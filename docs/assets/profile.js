@@ -22,7 +22,7 @@ import {
   loadPublicSiteConfig,
   mergeSiteBundles,
   renderBadgeIcon,
-} from "./dashboard-common.js?v=20260317d";
+} from "./dashboard-common.js?v=20260323a";
 
 const CATEGORY_ORDER = ["attendance", "distance", "time", "efficiency", "growth", "season", "gallery", "fun"];
 
@@ -136,7 +136,7 @@ function renderHero(profile) {
         <h2>${escapeHtml(primaryTitle?.name_ko || "아직 대표 칭호가 없습니다")}</h2>
         <p class="record-note">${escapeHtml(primaryTitle?.description_ko || "누적 배지 티어가 가장 높은 칭호가 이 자리에 걸립니다.")}</p>
         <div class="hero-meta-row">
-          ${primaryTitle?.icon_key ? renderBadgeIcon(state.siteBundle, primaryTitle.icon_key, primaryTitle.name_ko || "대표 칭호", "inline-badge-icon") : ""}
+          ${primaryTitle?.icon_key ? renderBadgeIcon(state.siteBundle, primaryTitle, primaryTitle.name_ko || "대표 칭호", "inline-badge-icon") : ""}
           ${primaryTitle?.short_label_ko ? `<span class="hero-chip">${escapeHtml(primaryTitle.short_label_ko)}</span>` : ""}
         </div>
       </article>
@@ -147,7 +147,7 @@ function renderHero(profile) {
         <h2>${escapeHtml(nextBadge?.name_ko || "다음 배지 계산 중")}</h2>
         <p class="record-note">${escapeHtml(nextBadge?.remaining_value_text_ko || "다음 해금 목표를 계산하는 중입니다.")}</p>
         <div class="hero-meta-row">
-          ${nextBadge?.icon_key ? renderBadgeIcon(state.siteBundle, nextBadge.icon_key, nextBadge.name_ko || "다음 해금", "inline-badge-icon") : ""}
+          ${nextBadge?.icon_key ? renderBadgeIcon(state.siteBundle, nextBadge, nextBadge.name_ko || "다음 해금", "inline-badge-icon") : ""}
           ${nextBadge?.target_value_text_ko ? `<span class="hero-chip">목표 ${escapeHtml(nextBadge.target_value_text_ko)}</span>` : ""}
         </div>
       </article>
@@ -347,7 +347,7 @@ function buildRecentUnlockChips(rows) {
   return rows.length
     ? rows.map((row) => `
       <span class="badge-chip">
-        ${row.icon_key ? renderBadgeIcon(state.siteBundle, row.icon_key, row.name_ko || row.badge_id, "inline-badge-icon") : ""}
+        ${row.icon_key ? renderBadgeIcon(state.siteBundle, row, row.name_ko || row.badge_id, "inline-badge-icon") : ""}
         ${escapeHtml(row.name_ko || row.short_label_ko || row.badge_id || "배지")}
       </span>
     `).join("")

@@ -21,7 +21,7 @@ import {
   renderBadgeIcon,
   sliceTopThree,
   sourceLabel,
-} from "./dashboard-common.js?v=20260317d";
+} from "./dashboard-common.js?v=20260323a";
 
 const state = {
   dashboard: null,
@@ -298,7 +298,7 @@ function renderSpotlight(row, metricKey) {
       <p class="spotlight-value">${escapeHtml(row.metric_value_text_ko || metricLabel(metricKey))}</p>
       <p class="record-note">${escapeHtml(row.secondary_text_ko || "이번 시즌 기준 기록입니다.")}</p>
       <div class="stat-chip-row">
-        ${row.primary_title?.icon_key ? renderBadgeIcon(state.siteBundle, row.primary_title.icon_key, row.author || "닉네임", "inline-badge-icon") : ""}
+        ${row.primary_title?.icon_key ? renderBadgeIcon(state.siteBundle, row.primary_title, row.author || "닉네임", "inline-badge-icon") : ""}
         ${(row.badge_preview || []).slice(0, 2).map((item) => `<span class="stat-chip">${escapeHtml(item)}</span>`).join("")}
       </div>
     </article>

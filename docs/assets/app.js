@@ -22,7 +22,7 @@
   sliceRankFourToTwenty,
   sliceTopThree,
   sourceLabel,
-} from "./dashboard-common.js?v=20260317d";
+} from "./dashboard-common.js?v=20260323a";
 
 const DEFAULT_NAV = [
   { label_ko: "모바일 보기", href: buildMobileUrl() },
@@ -155,7 +155,7 @@ function renderHero() {
   }
 
   document.getElementById("galleryTitleMeta").innerHTML = [
-    current.icon_key ? chip(renderBadgeIcon(state.siteBundle, current.icon_key, current.name_ko || "갤 칭호", "inline-badge-icon") + escapeHtml(current.short_label_ko || "현재 칭호"), true) : "",
+    current.icon_key ? chip(renderBadgeIcon(state.siteBundle, current, current.name_ko || "갤 칭호", "inline-badge-icon") + escapeHtml(current.short_label_ko || "현재 칭호"), true) : "",
     chip(`해금된 갤 배지 ${formatInt(progress.unlocked_badge_count || 0)}개`),
   ].join("");
 
@@ -237,7 +237,7 @@ function renderBadgeShelves() {
     return `
       <article class="shelf-item">
         <div class="metric-chip-row">
-          ${renderBadgeIcon(state.siteBundle, item.icon_key, item.name_ko || item.badge_id, "inline-badge-icon")}
+          ${renderBadgeIcon(state.siteBundle, item, item.name_ko || item.badge_id, "inline-badge-icon")}
           <span class="metric-chip">${escapeHtml(categoryLabelFromBundle(state.siteBundle, item.category))}</span>
         </div>
         <h3>${escapeHtml(item.name_ko || item.short_label_ko || "배지")}</h3>
@@ -332,7 +332,7 @@ function buildTopCard(row, rank) {
         <span class="metric-chip">${escapeHtml(metricLabel(state.activeMetric))}</span>
       </div>
       <div class="top-card-title">
-        ${renderBadgeIcon(state.siteBundle, row.primary_title?.icon_key, row.author || "닉네임", "top-card-icon")}
+        ${renderBadgeIcon(state.siteBundle, row.primary_title, row.author || "닉네임", "top-card-icon")}
         <div>
           <h3>${escapeHtml(row.author || "작성자 없음")}</h3>
           <p class="record-note">${escapeHtml(row.primary_title?.short_label_ko || row.primary_title?.name_ko || "대표 칭호 준비중")}</p>
@@ -363,7 +363,7 @@ function buildRankRow(row, rank) {
       <strong>${rank}위</strong>
       <div class="rank-row-main">
         <div class="rank-row-author">
-          ${renderBadgeIcon(state.siteBundle, row.primary_title?.icon_key, row.author || "닉네임", "inline-badge-icon")}
+          ${renderBadgeIcon(state.siteBundle, row.primary_title, row.author || "닉네임", "inline-badge-icon")}
           <span>${escapeHtml(row.author || "작성자 없음")}</span>
         </div>
         <span class="rank-copy">${escapeHtml(row.primary_title?.short_label_ko || row.secondary_text_ko || "대표 칭호 준비중")}</span>

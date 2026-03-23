@@ -9,7 +9,7 @@ import {
   loadPublicSiteConfig,
   mergeSiteBundles,
   renderBadgeIcon,
-} from "./dashboard-common.js?v=20260317d";
+} from "./dashboard-common.js?v=20260323a";
 
 const CATEGORY_ORDER = ["attendance", "distance", "time", "efficiency", "growth", "season", "gallery", "fun"];
 
@@ -226,7 +226,7 @@ function renderBadgeCard(badge) {
   return `
     <article class="badge-card">
       <div class="badge-meta-row">
-        ${badge.icon_key ? renderBadgeIcon(state.siteBundle, badge.icon_key, badge.name_ko || badge.badge_id, "badge-thumb") : ""}
+        ${badge.icon_key ? renderBadgeIcon(state.siteBundle, badge, badge.name_ko || badge.badge_id, "badge-thumb") : ""}
       </div>
       <strong>${escapeHtml(badge.name_ko || badge.badge_id)}</strong>
       <p class="meta">${escapeHtml(badge.description_ko || "배지 설명이 아직 없습니다.")}</p>

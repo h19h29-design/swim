@@ -1,0 +1,1482 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>배지 단계 시스템</title>
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <style>
+    :root {
+      --bg-top: #fff8ef;
+      --bg-bottom: #ffeddc;
+      --paper: rgba(255, 252, 247, 0.96);
+      --paper-strong: #fffdfb;
+      --ink: #2d221d;
+      --muted: #6f5d55;
+      --line: rgba(45, 34, 29, 0.12);
+      --shadow: 0 24px 54px rgba(45, 34, 29, 0.12);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --starter-a: #fff4ea;
+      --starter-b: #ffd966;
+      --starter-c: #ffb38f;
+      --rally-a: #effffb;
+      --rally-b: #83d6c9;
+      --rally-c: #7cb7ff;
+      --gold-a: #fff7d6;
+      --gold-b: #ffd966;
+      --gold-c: #ff9d5c;
+      --prism-a: #fff6f3;
+      --prism-b: #ff8f7a;
+      --prism-c: #7cb7ff;
+      --prism-d: #83d6c9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Aptos", "Trebuchet MS", "Malgun Gothic", "Noto Sans KR", sans-serif;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(255, 217, 101, 0.22), transparent 16%),
+        radial-gradient(circle at 88% 8%, rgba(124, 183, 255, 0.16), transparent 18%),
+        linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: "Aptos Display", "Aptos", "Trebuchet MS", "Malgun Gothic", sans-serif;
+      letter-spacing: -0.05em;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .page-shell {
+      width: min(calc(100% - 42px), 1680px);
+      margin: 0 auto;
+      padding: 30px 0 56px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .panel {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--line);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .panel::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 999px;
+      right: -60px;
+      top: -54px;
+      background: rgba(255, 217, 101, 0.12);
+      pointer-events: none;
+    }
+
+    .eyebrow,
+    .section-kicker,
+    .tier-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--muted);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.8fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .hero-copy {
+      display: grid;
+      gap: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(3rem, 4.8vw, 5.2rem);
+      line-height: 0.92;
+    }
+
+    .hero-copy .summary {
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.7;
+      max-width: 76ch;
+    }
+
+    .rule-chip-row,
+    .stat-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip,
+    .stat-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 12px 22px rgba(45, 34, 29, 0.08);
+      font-weight: 800;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .info-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.97);
+      padding: 18px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .info-card h2 {
+      font-size: 1.5rem;
+    }
+
+    .info-note {
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .mini-rule-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .mini-rule {
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255, 248, 240, 0.95);
+      padding: 12px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .mini-rule strong {
+      font-size: 0.96rem;
+    }
+
+    .mini-rule span {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .section-head {
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-head h2 {
+      font-size: 1.85rem;
+      margin-top: 6px;
+    }
+
+    .section-copy {
+      margin-top: 8px;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 72ch;
+    }
+
+    .stage-guide-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stage-guide-card,
+    .matrix-card,
+    .tier-row {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.97);
+      box-shadow: 0 12px 22px rgba(45, 34, 29, 0.08);
+    }
+
+    .stage-guide-card {
+      padding: 18px;
+      display: grid;
+      gap: 12px;
+      align-content: start;
+    }
+
+    .stage-guide-card h3 {
+      font-size: 1.12rem;
+    }
+
+    .stage-guide-card .stage-note,
+    .badge-copy,
+    .empty-copy {
+      color: var(--muted);
+      line-height: 1.58;
+      font-size: 0.94rem;
+    }
+
+    .stage-guide-card .tag-row,
+    .badge-meta,
+    .tier-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag,
+    .meta-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.96);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .matrix-list {
+      display: grid;
+      gap: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tier-row {
+      padding: 16px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .tier-row-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .tier-row-head h3 {
+      font-size: 1.3rem;
+    }
+
+    .tier-row-copy {
+      color: var(--muted);
+      line-height: 1.58;
+      max-width: 70ch;
+      margin-top: 6px;
+    }
+
+    .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(8, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .matrix-card {
+      padding: 14px;
+      display: grid;
+      gap: 10px;
+      min-height: 276px;
+      align-content: start;
+    }
+
+    .matrix-card.is-empty {
+      background: rgba(255, 250, 246, 0.76);
+      border-style: dashed;
+      box-shadow: none;
+    }
+
+    .category-chip {
+      display: inline-flex;
+      width: fit-content;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(45, 34, 29, 0.06);
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .badge-name {
+      font-size: 1.02rem;
+      line-height: 1.32;
+    }
+
+    .badge-id {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .stage-badge {
+      width: 116px;
+      height: 116px;
+      position: relative;
+      display: grid;
+      place-items: center;
+      margin: 0 auto;
+      filter: drop-shadow(0 18px 22px rgba(45, 34, 29, 0.14));
+      isolation: isolate;
+    }
+
+    .stage-badge::before {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.18);
+      mix-blend-mode: screen;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .stage-badge::after {
+      content: "";
+      position: absolute;
+      inset: -10px;
+      border-radius: 36px;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.72;
+    }
+
+    .band-starter.stage-badge::after {
+      background: radial-gradient(circle, rgba(255, 179, 143, 0.34) 0, rgba(255, 217, 101, 0.22) 42%, transparent 72%);
+    }
+
+    .band-rally.stage-badge::after {
+      background: radial-gradient(circle, rgba(131, 214, 201, 0.3) 0, rgba(124, 183, 255, 0.22) 44%, transparent 74%);
+    }
+
+    .band-gold.stage-badge::after {
+      background: radial-gradient(circle, rgba(255, 217, 101, 0.34) 0, rgba(255, 157, 92, 0.24) 44%, transparent 74%);
+    }
+
+    .band-prism.stage-badge::after {
+      background: radial-gradient(circle, rgba(255, 143, 122, 0.3) 0, rgba(124, 183, 255, 0.2) 36%, rgba(131, 214, 201, 0.18) 52%, transparent 76%);
+    }
+
+    .shape-1 {
+      border-radius: 34px;
+      background: linear-gradient(180deg, var(--starter-a), var(--starter-c));
+      border: 4px solid rgba(137, 87, 61, 0.18);
+    }
+
+    .shape-2 {
+      background: linear-gradient(180deg, var(--starter-a), var(--starter-b));
+      clip-path: polygon(14% 0, 86% 0, 100% 14%, 100% 86%, 86% 100%, 14% 100%, 0 86%, 0 14%);
+      border: 4px solid rgba(137, 87, 61, 0.18);
+    }
+
+    .shape-3 {
+      background: linear-gradient(180deg, var(--starter-a), var(--rally-b));
+      clip-path: polygon(20% 0, 80% 0, 100% 50%, 80% 100%, 20% 100%, 0 50%);
+      border: 4px solid rgba(74, 121, 128, 0.2);
+    }
+
+    .shape-4 {
+      background: linear-gradient(180deg, var(--rally-a), var(--rally-c));
+      clip-path: polygon(10% 0, 90% 0, 100% 14%, 100% 74%, 68% 100%, 32% 100%, 0 74%, 0 14%);
+      border: 4px solid rgba(55, 103, 145, 0.18);
+    }
+
+    .shape-5 {
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 24%, #fffefc 0, var(--gold-a) 42%, var(--gold-c) 100%);
+      border: 4px solid rgba(173, 118, 42, 0.24);
+    }
+
+    .shape-6 {
+      border-radius: 999px;
+      background: radial-gradient(circle at 32% 22%, #fffefc 0, var(--gold-a) 36%, var(--rally-c) 100%);
+      border: 4px solid rgba(109, 118, 183, 0.22);
+    }
+
+    .shape-6::after {
+      content: "";
+      position: absolute;
+      bottom: -16px;
+      left: 50%;
+      width: 56px;
+      height: 38px;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, var(--prism-b), var(--prism-c));
+      clip-path: polygon(0 0, 40% 0, 50% 100%, 60% 0, 100% 0, 82% 100%, 18% 100%);
+      z-index: -1;
+    }
+
+    .shape-7 {
+      background: linear-gradient(180deg, var(--gold-a), var(--gold-b));
+      clip-path: polygon(22% 0, 78% 0, 100% 22%, 100% 78%, 78% 100%, 22% 100%, 0 78%, 0 22%);
+      border: 4px solid rgba(173, 118, 42, 0.24);
+    }
+
+    .shape-8 {
+      background: linear-gradient(180deg, var(--gold-a), var(--prism-b));
+      clip-path: polygon(50% 0, 64% 12%, 82% 6%, 88% 24%, 100% 38%, 92% 54%, 100% 72%, 82% 78%, 74% 100%, 56% 92%, 44% 100%, 26% 92%, 18% 78%, 0 72%, 8% 54%, 0 38%, 12% 24%, 18% 6%, 36% 12%);
+      border: 4px solid rgba(157, 76, 55, 0.22);
+    }
+
+    .shape-9 {
+      background: linear-gradient(180deg, var(--gold-a), var(--prism-c));
+      clip-path: polygon(16% 0, 84% 0, 100% 16%, 100% 84%, 50% 100%, 0 84%, 0 16%);
+      border: 4px solid rgba(70, 93, 150, 0.22);
+    }
+
+    .shape-10 {
+      background: linear-gradient(180deg, var(--prism-a), var(--prism-d));
+      clip-path: polygon(20% 0, 80% 0, 96% 20%, 88% 78%, 50% 100%, 12% 78%, 4% 20%);
+      border: 4px solid rgba(62, 125, 119, 0.2);
+    }
+
+    .shape-11 {
+      background: linear-gradient(180deg, var(--prism-a), var(--prism-c));
+      clip-path: polygon(14% 0, 86% 0, 100% 18%, 92% 50%, 100% 82%, 86% 100%, 14% 100%, 0 82%, 8% 50%, 0 18%);
+      border: 4px solid rgba(86, 90, 153, 0.24);
+    }
+
+    .shape-12 {
+      background: linear-gradient(180deg, #fffefc, var(--prism-b) 34%, var(--prism-c) 68%, var(--prism-d) 100%);
+      clip-path: polygon(50% 0, 60% 10%, 74% 4%, 80% 18%, 96% 18%, 90% 34%, 100% 44%, 90% 56%, 96% 72%, 80% 72%, 74% 96%, 60% 88%, 50% 100%, 40% 88%, 26% 96%, 20% 72%, 4% 72%, 10% 56%, 0 44%, 10% 34%, 4% 18%, 20% 18%, 26% 4%, 40% 10%);
+      border: 4px solid rgba(114, 67, 120, 0.24);
+    }
+
+    .stage-core {
+      width: 80px;
+      height: 80px;
+      display: grid;
+      place-items: center;
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      box-shadow:
+        inset 0 10px 18px rgba(255, 255, 255, 0.4),
+        0 10px 18px rgba(45, 34, 29, 0.08);
+      position: relative;
+      z-index: 1;
+      overflow: visible;
+    }
+
+    .core-aura,
+    .core-orbit,
+    .core-accent,
+    .core-crown {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    .core-aura {
+      inset: -4px;
+      border-radius: 28px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.38), transparent 72%);
+      z-index: 0;
+    }
+
+    .core-orbit {
+      inset: 4px;
+      border-radius: 22px;
+      z-index: 1;
+    }
+
+    .core-shell {
+      position: absolute;
+      inset: 10px;
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 247, 240, 0.88));
+      border: 1px solid rgba(45, 34, 29, 0.1);
+      box-shadow:
+        inset 0 10px 18px rgba(255, 255, 255, 0.65),
+        0 6px 12px rgba(45, 34, 29, 0.08);
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    .core-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), transparent 42%);
+      pointer-events: none;
+    }
+
+    .core-icon {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      display: block;
+      position: relative;
+      z-index: 1;
+      filter: saturate(1.02) contrast(1.03);
+    }
+
+    .core-icon-svg {
+      width: 50px;
+      height: 50px;
+      display: block;
+      position: relative;
+      z-index: 1;
+      overflow: visible;
+    }
+
+    .inner-1 .core-shell {
+      inset: 12px;
+      border-radius: 20px;
+    }
+
+    .inner-1 .core-icon {
+      width: 44px;
+      height: 44px;
+      filter: saturate(0.95);
+    }
+
+    .inner-2 .core-orbit.orbit-a {
+      opacity: 0.9;
+      inset: 7px;
+      border: 2px dashed rgba(255, 217, 101, 0.72);
+    }
+
+    .inner-2 .core-shell {
+      inset: 11px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 246, 232, 0.9));
+    }
+
+    .inner-3 .core-aura {
+      opacity: 0.72;
+      background: radial-gradient(circle, rgba(131, 214, 201, 0.42), transparent 72%);
+    }
+
+    .inner-3 .core-orbit.orbit-a {
+      opacity: 0.86;
+      inset: 8px;
+      border: 2px solid rgba(131, 214, 201, 0.62);
+      transform: rotate(45deg);
+      border-radius: 18px;
+    }
+
+    .inner-3 .core-accent.accent-a {
+      opacity: 1;
+      width: 18px;
+      height: 6px;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, #83d6c9, #7cb7ff);
+      border-radius: 999px;
+      z-index: 2;
+    }
+
+    .inner-3 .core-accent.accent-b {
+      opacity: 1;
+      width: 16px;
+      height: 16px;
+      bottom: 7px;
+      right: 7px;
+      background: radial-gradient(circle at 30% 30%, #fffefc 0, #ffd966 48%, #ffb38f 100%);
+      clip-path: polygon(50% 0, 60% 34%, 100% 50%, 60% 66%, 50% 100%, 40% 66%, 0 50%, 40% 34%);
+      z-index: 2;
+    }
+
+    .inner-4 .core-aura {
+      opacity: 0.76;
+      background: radial-gradient(circle, rgba(124, 183, 255, 0.4), transparent 72%);
+    }
+
+    .inner-4 .core-orbit.orbit-a {
+      opacity: 0.9;
+      inset: 6px;
+      border: 2px solid rgba(124, 183, 255, 0.52);
+    }
+
+    .inner-4 .core-accent.accent-a,
+    .inner-4 .core-accent.accent-b {
+      opacity: 1;
+      width: 14px;
+      height: 30px;
+      top: 50%;
+      background: linear-gradient(180deg, #fffefc, #7cb7ff);
+      clip-path: polygon(0 18%, 100% 0, 84% 100%, 0 82%);
+      z-index: 1;
+    }
+
+    .inner-4 .core-accent.accent-a {
+      left: 3px;
+      transform: translateY(-50%);
+    }
+
+    .inner-4 .core-accent.accent-b {
+      right: 3px;
+      transform: translateY(-50%) scaleX(-1);
+    }
+
+    .inner-4 .core-shell {
+      inset: 11px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(236, 247, 255, 0.9));
+    }
+
+    .inner-5 .core-aura {
+      opacity: 0.86;
+      background: radial-gradient(circle, rgba(255, 217, 101, 0.48), transparent 72%);
+    }
+
+    .inner-5 .core-orbit.orbit-a {
+      opacity: 1;
+      inset: 4px;
+      border: 3px solid rgba(255, 217, 101, 0.62);
+      border-radius: 999px;
+    }
+
+    .inner-5 .core-shell {
+      inset: 10px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 26%, rgba(255, 255, 255, 0.98), rgba(255, 247, 214, 0.96) 52%, rgba(255, 157, 92, 0.86) 100%);
+    }
+
+    .inner-5 .core-icon {
+      width: 46px;
+      height: 46px;
+      filter: saturate(1.08) contrast(1.05);
+    }
+
+    .inner-6 .core-aura {
+      opacity: 0.92;
+      background: radial-gradient(circle, rgba(124, 183, 255, 0.44), rgba(255, 217, 101, 0.2) 52%, transparent 74%);
+    }
+
+    .inner-6 .core-orbit.orbit-a {
+      opacity: 1;
+      inset: 4px;
+      border: 3px solid rgba(124, 183, 255, 0.54);
+      border-radius: 999px;
+    }
+
+    .inner-6 .core-shell {
+      inset: 10px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 26%, rgba(255, 255, 255, 0.98), rgba(255, 247, 214, 0.94) 48%, rgba(124, 183, 255, 0.84) 100%);
+    }
+
+    .inner-6 .core-accent.accent-a,
+    .inner-6 .core-accent.accent-b {
+      opacity: 1;
+      width: 18px;
+      height: 24px;
+      bottom: -4px;
+      background: linear-gradient(180deg, #ff8f7a, #7cb7ff);
+      clip-path: polygon(0 0, 100% 0, 76% 100%, 50% 72%, 24% 100%);
+      z-index: 1;
+    }
+
+    .inner-6 .core-accent.accent-a {
+      left: 22px;
+    }
+
+    .inner-6 .core-accent.accent-b {
+      right: 22px;
+    }
+
+    .inner-7 .core-aura {
+      opacity: 0.9;
+      inset: -6px;
+      background: conic-gradient(from 0deg, rgba(255, 217, 101, 0.1), rgba(255, 217, 101, 0.5), rgba(255, 157, 92, 0.18), rgba(255, 217, 101, 0.5), rgba(255, 217, 101, 0.1));
+      clip-path: polygon(50% 0, 60% 18%, 82% 8%, 92% 28%, 100% 50%, 92% 72%, 82% 92%, 60% 82%, 50% 100%, 40% 82%, 18% 92%, 8% 72%, 0 50%, 8% 28%, 18% 8%, 40% 18%);
+    }
+
+    .inner-7 .core-orbit.orbit-a {
+      opacity: 1;
+      inset: 6px;
+      border: 2px solid rgba(255, 217, 101, 0.6);
+      transform: rotate(45deg);
+      border-radius: 16px;
+    }
+
+    .inner-7 .core-shell {
+      inset: 13px;
+      border-radius: 16px;
+      transform: rotate(45deg);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 246, 215, 0.92));
+    }
+
+    .inner-7 .core-icon {
+      width: 42px;
+      height: 42px;
+      transform: rotate(-45deg);
+      filter: saturate(1.1) contrast(1.06);
+    }
+
+    .inner-8 .core-aura {
+      opacity: 0.96;
+      inset: -7px;
+      background: radial-gradient(circle, rgba(255, 217, 101, 0.38), rgba(255, 143, 122, 0.26) 42%, transparent 74%);
+    }
+
+    .inner-8 .core-orbit.orbit-a {
+      opacity: 1;
+      inset: 2px;
+      border: 2px dashed rgba(255, 157, 92, 0.62);
+      border-radius: 24px;
+    }
+
+    .inner-8 .core-orbit.orbit-b {
+      opacity: 1;
+      inset: 8px;
+      border: 2px solid rgba(255, 217, 101, 0.72);
+      border-radius: 18px;
+    }
+
+    .inner-8 .core-crown {
+      opacity: 1;
+      width: 36px;
+      height: 20px;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(180deg, #fff7d6, #ffd966 56%, #ff9d5c 100%);
+      clip-path: polygon(0 100%, 0 38%, 16% 58%, 28% 4%, 50% 48%, 72% 4%, 84% 58%, 100% 38%, 100% 100%);
+      z-index: 3;
+      filter: drop-shadow(0 6px 8px rgba(157, 107, 44, 0.22));
+    }
+
+    .inner-8 .core-shell {
+      inset: 11px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 241, 223, 0.94));
+    }
+
+    .inner-8 .core-icon {
+      width: 46px;
+      height: 46px;
+      filter: saturate(1.14) contrast(1.08) drop-shadow(0 6px 12px rgba(255, 157, 92, 0.24));
+    }
+
+    .inner-9 .core-aura {
+      opacity: 0.88;
+      background: radial-gradient(circle, rgba(124, 183, 255, 0.34), rgba(255, 217, 101, 0.18) 44%, transparent 76%);
+    }
+
+    .inner-9 .core-orbit.orbit-a {
+      opacity: 1;
+      inset: 7px;
+      border: 2px solid rgba(124, 183, 255, 0.6);
+      clip-path: polygon(18% 0, 82% 0, 100% 18%, 100% 82%, 50% 100%, 0 82%, 0 18%);
+    }
+
+    .inner-9 .core-shell {
+      inset: 12px;
+      border-radius: 14px;
+      clip-path: polygon(18% 0, 82% 0, 100% 18%, 100% 82%, 50% 100%, 0 82%, 0 18%);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(238, 244, 255, 0.92));
+    }
+
+    .inner-10 .core-aura {
+      opacity: 0.9;
+      background: radial-gradient(circle, rgba(131, 214, 201, 0.34), rgba(124, 183, 255, 0.2) 44%, transparent 76%);
+    }
+
+    .inner-10 .core-shell {
+      inset: 11px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(231, 255, 249, 0.9));
+    }
+
+    .inner-10 .core-accent.accent-a,
+    .inner-10 .core-accent.accent-b {
+      opacity: 1;
+      width: 18px;
+      height: 18px;
+      background: radial-gradient(circle at 30% 30%, #fffefc 0, #83d6c9 52%, #7cb7ff 100%);
+      clip-path: polygon(50% 0, 60% 34%, 100% 50%, 60% 66%, 50% 100%, 40% 66%, 0 50%, 40% 34%);
+      z-index: 2;
+    }
+
+    .inner-10 .core-accent.accent-a {
+      top: 4px;
+      left: 4px;
+    }
+
+    .inner-10 .core-accent.accent-b {
+      bottom: 4px;
+      right: 4px;
+    }
+
+    .inner-11 .core-aura {
+      opacity: 0.94;
+      background: radial-gradient(circle, rgba(124, 183, 255, 0.34), rgba(255, 143, 122, 0.18) 42%, transparent 78%);
+    }
+
+    .inner-11 .core-orbit.orbit-a,
+    .inner-11 .core-orbit.orbit-b {
+      opacity: 1;
+      width: 22px;
+      height: 42px;
+      top: 18px;
+      border: 2px solid rgba(124, 183, 255, 0.56);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .inner-11 .core-orbit.orbit-a {
+      left: 10px;
+      border-right-color: transparent;
+      transform: rotate(-18deg);
+    }
+
+    .inner-11 .core-orbit.orbit-b {
+      right: 10px;
+      border-left-color: transparent;
+      transform: rotate(18deg);
+    }
+
+    .inner-11 .core-shell {
+      inset: 11px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(241, 245, 255, 0.92));
+    }
+
+    .inner-12 .core-aura {
+      opacity: 1;
+      inset: -8px;
+      background: conic-gradient(from 0deg, rgba(255, 143, 122, 0.18), rgba(255, 143, 122, 0.56), rgba(124, 183, 255, 0.24), rgba(131, 214, 201, 0.56), rgba(255, 143, 122, 0.18));
+      clip-path: polygon(50% 0, 58% 14%, 74% 6%, 82% 22%, 100% 22%, 90% 40%, 100% 54%, 84% 62%, 90% 82%, 72% 82%, 66% 100%, 50% 90%, 34% 100%, 28% 82%, 10% 82%, 16% 62%, 0 54%, 10% 40%, 0 22%, 18% 22%, 26% 6%, 42% 14%);
+    }
+
+    .inner-12 .core-orbit.orbit-a {
+      opacity: 1;
+      inset: 4px;
+      border: 2px dashed rgba(255, 255, 255, 0.76);
+      border-radius: 18px;
+    }
+
+    .inner-12 .core-crown {
+      opacity: 1;
+      width: 40px;
+      height: 24px;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(180deg, #fffefc, #ff8f7a 44%, #7cb7ff 76%, #83d6c9 100%);
+      clip-path: polygon(0 100%, 0 42%, 14% 56%, 24% 0, 42% 46%, 50% 24%, 58% 46%, 76% 0, 86% 56%, 100% 42%, 100% 100%);
+      z-index: 3;
+      filter: drop-shadow(0 6px 8px rgba(86, 90, 153, 0.18));
+    }
+
+    .inner-12 .core-shell {
+      inset: 10px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(250, 240, 255, 0.94));
+      box-shadow:
+        inset 0 10px 18px rgba(255, 255, 255, 0.7),
+        0 8px 16px rgba(86, 90, 153, 0.12);
+    }
+
+    .inner-12 .core-icon {
+      width: 44px;
+      height: 44px;
+      filter: saturate(1.16) contrast(1.08) drop-shadow(0 6px 12px rgba(86, 90, 153, 0.18));
+    }
+
+    .stage-rank {
+      position: absolute;
+      top: -8px;
+      right: -4px;
+      min-width: 40px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(45, 34, 29, 0.9);
+      color: #fffdfb;
+      font-size: 0.84rem;
+      font-weight: 900;
+      box-shadow: 0 10px 18px rgba(45, 34, 29, 0.16);
+      z-index: 2;
+    }
+
+    .band-starter .stage-rank {
+      background: #9b5d45;
+    }
+
+    .band-rally .stage-rank {
+      background: #2c6f77;
+    }
+
+    .band-gold .stage-rank {
+      background: #9d6b2c;
+    }
+
+    .band-prism .stage-rank {
+      background: #6b5ac9;
+    }
+
+    .legend-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      display: inline-block;
+      margin-right: 6px;
+      vertical-align: middle;
+      border: 1px solid rgba(45, 34, 29, 0.1);
+    }
+
+    .dot-starter { background: var(--starter-b); }
+    .dot-rally { background: var(--rally-b); }
+    .dot-gold { background: var(--gold-b); }
+    .dot-prism { background: var(--prism-b); }
+
+    @media (max-width: 1520px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .stage-guide-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .tier-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 980px) {
+      .page-shell {
+        width: min(calc(100% - 24px), 1680px);
+      }
+
+      .stage-guide-grid,
+      .tier-grid,
+      .mini-rule-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .stage-guide-grid,
+      .tier-grid,
+      .mini-rule-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page-shell">
+    <section class="panel hero">
+      <div class="hero-copy">
+        <p class="eyebrow">BADGE STAGE SYSTEM</p>
+        <h1>같은 단계라도<br>안쪽 아이콘이 진화합니다</h1>
+        <p class="summary">
+          출석, 거리, 시간, 효율, 성장, 시즌, 갤 전체, 보너스는 카테고리 상징은 유지하되
+          <strong>해금 단계가 올라갈수록 안쪽 아이콘 자체가 바뀌는</strong> 배지 시스템 시안입니다.
+          같은 카테고리 안에서도 Lv.1, Lv.2, Lv.3가 서로 다른 그림으로 보이게 하고,
+          단계가 오를수록 <strong>안쪽 심볼의 형태와 장식이 같이 진화</strong>하도록 잡았습니다.
+        </p>
+        <div class="rule-chip-row">
+          <span class="chip">같은 tier = 같은 단계 언어</span>
+          <span class="chip">카테고리별 차이 = 내부 상징</span>
+          <span class="chip">높은 tier = 안쪽 아이콘 진화</span>
+          <span class="chip">1~8 코어 단계 + 9~12 시즌 확장</span>
+          <span class="chip">모바일 축소 시에도 단계 인지 가능</span>
+        </div>
+        <div class="legend-row">
+          <span><span class="legend-dot dot-starter"></span>입문 구간</span>
+          <span><span class="legend-dot dot-rally"></span>도약 구간</span>
+          <span><span class="legend-dot dot-gold"></span>대표 구간</span>
+          <span><span class="legend-dot dot-prism"></span>하이라이트 구간</span>
+        </div>
+      </div>
+      <div class="hero-side">
+        <article class="info-card">
+          <p class="section-kicker">핵심 규칙</p>
+          <h2>단계는 아이콘 진화로, 파트는 상징으로</h2>
+          <p class="info-note">
+            현재 데이터 기준으로 배지 이름과 설명은 그대로 유지하고, UI에서 보이는
+            안쪽 심볼의 조형을 단계 공통 규칙으로 다시 설계하는 방향입니다.
+          </p>
+          <div class="mini-rule-grid">
+            <article class="mini-rule">
+              <strong>tier 1</strong>
+              <span>첫 해금, 입문, “시작했다”는 느낌</span>
+            </article>
+            <article class="mini-rule">
+              <strong>tier 4</strong>
+              <span>중반 도약, 구조가 복합화되는 단계</span>
+            </article>
+            <article class="mini-rule">
+              <strong>tier 8</strong>
+              <span>최상위, 대표 칭호에 가까운 인상</span>
+            </article>
+            <article class="mini-rule">
+              <strong>tier 12</strong>
+              <span>시즌 확장, 연간 전설급 마감용</span>
+            </article>
+          </div>
+        </article>
+        <article class="info-card">
+          <p class="section-kicker">현재 데이터</p>
+          <div class="stat-row" id="heroStats"></div>
+          <p class="info-note">
+            아래 표는 실제 `badge_catalog`를 tier 기준으로 재배열한 시안입니다.
+            비어 있는 칸은 해당 단계가 없는 카테고리입니다.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <p class="section-kicker">Stage Guide</p>
+        <h2>단계별 내부 아이콘 진화 가이드</h2>
+        <p class="section-copy">
+          아래 샘플은 카테고리마다 안쪽 그림이 어떻게 단계별로 커지고 복합화되는지 보여줍니다.
+          같은 카테고리라도 Lv.1은 단순 심볼, 상위 단계로 갈수록 장식과 구조가 붙는 방식입니다.
+        </p>
+      </div>
+      <div class="stage-guide-grid" id="stageGuide"></div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <p class="section-kicker">Tier Matrix</p>
+        <h2>실제 배지를 단계 기준으로 다시 본 표</h2>
+        <p class="section-copy">
+          같은 숫자 단계에 해금되는 배지는 한 줄에서 같은 진화 레벨을 공유합니다.
+          시즌은 9~12의 확장 단계를 추가로 사용해 월별 스탬프를 계속 쌓는 구조로 제안합니다.
+        </p>
+      </div>
+      <div class="matrix-list" id="tierMatrix"></div>
+    </section>
+  </main>
+
+  <script type="module">
+    const CATEGORY_ORDER = ["attendance", "distance", "time", "efficiency", "growth", "season", "gallery", "fun"];
+    const CATEGORY_FALLBACKS = {
+      attendance: "출석",
+      distance: "거리",
+      time: "시간",
+      efficiency: "효율",
+      growth: "성장",
+      season: "시즌",
+      gallery: "갤 전체",
+      fun: "보너스",
+    };
+    const STAGE_DEFS = [
+      { tier: 1, label: "입문 스티커", note: "처음 해금되는 시작 단계", shape: "shape-1" },
+      { tier: 2, label: "루틴 티켓", note: "다음 단계로 올라갔다는 티켓 감각", shape: "shape-2" },
+      { tier: 3, label: "첫 도약 배지", note: "시스템 안에서 본격적인 배지 느낌", shape: "shape-3" },
+      { tier: 4, label: "챌린저 엠블럼", note: "중반부에 들어서는 카드형 엠블럼", shape: "shape-4" },
+      { tier: 5, label: "메달 코어", note: "누적이 쌓였다는 메달 인상", shape: "shape-5" },
+      { tier: 6, label: "리본 메달", note: "가시적으로 상위권에 들어온 단계", shape: "shape-6" },
+      { tier: 7, label: "대표 실링", note: "대표 칭호 후보급의 봉인 인장", shape: "shape-7" },
+      { tier: 8, label: "레전드 씰", note: "카테고리 최상위 단계", shape: "shape-8" },
+      { tier: 9, label: "시즌 확장 I", note: "월별 시즌 배지 확장용 프레임", shape: "shape-9" },
+      { tier: 10, label: "시즌 확장 II", note: "연말로 갈수록 깊어지는 시즌감", shape: "shape-10" },
+      { tier: 11, label: "시즌 확장 III", note: "장기 시즌 참여 누적형", shape: "shape-11" },
+      { tier: 12, label: "연간 전설", note: "1년치 시즌 스탬프의 마지막 모양", shape: "shape-12" },
+    ];
+
+    init().catch((error) => {
+      console.error(error);
+      document.getElementById("heroStats").innerHTML = `<span class="stat-chip">데이터 로드 실패</span>`;
+    });
+
+    async function init() {
+      const response = await fetch("./data/site_config.json", { cache: "no-store" });
+      const payload = await response.json();
+      const bundle = payload && payload.badge_catalog ? payload : (payload.site_config || payload);
+      const badgeCatalog = Array.isArray(bundle.badge_catalog?.badges) ? bundle.badge_catalog.badges : [];
+      const categoryLabels = bundle.badge_catalog?.category_labels || {};
+      const iconMap = new Map(
+        (Array.isArray(bundle.badge_art_catalog?.icons) ? bundle.badge_art_catalog.icons : [])
+          .map((item) => [String(item.icon_key || ""), resolveAssetPath(item.file_path)])
+      );
+
+      renderHeroStats(badgeCatalog);
+      renderStageGuide(iconMap);
+      renderTierMatrix(badgeCatalog, categoryLabels, iconMap);
+    }
+
+    function renderHeroStats(badges) {
+      const stageCount = new Set(badges.map((badge) => Number(badge.tier || 0)).filter(Boolean)).size;
+      const primaryCount = badges.filter((badge) => Boolean(badge.is_primary_title_candidate)).length;
+      const hiddenCount = badges.filter((badge) => Boolean(badge.is_hidden)).length;
+      const maxTier = badges.reduce((current, badge) => Math.max(current, Number(badge.tier || 0)), 0);
+      const stats = [
+        `전체 배지 ${formatInt(badges.length)}개`,
+        `공통 단계 ${formatInt(stageCount)}개`,
+        `대표 후보 ${formatInt(primaryCount)}개`,
+        `숨김 배지 ${formatInt(hiddenCount)}개`,
+        `최대 tier ${formatInt(maxTier)}단계`,
+      ];
+      document.getElementById("heroStats").innerHTML = stats.map((item) => `<span class="stat-chip">${escapeHtml(item)}</span>`).join("");
+    }
+
+    function renderStageGuide(iconMap) {
+      const sampleCategories = [
+        "attendance",
+        "distance",
+        "time",
+        "efficiency",
+        "growth",
+        "season",
+        "gallery",
+        "fun",
+      ];
+
+      document.getElementById("stageGuide").innerHTML = STAGE_DEFS.map((stage, index) => {
+        const category = sampleCategories[index % sampleCategories.length];
+        const bandClass = `band-${bandForTier(stage.tier)}`;
+        return `
+          <article class="stage-guide-card ${bandClass}">
+            ${renderStageBadge(stage, category, category, true)}
+            <div>
+              <p class="tier-label">Tier ${stage.tier}</p>
+              <h3>${escapeHtml(stage.label)}</h3>
+            </div>
+            <p class="stage-note">${escapeHtml(stage.note)}</p>
+            <div class="tag-row">
+              <span class="tag">${escapeHtml(stageBandLabel(stage.tier))}</span>
+              <span class="tag">${escapeHtml(stage.shape.replace("shape-", "shape "))}</span>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function renderTierMatrix(badges, categoryLabels, iconMap) {
+      const byTier = new Map();
+      for (const badge of badges) {
+        const tier = Number(badge.tier || 0);
+        if (!tier) continue;
+        if (!byTier.has(tier)) byTier.set(tier, []);
+        byTier.get(tier).push(badge);
+      }
+
+      document.getElementById("tierMatrix").innerHTML = STAGE_DEFS.map((stage) => {
+        const bucket = byTier.get(stage.tier) || [];
+        const cards = CATEGORY_ORDER.map((category) => {
+          const badge = bucket.find((item) => String(item.category || "") === category);
+          if (!badge) {
+            return `
+              <article class="matrix-card is-empty">
+                <span class="category-chip">${escapeHtml(categoryLabel(categoryLabels, category))}</span>
+                ${renderStageBadge(stage, category, "empty", false, true)}
+                <strong class="badge-name">해당 단계 없음</strong>
+                <p class="empty-copy">이 카테고리는 tier ${stage.tier} 배지가 없습니다.</p>
+              </article>
+            `;
+          }
+
+          return `
+            <article class="matrix-card">
+              <span class="category-chip">${escapeHtml(categoryLabel(categoryLabels, category))}</span>
+              ${renderStageBadge(stage, category, badge.name_ko || badge.badge_id, false)}
+              <strong class="badge-name">${escapeHtml(badge.name_ko || badge.badge_id || "-")}</strong>
+              <p class="badge-copy">${escapeHtml(badge.description_ko || "설명이 아직 없습니다.")}</p>
+              <div class="badge-meta">
+                <span class="meta-tag">${escapeHtml(badge.short_label_ko || formatThreshold(badge.threshold_type, badge.threshold_value))}</span>
+                <span class="meta-tag">${escapeHtml(badge.badge_id || "-")}</span>
+              </div>
+            </article>
+          `;
+        }).join("");
+
+        return `
+          <section class="tier-row">
+            <div class="tier-row-head">
+              <div>
+                <p class="section-kicker">Tier ${stage.tier}</p>
+                <h3>${escapeHtml(stage.label)}</h3>
+                <p class="tier-row-copy">${escapeHtml(stage.note)}. 같은 줄에서는 카테고리가 달라도 프레임은 동일합니다.</p>
+              </div>
+              <div class="tier-meta-row">
+                <span class="meta-tag">${escapeHtml(stageBandLabel(stage.tier))}</span>
+                <span class="meta-tag">${escapeHtml(`shape ${stage.shape.replace("shape-", "")}`)}</span>
+              </div>
+            </div>
+            <div class="tier-grid">
+              ${cards}
+            </div>
+          </section>
+        `;
+      }).join("");
+    }
+
+    function renderStageBadge(stage, category, alt, isGuide, isEmpty = false) {
+      const bandClass = `band-${bandForTier(stage.tier)}`;
+      return `
+        <div class="stage-badge ${stage.shape} ${bandClass}">
+          <div class="stage-core inner-${stage.tier}">
+            <span class="core-aura"></span>
+            <span class="core-orbit orbit-a"></span>
+            <span class="core-orbit orbit-b"></span>
+            <span class="core-accent accent-a"></span>
+            <span class="core-accent accent-b"></span>
+            <span class="core-crown"></span>
+            <div class="core-shell">
+              ${isEmpty ? `<span class="badge-id">${isGuide ? "core" : "empty"}</span>` : renderEvolutionIcon(category, stage.tier, alt)}
+            </div>
+          </div>
+          <span class="stage-rank">Lv.${stage.tier}</span>
+        </div>
+      `;
+    }
+
+    function renderEvolutionIcon(category, tier, alt) {
+      const palette = paletteForTier(tier);
+      const glowId = `glow-${String(category || "badge").replace(/[^a-z0-9_-]/gi, "")}-${tier}`;
+      return `
+        <svg class="core-icon-svg" viewBox="0 0 64 64" role="img" aria-label="${escapeHtml(alt || "badge")}">
+          <defs>
+            <filter id="${glowId}" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur stdDeviation="${tier >= 8 ? 3 : tier >= 5 ? 2.2 : 1.4}" result="blur"></feGaussianBlur>
+              <feMerge>
+                <feMergeNode in="blur"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+              </feMerge>
+            </filter>
+          </defs>
+          <circle cx="32" cy="32" r="${tier >= 8 ? 25 : tier >= 5 ? 23 : 21}" fill="${palette.soft}" opacity="0.96"></circle>
+          <circle cx="32" cy="32" r="${tier >= 8 ? 20 : tier >= 5 ? 18 : 16}" fill="white" opacity="0.95"></circle>
+          ${glyphForCategory(category, tier, palette, glowId)}
+        </svg>
+      `;
+    }
+
+    function paletteForTier(tier) {
+      if (tier <= 3) {
+        return { main: "#d06f4c", accent: "#ffd966", strong: "#9e5538", tint: "#fff0df", soft: "#fff7ef" };
+      }
+      if (tier <= 6) {
+        return { main: "#2f8f83", accent: "#7cb7ff", strong: "#21606d", tint: "#eafffb", soft: "#f4fffd" };
+      }
+      if (tier <= 9) {
+        return { main: "#b2741b", accent: "#ffb347", strong: "#8b5709", tint: "#fff4d7", soft: "#fffaf0" };
+      }
+      return { main: "#d55d68", accent: "#83d6c9", strong: "#6b5ac9", tint: "#fff0f4", soft: "#fff8fb" };
+    }
+
+    function glyphForCategory(category, tier, p, glowId) {
+      switch (category) {
+        case "attendance":
+          return glyphAttendance(tier, p, glowId);
+        case "distance":
+          return glyphDistance(tier, p, glowId);
+        case "time":
+          return glyphTime(tier, p, glowId);
+        case "efficiency":
+          return glyphEfficiency(tier, p, glowId);
+        case "growth":
+          return glyphGrowth(tier, p, glowId);
+        case "season":
+          return glyphSeason(tier, p, glowId);
+        case "gallery":
+          return glyphGallery(tier, p, glowId);
+        case "fun":
+          return glyphFun(tier, p, glowId);
+        default:
+          return `<path d="M32 12l5 10 11 1-8 7 2 11-10-5-10 5 2-11-8-7 11-1z" fill="${p.accent}" stroke="${p.main}" stroke-width="2.5"></path>`;
+      }
+    }
+
+    function glyphAttendance(tier, p, glowId) {
+      if (tier <= 1) return `<circle cx="32" cy="32" r="11" fill="${p.tint}"></circle><path d="M26 32l4 4 8-10" fill="none" stroke="${p.main}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>`;
+      if (tier === 2) return `<rect x="20" y="22" width="24" height="20" rx="6" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></rect><circle cx="25" cy="32" r="2.2" fill="${p.accent}"></circle><path d="M30 32l3 3 7-8" fill="none" stroke="${p.main}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>`;
+      if (tier === 3) return `<rect x="19" y="16" width="26" height="30" rx="7" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></rect><rect x="23" y="13" width="4" height="8" rx="2" fill="${p.accent}"></rect><rect x="37" y="13" width="4" height="8" rx="2" fill="${p.accent}"></rect><path d="M25 32l4 4 8-10" fill="none" stroke="${p.main}" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path>`;
+      if (tier === 4) return `<rect x="22" y="14" width="20" height="34" rx="6" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></rect><rect x="27" y="11" width="10" height="6" rx="3" fill="${p.accent}"></rect><path d="M26 25h12M26 33h12M26 41h12" stroke="${p.main}" stroke-width="3" stroke-linecap="round"></path><path d="M41 36l4 5 6-8" fill="none" stroke="${p.accent}" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path>`;
+      if (tier === 5) return `<rect x="22" y="16" width="20" height="28" rx="6" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></rect><circle cx="42" cy="41" r="8" fill="${p.accent}" filter="url(#${glowId})"></circle><path d="M26 26h12M26 33h12" stroke="${p.main}" stroke-width="3" stroke-linecap="round"></path><path d="M39 41l2.5 3 5-6" fill="none" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path>`;
+      if (tier === 6) return `<circle cx="32" cy="28" r="10" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></circle><path d="M27 28l4 4 7-8" fill="none" stroke="${p.main}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M25 38l-4 12 8-3 3 6 4-15" fill="${p.accent}"></path><path d="M39 38l4 12-8-3-3 6-4-15" fill="${p.main}" opacity="0.92"></path>`;
+      if (tier === 7) return `<path d="M18 36c3 8 8 13 14 16" fill="none" stroke="${p.accent}" stroke-width="3" stroke-linecap="round"></path><path d="M46 36c-3 8-8 13-14 16" fill="none" stroke="${p.accent}" stroke-width="3" stroke-linecap="round"></path><circle cx="32" cy="28" r="10" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></circle><path d="M27 28l4 4 7-8" fill="none" stroke="${p.main}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>`;
+      return `<path d="M18 38c3 8 8 13 14 16" fill="none" stroke="${p.accent}" stroke-width="3" stroke-linecap="round"></path><path d="M46 38c-3 8-8 13-14 16" fill="none" stroke="${p.accent}" stroke-width="3" stroke-linecap="round"></path><circle cx="32" cy="30" r="10" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></circle><path d="M27 30l4 4 7-8" fill="none" stroke="${p.main}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M24 17l3-5 5 4 5-4 3 5 6 1-3 5H21l-3-5z" fill="${p.accent}" filter="url(#${glowId})"></path>`;
+    }
+
+    function glyphDistance(tier, p, glowId) {
+      if (tier <= 1) return `<path d="M18 38c6-6 12-6 18 0s12 6 18 0" fill="none" stroke="${p.main}" stroke-width="4" stroke-linecap="round"></path>`;
+      if (tier === 2) return `<path d="M18 40c6-6 12-6 18 0s12 6 18 0" fill="none" stroke="${p.main}" stroke-width="4" stroke-linecap="round"></path><path d="M22 30l16-10" fill="none" stroke="${p.accent}" stroke-width="4" stroke-linecap="round"></path><path d="M35 18h9v9" fill="none" stroke="${p.accent}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>`;
+      if (tier === 3) return `<path d="M16 40c6-6 12-6 18 0s12 6 18 0" fill="none" stroke="${p.main}" stroke-width="4" stroke-linecap="round"></path><path d="M16 48c6-6 12-6 18 0s12 6 18 0" fill="none" stroke="${p.accent}" stroke-width="4" stroke-linecap="round"></path><path d="M22 28l18-11" fill="none" stroke="${p.strong}" stroke-width="4" stroke-linecap="round"></path><circle cx="22" cy="28" r="3" fill="${p.strong}"></circle>`;
+      if (tier === 4) return `<circle cx="22" cy="42" r="4" fill="${p.main}"></circle><circle cx="42" cy="22" r="4" fill="${p.accent}"></circle><path d="M22 42c7-7 9-10 12-17 2-5 5-8 8-11" fill="none" stroke="${p.strong}" stroke-width="4" stroke-linecap="round"></path><path d="M16 50c6-6 12-6 18 0s12 6 18 0" fill="none" stroke="${p.main}" stroke-width="3.6" stroke-linecap="round"></path>`;
+      if (tier === 5) return `<circle cx="22" cy="42" r="4" fill="${p.main}"></circle><circle cx="42" cy="22" r="4" fill="${p.accent}"></circle><path d="M22 42c7-7 9-10 12-17 2-5 5-8 8-11" fill="none" stroke="${p.strong}" stroke-width="4" stroke-linecap="round"></path><path d="M30 36l8-1-1 8" fill="none" stroke="${p.accent}" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M15 52c6-6 12-6 18 0s12 6 18 0" fill="none" stroke="${p.main}" stroke-width="3.6" stroke-linecap="round"></path>`;
+      if (tier === 6) return `<circle cx="32" cy="30" r="12" fill="${p.tint}" stroke="${p.accent}" stroke-width="2.5"></circle><path d="M32 22v16M24 30h16" stroke="${p.strong}" stroke-width="3.2" stroke-linecap="round"></path><path d="M32 30l7-7" stroke="${p.strong}" stroke-width="3.2" stroke-linecap="round"></path><path d="M14 50c6-6 12-6 18 0s12 6 18 0" fill="none" stroke="${p.main}" stroke-width="3.6" stroke-linecap="round"></path>`;
+      if (tier === 7) return `<circle cx="32" cy="31" r="13" fill="${p.tint}" stroke="${p.accent}" stroke-width="2.5"></circle><circle cx="32" cy="31" r="7" fill="white" stroke="${p.strong}" stroke-width="2.4"></circle><path d="M32 18v7M32 37v7M19 31h7M38 31h7" stroke="${p.strong}" stroke-width="2.8" stroke-linecap="round"></path><path d="M15 52c6-6 12-6 18 0s12 6 18 0" fill="none" stroke="${p.main}" stroke-width="3.6" stroke-linecap="round"></path>`;
+      return `<path d="M14 51c6-6 12-6 18 0s12 6 18 0" fill="none" stroke="${p.main}" stroke-width="3.6" stroke-linecap="round"></path><path d="M19 43c5-5 10-5 13 0s8 5 13 0" fill="none" stroke="${p.accent}" stroke-width="3.2" stroke-linecap="round"></path><path d="M32 14l4 7 8 1-6 5 2 8-8-4-8 4 2-8-6-5 8-1z" fill="${p.tint}" stroke="${p.strong}" stroke-width="2.4" filter="url(#${glowId})"></path>`;
+    }
+
+    function glyphTime(tier, p, glowId) {
+      if (tier <= 1) return `<circle cx="32" cy="32" r="12" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></circle><path d="M32 32V24M32 32l7 4" stroke="${p.strong}" stroke-width="3.2" stroke-linecap="round"></path>`;
+      if (tier === 2) return `<rect x="28" y="14" width="8" height="6" rx="3" fill="${p.accent}"></rect><circle cx="32" cy="32" r="12" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></circle><path d="M32 32V24M32 32l7 4" stroke="${p.strong}" stroke-width="3.2" stroke-linecap="round"></path>`;
+      if (tier === 3) return `<rect x="28" y="14" width="8" height="6" rx="3" fill="${p.accent}"></rect><circle cx="32" cy="32" r="12" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></circle><circle cx="32" cy="32" r="17" fill="none" stroke="${p.accent}" stroke-width="2" stroke-dasharray="3 3"></circle><path d="M32 32V24M32 32l7 4" stroke="${p.strong}" stroke-width="3.2" stroke-linecap="round"></path>`;
+      if (tier === 4) return `<path d="M32 18c8 0 13 6 13 13 0 9-7 11-13 17-6-6-13-8-13-17 0-7 5-13 13-13z" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></path><path d="M27 31h10M32 24v14" stroke="${p.strong}" stroke-width="3.2" stroke-linecap="round"></path>`;
+      if (tier === 5) return `<circle cx="32" cy="32" r="13" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></circle><circle cx="32" cy="32" r="18" fill="none" stroke="${p.accent}" stroke-width="2.3"></circle><path d="M32 32V23M32 32l8 4" stroke="${p.strong}" stroke-width="3.2" stroke-linecap="round"></path>`;
+      if (tier === 6) return `<circle cx="32" cy="28" r="12" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></circle><path d="M32 28V20M32 28l7 4" stroke="${p.strong}" stroke-width="3.2" stroke-linecap="round"></path><path d="M16 45c6-6 12-6 18 0s12 6 18 0" fill="none" stroke="${p.accent}" stroke-width="3.6" stroke-linecap="round"></path><path d="M16 52c6-6 12-6 18 0s12 6 18 0" fill="none" stroke="${p.main}" stroke-width="3.6" stroke-linecap="round"></path>`;
+      if (tier === 7) return `<path d="M22 45c2 5 5 9 10 11M42 45c-2 5-5 9-10 11" fill="none" stroke="${p.accent}" stroke-width="3" stroke-linecap="round"></path><circle cx="32" cy="28" r="11" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></circle><path d="M32 28V21M32 28l7 4" stroke="${p.strong}" stroke-width="3.2" stroke-linecap="round"></path>`;
+      return `<path d="M25 17l3-5 4 4 4-4 3 5 6 1-3 5H22l-3-5z" fill="${p.accent}" filter="url(#${glowId})"></path><circle cx="32" cy="30" r="12" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></circle><circle cx="32" cy="30" r="17" fill="none" stroke="${p.accent}" stroke-width="2" stroke-dasharray="3 3"></circle><path d="M32 30V22M32 30l8 5" stroke="${p.strong}" stroke-width="3.2" stroke-linecap="round"></path>`;
+    }
+
+    function glyphEfficiency(tier, p, glowId) {
+      if (tier <= 1) return `<path d="M22 39c4-11 12-13 19-12-4 6-6 14-19 12z" fill="${p.main}"></path><path d="M27 37c4-3 7-4 10-4" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round"></path>`;
+      if (tier === 2) return `<path d="M19 39c4-9 10-12 17-11-4 5-5 12-17 11z" fill="${p.main}"></path><path d="M30 38c4-9 10-12 17-11-4 5-5 12-17 11z" fill="${p.accent}"></path>`;
+      if (tier === 3) return `<circle cx="32" cy="32" r="6" fill="${p.strong}"></circle><path d="M32 16l5 12-5 3-5-3z" fill="${p.main}"></path><path d="M48 32l-12 5-3-5 3-5z" fill="${p.accent}"></path><path d="M32 48l-5-12 5-3 5 3z" fill="${p.main}"></path>`;
+      if (tier === 4) return `<rect x="20" y="24" width="24" height="16" rx="6" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></rect><circle cx="28" cy="32" r="4" fill="${p.main}"></circle><path d="M28 27v10M23 32h10" stroke="white" stroke-width="2.4" stroke-linecap="round"></path><path d="M40 26l7 6-7 6" fill="none" stroke="${p.accent}" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path>`;
+      return `<path d="M16 32c8-12 19-15 35-13-8 6-11 12-12 22-7-2-15-5-23-9z" fill="${p.main}" filter="url(#${glowId})"></path><path d="M21 19l9 6M20 46l11-5M43 21l6 6" fill="none" stroke="${p.accent}" stroke-width="3.2" stroke-linecap="round"></path><circle cx="39" cy="32" r="5" fill="${p.accent}"></circle>`;
+    }
+
+    function glyphGrowth(tier, p, glowId) {
+      if (tier <= 1) return `<path d="M32 46c0-9 1-15 1-21" fill="none" stroke="${p.main}" stroke-width="3.6" stroke-linecap="round"></path><path d="M32 34c-8 0-12-5-12-11 7 0 12 4 12 11z" fill="${p.tint}" stroke="${p.main}" stroke-width="2.3"></path><path d="M32 30c8 0 12-5 12-11-7 0-12 4-12 11z" fill="${p.accent}" opacity="0.92" stroke="${p.main}" stroke-width="2.3"></path>`;
+      if (tier === 2) return `<path d="M32 48V22" fill="none" stroke="${p.main}" stroke-width="3.6" stroke-linecap="round"></path><path d="M32 34c-8 0-12-5-12-11 7 0 12 4 12 11z" fill="${p.tint}" stroke="${p.main}" stroke-width="2.3"></path><path d="M32 30c8 0 12-5 12-11-7 0-12 4-12 11z" fill="${p.accent}" opacity="0.92" stroke="${p.main}" stroke-width="2.3"></path><path d="M28 47h8" stroke="${p.strong}" stroke-width="3.2" stroke-linecap="round"></path>`;
+      if (tier === 3) return `<path d="M20 44h8V28h-8zM30 44h8V22h-8zM40 44h8V16h-8z" fill="${p.tint}" stroke="${p.main}" stroke-width="2.4"></path><path d="M19 49h30" stroke="${p.strong}" stroke-width="3.2" stroke-linecap="round"></path>`;
+      if (tier === 4) return `<path d="M20 44h7V32h-7zM30 44h7V24h-7zM40 44h7V16h-7z" fill="${p.tint}" stroke="${p.main}" stroke-width="2.3"></path><path d="M21 35l7-7 7 2 10-11" fill="none" stroke="${p.accent}" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"></path><path d="M39 19h7v7" fill="none" stroke="${p.accent}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>`;
+      if (tier === 5) return `<path d="M32 49V18" fill="none" stroke="${p.main}" stroke-width="3.5" stroke-linecap="round"></path><path d="M32 31c-10 0-15-6-15-13 9 0 15 5 15 13z" fill="${p.tint}" stroke="${p.main}" stroke-width="2.4"></path><path d="M32 26c10 0 15-6 15-13-9 0-15 5-15 13z" fill="${p.accent}" stroke="${p.main}" stroke-width="2.4"></path><circle cx="32" cy="17" r="5" fill="${p.accent}" filter="url(#${glowId})"></circle>`;
+      if (tier === 6) return `<path d="M24 46l8-24 8 24" fill="none" stroke="${p.main}" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 34h24" stroke="${p.accent}" stroke-width="3.4" stroke-linecap="round"></path><path d="M32 18l5 6 8 1-6 5 2 8-9-4-9 4 2-8-6-5 8-1z" fill="${p.tint}" stroke="${p.strong}" stroke-width="2.2"></path>`;
+      if (tier === 7) return `<path d="M18 44l14-24 14 24" fill="none" stroke="${p.main}" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M23 35h18" stroke="${p.accent}" stroke-width="3.2" stroke-linecap="round"></path><path d="M32 15l4 5 7 1-5 4 2 7-8-4-8 4 2-7-5-4 7-1z" fill="${p.tint}" stroke="${p.strong}" stroke-width="2.2"></path><circle cx="32" cy="15" r="4" fill="${p.accent}" filter="url(#${glowId})"></circle>`;
+      return `<path d="M16 44l16-26 16 26" fill="none" stroke="${p.main}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 34h20" stroke="${p.accent}" stroke-width="3.4" stroke-linecap="round"></path><path d="M32 12l4 6 7 1-5 5 2 7-8-4-8 4 2-7-5-5 7-1z" fill="${p.tint}" stroke="${p.strong}" stroke-width="2.2" filter="url(#${glowId})"></path><path d="M23 49h18" stroke="${p.strong}" stroke-width="3.2" stroke-linecap="round"></path>`;
+    }
+
+    function glyphSeason(tier, p, glowId) {
+      if (tier <= 1) return `<rect x="20" y="19" width="24" height="24" rx="6" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></rect><rect x="24" y="14" width="4" height="8" rx="2" fill="${p.accent}"></rect><rect x="36" y="14" width="4" height="8" rx="2" fill="${p.accent}"></rect><path d="M25 30h14M25 36h10" stroke="${p.main}" stroke-width="3" stroke-linecap="round"></path>`;
+      if (tier === 2) return `<rect x="20" y="19" width="24" height="24" rx="6" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></rect><rect x="24" y="14" width="4" height="8" rx="2" fill="${p.accent}"></rect><rect x="36" y="14" width="4" height="8" rx="2" fill="${p.accent}"></rect><circle cx="32" cy="33" r="5" fill="${p.accent}"></circle>`;
+      if (tier === 3) return `<rect x="20" y="19" width="24" height="24" rx="6" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></rect><rect x="24" y="14" width="4" height="8" rx="2" fill="${p.accent}"></rect><rect x="36" y="14" width="4" height="8" rx="2" fill="${p.accent}"></rect><path d="M32 27l2.2 4.5 5 0.7-3.6 3.5 0.9 5-4.5-2.5-4.5 2.5 0.9-5-3.6-3.5 5-0.7z" fill="${p.accent}"></path>`;
+      if (tier === 4) return `<circle cx="32" cy="32" r="11" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></circle><path d="M32 16v5M32 43v5M16 32h5M43 32h5M21 21l3.5 3.5M42.5 42.5L39 39M21 43l3.5-3.5M42.5 21.5L39 25" stroke="${p.accent}" stroke-width="3" stroke-linecap="round"></path><circle cx="32" cy="32" r="4" fill="${p.main}"></circle>`;
+      if (tier === 5) return `<path d="M17 34c3-9 10-14 18-14 7 0 12 3 14 8-3 4-8 6-13 6-5 0-9 2-13 7-3 0-5-3-6-7z" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></path><path d="M24 47c5-8 11-12 21-12" fill="none" stroke="${p.accent}" stroke-width="3.2" stroke-linecap="round"></path>`;
+      if (tier === 6) return `<path d="M32 17l4 8 9 1-6.5 6 1.8 9-8.3-4.4L24.7 41l1.8-9L20 26l9-1z" fill="${p.tint}" stroke="${p.main}" stroke-width="2.4"></path><circle cx="32" cy="32" r="4" fill="${p.accent}" filter="url(#${glowId})"></circle>`;
+      if (tier === 7) return `<path d="M32 16l4 8 9 1-6.5 6 1.8 9-8.3-4.4L24.7 40l1.8-9L20 25l9-1z" fill="${p.tint}" stroke="${p.main}" stroke-width="2.4"></path><path d="M18 48c5-4 9-4 14 0s9 4 14 0" fill="none" stroke="${p.accent}" stroke-width="3.2" stroke-linecap="round"></path><circle cx="32" cy="28" r="4" fill="${p.accent}" filter="url(#${glowId})"></circle>`;
+      return `<circle cx="32" cy="32" r="16" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></circle><path d="M32 13l4 7 8 1-6 5 2 8-8-4-8 4 2-8-6-5 8-1z" fill="${p.accent}" filter="url(#${glowId})"></path><path d="M20 45c4-4 8-4 12 0s8 4 12 0" fill="none" stroke="${p.strong}" stroke-width="3.2" stroke-linecap="round"></path>`;
+    }
+
+    function glyphGallery(tier, p, glowId) {
+      if (tier <= 1) return `<circle cx="25" cy="28" r="5" fill="${p.main}"></circle><circle cx="39" cy="28" r="5" fill="${p.accent}"></circle><path d="M18 42c1-6 5-10 11-10s10 4 11 10" fill="${p.tint}" stroke="${p.main}" stroke-width="2.3"></path><path d="M28 42c1-6 5-10 11-10s10 4 11 10" fill="none" stroke="${p.accent}" stroke-width="2.3"></path>`;
+      if (tier === 2) return `<circle cx="23" cy="29" r="4.5" fill="${p.main}"></circle><circle cx="32" cy="24" r="5" fill="${p.accent}"></circle><circle cx="41" cy="29" r="4.5" fill="${p.main}"></circle><path d="M17 43c1-6 5-9 10-9 4 0 7 2 9 5 2-3 5-5 9-5 5 0 9 3 10 9" fill="${p.tint}" stroke="${p.main}" stroke-width="2.2"></path>`;
+      if (tier === 3) return `<circle cx="23" cy="29" r="4.5" fill="${p.main}"></circle><circle cx="32" cy="24" r="5" fill="${p.accent}"></circle><circle cx="41" cy="29" r="4.5" fill="${p.main}"></circle><path d="M17 43c1-6 5-9 10-9 4 0 7 2 9 5 2-3 5-5 9-5 5 0 9 3 10 9" fill="${p.tint}" stroke="${p.main}" stroke-width="2.2"></path><path d="M32 15l2 4 5 .7-3.5 3.2.9 4.8-4.4-2.3-4.4 2.3.9-4.8-3.5-3.2 5-.7z" fill="${p.accent}"></path>`;
+      if (tier === 4) return `<path d="M32 16l4 7 8 1-6 5 2 8-8-4-8 4 2-8-6-5 8-1z" fill="${p.tint}" stroke="${p.main}" stroke-width="2.4"></path><path d="M20 43c4-4 8-4 12 0s8 4 12 0" fill="none" stroke="${p.accent}" stroke-width="3.2" stroke-linecap="round"></path><circle cx="32" cy="28" r="4" fill="${p.main}"></circle>`;
+      if (tier === 5) return `<path d="M32 16l4 7 8 1-6 5 2 8-8-4-8 4 2-8-6-5 8-1z" fill="${p.tint}" stroke="${p.main}" stroke-width="2.4"></path><path d="M17 43c5-4 10-4 15 0s10 4 15 0" fill="none" stroke="${p.accent}" stroke-width="3.2" stroke-linecap="round"></path><circle cx="25" cy="28" r="3.2" fill="${p.main}"></circle><circle cx="39" cy="28" r="3.2" fill="${p.main}"></circle><circle cx="32" cy="25" r="3.5" fill="${p.accent}"></circle>`;
+      if (tier === 6) return `<path d="M20 22h24v18H20z" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></path><path d="M23 36l6-6 5 4 6-8 4 10z" fill="${p.accent}" opacity="0.9"></path><circle cx="28" cy="28" r="2.8" fill="${p.main}"></circle><path d="M24 47c4-4 8-4 12 0s8 4 12 0" fill="none" stroke="${p.strong}" stroke-width="3.2" stroke-linecap="round"></path>`;
+      if (tier === 7) return `<path d="M32 14l4 7 8 1-6 5 2 8-8-4-8 4 2-8-6-5 8-1z" fill="${p.tint}" stroke="${p.main}" stroke-width="2.4"></path><path d="M22 39h20v10H22z" fill="${p.accent}" opacity="0.18"></path><path d="M22 44c3-3 6-3 10 0s7 3 10 0" fill="none" stroke="${p.accent}" stroke-width="3.2" stroke-linecap="round"></path><path d="M26 20l6-7 6 7" fill="none" stroke="${p.strong}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>`;
+      return `<path d="M32 12l4 7 8 1-6 5 2 8-8-4-8 4 2-8-6-5 8-1z" fill="${p.accent}" filter="url(#${glowId})"></path><path d="M18 45c5-5 9-5 14 0s9 5 14 0" fill="none" stroke="${p.main}" stroke-width="3.4" stroke-linecap="round"></path><circle cx="24" cy="29" r="3" fill="${p.main}"></circle><circle cx="32" cy="24" r="3.4" fill="${p.strong}"></circle><circle cx="40" cy="29" r="3" fill="${p.main}"></circle>`;
+    }
+
+    function glyphFun(tier, p, glowId) {
+      if (tier <= 1) return `<circle cx="32" cy="32" r="12" fill="${p.tint}" stroke="${p.main}" stroke-width="2.5"></circle><circle cx="27" cy="29" r="2" fill="${p.main}"></circle><circle cx="37" cy="29" r="2" fill="${p.main}"></circle><path d="M26 36c2 2 4 3 6 3s4-1 6-3" fill="none" stroke="${p.accent}" stroke-width="3" stroke-linecap="round"></path>`;
+      if (tier === 2) return `<circle cx="28" cy="30" r="11" fill="${p.tint}" stroke="${p.main}" stroke-width="2.4"></circle><path d="M37 20c5 0 9 4 9 9 0 4-2 7-5 9-2-5-4-8-9-10 1-4 3-8 5-8z" fill="${p.accent}" opacity="0.9"></path><circle cx="24" cy="28" r="2" fill="${p.main}"></circle><path d="M22 34c2 2 4 3 6 3" fill="none" stroke="${p.main}" stroke-width="3" stroke-linecap="round"></path>`;
+      if (tier === 3) return `<circle cx="29" cy="31" r="10" fill="${p.tint}" stroke="${p.main}" stroke-width="2.4"></circle><path d="M39 22c4 1 7 4 7 8 0 4-2 7-5 9-2-5-4-8-9-10 1-4 3-7 7-7z" fill="${p.accent}" opacity="0.9"></path><path d="M18 24l3 2M43 18l2-3M45 42l4 2" stroke="${p.accent}" stroke-width="3" stroke-linecap="round"></path><circle cx="25" cy="29" r="2" fill="${p.main}"></circle>`;
+      if (tier === 4) return `<path d="M20 37c3-10 9-16 18-17 4 2 7 5 9 9-3 7-11 14-24 12-2-1-3-2-3-4z" fill="${p.tint}" stroke="${p.main}" stroke-width="2.4"></path><circle cx="30" cy="31" r="2.3" fill="${p.main}"></circle><path d="M28 38c2 1 4 2 7 1" fill="none" stroke="${p.accent}" stroke-width="3" stroke-linecap="round"></path>`;
+      if (tier === 5) return `<path d="M19 36c3-10 10-16 20-17 4 2 7 5 9 9-4 8-12 15-26 12-2-1-3-2-3-4z" fill="${p.tint}" stroke="${p.main}" stroke-width="2.4"></path><path d="M44 16l2 4 4 .5-3 3 .8 4-3.8-2-3.8 2 .8-4-3-3 4-.5z" fill="${p.accent}"></path><circle cx="31" cy="31" r="2.3" fill="${p.main}"></circle>`;
+      if (tier === 6) return `<path d="M32 16l4 6 7 1-5 5 1 7-7-4-7 4 1-7-5-5 7-1z" fill="${p.accent}" opacity="0.9"></path><circle cx="25" cy="35" r="4.5" fill="${p.main}"></circle><circle cx="39" cy="35" r="4.5" fill="${p.main}"></circle><path d="M20 46c4-4 8-6 12-6s8 2 12 6" fill="none" stroke="${p.strong}" stroke-width="3.4" stroke-linecap="round"></path>`;
+      if (tier === 7) return `<path d="M32 14l4 7 8 1-6 5 2 8-8-4-8 4 2-8-6-5 8-1z" fill="${p.accent}" filter="url(#${glowId})"></path><circle cx="24" cy="36" r="4.2" fill="${p.main}"></circle><circle cx="40" cy="36" r="4.2" fill="${p.main}"></circle><path d="M19 46c4-4 8-6 13-6s9 2 13 6" fill="none" stroke="${p.strong}" stroke-width="3.4" stroke-linecap="round"></path><path d="M18 24l3-3M46 24l-3-3" stroke="${p.accent}" stroke-width="3" stroke-linecap="round"></path>`;
+      return `<path d="M32 12l4 7 8 1-6 5 2 8-8-4-8 4 2-8-6-5 8-1z" fill="${p.accent}" filter="url(#${glowId})"></path><circle cx="24" cy="37" r="4" fill="${p.main}"></circle><circle cx="40" cy="37" r="4" fill="${p.main}"></circle><path d="M18 47c4-5 9-7 14-7s10 2 14 7" fill="none" stroke="${p.strong}" stroke-width="3.4" stroke-linecap="round"></path><circle cx="32" cy="26" r="3.5" fill="${p.tint}" stroke="${p.main}" stroke-width="2"></circle>`;
+    }
+
+    function stageBandLabel(tier) {
+      const band = bandForTier(tier);
+      return {
+        starter: "입문 구간",
+        rally: "도약 구간",
+        gold: "대표 구간",
+        prism: "하이라이트 구간",
+      }[band] || band;
+    }
+
+    function bandForTier(tier) {
+      if (tier <= 3) return "starter";
+      if (tier <= 6) return "rally";
+      if (tier <= 9) return "gold";
+      return "prism";
+    }
+
+    function categoryLabel(labels, category) {
+      return String(labels?.[category] || CATEGORY_FALLBACKS[category] || category);
+    }
+
+    function resolveAssetPath(filePath) {
+      const raw = String(filePath || "").trim();
+      if (!raw) return "";
+      if (/^https?:\/\//i.test(raw)) return raw;
+      if (raw.startsWith("./")) return raw;
+      if (raw.startsWith("docs/")) return `./${raw.slice(5)}`;
+      return `./${raw.replace(/^\/+/, "")}`;
+    }
+
+    function formatThreshold(type, value) {
+      const numeric = Number(value || 0);
+      if (String(type || "").includes("distance")) {
+        if (numeric >= 1000) {
+          const km = numeric / 1000;
+          return `${Number.isInteger(km) ? km : km.toFixed(1)}km`;
+        }
+        return `${Math.round(numeric)}m`;
+      }
+      if (String(type || "").includes("seconds")) {
+        const totalSeconds = Math.round(numeric);
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        if (hours > 0) return `${hours}시간 ${minutes}분`;
+        return `${minutes}분`;
+      }
+      if (String(type || "").includes("swim_count")) {
+        return `${formatInt(numeric)}회`;
+      }
+      if (type === "author_distance_per_hour_m") {
+        return `${formatInt(numeric)}m/h`;
+      }
+      return String(value ?? "-");
+    }
+
+    function formatInt(value) {
+      return new Intl.NumberFormat("ko-KR").format(Number(value || 0));
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
+  </script>
+</body>
+</html>
