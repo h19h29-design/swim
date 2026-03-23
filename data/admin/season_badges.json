@@ -1,0 +1,67 @@
+{
+  "season_key": "2026",
+  "season_name_ko": "2026 수영 스티커북 시즌",
+  "unlock_rule_ko": "각 달에 core 기록이 1건 이상 있으면 해당 달 시즌 배지가 열립니다.",
+  "months": [
+    {
+      "month": "03",
+      "label_ko": "3월",
+      "badge_id": "sea_01"
+    },
+    {
+      "month": "04",
+      "label_ko": "4월",
+      "badge_id": "sea_02"
+    },
+    {
+      "month": "05",
+      "label_ko": "5월",
+      "badge_id": "sea_03"
+    },
+    {
+      "month": "06",
+      "label_ko": "6월",
+      "badge_id": "sea_04"
+    },
+    {
+      "month": "07",
+      "label_ko": "7월",
+      "badge_id": "sea_05"
+    },
+    {
+      "month": "08",
+      "label_ko": "8월",
+      "badge_id": "sea_06"
+    },
+    {
+      "month": "09",
+      "label_ko": "9월",
+      "badge_id": "sea_07"
+    },
+    {
+      "month": "10",
+      "label_ko": "10월",
+      "badge_id": "sea_08"
+    },
+    {
+      "month": "11",
+      "label_ko": "11월",
+      "badge_id": "sea_09"
+    },
+    {
+      "month": "12",
+      "label_ko": "12월",
+      "badge_id": "sea_10"
+    },
+    {
+      "month": "01",
+      "label_ko": "1월",
+      "badge_id": "sea_11"
+    },
+    {
+      "month": "02",
+      "label_ko": "2월",
+      "badge_id": "sea_12"
+    }
+  ]
+}

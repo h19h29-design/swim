@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>배지 갤러리</title>
+  <link rel="stylesheet" href="./assets/badge-gallery.css">
+</head>
+<body>
+  <main class="gallery-shell">
+    <header class="panel hero-panel">
+      <div class="hero-copy">
+        <p class="eyebrow" id="galleryHeroEyebrow">BADGE STICKERBOOK</p>
+        <h1 id="galleryHeroTitle">배지와 칭호를 한눈에 보는 전시관</h1>
+        <p class="hero-copy-text" id="galleryHeroCopy">개인 배지, 시즌 배지, 갤 전체 칭호를 카테고리별로 살펴봅니다.</p>
+        <div class="hero-chip-row" id="galleryHeroChips"></div>
+      </div>
+      <aside class="hero-side">
+        <article class="hero-card">
+          <p class="section-kicker">배지 요약</p>
+          <div class="stat-grid" id="galleryHeroStats"></div>
+        </article>
+        <article class="hero-card">
+          <p class="section-kicker">운영 규칙</p>
+          <div class="rule-list" id="galleryRuleList"></div>
+        </article>
+      </aside>
+    </header>
+
+    <section class="panel">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">갤 전체 칭호</p>
+          <h2>현재 어떤 칭호까지 열렸는지 봅니다</h2>
+        </div>
+      </div>
+      <div class="title-track" id="galleryTitleTrack"></div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">아이콘 가족</p>
+          <h2>카테고리별 아이콘과 스타일</h2>
+        </div>
+      </div>
+      <div class="family-grid" id="galleryFamilyGrid"></div>
+    </section>
+
+    <section class="panel split-panel">
+      <article>
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">공용 리소스</p>
+            <h2>프레임과 대표 스티커</h2>
+          </div>
+        </div>
+        <div class="asset-grid" id="gallerySharedAssets"></div>
+      </article>
+      <article>
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">티어 팔레트</p>
+            <h2>단계별 색상 규칙</h2>
+          </div>
+        </div>
+        <div class="palette-grid" id="galleryPaletteGrid"></div>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">전체 배지 목록</p>
+          <h2>카테고리별 배지 카드</h2>
+        </div>
+      </div>
+      <div class="badge-group-list" id="galleryBadgeGroups"></div>
+    </section>
+  </main>
+
+  <script type="module" src="./assets/badge-gallery.js?v=20260317d"></script>
+</body>
+</html>

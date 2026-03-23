@@ -1,0 +1,340 @@
+:root {
+  --bg: #fff7ee;
+  --paper: rgba(255, 252, 247, 0.94);
+  --paper-strong: #fffdfb;
+  --ink: #34241e;
+  --muted: #735c53;
+  --line: rgba(52, 36, 30, 0.12);
+  --coral: #ff8f7a;
+  --yellow: #ffd965;
+  --mint: #92dbc8;
+  --sky: #8db7ff;
+  --shadow: 0 18px 40px rgba(52, 36, 30, 0.12);
+  --radius-xl: 28px;
+  --radius-lg: 22px;
+  --radius-md: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Aptos", "Trebuchet MS", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(255, 217, 101, 0.24), transparent 16%),
+    radial-gradient(circle at 86% 8%, rgba(141, 183, 255, 0.18), transparent 18%),
+    linear-gradient(180deg, #fffaf3 0%, #fff2e7 100%);
+}
+
+.mobile-shell {
+  width: min(calc(100% - 24px), 760px);
+  margin: 0 auto;
+  padding: 18px 0 36px;
+  display: grid;
+  gap: 14px;
+}
+
+.mobile-hero,
+.panel {
+  position: relative;
+  overflow: hidden;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+}
+
+.mobile-hero {
+  padding: 22px;
+}
+
+.mobile-hero::after,
+.panel::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.mobile-hero::after {
+  width: 130px;
+  height: 130px;
+  right: -24px;
+  top: -34px;
+  background: rgba(255, 217, 101, 0.22);
+}
+
+.panel {
+  padding: 18px;
+  display: grid;
+  gap: 14px;
+}
+
+.panel::after {
+  width: 92px;
+  height: 92px;
+  right: -26px;
+  bottom: -30px;
+  background: rgba(146, 219, 200, 0.1);
+}
+
+.eyebrow,
+.section-kicker {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  letter-spacing: -0.05em;
+  font-family: "Aptos Display", "Aptos", "Trebuchet MS", "Malgun Gothic", sans-serif;
+}
+
+h1 {
+  margin-top: 8px;
+  font-size: clamp(2.2rem, 8vw, 3.6rem);
+  line-height: 0.94;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+.hero-copy,
+.generated-at,
+.note,
+.record-note {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.hero-chip-row,
+.quick-links,
+.mini-chip-row,
+.stat-chip-row,
+.search-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hero-chip,
+.link-chip,
+.mini-chip,
+.stat-chip,
+.suggestion-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--ink);
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 10px 18px rgba(52, 36, 30, 0.08);
+}
+
+.quick-links {
+  margin-top: 10px;
+}
+
+.panel-head {
+  display: grid;
+  gap: 6px;
+}
+
+.kpi-grid,
+.unlock-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.kpi-card,
+.rank-card,
+.spotlight-card,
+.unlock-card,
+.unlock-mini-card,
+.record-card,
+.ops-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.96);
+  padding: 14px;
+  box-shadow: 0 10px 20px rgba(52, 36, 30, 0.06);
+}
+
+.kpi-card strong,
+.unlock-mini-card strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.5rem;
+  letter-spacing: -0.05em;
+}
+
+.ranking-stack,
+.record-list {
+  display: grid;
+  gap: 10px;
+}
+
+.spotlight-card {
+  padding: 18px;
+  background: linear-gradient(160deg, #ffe8a1, #ffd14d 64%, #ffb471);
+}
+
+.spotlight-card.is-placeholder {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 246, 237, 0.92));
+}
+
+.spotlight-head,
+.rank-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.spotlight-card h3,
+.rank-card strong {
+  margin-top: 14px;
+  font-size: 1.3rem;
+}
+
+.spotlight-value {
+  margin: 8px 0 10px;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+}
+
+.rank-card {
+  display: grid;
+  gap: 8px;
+}
+
+.rank-card.is-placeholder {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 246, 237, 0.92));
+}
+
+.progress-track {
+  height: 14px;
+  border-radius: 999px;
+  background: rgba(52, 36, 30, 0.08);
+  overflow: hidden;
+}
+
+.progress-track span {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--coral), var(--yellow), var(--sky));
+}
+
+.unlock-card {
+  display: grid;
+  gap: 10px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(146, 219, 200, 0.18));
+}
+
+.unlock-link {
+  color: inherit;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.unlock-link::after {
+  content: " →";
+}
+
+.search-form {
+  display: grid;
+  gap: 10px;
+}
+
+.search-row {
+  display: flex;
+  gap: 10px;
+}
+
+.search-row input {
+  flex: 1;
+  padding: 13px 14px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  font: inherit;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.search-row button,
+.suggestion-chip {
+  padding: 13px 16px;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--coral), #ffa788);
+  color: #fff;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.search-suggestions {
+  margin-top: 2px;
+}
+
+.record-card strong,
+.ops-card strong {
+  display: block;
+  font-size: 1rem;
+}
+
+.ops-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(246, 239, 233, 0.92));
+}
+
+@media (max-width: 420px) {
+  .search-row,
+  .kpi-grid,
+  .unlock-mini-grid {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .search-row button {
+    width: 100%;
+  }
+}
+
+.inline-badge-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.94);
+  padding: 5px;
+  box-shadow: 0 8px 16px rgba(52, 36, 30, 0.08);
+}
+
+.badge-thumb {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.96);
+  padding: 7px;
+  box-shadow: 0 10px 18px rgba(52, 36, 30, 0.08);
+}

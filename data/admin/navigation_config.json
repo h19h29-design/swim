@@ -1,0 +1,42 @@
+{
+  "default_nav_key": "home",
+  "items": [
+    {
+      "nav_key": "home",
+      "label_ko": "메인 대시보드",
+      "description_ko": "갤 전체 기록과 현재 랭킹",
+      "visible": true
+    },
+    {
+      "nav_key": "rankings",
+      "label_ko": "랭킹 보드",
+      "description_ko": "Top 3와 4위부터 20위까지",
+      "visible": true
+    },
+    {
+      "nav_key": "profiles",
+      "label_ko": "개인 앨범",
+      "description_ko": "닉네임별 성장과 배지",
+      "visible": true
+    },
+    {
+      "nav_key": "parse_status",
+      "label_ko": "파싱 현황",
+      "description_ko": "성공 글과 보류 글 확인",
+      "visible": true,
+      "href": "./parse-status.html"
+    },
+    {
+      "nav_key": "badges",
+      "label_ko": "배지 갤러리",
+      "description_ko": "전체 배지와 칭호 목록",
+      "visible": true
+    },
+    {
+      "nav_key": "admin",
+      "label_ko": "관리자 미리보기",
+      "description_ko": "문구와 섹션 설정 미리보기",
+      "visible": true
+    }
+  ]
+}

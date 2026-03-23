@@ -1,0 +1,52 @@
+{
+  "default_ranking_metric": "swim_count",
+  "section_order": [
+    "hero",
+    "summary_kpis",
+    "rankings",
+    "recent_unlocks",
+    "badge_shelf",
+    "profile_search",
+    "recent_records",
+    "ops"
+  ],
+  "ranking_sections": [
+    {
+      "metric_key": "swim_count",
+      "label_ko": "참여횟수",
+      "description_ko": "이번 시즌 가장 꾸준히 레인에 나온 닉네임"
+    },
+    {
+      "metric_key": "total_distance_m",
+      "label_ko": "거리",
+      "description_ko": "가장 많은 거리를 채운 닉네임"
+    },
+    {
+      "metric_key": "total_seconds",
+      "label_ko": "시간",
+      "description_ko": "가장 오래 수영한 닉네임"
+    },
+    {
+      "metric_key": "distance_per_hour_m",
+      "label_ko": "시간당 거리",
+      "description_ko": "운동 밀도가 높은 닉네임"
+    },
+    {
+      "metric_key": "growth_swim_count",
+      "label_ko": "성장: 횟수",
+      "description_ko": "최근 28일 참여가 가장 늘어난 닉네임"
+    },
+    {
+      "metric_key": "growth_distance_m",
+      "label_ko": "성장: 거리",
+      "description_ko": "최근 28일 거리가 가장 늘어난 닉네임"
+    },
+    {
+      "metric_key": "growth_total_seconds",
+      "label_ko": "성장: 시간",
+      "description_ko": "최근 28일 운동 시간이 가장 늘어난 닉네임"
+    }
+  ],
+  "recent_unlock_limit": 10,
+  "recent_record_limit": 20
+}

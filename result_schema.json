@@ -1,0 +1,53 @@
+{
+  "version": 3,
+  "priority_policy": "title_format_only",
+  "fields": {
+    "distance_m": "integer|null",
+    "total_time_text": "string|null",
+    "total_seconds": "integer|null",
+    "source": [
+      "title_format",
+      "manual_review",
+      "manual_patch",
+      "none"
+    ],
+    "include": "boolean",
+    "metric_bucket": [
+      null,
+      "core"
+    ],
+    "score": "integer|null",
+    "exclude_reason_code": [
+      null,
+      "TITLE_FORMAT_MISSING",
+      "TITLE_FORMAT_INVALID",
+      "MANUAL_REJECTED",
+      "NO_DATA"
+    ],
+    "warning_codes": [],
+    "review_needed": "boolean",
+    "review_reason_code": [
+      null,
+      "TITLE_FORMAT_MISSING",
+      "TITLE_FORMAT_INVALID"
+    ],
+    "manual_override_decision": [
+      null,
+      "accept",
+      "reject",
+      "patch"
+    ],
+    "manual_override_applied": "boolean",
+    "manual_override_note": "string|null",
+    "automatic_record": "object|null"
+  },
+  "include_rules": [
+    "If the title matches the official distance / time format, include=true.",
+    "Manual overrides are applied after automatic normalization and can replace the final backend decision per post_id."
+  ],
+  "review_rules": [
+    "review_needed=true means the title is missing or invalid and should be reviewed or corrected.",
+    "Applied manual overrides clear review_needed and become the backend-authoritative final state."
+  ],
+  "ui_rule": "Frontend must render include/exclude from backend include boolean only and surface review queue from backend review_needed only."
+}

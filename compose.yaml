@@ -1,0 +1,21 @@
+services:
+  swimdash:
+    container_name: swimdash-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: swimdash:local
+    restart: unless-stopped
+    ports:
+      - "${SWIMDASH_PUBLIC_PORT:-8766}:8766"
+    environment:
+      TZ: ${TZ:-Asia/Seoul}
+      SWIMDASH_ADMIN_PASSWORD: ${SWIMDASH_ADMIN_PASSWORD:-}
+      SWIMDASH_ADMIN_SESSION_SECRET: ${SWIMDASH_ADMIN_SESSION_SECRET:-}
+      SWIMDASH_SECURE_COOKIES: ${SWIMDASH_SECURE_COOKIES:-0}
+      SWIMDASH_ADMIN_SESSION_TTL_SECONDS: ${SWIMDASH_ADMIN_SESSION_TTL_SECONDS:-43200}
+    volumes:
+      - ./data:/app/data
+      - ./docs/data:/app/docs/data
+      - ./logs:/app/logs
+    command: ["python", "-m", "swimdash", "serve", "--port", "8766"]

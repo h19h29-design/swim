@@ -1,0 +1,56 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>수영 대시보드 시안 V7 - 스티커북</title>
+<style>
+:root{--bg:#fff4ea;--paper:#fffaf7;--ink:#3f2e2a;--muted:#7d6760;--coral:#ff8f7a;--mint:#83d6c9;--sky:#7cb7ff;--yellow:#ffd966;--line:rgba(63,46,42,.12);--shadow:0 20px 50px rgba(63,46,42,.12);--max:1540px}*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:"Trebuchet MS","Malgun Gothic",sans-serif;background:radial-gradient(circle at 8% 10%,rgba(255,217,102,.26),transparent 14%),radial-gradient(circle at 92% 12%,rgba(124,183,255,.18),transparent 18%),linear-gradient(180deg,#fff8ef,#fff1e5 52%,#f7eee9)}.shell{width:min(calc(100% - 56px),var(--max));margin:0 auto;padding:28px 0 42px;display:grid;gap:18px}.panel{background:var(--paper);border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow)}.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;padding:24px}.eyebrow{display:inline-block;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.9);border:1px solid var(--line);font-size:.8rem;color:var(--muted)}h1{margin:16px 0 12px;font-size:clamp(3rem,4.8vw,5rem);line-height:.92;letter-spacing:-.05em}.hero p{line-height:1.7}.stickers{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.sticker{padding:10px 14px;border-radius:16px 22px 18px 24px;background:#fff;border:1px solid var(--line);box-shadow:0 8px 18px rgba(63,46,42,.08);transform:rotate(-2deg);font-weight:800}.sticker:nth-child(2n){transform:rotate(3deg)}.side{display:grid;gap:14px}.card,.section,.bottom article{padding:20px;border-radius:24px;background:#fffdfb;border:1px solid var(--line)}.seal{display:inline-flex;padding:8px 12px;border-radius:999px;background:rgba(131,214,201,.22);color:#27645b;font-weight:800}.meter{margin-top:12px;height:12px;border-radius:999px;background:rgba(63,46,42,.08);overflow:hidden}.meter span{display:block;height:100%;width:69%;background:linear-gradient(90deg,var(--coral),var(--yellow),var(--sky))}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.kpi{padding:20px;border-radius:24px;border:1px solid var(--line);background:#fff;position:relative}.kpi::before{content:"";position:absolute;top:12px;right:14px;width:24px;height:24px;border-radius:10px;background:rgba(255,217,102,.26)}.kpi small{color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.kpi strong{display:block;margin-top:12px;font-size:2.1rem}.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}.tabs span{padding:10px 14px;border-radius:999px;background:#fff;border:1px solid var(--line)}.tabs .on{background:var(--coral);color:#fff;border-color:transparent}.top3{display:grid;grid-template-columns:1.08fr .92fr .92fr;gap:12px}.top3 article{padding:18px;border-radius:26px;min-height:188px;color:#2d1b18;position:relative;overflow:hidden}.top3 article::after{content:"";position:absolute;width:84px;height:84px;border-radius:50%;right:-16px;top:-14px;background:rgba(255,255,255,.35)}.one{background:linear-gradient(160deg,#ffd966,#ffbe5b 60%,#ff9d5c);min-height:260px}.two{background:linear-gradient(160deg,#9edcf5,#7cb7ff 60%,#6f98ef)}.three{background:linear-gradient(160deg,#ffc9b5,#ff9f85 60%,#ff8f7a)}.rank{display:inline-flex;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.5);font-weight:800}.top3 h3{margin:12px 0 8px;font-size:1.8rem}.top3 strong{font-size:2.2rem}.stack{display:grid;gap:12px}.stack article{padding:16px;border-radius:20px;border:1px solid var(--line);background:#fff}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.chip{padding:8px 11px;border-radius:999px;background:rgba(124,183,255,.16);font-weight:700}.bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}@media (max-width:1180px){.hero,.grid,.kpis,.top3,.bottom{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="shell">
+<section class="panel hero">
+<div>
+<span class="eyebrow">sticker board concept</span>
+<h1>붙이고 모으는 맛으로<br>계속 열어보게 만드는<br>수영 스티커북</h1>
+<p>이 시안은 기록을 무겁게 보여주기보다, 스티커를 모으듯 칭호와 배지를 쌓는 재미를 전면에 둔다. 숫자는 귀엽게, Top 3는 엽서처럼, 개인 페이지는 수집 앨범처럼 보이게 하는 방향이다.</p>
+<div class="stickers"><span class="sticker">오수완!</span><span class="sticker">출석왕 도전</span><span class="sticker">백킬로 클럽</span></div>
+</div>
+<div class="side">
+<article class="card"><span class="eyebrow">gallery sticker</span><h2>갤 전체 대표 스티커</h2><span class="seal">대형 파도</span><p>갤 전체가 milestone을 넘길 때마다 새 스티커가 앨범 첫 장에 붙는 느낌.</p><div class="meter"><span></span></div></article>
+<article class="card"><span class="eyebrow">next unlock</span><h2>다음 해금까지</h2><p>바다 개방까지 41km를 해금 게이지처럼 가볍게 보여준다.</p></article>
+</div>
+</section>
+<section class="kpis">
+<article class="kpi"><small>갤 전체 운동횟수</small><strong>142회</strong></article>
+<article class="kpi"><small>갤 전체 총거리</small><strong>107.8km</strong></article>
+<article class="kpi"><small>갤 전체 총시간</small><strong>58시간 40분</strong></article>
+<article class="kpi"><small>참여 인원</small><strong>17명</strong></article>
+</section>
+<section class="grid">
+<section class="panel section">
+<span class="eyebrow">top stickers</span><h2>오늘 제일 반짝이는 Top 3</h2>
+<div class="tabs"><span class="on">참여횟수</span><span>거리</span><span>시간</span><span>시간당 거리</span><span>성장</span></div>
+<div class="top3">
+<article class="one"><span class="rank">1위 스티커</span><h3>NTHNG</h3><strong>24회</strong><p>가장 많이 붙은 출석 스티커의 주인.</p></article>
+<article class="two"><span class="rank">2위 스티커</span><h3>WAVEKIM</h3><strong>18회</strong><p>차곡차곡 쌓이는 타입.</p></article>
+<article class="three"><span class="rank">3위 스티커</span><h3>LANE7</h3><strong>16회</strong><p>꾸준함 배지가 잘 어울리는 사람.</p></article>
+</div>
+</section>
+<aside class="panel section">
+<span class="eyebrow">badge shelf</span><h2>배지 선반</h2>
+<div class="stack">
+<article><strong>출석왕</strong><div class="chips"><span class="chip">50회 달성</span><span class="chip">대표 칭호</span></div></article>
+<article><strong>장거리 레이서</strong><div class="chips"><span class="chip">50km 돌파</span><span class="chip">거리형 칭호</span></div></article>
+<article><strong>심해 체류자</strong><div class="chips"><span class="chip">100시간 누적</span><span class="chip">시간형 칭호</span></div></article>
+</div>
+</aside>
+</section>
+<section class="bottom">
+<article class="card"><span class="eyebrow">profile</span><h2>개인 페이지는 앨범</h2><p>최근 28일 성장, 최근 기록, 시간당 거리 배지를 한 장에 모으는 느낌으로 가기 좋다.</p></article>
+<article class="card"><span class="eyebrow">growth</span><h2>떡상 배지</h2><p>성장률이 높은 사람은 메인에서 “요즘 누가 확 치고 올라오나”처럼 보여줄 수 있다.</p></article>
+<article class="card"><span class="eyebrow">ops later</span><h2>운영은 뒷장</h2><p>검토/OCR 같은 운영 정보는 마지막 페이지 느낌으로 분리한다.</p></article>
+</section>
+</main>
+</body>
+</html>

@@ -1,0 +1,1530 @@
+{
+  "generated_at": "2026-03-23 06:43:54 UTC",
+  "site_config": {
+    "site_title_ko": "수영 스티커북",
+    "site_subtitle_ko": "기록, 누적, 해금까지 한 페이지에 붙이는 시즌 대시보드",
+    "product_mode": "core_only",
+    "theme_direction_ko": "스티커북 톤 + 게임형 정보 구조",
+    "hero": {
+      "eyebrow_ko": "SWIM STICKER BOOK",
+      "headline_ko": "붙이고 모으는 수영 시즌 보드",
+      "subheadline_ko": "운동 정보, 랭킹, 칭호와 해금 현황을 첫 화면에서 바로 보여줍니다."
+    },
+    "kpi_labels": {
+      "swim_count": "갤 전체 운동횟수",
+      "total_distance_m": "갤 전체 총거리",
+      "total_seconds": "갤 전체 총시간",
+      "active_authors": "참여 인원"
+    },
+    "gallery_labels": {
+      "current_title_ko": "이번 시즌 갤 대표 칭호",
+      "next_title_ko": "다음 갤 칭호",
+      "recent_unlocks_ko": "최근 해금"
+    },
+    "empty_state_ko": "아직 양식 기록이 들어오지 않았습니다. 첫 기록이 쌓이면 이 화면이 바로 채워집니다.",
+    "admin_edit_note_ko": "운영 설정은 data/admin 폴더의 JSON을 수정한 뒤 rebuild 해서 반영합니다.",
+    "main_experience_notes_ko": [
+      "메인 대시보드는 양식 기록(core_only)만 공식 집계합니다.",
+      "운동 정보와 랭킹, 해금 현황을 운영 정보보다 먼저 보여줍니다.",
+      "배지와 메뉴 구성은 data/admin JSON으로 수정할 수 있습니다."
+    ]
+  },
+  "navigation_config": {
+    "default_nav_key": "home",
+    "items": [
+      {
+        "nav_key": "home",
+        "label_ko": "메인 대시보드",
+        "description_ko": "갤 전체 기록과 현재 랭킹",
+        "visible": true
+      },
+      {
+        "nav_key": "rankings",
+        "label_ko": "랭킹 보드",
+        "description_ko": "Top 3와 4위부터 20위까지",
+        "visible": true
+      },
+      {
+        "nav_key": "profiles",
+        "label_ko": "개인 앨범",
+        "description_ko": "닉네임별 성장과 배지",
+        "visible": true
+      },
+      {
+        "nav_key": "parse_status",
+        "label_ko": "파싱 현황",
+        "description_ko": "성공 글과 보류 글 확인",
+        "visible": true,
+        "href": "./parse-status.html"
+      },
+      {
+        "nav_key": "badges",
+        "label_ko": "배지 갤러리",
+        "description_ko": "전체 배지와 칭호 목록",
+        "visible": true
+      },
+      {
+        "nav_key": "admin",
+        "label_ko": "관리자 미리보기",
+        "description_ko": "문구와 섹션 설정 미리보기",
+        "visible": true
+      }
+    ]
+  },
+  "home_sections": {
+    "default_ranking_metric": "swim_count",
+    "section_order": [
+      "hero",
+      "summary_kpis",
+      "rankings",
+      "recent_unlocks",
+      "badge_shelf",
+      "profile_search",
+      "recent_records",
+      "ops"
+    ],
+    "ranking_sections": [
+      {
+        "metric_key": "swim_count",
+        "label_ko": "참여횟수",
+        "description_ko": "이번 시즌 가장 꾸준히 레인에 나온 닉네임"
+      },
+      {
+        "metric_key": "total_distance_m",
+        "label_ko": "거리",
+        "description_ko": "가장 많은 거리를 채운 닉네임"
+      },
+      {
+        "metric_key": "total_seconds",
+        "label_ko": "시간",
+        "description_ko": "가장 오래 수영한 닉네임"
+      },
+      {
+        "metric_key": "distance_per_hour_m",
+        "label_ko": "시간당 거리",
+        "description_ko": "운동 밀도가 높은 닉네임"
+      },
+      {
+        "metric_key": "growth_swim_count",
+        "label_ko": "성장: 횟수",
+        "description_ko": "최근 28일 참여가 가장 늘어난 닉네임"
+      },
+      {
+        "metric_key": "growth_distance_m",
+        "label_ko": "성장: 거리",
+        "description_ko": "최근 28일 거리가 가장 늘어난 닉네임"
+      },
+      {
+        "metric_key": "growth_total_seconds",
+        "label_ko": "성장: 시간",
+        "description_ko": "최근 28일 운동 시간이 가장 늘어난 닉네임"
+      }
+    ],
+    "recent_unlock_limit": 10,
+    "recent_record_limit": 20
+  },
+  "badge_catalog": {
+    "version": 1,
+    "title_ko": "수영 스티커북 배지 카탈로그",
+    "description_ko": "출석, 거리, 시간, 효율, 성장, 시즌, 갤 전체, 보너스까지 1년 동안 모을 수 있는 기본 배지 묶음입니다.",
+    "category_labels": {
+      "attendance": "출석",
+      "distance": "거리",
+      "time": "시간",
+      "efficiency": "효율",
+      "growth": "성장",
+      "season": "시즌",
+      "gallery": "갤 전체",
+      "fun": "보너스"
+    },
+    "badges": [
+      {
+        "badge_id": "att_01",
+        "category": "attendance",
+        "name_ko": "첫 입수",
+        "short_label_ko": "첫 입수",
+        "description_ko": "core 기록을 처음 남기면 받는 첫 스티커입니다.",
+        "threshold_type": "author_total_swim_count",
+        "threshold_value": 1,
+        "icon_key": "att.base",
+        "tier": 1,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "att_02",
+        "category": "attendance",
+        "name_ko": "레인 발도장",
+        "short_label_ko": "3회",
+        "description_ko": "세 번의 기록으로 레인에 이름을 남깁니다.",
+        "threshold_type": "author_total_swim_count",
+        "threshold_value": 3,
+        "icon_key": "att.base",
+        "tier": 2,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "att_03",
+        "category": "attendance",
+        "name_ko": "오수완 초심자",
+        "short_label_ko": "5회",
+        "description_ko": "다섯 번의 기록으로 루틴을 만들기 시작합니다.",
+        "threshold_type": "author_total_swim_count",
+        "threshold_value": 5,
+        "icon_key": "att.base",
+        "tier": 3,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "att_04",
+        "category": "attendance",
+        "name_ko": "꾸준러",
+        "short_label_ko": "10회",
+        "description_ko": "열 번의 기록으로 꾸준함을 증명합니다.",
+        "threshold_type": "author_total_swim_count",
+        "threshold_value": 10,
+        "icon_key": "att.base",
+        "tier": 4,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "att_05",
+        "category": "attendance",
+        "name_ko": "출석왕",
+        "short_label_ko": "20회",
+        "description_ko": "스무 번 출석으로 시즌 중반의 리듬에 올라탑니다.",
+        "threshold_type": "author_total_swim_count",
+        "threshold_value": 20,
+        "icon_key": "att.base",
+        "tier": 5,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "att_06",
+        "category": "attendance",
+        "name_ko": "물개 반장",
+        "short_label_ko": "35회",
+        "description_ko": "서른다섯 번 기록으로 레인 분위기를 이끌기 시작합니다.",
+        "threshold_type": "author_total_swim_count",
+        "threshold_value": 35,
+        "icon_key": "att.base",
+        "tier": 6,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "att_07",
+        "category": "attendance",
+        "name_ko": "레인 지박령",
+        "short_label_ko": "50회",
+        "description_ko": "쉰 번 이상 등장하는 진짜 상주 멤버입니다.",
+        "threshold_type": "author_total_swim_count",
+        "threshold_value": 50,
+        "icon_key": "att.base",
+        "tier": 7,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "att_08",
+        "category": "attendance",
+        "name_ko": "수영장 상주자",
+        "short_label_ko": "80회",
+        "description_ko": "1년 동안 꾸준히 채우는 최상위 출석 칭호입니다.",
+        "threshold_type": "author_total_swim_count",
+        "threshold_value": 80,
+        "icon_key": "att.base",
+        "tier": 8,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "dst_01",
+        "category": "distance",
+        "name_ko": "1km 돌파",
+        "short_label_ko": "1km",
+        "description_ko": "누적 1km로 첫 물결을 만듭니다.",
+        "threshold_type": "author_total_distance_m",
+        "threshold_value": 1000,
+        "icon_key": "dst.base",
+        "tier": 1,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "dst_02",
+        "category": "distance",
+        "name_ko": "물결 수집가",
+        "short_label_ko": "3km",
+        "description_ko": "누적 3km로 거리 스티커 수집을 시작합니다.",
+        "threshold_type": "author_total_distance_m",
+        "threshold_value": 3000,
+        "icon_key": "dst.base",
+        "tier": 2,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "dst_03",
+        "category": "distance",
+        "name_ko": "중거리 주자",
+        "short_label_ko": "5km",
+        "description_ko": "누적 5km로 중거리 감각이 붙습니다.",
+        "threshold_type": "author_total_distance_m",
+        "threshold_value": 5000,
+        "icon_key": "dst.base",
+        "tier": 3,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "dst_04",
+        "category": "distance",
+        "name_ko": "장거리 레이서",
+        "short_label_ko": "10km",
+        "description_ko": "누적 10km로 진짜 장거리 감각에 들어갑니다.",
+        "threshold_type": "author_total_distance_m",
+        "threshold_value": 10000,
+        "icon_key": "dst.base",
+        "tier": 4,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "dst_05",
+        "category": "distance",
+        "name_ko": "수로 개척자",
+        "short_label_ko": "25km",
+        "description_ko": "누적 25km로 자기만의 수로를 엽니다.",
+        "threshold_type": "author_total_distance_m",
+        "threshold_value": 25000,
+        "icon_key": "dst.base",
+        "tier": 5,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "dst_06",
+        "category": "distance",
+        "name_ko": "백킬로 클럽",
+        "short_label_ko": "50km",
+        "description_ko": "누적 50km로 묵직한 거리 배지를 해금합니다.",
+        "threshold_type": "author_total_distance_m",
+        "threshold_value": 50000,
+        "icon_key": "dst.base",
+        "tier": 6,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "dst_07",
+        "category": "distance",
+        "name_ko": "물길의 주인",
+        "short_label_ko": "100km",
+        "description_ko": "누적 100km로 물길을 자기 것으로 만듭니다.",
+        "threshold_type": "author_total_distance_m",
+        "threshold_value": 100000,
+        "icon_key": "dst.base",
+        "tier": 7,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "dst_08",
+        "category": "distance",
+        "name_ko": "대양 주자",
+        "short_label_ko": "200km",
+        "description_ko": "1년 동안 노리는 최상위 거리 칭호입니다.",
+        "threshold_type": "author_total_distance_m",
+        "threshold_value": 200000,
+        "icon_key": "dst.base",
+        "tier": 8,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "tim_01",
+        "category": "time",
+        "name_ko": "첫 1시간 잠수",
+        "short_label_ko": "1시간",
+        "description_ko": "누적 1시간으로 물속 체류를 시작합니다.",
+        "threshold_type": "author_total_seconds",
+        "threshold_value": 3600,
+        "icon_key": "tim.base",
+        "tier": 1,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "tim_02",
+        "category": "time",
+        "name_ko": "물 적응 완료",
+        "short_label_ko": "3시간",
+        "description_ko": "누적 3시간으로 레인 적응이 끝납니다.",
+        "threshold_type": "author_total_seconds",
+        "threshold_value": 10800,
+        "icon_key": "tim.base",
+        "tier": 2,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "tim_03",
+        "category": "time",
+        "name_ko": "레인 체류자",
+        "short_label_ko": "6시간",
+        "description_ko": "누적 6시간으로 레인에 머무는 감각이 생깁니다.",
+        "threshold_type": "author_total_seconds",
+        "threshold_value": 21600,
+        "icon_key": "tim.base",
+        "tier": 3,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "tim_04",
+        "category": "time",
+        "name_ko": "장시간 생존자",
+        "short_label_ko": "12시간",
+        "description_ko": "누적 12시간으로 장시간 루틴에 들어갑니다.",
+        "threshold_type": "author_total_seconds",
+        "threshold_value": 43200,
+        "icon_key": "tim.base",
+        "tier": 4,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "tim_05",
+        "category": "time",
+        "name_ko": "물속 거주민",
+        "short_label_ko": "24시간",
+        "description_ko": "누적 24시간으로 물속 거주민 배지를 받습니다.",
+        "threshold_type": "author_total_seconds",
+        "threshold_value": 86400,
+        "icon_key": "tim.base",
+        "tier": 5,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "tim_06",
+        "category": "time",
+        "name_ko": "심해 체류자",
+        "short_label_ko": "48시간",
+        "description_ko": "누적 48시간으로 깊은 체류 기록을 세웁니다.",
+        "threshold_type": "author_total_seconds",
+        "threshold_value": 172800,
+        "icon_key": "tim.base",
+        "tier": 6,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "tim_07",
+        "category": "time",
+        "name_ko": "레인 장기복무",
+        "short_label_ko": "100시간",
+        "description_ko": "누적 100시간으로 장기 복무 레벨에 들어갑니다.",
+        "threshold_type": "author_total_seconds",
+        "threshold_value": 360000,
+        "icon_key": "tim.base",
+        "tier": 7,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "tim_08",
+        "category": "time",
+        "name_ko": "수중 생활자",
+        "short_label_ko": "200시간",
+        "description_ko": "1년 동안 쌓아가는 최상위 시간 칭호입니다.",
+        "threshold_type": "author_total_seconds",
+        "threshold_value": 720000,
+        "icon_key": "tim.base",
+        "tier": 8,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "eff_01",
+        "category": "efficiency",
+        "name_ko": "기본 추진",
+        "short_label_ko": "700m/h",
+        "description_ko": "시간당 700m를 넘기면 기본 추진 배지를 받습니다.",
+        "threshold_type": "author_distance_per_hour_m",
+        "threshold_value": 700,
+        "icon_key": "eff.base",
+        "tier": 1,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "eff_02",
+        "category": "efficiency",
+        "name_ko": "물살 모터",
+        "short_label_ko": "900m/h",
+        "description_ko": "시간당 900m 이상으로 물살을 안정적으로 밀어냅니다.",
+        "threshold_type": "author_distance_per_hour_m",
+        "threshold_value": 900,
+        "icon_key": "eff.base",
+        "tier": 2,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "eff_03",
+        "category": "efficiency",
+        "name_ko": "레인 스프린터",
+        "short_label_ko": "1100m/h",
+        "description_ko": "시간당 1100m를 넘기면 효율 레벨이 달라집니다.",
+        "threshold_type": "author_distance_per_hour_m",
+        "threshold_value": 1100,
+        "icon_key": "eff.base",
+        "tier": 3,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "eff_04",
+        "category": "efficiency",
+        "name_ko": "수중 엔진",
+        "short_label_ko": "1300m/h",
+        "description_ko": "시간당 1300m로 강한 추진력을 보여줍니다.",
+        "threshold_type": "author_distance_per_hour_m",
+        "threshold_value": 1300,
+        "icon_key": "eff.base",
+        "tier": 4,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "eff_05",
+        "category": "efficiency",
+        "name_ko": "레인 터보",
+        "short_label_ko": "1500m/h",
+        "description_ko": "상위권 효율 배지로 기록 밀도가 매우 높습니다.",
+        "threshold_type": "author_distance_per_hour_m",
+        "threshold_value": 1500,
+        "icon_key": "eff.base",
+        "tier": 5,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "grw_01",
+        "category": "growth",
+        "name_ko": "요즘 떡상",
+        "short_label_ko": "횟수 +1",
+        "description_ko": "최근 28일 수영 횟수가 이전보다 늘었습니다.",
+        "threshold_type": "author_recent_growth_swim_count",
+        "threshold_value": 1,
+        "icon_key": "grw.base",
+        "tier": 1,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "grw_02",
+        "category": "growth",
+        "name_ko": "거리 급상승",
+        "short_label_ko": "+500m",
+        "description_ko": "최근 28일 누적 거리가 500m 이상 늘었습니다.",
+        "threshold_type": "author_recent_growth_distance_m",
+        "threshold_value": 500,
+        "icon_key": "grw.base",
+        "tier": 2,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "grw_03",
+        "category": "growth",
+        "name_ko": "호흡이 붙음",
+        "short_label_ko": "+30분",
+        "description_ko": "최근 28일 누적 시간이 30분 이상 늘었습니다.",
+        "threshold_type": "author_recent_growth_total_seconds",
+        "threshold_value": 1800,
+        "icon_key": "grw.base",
+        "tier": 3,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "grw_04",
+        "category": "growth",
+        "name_ko": "출석 각성",
+        "short_label_ko": "횟수 +3",
+        "description_ko": "최근 28일 참여가 눈에 띄게 늘어난 상태입니다.",
+        "threshold_type": "author_recent_growth_swim_count",
+        "threshold_value": 3,
+        "icon_key": "grw.base",
+        "tier": 4,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "grw_05",
+        "category": "growth",
+        "name_ko": "거리 각성",
+        "short_label_ko": "+1500m",
+        "description_ko": "최근 28일 거리가 확실하게 늘어났습니다.",
+        "threshold_type": "author_recent_growth_distance_m",
+        "threshold_value": 1500,
+        "icon_key": "grw.base",
+        "tier": 5,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "grw_06",
+        "category": "growth",
+        "name_ko": "시간 각성",
+        "short_label_ko": "+90분",
+        "description_ko": "최근 28일 누적 시간이 크게 늘었습니다.",
+        "threshold_type": "author_recent_growth_total_seconds",
+        "threshold_value": 5400,
+        "icon_key": "grw.base",
+        "tier": 6,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "sea_01",
+        "category": "season",
+        "name_ko": "3월 개국 멤버",
+        "short_label_ko": "3월",
+        "description_ko": "시즌 시작 달에 core 기록을 남긴 멤버입니다.",
+        "threshold_type": "season_month_participation",
+        "threshold_value": 1,
+        "icon_key": "sea.base",
+        "tier": 1,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": "03"
+      },
+      {
+        "badge_id": "sea_02",
+        "category": "season",
+        "name_ko": "4월 물결 멤버",
+        "short_label_ko": "4월",
+        "description_ko": "4월 시즌 배지를 해금합니다.",
+        "threshold_type": "season_month_participation",
+        "threshold_value": 1,
+        "icon_key": "sea.base",
+        "tier": 2,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": "04"
+      },
+      {
+        "badge_id": "sea_03",
+        "category": "season",
+        "name_ko": "초여름 스티커",
+        "short_label_ko": "5월",
+        "description_ko": "5월에도 시즌 스티커를 이어갑니다.",
+        "threshold_type": "season_month_participation",
+        "threshold_value": 1,
+        "icon_key": "sea.base",
+        "tier": 3,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": "05"
+      },
+      {
+        "badge_id": "sea_04",
+        "category": "season",
+        "name_ko": "장마철 생존자",
+        "short_label_ko": "6월",
+        "description_ko": "비 오는 계절에도 루틴을 이어간 멤버입니다.",
+        "threshold_type": "season_month_participation",
+        "threshold_value": 1,
+        "icon_key": "sea.base",
+        "tier": 4,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": "06"
+      },
+      {
+        "badge_id": "sea_05",
+        "category": "season",
+        "name_ko": "한여름 잠수단",
+        "short_label_ko": "7월",
+        "description_ko": "한여름에도 기록을 남긴 멤버입니다.",
+        "threshold_type": "season_month_participation",
+        "threshold_value": 1,
+        "icon_key": "sea.base",
+        "tier": 5,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": "07"
+      },
+      {
+        "badge_id": "sea_06",
+        "category": "season",
+        "name_ko": "폭염 레이서",
+        "short_label_ko": "8월",
+        "description_ko": "뜨거운 8월에도 시즌을 이어간 멤버입니다.",
+        "threshold_type": "season_month_participation",
+        "threshold_value": 1,
+        "icon_key": "sea.base",
+        "tier": 6,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": "08"
+      },
+      {
+        "badge_id": "sea_07",
+        "category": "season",
+        "name_ko": "가을 루틴러",
+        "short_label_ko": "9월",
+        "description_ko": "가을 루틴을 만든 멤버입니다.",
+        "threshold_type": "season_month_participation",
+        "threshold_value": 1,
+        "icon_key": "sea.base",
+        "tier": 7,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": "09"
+      },
+      {
+        "badge_id": "sea_08",
+        "category": "season",
+        "name_ko": "시즌 중반 지키미",
+        "short_label_ko": "10월",
+        "description_ko": "10월에도 빠지지 않고 등장한 멤버입니다.",
+        "threshold_type": "season_month_participation",
+        "threshold_value": 1,
+        "icon_key": "sea.base",
+        "tier": 8,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": "10"
+      },
+      {
+        "badge_id": "sea_09",
+        "category": "season",
+        "name_ko": "찬물 적응자",
+        "short_label_ko": "11월",
+        "description_ko": "날이 추워져도 기록을 이어간 멤버입니다.",
+        "threshold_type": "season_month_participation",
+        "threshold_value": 1,
+        "icon_key": "sea.base",
+        "tier": 9,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": "11"
+      },
+      {
+        "badge_id": "sea_10",
+        "category": "season",
+        "name_ko": "연말 결산 멤버",
+        "short_label_ko": "12월",
+        "description_ko": "연말까지 시즌을 채운 멤버입니다.",
+        "threshold_type": "season_month_participation",
+        "threshold_value": 1,
+        "icon_key": "sea.base",
+        "tier": 10,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": "12"
+      },
+      {
+        "badge_id": "sea_11",
+        "category": "season",
+        "name_ko": "새해 첫 입수",
+        "short_label_ko": "1월",
+        "description_ko": "새해 첫 달 시즌 배지입니다.",
+        "threshold_type": "season_month_participation",
+        "threshold_value": 1,
+        "icon_key": "sea.base",
+        "tier": 11,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": "01"
+      },
+      {
+        "badge_id": "sea_12",
+        "category": "season",
+        "name_ko": "겨울 마감 주자",
+        "short_label_ko": "2월",
+        "description_ko": "시즌의 마지막 달을 채운 멤버입니다.",
+        "threshold_type": "season_month_participation",
+        "threshold_value": 1,
+        "icon_key": "sea.base",
+        "tier": 12,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": "02"
+      },
+      {
+        "badge_id": "gal_01",
+        "category": "gallery",
+        "name_ko": "첫 물결",
+        "short_label_ko": "1km",
+        "description_ko": "갤 전체 누적 거리 1km를 달성합니다.",
+        "threshold_type": "gallery_total_distance_m",
+        "threshold_value": 1000,
+        "icon_key": "gal.base",
+        "tier": 1,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "gal_02",
+        "category": "gallery",
+        "name_ko": "모여든 레인",
+        "short_label_ko": "5km",
+        "description_ko": "갤 전체 누적 거리 5km를 채웠습니다.",
+        "threshold_type": "gallery_total_distance_m",
+        "threshold_value": 5000,
+        "icon_key": "gal.base",
+        "tier": 2,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "gal_03",
+        "category": "gallery",
+        "name_ko": "대형 파도",
+        "short_label_ko": "10km",
+        "description_ko": "갤 전체 누적 거리 10km로 시즌의 힘이 보입니다.",
+        "threshold_type": "gallery_total_distance_m",
+        "threshold_value": 10000,
+        "icon_key": "gal.base",
+        "tier": 3,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "gal_04",
+        "category": "gallery",
+        "name_ko": "바다 개방",
+        "short_label_ko": "25km",
+        "description_ko": "갤 전체 누적 거리 25km로 바다가 열립니다.",
+        "threshold_type": "gallery_total_distance_m",
+        "threshold_value": 25000,
+        "icon_key": "gal.base",
+        "tier": 4,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "gal_05",
+        "category": "gallery",
+        "name_ko": "물결 전시",
+        "short_label_ko": "50km",
+        "description_ko": "갤 전체 누적 거리 50km로 물결 전시가 시작됩니다.",
+        "threshold_type": "gallery_total_distance_m",
+        "threshold_value": 50000,
+        "icon_key": "gal.base",
+        "tier": 5,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "gal_06",
+        "category": "gallery",
+        "name_ko": "원양 진출",
+        "short_label_ko": "100km",
+        "description_ko": "갤 전체 누적 거리 100km를 넘기며 원양 단계에 들어갑니다.",
+        "threshold_type": "gallery_total_distance_m",
+        "threshold_value": 100000,
+        "icon_key": "gal.base",
+        "tier": 6,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "gal_07",
+        "category": "gallery",
+        "name_ko": "대양 정복",
+        "short_label_ko": "200km",
+        "description_ko": "갤 전체 누적 거리 200km를 채웠습니다.",
+        "threshold_type": "gallery_total_distance_m",
+        "threshold_value": 200000,
+        "icon_key": "gal.base",
+        "tier": 7,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "gal_08",
+        "category": "gallery",
+        "name_ko": "수영 갤 전설",
+        "short_label_ko": "400km",
+        "description_ko": "1년 동안 노리는 최상위 갤 대표 칭호입니다.",
+        "threshold_type": "gallery_total_distance_m",
+        "threshold_value": 400000,
+        "icon_key": "gal.base",
+        "tier": 8,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "fun_01",
+        "category": "fun",
+        "name_ko": "오늘 길었다",
+        "short_label_ko": "한 번에 1500m",
+        "description_ko": "한 번의 기록에서 1500m를 채웠습니다.",
+        "threshold_type": "author_single_swim_distance_m",
+        "threshold_value": 1500,
+        "icon_key": "fun.base",
+        "tier": 1,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "fun_02",
+        "category": "fun",
+        "name_ko": "물개 왕복자",
+        "short_label_ko": "한 번에 3000m",
+        "description_ko": "한 번의 기록에서 3000m를 찍었습니다.",
+        "threshold_type": "author_single_swim_distance_m",
+        "threshold_value": 3000,
+        "icon_key": "fun.base",
+        "tier": 2,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "fun_03",
+        "category": "fun",
+        "name_ko": "주말 물개",
+        "short_label_ko": "주말 3회",
+        "description_ko": "주말 수영만 세 번 이상 했습니다.",
+        "threshold_type": "author_weekend_swim_count",
+        "threshold_value": 3,
+        "icon_key": "fun.base",
+        "tier": 3,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "fun_04",
+        "category": "fun",
+        "name_ko": "새벽 입수러",
+        "short_label_ko": "새벽 3회",
+        "description_ko": "아침 8시 이전 기록이 세 번 이상입니다.",
+        "threshold_type": "author_early_bird_swim_count",
+        "threshold_value": 3,
+        "icon_key": "fun.base",
+        "tier": 4,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "fun_05",
+        "category": "fun",
+        "name_ko": "심야 수영부",
+        "short_label_ko": "밤 2회",
+        "description_ko": "밤 9시 이후 기록이 두 번 이상입니다.",
+        "threshold_type": "author_night_owl_swim_count",
+        "threshold_value": 2,
+        "icon_key": "fun.base",
+        "tier": 5,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "fun_06",
+        "category": "fun",
+        "name_ko": "주말 레인 상주",
+        "short_label_ko": "주말 8회",
+        "description_ko": "주말 수영을 아주 많이 했습니다.",
+        "threshold_type": "author_weekend_swim_count",
+        "threshold_value": 8,
+        "icon_key": "fun.base",
+        "tier": 6,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "fun_07",
+        "category": "fun",
+        "name_ko": "새벽 루틴 장인",
+        "short_label_ko": "새벽 8회",
+        "description_ko": "새벽 레인 루틴이 확실하게 자리잡았습니다.",
+        "threshold_type": "author_early_bird_swim_count",
+        "threshold_value": 8,
+        "icon_key": "fun.base",
+        "tier": 7,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null
+      },
+      {
+        "badge_id": "fun_08",
+        "category": "fun",
+        "name_ko": "심야 물고기",
+        "short_label_ko": "밤 5회",
+        "description_ko": "깊은 밤 레인에도 다섯 번 이상 등장했습니다.",
+        "threshold_type": "author_night_owl_swim_count",
+        "threshold_value": 5,
+        "icon_key": "fun.base",
+        "tier": 8,
+        "is_primary_title_candidate": false,
+        "is_hidden": true,
+        "season_tag": null
+      }
+    ]
+  },
+  "season_badges": {
+    "season_key": "2026",
+    "season_name_ko": "2026 수영 스티커북 시즌",
+    "unlock_rule_ko": "각 달에 core 기록이 1건 이상 있으면 해당 달 시즌 배지가 열립니다.",
+    "months": [
+      {
+        "month": "03",
+        "label_ko": "3월",
+        "badge_id": "sea_01"
+      },
+      {
+        "month": "04",
+        "label_ko": "4월",
+        "badge_id": "sea_02"
+      },
+      {
+        "month": "05",
+        "label_ko": "5월",
+        "badge_id": "sea_03"
+      },
+      {
+        "month": "06",
+        "label_ko": "6월",
+        "badge_id": "sea_04"
+      },
+      {
+        "month": "07",
+        "label_ko": "7월",
+        "badge_id": "sea_05"
+      },
+      {
+        "month": "08",
+        "label_ko": "8월",
+        "badge_id": "sea_06"
+      },
+      {
+        "month": "09",
+        "label_ko": "9월",
+        "badge_id": "sea_07"
+      },
+      {
+        "month": "10",
+        "label_ko": "10월",
+        "badge_id": "sea_08"
+      },
+      {
+        "month": "11",
+        "label_ko": "11월",
+        "badge_id": "sea_09"
+      },
+      {
+        "month": "12",
+        "label_ko": "12월",
+        "badge_id": "sea_10"
+      },
+      {
+        "month": "01",
+        "label_ko": "1월",
+        "badge_id": "sea_11"
+      },
+      {
+        "month": "02",
+        "label_ko": "2월",
+        "badge_id": "sea_12"
+      }
+    ]
+  },
+  "gallery_title_rules": {
+    "metric_key": "total_distance_m",
+    "title_basis_ko": "갤 전체 누적 거리",
+    "progress_label_ko": "다음 갤 칭호까지",
+    "fallback_title": {
+      "badge_id": "gal_00",
+      "name_ko": "수면 대기",
+      "short_label_ko": "대기중",
+      "description_ko": "아직 core 기록 기준으로 해금된 갤 대표 칭호가 없습니다.",
+      "icon_key": "gallery_idle",
+      "tier": 0
+    },
+    "rules": [
+      {
+        "badge_id": "gal_01",
+        "name_ko": "첫 물결",
+        "short_label_ko": "1km",
+        "description_ko": "갤 전체 누적 거리 1km를 달성합니다.",
+        "threshold_type": "gallery_total_distance_m",
+        "threshold_value": 1000,
+        "icon_key": "gal.base",
+        "tier": 1
+      },
+      {
+        "badge_id": "gal_02",
+        "name_ko": "모여든 레인",
+        "short_label_ko": "5km",
+        "description_ko": "갤 전체 누적 거리 5km를 채웠습니다.",
+        "threshold_type": "gallery_total_distance_m",
+        "threshold_value": 5000,
+        "icon_key": "gal.base",
+        "tier": 2
+      },
+      {
+        "badge_id": "gal_03",
+        "name_ko": "대형 파도",
+        "short_label_ko": "10km",
+        "description_ko": "갤 전체 누적 거리 10km로 시즌의 힘이 보입니다.",
+        "threshold_type": "gallery_total_distance_m",
+        "threshold_value": 10000,
+        "icon_key": "gal.base",
+        "tier": 3
+      },
+      {
+        "badge_id": "gal_04",
+        "name_ko": "바다 개방",
+        "short_label_ko": "25km",
+        "description_ko": "갤 전체 누적 거리 25km로 바다가 열립니다.",
+        "threshold_type": "gallery_total_distance_m",
+        "threshold_value": 25000,
+        "icon_key": "gal.base",
+        "tier": 4
+      },
+      {
+        "badge_id": "gal_05",
+        "name_ko": "물결 전시",
+        "short_label_ko": "50km",
+        "description_ko": "갤 전체 누적 거리 50km로 물결 전시가 시작됩니다.",
+        "threshold_type": "gallery_total_distance_m",
+        "threshold_value": 50000,
+        "icon_key": "gal.base",
+        "tier": 5
+      },
+      {
+        "badge_id": "gal_06",
+        "name_ko": "원양 진출",
+        "short_label_ko": "100km",
+        "description_ko": "갤 전체 누적 거리 100km를 넘기며 원양 단계에 들어갑니다.",
+        "threshold_type": "gallery_total_distance_m",
+        "threshold_value": 100000,
+        "icon_key": "gal.base",
+        "tier": 6
+      },
+      {
+        "badge_id": "gal_07",
+        "name_ko": "대양 정복",
+        "short_label_ko": "200km",
+        "description_ko": "갤 전체 누적 거리 200km를 채웠습니다.",
+        "threshold_type": "gallery_total_distance_m",
+        "threshold_value": 200000,
+        "icon_key": "gal.base",
+        "tier": 7
+      },
+      {
+        "badge_id": "gal_08",
+        "name_ko": "수영 갤 전설",
+        "short_label_ko": "400km",
+        "description_ko": "1년 동안 노리는 최상위 갤 대표 칭호입니다.",
+        "threshold_type": "gallery_total_distance_m",
+        "threshold_value": 400000,
+        "icon_key": "gal.base",
+        "tier": 8
+      }
+    ]
+  },
+  "profile_layout_config": {
+    "header_stat_keys": [
+      "swim_count",
+      "total_distance_m",
+      "total_seconds",
+      "distance_per_hour_m"
+    ],
+    "section_order": [
+      "primary_title",
+      "next_badge",
+      "recent_unlocks",
+      "badge_shelf",
+      "monthly_trend",
+      "recent_records"
+    ],
+    "badge_category_order": [
+      "attendance",
+      "distance",
+      "time",
+      "efficiency",
+      "growth",
+      "season",
+      "fun",
+      "gallery"
+    ],
+    "recent_unlock_limit": 6,
+    "badge_preview_limit": 12,
+    "next_badge_label_ko": "다음 해금"
+  },
+  "badge_art_catalog": {
+    "generated_on": "2026-03-14",
+    "asset_root": "docs/assets/badges",
+    "naming_rule": "{family}-base.svg for family icons; frame-{shape}.svg for shared frames; special-{treatment}.svg for featured treatments.",
+    "family_map": {
+      "att": {
+        "label_ko": "출석",
+        "label_en": "Attendance",
+        "badge_id_prefixes": [
+          "att"
+        ],
+        "display_note": "참여 횟수와 출석 계열 배지"
+      },
+      "dst": {
+        "label_ko": "거리",
+        "label_en": "Distance",
+        "badge_id_prefixes": [
+          "dst"
+        ],
+        "display_note": "누적 거리와 km milestone 계열"
+      },
+      "tim": {
+        "label_ko": "시간",
+        "label_en": "Time",
+        "badge_id_prefixes": [
+          "tim"
+        ],
+        "display_note": "누적 시간과 체류 계열"
+      },
+      "eff": {
+        "label_ko": "효율",
+        "label_en": "Efficiency",
+        "badge_id_prefixes": [
+          "eff"
+        ],
+        "display_note": "시간당 거리와 효율 계열"
+      },
+      "grw": {
+        "label_ko": "성장",
+        "label_en": "Growth",
+        "badge_id_prefixes": [
+          "grw"
+        ],
+        "display_note": "최근 28일 성장 계열"
+      },
+      "sea": {
+        "label_ko": "시즌",
+        "label_en": "Season",
+        "badge_id_prefixes": [
+          "sea"
+        ],
+        "display_note": "월별 시즌 참여 배지"
+      },
+      "gal": {
+        "label_ko": "갤 전체",
+        "label_en": "Gallery",
+        "badge_id_prefixes": [
+          "gal"
+        ],
+        "display_note": "갤 대표 칭호와 공동 milestone 계열"
+      },
+      "fun": {
+        "label_ko": "보너스",
+        "label_en": "Fun",
+        "badge_id_prefixes": [
+          "fun"
+        ],
+        "display_note": "주말, 새벽, 심야 같은 보너스 배지"
+      }
+    },
+    "tier_palettes": [
+      {
+        "id": "starter",
+        "label_ko": "입문",
+        "swatch": [
+          "#fff4ea",
+          "#ffd966",
+          "#ffb38f"
+        ],
+        "color_notes": "처음 해금하는 배지용"
+      },
+      {
+        "id": "rally",
+        "label_ko": "도약",
+        "swatch": [
+          "#83d6c9",
+          "#7cb7ff",
+          "#fffaf7"
+        ],
+        "color_notes": "중간 단계용"
+      },
+      {
+        "id": "gold",
+        "label_ko": "대표",
+        "swatch": [
+          "#ffd966",
+          "#ff9d5c",
+          "#fff7d6"
+        ],
+        "color_notes": "대표 칭호와 고레벨 배지용"
+      },
+      {
+        "id": "prism",
+        "label_ko": "하이라이트",
+        "swatch": [
+          "#ff8f7a",
+          "#83d6c9",
+          "#7cb7ff"
+        ],
+        "color_notes": "최근 해금과 특수 강조용"
+      }
+    ],
+    "icons": [
+      {
+        "icon_key": "att.base",
+        "file_path": "docs/assets/badges/att-base.svg",
+        "family": "att",
+        "tier_compatibility": [
+          "starter",
+          "rally",
+          "gold",
+          "prism"
+        ],
+        "color_notes": "출석 계열",
+        "display_notes": "참여와 출석 배지의 기본 아이콘",
+        "badge_id_prefixes": [
+          "att"
+        ]
+      },
+      {
+        "icon_key": "dst.base",
+        "file_path": "docs/assets/badges/dst-base.svg",
+        "family": "dst",
+        "tier_compatibility": [
+          "starter",
+          "rally",
+          "gold",
+          "prism"
+        ],
+        "color_notes": "거리 계열",
+        "display_notes": "누적 거리 배지의 기본 아이콘",
+        "badge_id_prefixes": [
+          "dst"
+        ]
+      },
+      {
+        "icon_key": "tim.base",
+        "file_path": "docs/assets/badges/tim-base.svg",
+        "family": "tim",
+        "tier_compatibility": [
+          "starter",
+          "rally",
+          "gold",
+          "prism"
+        ],
+        "color_notes": "시간 계열",
+        "display_notes": "누적 시간 배지의 기본 아이콘",
+        "badge_id_prefixes": [
+          "tim"
+        ]
+      },
+      {
+        "icon_key": "eff.base",
+        "file_path": "docs/assets/badges/eff-base.svg",
+        "family": "eff",
+        "tier_compatibility": [
+          "starter",
+          "rally",
+          "gold",
+          "prism"
+        ],
+        "color_notes": "효율 계열",
+        "display_notes": "시간당 거리와 효율 배지의 기본 아이콘",
+        "badge_id_prefixes": [
+          "eff"
+        ]
+      },
+      {
+        "icon_key": "grw.base",
+        "file_path": "docs/assets/badges/grw-base.svg",
+        "family": "grw",
+        "tier_compatibility": [
+          "starter",
+          "rally",
+          "gold",
+          "prism"
+        ],
+        "color_notes": "성장 계열",
+        "display_notes": "최근 성장 배지의 기본 아이콘",
+        "badge_id_prefixes": [
+          "grw"
+        ]
+      },
+      {
+        "icon_key": "sea.base",
+        "file_path": "docs/assets/badges/sea-base.svg",
+        "family": "sea",
+        "tier_compatibility": [
+          "starter",
+          "rally",
+          "gold",
+          "prism"
+        ],
+        "color_notes": "시즌 계열",
+        "display_notes": "월별 시즌 배지의 기본 아이콘",
+        "badge_id_prefixes": [
+          "sea"
+        ]
+      },
+      {
+        "icon_key": "gal.base",
+        "file_path": "docs/assets/badges/gal-base.svg",
+        "family": "gal",
+        "tier_compatibility": [
+          "starter",
+          "rally",
+          "gold",
+          "prism"
+        ],
+        "color_notes": "갤 전체 계열",
+        "display_notes": "갤 대표 칭호와 공동 milestone 아이콘",
+        "badge_id_prefixes": [
+          "gal"
+        ]
+      },
+      {
+        "icon_key": "fun.base",
+        "file_path": "docs/assets/badges/fun-base.svg",
+        "family": "fun",
+        "tier_compatibility": [
+          "starter",
+          "rally",
+          "gold",
+          "prism"
+        ],
+        "color_notes": "보너스 계열",
+        "display_notes": "재미 배지의 기본 아이콘",
+        "badge_id_prefixes": [
+          "fun"
+        ]
+      },
+      {
+        "icon_key": "frame.sticker",
+        "file_path": "docs/assets/badges/frame-sticker.svg",
+        "family": "shared",
+        "tier_compatibility": [
+          "starter",
+          "rally",
+          "gold",
+          "prism"
+        ],
+        "color_notes": "스티커 테두리",
+        "display_notes": "기본 배지 프레임"
+      },
+      {
+        "icon_key": "frame.ribbon",
+        "file_path": "docs/assets/badges/frame-ribbon.svg",
+        "family": "shared",
+        "tier_compatibility": [
+          "rally",
+          "gold",
+          "prism"
+        ],
+        "color_notes": "리본 프레임",
+        "display_notes": "고레벨 배지 프레임"
+      },
+      {
+        "icon_key": "frame.seal",
+        "file_path": "docs/assets/badges/frame-seal.svg",
+        "family": "shared",
+        "tier_compatibility": [
+          "gold",
+          "prism"
+        ],
+        "color_notes": "씰 프레임",
+        "display_notes": "대표 칭호와 갤 칭호용 프레임"
+      },
+      {
+        "icon_key": "shared.representative-title",
+        "file_path": "docs/assets/badges/special-representative-title.svg",
+        "family": "shared",
+        "tier_compatibility": [
+          "gold",
+          "prism"
+        ],
+        "color_notes": "대표 칭호 전용",
+        "display_notes": "대표 칭호 카드 강조 처리"
+      },
+      {
+        "icon_key": "shared.recent-unlock-chip",
+        "file_path": "docs/assets/badges/special-recent-unlock-chip.svg",
+        "family": "shared",
+        "tier_compatibility": [
+          "starter",
+          "rally",
+          "gold",
+          "prism"
+        ],
+        "color_notes": "최근 해금 칩",
+        "display_notes": "최근 해금 목록용 강조 칩"
+      },
+      {
+        "icon_key": "shared.gallery-title-seal",
+        "file_path": "docs/assets/badges/special-gallery-title-seal.svg",
+        "family": "shared",
+        "tier_compatibility": [
+          "gold",
+          "prism"
+        ],
+        "color_notes": "갤 대표 칭호 씰",
+        "display_notes": "갤 대표 칭호 전용 강조 처리"
+      }
+    ]
+  }
+}

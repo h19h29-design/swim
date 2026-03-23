@@ -1,0 +1,21 @@
+Read PROJECT_CONTEXT.md, OCR_STRATEGY.md, TODO_NEXT.md, TEXT_FORMAT_SPEC.md, result_schema.json, text_parser_cases.csv first.
+
+Priority has changed.
+
+Do P0 only:
+1. implement a format-first post text parser for:
+   - 총거리
+   - 시간
+2. normalize parsed output to:
+   distance_m, total_time_text, total_seconds, source, include, score, exclude_reason_code, warning_codes, template_family
+3. make text format authoritative when both text and image exist
+4. patch include/exclude logic so backend decides it once
+5. patch UI so it renders from backend include boolean only
+
+Rules:
+- if text has both 총거리 and 시간 parsed successfully, include=true
+- image OCR is secondary fallback only
+- if text and image disagree, keep text as final and add warning TEXT_IMAGE_MISMATCH
+- detailed-screen OCR remains allowed as fallback
+- home/feed card OCR is MANUAL_REVIEW_ONLY
+- do not widen scope beyond distance and total_time in this step

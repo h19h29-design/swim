@@ -1,0 +1,24 @@
+{
+  "project_root": "AUTO",
+  "venv_candidates": [
+    "..\\.venv311",
+    ".\\.venv311",
+    "..\\.venv",
+    ".\\.venv"
+  ],
+  "server_port": 8765,
+  "scheduler_times": [
+    "00:10",
+    "06:10",
+    "12:10",
+    "18:10"
+  ],
+  "mode": "march_pilot",
+  "march_pilot_start_date": "2026-03-01",
+  "production_lookback_days": 3,
+  "crawl_command": "",
+  "rebuild_command": "python -m swimdash rebuild",
+  "serve_command": "python -m swimdash serve --port {port}",
+  "task_prefix": "SwimmingDash",
+  "skip_scheduler": false
+}

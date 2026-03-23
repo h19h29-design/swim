@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>수영 대시보드 시안 V1</title>
+  <style>
+    :root {
+      --bg: #f4efe7;
+      --panel: rgba(255, 253, 248, 0.94);
+      --panel-strong: #fffdf9;
+      --line: rgba(16, 36, 48, 0.1);
+      --ink: #102430;
+      --muted: #62717b;
+      --sea: #0f8b7a;
+      --sea-deep: #086258;
+      --foam: #e7f5f2;
+      --gold: #d59e2d;
+      --silver: #90a0af;
+      --bronze: #a8663b;
+      --sun: #f17a3a;
+      --rose: #d05f49;
+      --shadow: 0 24px 60px rgba(16, 36, 48, 0.12);
+      --radius: 28px;
+      --radius-sm: 18px;
+      --page-max: 1540px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Aptos", "Bahnschrift", "Malgun Gothic", "Noto Sans KR", sans-serif;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(11, 122, 115, 0.16), transparent 24%),
+        radial-gradient(circle at 100% 4%, rgba(234, 140, 51, 0.18), transparent 22%),
+        linear-gradient(180deg, #fbf7ef 0%, var(--bg) 42%, #e8f0ef 100%);
+    }
+
+    .shell {
+      width: min(calc(100% - 56px), var(--page-max));
+      margin: 0 auto;
+      padding: 28px 0 44px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.78fr);
+      gap: 18px;
+      padding: 24px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(12px);
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 220px;
+      height: 220px;
+      right: -40px;
+      top: -40px;
+      background: rgba(213, 158, 45, 0.16);
+    }
+
+    .hero::after {
+      width: 260px;
+      height: 260px;
+      left: -80px;
+      bottom: -110px;
+      background: rgba(11, 122, 115, 0.12);
+    }
+
+    .hero-copy,
+    .hero-side {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 14px;
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sea);
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-family: "Aptos Display", "Bahnschrift", "Malgun Gothic", sans-serif;
+      font-size: clamp(3rem, 4.4vw, 4.8rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      max-width: 10ch;
+    }
+
+    .hero-copy p {
+      margin: 0;
+    }
+
+    .hero-subtitle {
+      max-width: 54ch;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 1rem;
+    }
+
+    .season-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid rgba(16, 36, 48, 0.08);
+      color: var(--ink);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .hero-side {
+      align-content: start;
+    }
+
+    .milestone-card,
+    .mode-card {
+      padding: 18px;
+      border-radius: 22px;
+      border: 1px solid rgba(16, 36, 48, 0.08);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(240, 248, 246, 0.86));
+    }
+
+    .mode-card h2,
+    .milestone-card h2,
+    .section-head h2,
+    .subsection h3 {
+      margin: 0;
+      font-family: "Aptos Display", "Bahnschrift", "Malgun Gothic", sans-serif;
+      letter-spacing: -0.03em;
+    }
+
+    .mode-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .mode-pill {
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(16, 36, 48, 0.08);
+      background: #fff;
+      font: inherit;
+      font-weight: 700;
+      color: var(--sea-deep);
+    }
+
+    .mode-pill.is-active {
+      background: var(--sea);
+      color: #f9fffe;
+      border-color: transparent;
+    }
+
+    .milestone-card {
+      display: grid;
+      gap: 12px;
+    }
+
+    .title-chip {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(213, 158, 45, 0.16);
+      color: #7b5815;
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(16, 36, 48, 0.08);
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      width: 72%;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--sea), var(--sun));
+    }
+
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .kpi-card {
+      padding: 18px;
+      border-radius: 22px;
+      background: var(--panel-strong);
+      border: 1px solid rgba(16, 36, 48, 0.08);
+    }
+
+    .kpi-card h3 {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .kpi-card strong {
+      display: block;
+      margin-top: 14px;
+      font-size: clamp(1.8rem, 2.6vw, 2.7rem);
+      letter-spacing: -0.05em;
+    }
+
+    .kpi-card p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.22fr) minmax(360px, 0.86fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .ranking-panel,
+    .title-panel,
+    .growth-panel,
+    .records-panel {
+      padding: 22px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .section-head p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .rank-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .rank-tabs .tag {
+      background: rgba(255, 255, 255, 0.76);
+    }
+
+    .rank-tabs .tag.active {
+      background: var(--sea);
+      color: #f8fffe;
+    }
+
+    .podium {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr 0.92fr;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .podium-card {
+      min-height: 168px;
+      padding: 18px;
+      border-radius: 24px;
+      color: #fffdf8;
+      display: grid;
+      gap: 10px;
+    }
+
+    .podium-card.rank-1 {
+      min-height: 268px;
+      background: linear-gradient(160deg, #153a4d, #0d746d 68%, #178f87);
+    }
+
+    .podium-card.rank-2 {
+      background: linear-gradient(160deg, #596978, #7c8d9a 60%, #a5b1bb);
+    }
+
+    .podium-card.rank-3 {
+      background: linear-gradient(160deg, #704328, #935431 58%, #b56d3f);
+    }
+
+    .medal {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 32px;
+      padding: 0 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .podium-card h3,
+    .table-card strong {
+      margin: 0;
+      font-size: 1.55rem;
+      letter-spacing: -0.04em;
+    }
+
+    .podium-card small,
+    .table-card span,
+    .subtitle {
+      color: rgba(255, 255, 255, 0.84);
+    }
+
+    .table-card {
+      display: grid;
+      gap: 10px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid rgba(16, 36, 48, 0.08);
+      margin-bottom: 10px;
+    }
+
+    .table-row {
+      display: grid;
+      grid-template-columns: 52px 1fr auto;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .table-rank {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--foam);
+      color: var(--sea-deep);
+      font-weight: 800;
+    }
+
+    .title-panel {
+      display: grid;
+      gap: 14px;
+    }
+
+    .title-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .title-item {
+      display: grid;
+      gap: 8px;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(16, 36, 48, 0.08);
+    }
+
+    .title-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .title-head strong {
+      font-size: 1.08rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      background: rgba(11, 122, 115, 0.1);
+      color: var(--sea-deep);
+    }
+
+    .growth-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 18px;
+    }
+
+    .chart-card,
+    .profile-preview {
+      padding: 22px;
+    }
+
+    .chart-area {
+      margin-top: 18px;
+      height: 260px;
+      border-radius: 24px;
+      padding: 18px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.88), rgba(234,245,242,0.82));
+      border: 1px solid rgba(16, 36, 48, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .chart-grid-lines {
+      position: absolute;
+      inset: 18px;
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
+    }
+
+    .chart-grid-lines span {
+      border-top: 1px dashed rgba(16, 36, 48, 0.1);
+    }
+
+    .chart-line {
+      position: absolute;
+      inset: 30px 26px 42px 26px;
+    }
+
+    .chart-line svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .profile-preview {
+      display: grid;
+      gap: 14px;
+    }
+
+    .profile-card {
+      display: grid;
+      gap: 12px;
+      padding: 18px;
+      border-radius: 22px;
+      background: linear-gradient(160deg, rgba(255,255,255,0.88), rgba(240,248,246,0.82));
+      border: 1px solid rgba(16, 36, 48, 0.08);
+    }
+
+    .profile-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .record-table {
+      display: grid;
+      gap: 10px;
+    }
+
+    .record-row {
+      display: grid;
+      grid-template-columns: 120px 1fr auto auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(16, 36, 48, 0.08);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    @media (max-width: 1180px) {
+      .hero,
+      .main-grid,
+      .growth-grid,
+      .podium,
+      .kpis {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .shell {
+        width: min(calc(100% - 28px), var(--page-max));
+      }
+
+      .record-row,
+      .table-row,
+      .title-head,
+      .section-head {
+        grid-template-columns: 1fr;
+      }
+
+      .record-row {
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="panel hero">
+      <div class="hero-copy">
+        <p class="eyebrow">??? ??? ?? ???????</p>
+        <h1>랭킹과 칭호로 보는 갤 수영 대시보드</h1>
+        <p class="hero-subtitle">
+          OCR은 빼고, 양식 기록만으로 운영하는 전제를 둔 시안이다. 첫 화면에서 갤 전체 누적 운동량,
+          현재 랭킹, 갤 칭호 진행도를 먼저 보여주고 아래에서 개인 성장으로 이어진다.
+        </p>
+        <div class="season-strip">
+          <span class="tag">2026 시즌 1</span>
+          <span class="tag">집계 시작 2026-03-01</span>
+          <span class="tag">기본 모드: 양식 기록만</span>
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <article class="milestone-card">
+          <p class="eyebrow">갤 전체 칭호</p>
+          <h2>대형 파도</h2>
+          <span class="title-chip">다음 칭호: 바다 개방까지 41km</span>
+          <div class="progress-bar"><div class="progress-fill"></div></div>
+          <p class="muted">누적 거리 459km / 다음 단계 500km</p>
+        </article>
+
+        <article class="mode-card">
+          <p class="eyebrow">보기 모드</p>
+          <h2>양식 기록 중심 운영</h2>
+          <div class="mode-row">
+            <button class="mode-pill is-active" type="button">기본 기록</button>
+            <button class="mode-pill" type="button">시즌 보기</button>
+          </div>
+          <p class="muted">운영 정보는 하단으로 내리고, 메인 첫 화면은 운동 정보와 랭킹만 보여준다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="kpis">
+      <article class="kpi-card">
+        <h3>갤 전체 운동횟수</h3>
+        <strong>142회</strong>
+        <p>이번 시즌 기준 참여 횟수 누적</p>
+      </article>
+      <article class="kpi-card">
+        <h3>갤 전체 총거리</h3>
+        <strong>107.8km</strong>
+        <p>양식 기록으로 집계한 총거리</p>
+      </article>
+      <article class="kpi-card">
+        <h3>갤 전체 총시간</h3>
+        <strong>58시간 40분</strong>
+        <p>총 운동 시간 누적</p>
+      </article>
+      <article class="kpi-card">
+        <h3>참여 인원</h3>
+        <strong>17명</strong>
+        <p>이번 시즌 기록이 잡힌 닉네임 수</p>
+      </article>
+    </section>
+
+    <section class="main-grid">
+      <section class="panel ranking-panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">명예의 전당</p>
+            <h2>현재 활성 랭킹</h2>
+            <p>첫 화면은 참여횟수 랭킹을 기본으로 보여주고, 거리·시간·시간당 거리·성장 탭으로 전환한다.</p>
+          </div>
+          <span class="tag">기본 정렬: 참여횟수</span>
+        </div>
+
+        <div class="rank-tabs">
+          <span class="tag active">참여횟수</span>
+          <span class="tag">거리</span>
+          <span class="tag">시간</span>
+          <span class="tag">시간당 거리</span>
+          <span class="tag">성장: 횟수</span>
+          <span class="tag">성장: 거리</span>
+          <span class="tag">성장: 시간</span>
+        </div>
+
+        <div class="podium">
+          <article class="podium-card rank-1">
+            <span class="medal">1위 · 출석왕</span>
+            <h3>NTHNG</h3>
+            <small class="subtitle">현재 기준 가장 많이 운동한 닉네임</small>
+            <strong>24회</strong>
+            <small>누적 18.4km · 11시간 26분</small>
+            <small>칭호: 레인 지배자</small>
+          </article>
+          <article class="podium-card rank-2">
+            <span class="medal">2위 · 꾸준러</span>
+            <h3>WAVEKIM</h3>
+            <strong>18회</strong>
+            <small>누적 15.0km · 9시간 12분</small>
+          </article>
+          <article class="podium-card rank-3">
+            <span class="medal">3위 · 상승세</span>
+            <h3>LANE7</h3>
+            <strong>16회</strong>
+            <small>누적 12.6km · 8시간 44분</small>
+          </article>
+        </div>
+
+        <article class="table-card">
+          <div class="table-row">
+            <span class="table-rank">4</span>
+            <div>
+              <strong>BLUECAP</strong>
+              <div class="muted">칭호: 장거리 레이서</div>
+            </div>
+            <span>14회</span>
+          </div>
+        </article>
+        <article class="table-card">
+          <div class="table-row">
+            <span class="table-rank">5</span>
+            <div>
+              <strong>SEAFOX</strong>
+              <div class="muted">칭호: 물 적응 완료</div>
+            </div>
+            <span>12회</span>
+          </div>
+        </article>
+        <article class="table-card">
+          <div class="table-row">
+            <span class="table-rank">6</span>
+            <div>
+              <strong>FREESTYLE</strong>
+              <div class="muted">칭호: 중거리 주자</div>
+            </div>
+            <span>11회</span>
+          </div>
+        </article>
+      </section>
+
+      <aside class="panel title-panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">칭호 시스템</p>
+            <h2>도달하면 붙는 이름</h2>
+            <p>개인 누적과 갤 전체 누적 둘 다 칭호를 준다. 메인에는 대표 칭호 1개만 크게 보여준다.</p>
+          </div>
+        </div>
+
+        <div class="title-list">
+          <article class="title-item">
+            <div class="title-head">
+              <strong>참여횟수 칭호</strong>
+              <span class="badge">10회: 입수자</span>
+            </div>
+            <div class="badge-row">
+              <span class="badge">30회: 꾸준러</span>
+              <span class="badge">50회: 출석왕</span>
+              <span class="badge">100회: 레인 지배자</span>
+            </div>
+          </article>
+
+          <article class="title-item">
+            <div class="title-head">
+              <strong>누적 거리 칭호</strong>
+              <span class="badge">10km: 첫 물결</span>
+            </div>
+            <div class="badge-row">
+              <span class="badge">25km: 중거리 주자</span>
+              <span class="badge">50km: 장거리 레이서</span>
+              <span class="badge">100km: 백킬로 클럽</span>
+            </div>
+          </article>
+
+          <article class="title-item">
+            <div class="title-head">
+              <strong>누적 시간 칭호</strong>
+              <span class="badge">10시간: 물 적응 완료</span>
+            </div>
+            <div class="badge-row">
+              <span class="badge">25시간: 레인 체류자</span>
+              <span class="badge">50시간: 물속 거주민</span>
+              <span class="badge">100시간: 심해 체류자</span>
+            </div>
+          </article>
+        </div>
+      </aside>
+    </section>
+
+    <section class="growth-grid">
+      <section class="panel chart-card">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">성장 리포트</p>
+            <h2>갤 전체 주간 상승 곡선</h2>
+            <p>메인에서 전체 분위기를 보고, 개인 페이지에서는 최근 28일 vs 이전 28일 비교를 더 자세히 본다.</p>
+          </div>
+          <span class="tag">최근 8주</span>
+        </div>
+
+        <div class="chart-area">
+          <div class="chart-grid-lines">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="chart-line">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <polyline
+                fill="none"
+                stroke="#0b7a73"
+                stroke-width="3.5"
+                points="0,78 12,72 25,65 38,62 52,50 66,46 80,33 100,26" />
+              <polyline
+                fill="rgba(11,122,115,0.12)"
+                stroke="none"
+                points="0,78 12,72 25,65 38,62 52,50 66,46 80,33 100,26 100,100 0,100" />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel profile-preview">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">개인 페이지 미리보기</p>
+            <h2>닉네임별 성장 카드</h2>
+          </div>
+        </div>
+
+        <article class="profile-card">
+          <strong>NTHNG</strong>
+          <div class="profile-meta">
+            <span class="badge">현재 칭호: 레인 지배자</span>
+            <span class="badge">시간당 거리 1,610m/h</span>
+          </div>
+          <p class="muted">최근 28일 수영 횟수 +6, 거리 +4.2km, 시간 +2시간 18분</p>
+        </article>
+
+        <article class="profile-card">
+          <strong>다음 칭호까지</strong>
+          <p class="muted">백킬로 클럽까지 18.5km 남음</p>
+          <div class="progress-bar"><div class="progress-fill" style="width: 58%"></div></div>
+        </article>
+      </aside>
+    </section>
+
+    <section class="panel records-panel">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">최근 기록</p>
+          <h2>메인에서는 가볍게, 개인 페이지에서는 깊게</h2>
+          <p>운영 섹션은 그 아래에 두고, 첫 화면에서는 운동 흐름을 먼저 읽게 만드는 구조다.</p>
+        </div>
+      </div>
+
+      <div class="record-table">
+        <article class="record-row">
+          <span>03-12</span>
+          <strong>NTHNG</strong>
+          <span>1,400m / 52분</span>
+          <span class="badge">칭호 진척 +1</span>
+        </article>
+        <article class="record-row">
+          <span>03-12</span>
+          <strong>WAVEKIM</strong>
+          <span>1,000m / 41분</span>
+          <span class="badge">거리 랭킹 상승</span>
+        </article>
+        <article class="record-row">
+          <span>03-11</span>
+          <strong>LANE7</strong>
+          <span>1,600m / 58분</span>
+          <span class="badge">성장 배지 획득</span>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

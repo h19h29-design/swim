@@ -1,0 +1,13 @@
+﻿image_file,family_id,distance_m,total_time,expected_include,auto_include_allowed,notes
+samsung_475_3707.jpg,photo_header_detail_light,475,37:07,True,True,photo header + white detail card
+samsung_750_3826.jpg,photo_header_detail_light,750,38:26,True,True,photo header + white detail card
+samsung_925_3935.jpg,photo_header_detail_light,925,39:35,True,True,photo header + white detail card
+samsung_1600_4707.jpg,photo_header_detail_light,1600,47:07,True,True,photo header + white detail card; comma in distance
+samsung_1925_14202.jpg,photo_header_detail_dark,1925,1:42:02,True,True,photo header + dark detail card; H:MM:SS time
+samsung_2025_22934.jpg,photo_header_detail_dark,2025,2:59:34,True,True,photo header + dark detail card; corrected mislabeled time
+gamin_525_3718.png,garmin_detail_light,525,37:18,True,True,garmin detail page light theme
+gamin_1000_4428.jpg,garmin_detail_dark,1000,44:28,True,True,garmin detail page dark theme
+gamin_1500_5036.jpg,garmin_detail_dark,1500,50:36,True,True,garmin detail page dark theme
+etc2_400_4754.jpg,white_detail_card,400,47:54,True,True,white detail card; no photo header
+etc_925_4350.jpg,dashboard_chart_summary,925,43:50,True,True,chart-heavy dashboard; pace shown near time
+gamin_850_4229.png,garmin_home_feed_dark,850,42:29,False,False,feed/home card layout; manual review only

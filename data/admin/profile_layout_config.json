@@ -1,0 +1,29 @@
+{
+  "header_stat_keys": [
+    "swim_count",
+    "total_distance_m",
+    "total_seconds",
+    "distance_per_hour_m"
+  ],
+  "section_order": [
+    "primary_title",
+    "next_badge",
+    "recent_unlocks",
+    "badge_shelf",
+    "monthly_trend",
+    "recent_records"
+  ],
+  "badge_category_order": [
+    "attendance",
+    "distance",
+    "time",
+    "efficiency",
+    "growth",
+    "season",
+    "fun",
+    "gallery"
+  ],
+  "recent_unlock_limit": 6,
+  "badge_preview_limit": 12,
+  "next_badge_label_ko": "다음 해금"
+}

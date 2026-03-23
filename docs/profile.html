@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>내 수영 앨범</title>
+  <link rel="stylesheet" href="./assets/profile.css">
+</head>
+<body>
+  <main class="profile-shell">
+    <header class="profile-hero">
+      <div>
+        <p class="eyebrow" id="profileEyebrow">내 수영 앨범</p>
+        <h1 id="profileTitle">닉네임을 불러오는 중입니다</h1>
+        <p class="hero-copy" id="profileSubtitle">대표 칭호, 보유 배지, 최근 28일 변화와 다음 해금을 함께 봅니다.</p>
+      </div>
+      <div class="hero-chip-row" id="profileHeroChips"></div>
+      <div class="hero-links" id="profileNavLinks"></div>
+      <p class="generated-at" id="profileGeneratedAt"></p>
+    </header>
+
+    <section class="search-panel">
+      <form class="search-form" id="profileSearchForm">
+        <label for="profileAuthorSearch">다른 닉네임도 바로 찾기</label>
+        <div class="search-row">
+          <input id="profileAuthorSearch" list="profileAuthorSuggestions" placeholder="닉네임 입력">
+          <button type="submit">열기</button>
+        </div>
+        <div class="search-suggestions" id="profileSuggestionRow"></div>
+        <datalist id="profileAuthorSuggestions"></datalist>
+      </form>
+    </section>
+
+    <section class="hero-grid" id="profileHeroGrid"></section>
+    <section class="metric-grid" id="profileMetrics"></section>
+    <section class="compare-panel" id="profileCompare"></section>
+    <section class="badge-panel" id="profileBadges"></section>
+    <section class="trend-panel" id="profileTrend"></section>
+    <section class="records-panel" id="profileRecords"></section>
+    <section class="empty-panel" id="profileEmpty" hidden></section>
+  </main>
+
+  <script type="module" src="./assets/profile.js?v=20260317d"></script>
+</body>
+</html>

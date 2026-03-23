@@ -1,0 +1,8 @@
+[최종 체크리스트]
+
+1. 프로젝트 폴더에 이 파일들을 넣었는가
+2. START_HERE.bat 를 실행했는가
+3. 브라우저에서 http://127.0.0.1:8765/ 가 열리는가
+4. logs/last_cycle_status.json 의 ok 가 true 인가
+5. docs/data/summary.json 시간이 갱신되는가
+6. 테스트 종료 후에는 switch_to_rolling_3d.ps1 를 실행할 것

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>관리자 로그인</title>
+  <link rel="stylesheet" href="./assets/admin.css">
+</head>
+<body class="auth-body">
+  <main class="auth-shell">
+    <section class="hero-panel login-panel">
+      <div>
+        <p class="eyebrow">Admin Login</p>
+        <h1>관리자 로그인</h1>
+        <p class="hero-copy">로그인 후 설정을 저장하면 <code>data/admin/*.json</code> 원본이 바뀌고 rebuild 후 공개 페이지에 반영됩니다.</p>
+      </div>
+
+      <form class="login-form" id="loginForm">
+        <label class="field">
+          <span>공유 비밀번호</span>
+          <input id="passwordInput" type="password" autocomplete="current-password" required>
+        </label>
+        <button class="export-button strong" type="submit" id="loginButton">로그인</button>
+      </form>
+
+      <div class="status-banner status-banner--info" id="loginStatus">
+        <strong>관리자 세션을 확인하는 중입니다.</strong>
+      </div>
+    </section>
+  </main>
+
+  <script type="module">
+    const form = document.getElementById('loginForm');
+    const passwordInput = document.getElementById('passwordInput');
+    const loginButton = document.getElementById('loginButton');
+    const statusNode = document.getElementById('loginStatus');
+    const next = sanitizeNext(new URLSearchParams(window.location.search).get('next'));
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      loginButton.disabled = true;
+      setStatus('로그인 중입니다.', 'info');
+      try {
+        const response = await fetch('/api/admin/login', {
+          method: 'POST',
+          cache: 'no-store',
+          credentials: 'same-origin',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            password: passwordInput.value,
+            next,
+          }),
+        });
+        const payload = await response.json().catch(() => ({}));
+        if (!response.ok || !payload.authenticated) {
+          throw new Error(payload.error || '비밀번호가 올바르지 않습니다.');
+        }
+        setStatus('로그인에 성공했습니다. 관리자 페이지로 이동합니다.', 'success');
+        window.location.assign(next);
+      } catch (error) {
+        setStatus(error.message || '로그인에 실패했습니다.', 'error');
+      } finally {
+        loginButton.disabled = false;
+      }
+    });
+
+    void bootstrap();
+
+    async function bootstrap() {
+      try {
+        const response = await fetch('/api/admin/session', {
+          cache: 'no-store',
+          credentials: 'same-origin',
+          headers: { Accept: 'application/json' },
+        });
+        const payload = await response.json().catch(() => ({}));
+        if (payload.authenticated) {
+          window.location.replace(next);
+          return;
+        }
+        if (!payload.configured) {
+          setStatus('서버에 관리자 비밀번호가 설정되지 않았습니다. SWIMDASH_ADMIN_PASSWORD 또는 HASH 설정을 확인해 주세요.', 'warning');
+          loginButton.disabled = true;
+          passwordInput.disabled = true;
+          return;
+        }
+        setStatus('관리자 비밀번호를 입력해 주세요.', 'info');
+      } catch (_error) {
+        setStatus('관리자 세션 상태를 확인하지 못했습니다.', 'warning');
+      }
+    }
+
+    function setStatus(message, kind) {
+      statusNode.className = `status-banner status-banner--${kind}`;
+      statusNode.innerHTML = `<strong>${escapeHtml(message)}</strong>`;
+    }
+
+    function sanitizeNext(candidate) {
+      if (!candidate || typeof candidate !== 'string') {
+        return '/admin.html';
+      }
+      if (!candidate.startsWith('/') || candidate.startsWith('//')) {
+        return '/admin.html';
+      }
+      return candidate;
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+  </script>
+</body>
+</html>

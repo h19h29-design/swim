@@ -1,0 +1,57 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>수영 대시보드 시안 V5 - 동화책</title>
+<style>
+:root{--bg:#f6f0e5;--paper:#fffaf1;--ink:#3d3326;--muted:#7c6b57;--sea:#4d88b3;--mint:#8ac7b8;--gold:#c38c38;--rose:#d38b92;--line:rgba(61,51,38,.14);--shadow:0 24px 64px rgba(101,79,48,.16);--max:1540px}*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:"Georgia","Malgun Gothic",serif;background:radial-gradient(circle at 20% 8%,rgba(138,199,184,.18),transparent 20%),radial-gradient(circle at 82% 10%,rgba(211,139,146,.18),transparent 18%),linear-gradient(180deg,#fbf7ef,#f3ecdf 44%,#ece5db)}.shell{width:min(calc(100% - 56px),var(--max));margin:0 auto;padding:30px 0 44px;display:grid;gap:18px}.panel{background:var(--paper);border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow)}.hero{display:grid;grid-template-columns:1.14fr .86fr;gap:18px;padding:26px}.eyebrow{color:var(--gold);letter-spacing:.16em;text-transform:uppercase;font-size:.8rem}h1{margin:10px 0 14px;font-size:clamp(3rem,4.8vw,5rem);line-height:.94;letter-spacing:-.05em}.ribbons{display:flex;flex-wrap:wrap;gap:10px}.ribbon{padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.82)}.side{display:grid;gap:14px}.card,.section,.epilogue article{padding:20px;border-radius:24px;background:rgba(255,255,255,.86);border:1px solid var(--line)}.seal{display:inline-flex;padding:8px 14px;border-radius:999px;background:rgba(195,140,56,.14);color:#7a5116;font-weight:700}.bar{height:12px;border-radius:999px;background:rgba(61,51,38,.08);overflow:hidden;margin-top:12px}.bar span{display:block;width:74%;height:100%;background:linear-gradient(90deg,var(--mint),var(--sea),var(--gold))}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.kpi{padding:20px;border-radius:24px;background:#fffefb;border:1px solid var(--line)}.kpi small{color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.kpi strong{display:block;margin-top:12px;font-size:2.2rem}.story{display:grid;grid-template-columns:1.12fr .88fr;gap:18px}.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}.tabs span{padding:10px 14px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.8)}.tabs .on{background:var(--sea);color:#fff;border-color:transparent}.podium{display:grid;grid-template-columns:1.08fr .92fr .92fr;gap:12px}.podium article{padding:18px;border-radius:24px;color:#fff;min-height:182px}.one{min-height:260px;background:linear-gradient(160deg,#4d88b3,#79b7cf 60%,#bfe0e7)}.two{background:linear-gradient(160deg,#c38c38,#d7b06d 60%,#e9d5ac)}.three{background:linear-gradient(160deg,#8d6f5f,#b28a75 58%,#d3b39a)}.mark{display:inline-flex;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.18);font-weight:700}.podium h3{margin:12px 0 8px;font-size:1.8rem}.legend{display:grid;gap:12px}.legend article{padding:16px;border-radius:20px;background:#fffdf8;border:1px solid var(--line)}.legend strong{display:block;font-size:1.08rem}.epilogue{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}@media (max-width:1180px){.hero,.story,.podium,.kpis,.epilogue{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="shell">
+<section class="panel hero">
+<div>
+<div class="eyebrow">storybook of the blue lane</div>
+<h1>오늘의 물결이<br>한 권의 동화처럼<br>쌓이는 기록장</h1>
+<p>이 시안은 랭킹을 무겁게 경쟁시키기보다, 갤 전체가 한 장면씩 모여 큰 이야기를 만드는 느낌으로 잡았다. 숫자는 또렷하지만 카피는 포근하고, 칭호는 훈장보다 이야기 속 이름에 가깝다.</p>
+<div class="ribbons"><span class="ribbon">첫 물결</span><span class="ribbon">물빛 순례자</span><span class="ribbon">오늘의 주인공</span></div>
+</div>
+<div class="side">
+<article class="card"><div class="eyebrow">gallery chapter</div><h2>갤의 현재 장면</h2><span class="seal">대형 파도</span><p>갤 전체 누적이 쌓일수록 이야기가 한 장씩 넘어가는 느낌으로 칭호를 보여준다.</p><div class="bar"><span></span></div></article>
+<article class="card"><div class="eyebrow">next page</div><h2>다음 장면까지</h2><p>“바다 개방까지 41km”처럼 다음 이정표를 살짝 서정적으로 보여준다.</p></article>
+</div>
+</section>
+<section class="kpis">
+<article class="kpi"><small>갤 전체 운동횟수</small><strong>142회</strong></article>
+<article class="kpi"><small>갤 전체 총거리</small><strong>107.8km</strong></article>
+<article class="kpi"><small>갤 전체 총시간</small><strong>58시간 40분</strong></article>
+<article class="kpi"><small>참여 인원</small><strong>17명</strong></article>
+</section>
+<section class="story">
+<section class="panel section">
+<div class="eyebrow">chapter one</div><h2>이번 장면의 주인공</h2>
+<div class="tabs"><span class="on">참여횟수</span><span>거리</span><span>시간</span><span>시간당 거리</span><span>성장</span></div>
+<div class="podium">
+<article class="one"><span class="mark">첫 번째 물결</span><h3>NTHNG</h3><strong>24회</strong><p>가장 자주 물속으로 들어간 사람. 오늘 장면의 중심 인물.</p></article>
+<article class="two"><span class="mark">두 번째 물결</span><h3>WAVEKIM</h3><strong>18회</strong><p>묵직하게 따라붙는 장면 전환 담당.</p></article>
+<article class="three"><span class="mark">세 번째 물결</span><h3>LANE7</h3><strong>16회</strong><p>꾸준함으로 페이지를 채우는 인물.</p></article>
+</div>
+</section>
+<aside class="panel section">
+<div class="eyebrow">titles in the tale</div><h2>동화형 칭호 예시</h2>
+<div class="legend">
+<article><strong>첫 물결</strong><p>처음 일정 누적을 넘겼을 때 붙는 시작의 칭호.</p></article>
+<article><strong>물빛 순례자</strong><p>누적 거리형 칭호. 숫자보다 여정의 느낌을 강조한다.</p></article>
+<article><strong>푸른 방의 주민</strong><p>누적 시간형 칭호. 오래 머문 사람에게 주는 이름.</p></article>
+</div>
+</aside>
+</section>
+<section class="epilogue">
+<article class="card"><div class="eyebrow">growth</div><h2>성장도 이야기처럼</h2><p>최근 28일과 이전 28일을 비교해 “이번 달 더 자주, 더 멀리, 더 오래”를 보여주는 구조.</p></article>
+<article class="card"><div class="eyebrow">profile</div><h2>개인 페이지는 주인공 페이지</h2><p>닉네임 검색 후 들어가면 본인의 칭호와 성장 곡선이 메인처럼 크게 뜬다.</p></article>
+<article class="card"><div class="eyebrow">ops later</div><h2>운영 정보는 뒷장으로</h2><p>검토 대기열과 보정 정보는 책의 부록처럼 아래쪽에 배치한다.</p></article>
+</section>
+</main>
+</body>
+</html>

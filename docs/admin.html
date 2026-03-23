@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>관리자 설정 스튜디오</title>
+  <link rel="stylesheet" href="./assets/admin.css">
+</head>
+<body>
+  <main class="admin-shell">
+    <header class="hero-panel">
+      <div>
+        <p class="eyebrow" id="adminEyebrow">관리자</p>
+        <h1 id="adminTitle">관리자 설정 스튜디오</h1>
+        <p class="hero-copy" id="adminCopy">문구, 메뉴, 배지, 아이콘을 수정하고 저장한 뒤 rebuild 해서 공개 페이지에 반영합니다.</p>
+      </div>
+      <div class="hero-meta" id="adminMeta"></div>
+    </header>
+
+    <section class="toolbar-panel">
+      <div class="toolbar-row">
+        <button class="export-button strong" type="button" data-save="bundle">전체 저장 + rebuild</button>
+        <button class="export-button" type="button" data-save="bundle" data-run-rebuild="false">전체 저장만</button>
+        <button class="export-button" type="button" data-rebuild>rebuild만 실행</button>
+        <button class="export-button" type="button" data-logout>로그아웃</button>
+      </div>
+      <div class="toolbar-row">
+        <button class="export-button" type="button" data-save="site_config">site_config 저장 + rebuild</button>
+        <button class="export-button" type="button" data-save="navigation_config">navigation 저장 + rebuild</button>
+        <button class="export-button" type="button" data-save="home_sections">home_sections 저장 + rebuild</button>
+        <button class="export-button" type="button" data-save="badge_catalog">badge_catalog 저장 + rebuild</button>
+        <button class="export-button" type="button" data-save="badge_art_catalog">badge_art_catalog 저장 + rebuild</button>
+      </div>
+      <div class="toolbar-row">
+        <button class="export-button" type="button" data-export="site">site_config 내보내기</button>
+        <button class="export-button" type="button" data-export="navigation">navigation 내보내기</button>
+        <button class="export-button" type="button" data-export="home">home_sections 내보내기</button>
+        <button class="export-button" type="button" data-export="badges">badge_catalog 내보내기</button>
+        <button class="export-button" type="button" data-export="badge_art">badge_art_catalog 내보내기</button>
+        <button class="export-button" type="button" data-export="season">season_badges 내보내기</button>
+        <button class="export-button" type="button" data-export="gallery">gallery_title_rules 내보내기</button>
+        <button class="export-button" type="button" data-export="profile">profile_layout_config 내보내기</button>
+        <button class="export-button strong" type="button" data-export="bundle">전체 번들 내보내기</button>
+      </div>
+      <div class="status-banner status-banner--info" id="saveStatus">관리자 설정을 불러오는 중입니다.</div>
+      <p class="section-note" id="saveNote">기본 저장 버튼은 바로 <code>rebuild</code>까지 함께 실행합니다. 저장만 하고 싶을 때만 <code>전체 저장만</code>을 사용해 주세요.</p>
+    </section>
+
+    <div class="admin-grid">
+      <section class="panel editor-panel" id="siteEditor"></section>
+      <section class="panel editor-panel" id="navigationEditor"></section>
+      <section class="panel editor-panel" id="sectionsEditor"></section>
+      <section class="panel editor-panel" id="syncEditor"></section>
+      <section class="panel editor-panel" id="badgeEditor"></section>
+      <section class="panel editor-panel" id="badgeArtEditor"></section>
+      <section class="panel preview-panel" id="previewHero"></section>
+      <section class="panel preview-panel" id="previewBadges"></section>
+      <section class="panel preview-panel" id="previewGallery"></section>
+      <section class="panel preview-panel" id="previewAuthors"></section>
+    </div>
+  </main>
+
+  <script type="module" src="./assets/admin.js?v=20260317d"></script>
+</body>
+</html>

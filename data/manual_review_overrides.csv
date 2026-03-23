@@ -1,0 +1,4 @@
+post_id,decision,distance_m,total_time_text,note
+# 17288,patch,1100,47:54,recovered from review
+# 17139,accept,,,verified manually
+# 17197,reject,,,rejected after review

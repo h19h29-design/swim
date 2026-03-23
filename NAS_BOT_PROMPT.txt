@@ -1,0 +1,123 @@
+﻿Synology NAS redeploy task for swimming diary dashboard
+
+Use the latest source zip from the user and redeploy the existing swimdash app.
+Target app name should stay swimdash-app.
+
+Current product rules:
+- OCR is removed.
+- Official ingestion is title parsing only.
+- Accepted title examples:
+  - 1500 / 42:30
+  - 1500m / 42:30
+  - 1500 / 42분 30초
+  - 1500 / 1시간 05분
+  - 1500m / 55분
+  - 총거리 1000 / 시간 49분17초
+- Admin saves now write to data/admin/*.json.
+- Admin save buttons rebuild public docs/data by default.
+- parse-status manual override saves also rebuild immediately.
+- Profile representative title should show the highest-tier unlocked badge.
+
+Main goals:
+1. Redeploy the latest source bundle.
+2. Confirm main dashboard, mobile, profile, badge gallery, parse-status, and admin pages all work.
+3. Confirm admin save/auth, admin sync controls, and parse-status manual override flows work.
+4. Confirm scheduler jobs exist for the two daily refreshes, and document manual repair commands.
+
+Deployment path:
+- Recommended: /volume1/docker/swimdash
+
+Tasks:
+1. Unpack the latest zip into the deployment path.
+2. Review .env and ensure these are set:
+   - SWIMDASH_ADMIN_PASSWORD or SWIMDASH_ADMIN_PASSWORD_HASH
+   - SWIMDASH_ADMIN_SESSION_SECRET
+   - SWIMDASH_PUBLIC_PORT=8766
+   - TZ=Asia/Seoul
+   - SWIMDASH_SECURE_COOKIES=0 for plain HTTP, 1 if HTTPS reverse proxy is used
+3. Rebuild and restart:
+   - docker compose up -d --build
+4. Verify container is running.
+5. Verify these URLs with cache-busting:
+   - http://swimmingdiary.duckdns.org:8766/?desktop=1&v=20260317d
+   - http://swimmingdiary.duckdns.org:8766/mobile.html?v=20260317d
+   - http://swimmingdiary.duckdns.org:8766/profile.html?author=NTHNG&v=20260317d
+   - http://swimmingdiary.duckdns.org:8766/badge-gallery.html?v=20260317d
+   - http://swimmingdiary.duckdns.org:8766/parse-status.html?v=20260317d
+   - http://swimmingdiary.duckdns.org:8766/admin-login.html?v=20260317d
+6. Confirm /admin.html while logged out redirects to login.
+7. Log into admin and verify:
+   - admin bundle loads
+   - save still works
+   - save triggers rebuild by default
+8. Verify admin sync controls:
+   - recent 3-day sync runs successfully
+   - custom window sync runs successfully for a short safe range
+9. Verify badge icon upload flow:
+   - upload one harmless test icon if safe, or at minimum confirm the upload endpoint is live after login
+10. Verify parse-status manual override flow:
+   - pick one failed row if available
+   - save a harmless manual override if safe
+   - confirm it triggers rebuild and changes the visible status
+11. Run a manual data refresh:
+   - docker exec swimdash-app python -m swimdash refresh
+12. Run the floor overwrite refresh:
+   - docker exec swimdash-app python -m swimdash refresh-from-floor
+13. Run a custom window refresh for a small safe range:
+   - docker exec swimdash-app python -m swimdash refresh-window --start-date 2026-03-15 --end-date 2026-03-17
+14. Confirm parsed data is visible on the public pages after refresh.
+15. Ensure DSM Task Scheduler jobs exist:
+   - swimdash-refresh-1000 at 10:00 daily -> docker exec swimdash-app python -m swimdash refresh
+   - swimdash-refresh-2200 at 22:00 daily -> docker exec swimdash-app python -m swimdash refresh
+16. Do not create an automatic 22:10 floor task unless the user explicitly asks. Keep floor/window refresh as manual recovery tools.
+14. Keep data/admin, docs/data, and logs persistent.
+
+Important guardrails:
+- Do not reintroduce OCR.
+- Do not change title parsing policy.
+- Do not flatten the split admin files into one JSON file.
+- data/admin/*.json must remain the editable source of truth.
+- docs/data/*.json are generated outputs.
+
+Helpful commands:
+- docker compose ps
+- docker logs swimdash-app --tail 200
+- docker exec swimdash-app python -m swimdash refresh
+- docker exec swimdash-app python -m swimdash refresh-from-floor
+- docker exec swimdash-app python -m swimdash refresh-window --start-date 2026-03-15 --end-date 2026-03-17
+- docker exec swimdash-app python -m swimdash rebuild
+
+At the end, reply in exactly this format:
+
+1. Deploy result
+- container status
+- final public URL
+- admin URL
+
+2. Env/config used
+- which env values were set (mask secrets)
+- whether secure cookies were enabled
+
+3. Commands run
+- actual NAS commands run
+
+4. Verification
+- route checks and results
+- admin auth result
+- admin save result
+- parse-status manual override result
+- badge icon upload result
+- refresh result
+- refresh-from-floor result
+- refresh-window result
+- scheduler result
+- whether dashboard/mobile/profile/badge-gallery/parse-status rendered actual data
+
+5. If there was a problem
+- exact failing file or endpoint
+- exact fix applied
+
+6. Notes
+- anything still manual
+- backup paths
+- Synology-specific caveats

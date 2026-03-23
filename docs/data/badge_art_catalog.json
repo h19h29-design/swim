@@ -1,0 +1,314 @@
+{
+  "generated_on": "2026-03-14",
+  "asset_root": "docs/assets/badges",
+  "naming_rule": "{family}-base.svg for family icons; frame-{shape}.svg for shared frames; special-{treatment}.svg for featured treatments.",
+  "family_map": {
+    "att": {
+      "label_ko": "출석",
+      "label_en": "Attendance",
+      "badge_id_prefixes": [
+        "att"
+      ],
+      "display_note": "참여 횟수와 출석 계열 배지"
+    },
+    "dst": {
+      "label_ko": "거리",
+      "label_en": "Distance",
+      "badge_id_prefixes": [
+        "dst"
+      ],
+      "display_note": "누적 거리와 km milestone 계열"
+    },
+    "tim": {
+      "label_ko": "시간",
+      "label_en": "Time",
+      "badge_id_prefixes": [
+        "tim"
+      ],
+      "display_note": "누적 시간과 체류 계열"
+    },
+    "eff": {
+      "label_ko": "효율",
+      "label_en": "Efficiency",
+      "badge_id_prefixes": [
+        "eff"
+      ],
+      "display_note": "시간당 거리와 효율 계열"
+    },
+    "grw": {
+      "label_ko": "성장",
+      "label_en": "Growth",
+      "badge_id_prefixes": [
+        "grw"
+      ],
+      "display_note": "최근 28일 성장 계열"
+    },
+    "sea": {
+      "label_ko": "시즌",
+      "label_en": "Season",
+      "badge_id_prefixes": [
+        "sea"
+      ],
+      "display_note": "월별 시즌 참여 배지"
+    },
+    "gal": {
+      "label_ko": "갤 전체",
+      "label_en": "Gallery",
+      "badge_id_prefixes": [
+        "gal"
+      ],
+      "display_note": "갤 대표 칭호와 공동 milestone 계열"
+    },
+    "fun": {
+      "label_ko": "보너스",
+      "label_en": "Fun",
+      "badge_id_prefixes": [
+        "fun"
+      ],
+      "display_note": "주말, 새벽, 심야 같은 보너스 배지"
+    }
+  },
+  "tier_palettes": [
+    {
+      "id": "starter",
+      "label_ko": "입문",
+      "swatch": [
+        "#fff4ea",
+        "#ffd966",
+        "#ffb38f"
+      ],
+      "color_notes": "처음 해금하는 배지용"
+    },
+    {
+      "id": "rally",
+      "label_ko": "도약",
+      "swatch": [
+        "#83d6c9",
+        "#7cb7ff",
+        "#fffaf7"
+      ],
+      "color_notes": "중간 단계용"
+    },
+    {
+      "id": "gold",
+      "label_ko": "대표",
+      "swatch": [
+        "#ffd966",
+        "#ff9d5c",
+        "#fff7d6"
+      ],
+      "color_notes": "대표 칭호와 고레벨 배지용"
+    },
+    {
+      "id": "prism",
+      "label_ko": "하이라이트",
+      "swatch": [
+        "#ff8f7a",
+        "#83d6c9",
+        "#7cb7ff"
+      ],
+      "color_notes": "최근 해금과 특수 강조용"
+    }
+  ],
+  "icons": [
+    {
+      "icon_key": "att.base",
+      "file_path": "docs/assets/badges/att-base.svg",
+      "family": "att",
+      "tier_compatibility": [
+        "starter",
+        "rally",
+        "gold",
+        "prism"
+      ],
+      "color_notes": "출석 계열",
+      "display_notes": "참여와 출석 배지의 기본 아이콘",
+      "badge_id_prefixes": [
+        "att"
+      ]
+    },
+    {
+      "icon_key": "dst.base",
+      "file_path": "docs/assets/badges/dst-base.svg",
+      "family": "dst",
+      "tier_compatibility": [
+        "starter",
+        "rally",
+        "gold",
+        "prism"
+      ],
+      "color_notes": "거리 계열",
+      "display_notes": "누적 거리 배지의 기본 아이콘",
+      "badge_id_prefixes": [
+        "dst"
+      ]
+    },
+    {
+      "icon_key": "tim.base",
+      "file_path": "docs/assets/badges/tim-base.svg",
+      "family": "tim",
+      "tier_compatibility": [
+        "starter",
+        "rally",
+        "gold",
+        "prism"
+      ],
+      "color_notes": "시간 계열",
+      "display_notes": "누적 시간 배지의 기본 아이콘",
+      "badge_id_prefixes": [
+        "tim"
+      ]
+    },
+    {
+      "icon_key": "eff.base",
+      "file_path": "docs/assets/badges/eff-base.svg",
+      "family": "eff",
+      "tier_compatibility": [
+        "starter",
+        "rally",
+        "gold",
+        "prism"
+      ],
+      "color_notes": "효율 계열",
+      "display_notes": "시간당 거리와 효율 배지의 기본 아이콘",
+      "badge_id_prefixes": [
+        "eff"
+      ]
+    },
+    {
+      "icon_key": "grw.base",
+      "file_path": "docs/assets/badges/grw-base.svg",
+      "family": "grw",
+      "tier_compatibility": [
+        "starter",
+        "rally",
+        "gold",
+        "prism"
+      ],
+      "color_notes": "성장 계열",
+      "display_notes": "최근 성장 배지의 기본 아이콘",
+      "badge_id_prefixes": [
+        "grw"
+      ]
+    },
+    {
+      "icon_key": "sea.base",
+      "file_path": "docs/assets/badges/sea-base.svg",
+      "family": "sea",
+      "tier_compatibility": [
+        "starter",
+        "rally",
+        "gold",
+        "prism"
+      ],
+      "color_notes": "시즌 계열",
+      "display_notes": "월별 시즌 배지의 기본 아이콘",
+      "badge_id_prefixes": [
+        "sea"
+      ]
+    },
+    {
+      "icon_key": "gal.base",
+      "file_path": "docs/assets/badges/gal-base.svg",
+      "family": "gal",
+      "tier_compatibility": [
+        "starter",
+        "rally",
+        "gold",
+        "prism"
+      ],
+      "color_notes": "갤 전체 계열",
+      "display_notes": "갤 대표 칭호와 공동 milestone 아이콘",
+      "badge_id_prefixes": [
+        "gal"
+      ]
+    },
+    {
+      "icon_key": "fun.base",
+      "file_path": "docs/assets/badges/fun-base.svg",
+      "family": "fun",
+      "tier_compatibility": [
+        "starter",
+        "rally",
+        "gold",
+        "prism"
+      ],
+      "color_notes": "보너스 계열",
+      "display_notes": "재미 배지의 기본 아이콘",
+      "badge_id_prefixes": [
+        "fun"
+      ]
+    },
+    {
+      "icon_key": "frame.sticker",
+      "file_path": "docs/assets/badges/frame-sticker.svg",
+      "family": "shared",
+      "tier_compatibility": [
+        "starter",
+        "rally",
+        "gold",
+        "prism"
+      ],
+      "color_notes": "스티커 테두리",
+      "display_notes": "기본 배지 프레임"
+    },
+    {
+      "icon_key": "frame.ribbon",
+      "file_path": "docs/assets/badges/frame-ribbon.svg",
+      "family": "shared",
+      "tier_compatibility": [
+        "rally",
+        "gold",
+        "prism"
+      ],
+      "color_notes": "리본 프레임",
+      "display_notes": "고레벨 배지 프레임"
+    },
+    {
+      "icon_key": "frame.seal",
+      "file_path": "docs/assets/badges/frame-seal.svg",
+      "family": "shared",
+      "tier_compatibility": [
+        "gold",
+        "prism"
+      ],
+      "color_notes": "씰 프레임",
+      "display_notes": "대표 칭호와 갤 칭호용 프레임"
+    },
+    {
+      "icon_key": "shared.representative-title",
+      "file_path": "docs/assets/badges/special-representative-title.svg",
+      "family": "shared",
+      "tier_compatibility": [
+        "gold",
+        "prism"
+      ],
+      "color_notes": "대표 칭호 전용",
+      "display_notes": "대표 칭호 카드 강조 처리"
+    },
+    {
+      "icon_key": "shared.recent-unlock-chip",
+      "file_path": "docs/assets/badges/special-recent-unlock-chip.svg",
+      "family": "shared",
+      "tier_compatibility": [
+        "starter",
+        "rally",
+        "gold",
+        "prism"
+      ],
+      "color_notes": "최근 해금 칩",
+      "display_notes": "최근 해금 목록용 강조 칩"
+    },
+    {
+      "icon_key": "shared.gallery-title-seal",
+      "file_path": "docs/assets/badges/special-gallery-title-seal.svg",
+      "family": "shared",
+      "tier_compatibility": [
+        "gold",
+        "prism"
+      ],
+      "color_notes": "갤 대표 칭호 씰",
+      "display_notes": "갤 대표 칭호 전용 강조 처리"
+    }
+  ]
+}

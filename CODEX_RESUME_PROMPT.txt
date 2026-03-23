@@ -1,0 +1,21 @@
+Read these files first:
+- PROJECT_CONTEXT_LATEST.md
+- pilot_config.json
+- logs/last_cycle_status.json if present
+- docs/data/summary.json if present
+- docs/data/review_queue.json if present
+
+Current intended operation mode:
+- During the pilot, re-collect from 2026-03-01 to now on each scheduled run.
+- Run 4 times per day.
+- No human review during the pilot.
+- After the pilot, switch to rolling 3-day recollection.
+
+Goals for any next patch:
+- keep backend-owned include/exclude/review_needed
+- keep text authoritative per field
+- keep OCR conservative and cheap
+- do not broaden free-form parsing aggressively
+- optimize only if a real operational issue appears
+
+If something is broken, prefer an incremental operational patch over a rewrite.

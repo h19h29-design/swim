@@ -1,0 +1,9 @@
+﻿case_id,input_text,expected_distance_m,expected_total_time_text,expected_total_seconds,expected_include,note
+text_001,총거리 925\n시간 39분35초,925,39분35초,2375,True,seconds-only duration
+text_002,"총거리 1,600\n시간 47분07초",1600,47분07초,2827,True,comma distance
+text_003,총거리: 2025\n시간: 2시간59분34초,2025,2시간59분34초,10774,True,colon after label
+text_004,총거리 1925\n시간 1시간42분02초,1925,1시간42분02초,6122,True,hour-minute-second duration
+text_005,총거리 750\n시간 38분26초,750,38분26초,2306,True,simple valid case
+text_006,총거리 850,850,,,False,time missing
+text_007,시간 42분29초,,42분29초,2549,False,distance missing
+text_008,오늘 수영함\n총거리 1000\n시간 44분28초\n기록 좋았음,1000,44분28초,2668,True,extra text around valid fields

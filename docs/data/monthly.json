@@ -1,0 +1,14 @@
+[
+  {
+    "month": "2026-03",
+    "swim_count": 44,
+    "total_distance_m": 68825.0,
+    "total_seconds": 205585,
+    "total_duration_min": 3426.42,
+    "distance_per_hour_m": 1205.19,
+    "active_authors": 13,
+    "metric_bucket_counts": {
+      "core": 44
+    }
+  }
+]

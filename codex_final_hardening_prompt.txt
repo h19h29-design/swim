@@ -1,0 +1,39 @@
+Read PROJECT_CONTEXT.md, OCR_STRATEGY.md, TODO_NEXT.md, TEXT_FORMAT_SPEC.md, result_schema.json, and the latest verification artifacts first.
+
+Do the final hardening pass for practical use, not broad OCR expansion.
+
+Tasks:
+1. add review queue support to the normalized record contract
+   - review_required
+   - review_reason_codes
+   - confidence_band
+2. classify failures into:
+   - terminal exclude
+   - recoverable review
+3. add narrow labeled total-time near-miss parsing only for:
+   시간, 총시간, 총 시간, 운동시간, 운동 시간, 소요시간
+   and formats:
+   47분, 47분54초, 1시간10분, 1시간 10분, 1시간42분02초
+   plus label-scoped 47:54 / 1:42:02
+4. keep text authoritative per field
+5. keep OCR as guarded fallback only
+6. add OCR cache/runtime guardrails
+   - image hash cache
+   - per-post max image cap config
+   - skip low-value layouts early when possible
+7. expose a review queue in the dashboard UI
+   showing recoverable records separately from included/excluded
+8. generate an operational report after rebuild
+   including source_counts, exclude_reason_counts, warning_code_counts,
+   review_required_count, OCR_cache_hit_rate if available
+9. rebuild docs/data/*.json and verify dashboard routes again
+10. produce a release note summarizing:
+   - what is auto-included
+   - what is excluded
+   - what goes to review queue
+
+Important:
+- Do not broaden parsing into arbitrary prose without labels.
+- Do not treat pace as total time.
+- Do not optimize for maximum recall at the cost of false includes.
+- Keep detailed-screen layouts as the only high-confidence OCR source.

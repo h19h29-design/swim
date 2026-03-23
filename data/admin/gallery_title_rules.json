@@ -1,0 +1,95 @@
+{
+  "metric_key": "total_distance_m",
+  "title_basis_ko": "갤 전체 누적 거리",
+  "progress_label_ko": "다음 갤 칭호까지",
+  "fallback_title": {
+    "badge_id": "gal_00",
+    "name_ko": "수면 대기",
+    "short_label_ko": "대기중",
+    "description_ko": "아직 core 기록 기준으로 해금된 갤 대표 칭호가 없습니다.",
+    "icon_key": "gallery_idle",
+    "tier": 0
+  },
+  "rules": [
+    {
+      "badge_id": "gal_01",
+      "name_ko": "첫 물결",
+      "short_label_ko": "1km",
+      "description_ko": "갤 전체 누적 거리 1km를 달성합니다.",
+      "threshold_type": "gallery_total_distance_m",
+      "threshold_value": 1000,
+      "icon_key": "gal.base",
+      "tier": 1
+    },
+    {
+      "badge_id": "gal_02",
+      "name_ko": "모여든 레인",
+      "short_label_ko": "5km",
+      "description_ko": "갤 전체 누적 거리 5km를 채웠습니다.",
+      "threshold_type": "gallery_total_distance_m",
+      "threshold_value": 5000,
+      "icon_key": "gal.base",
+      "tier": 2
+    },
+    {
+      "badge_id": "gal_03",
+      "name_ko": "대형 파도",
+      "short_label_ko": "10km",
+      "description_ko": "갤 전체 누적 거리 10km로 시즌의 힘이 보입니다.",
+      "threshold_type": "gallery_total_distance_m",
+      "threshold_value": 10000,
+      "icon_key": "gal.base",
+      "tier": 3
+    },
+    {
+      "badge_id": "gal_04",
+      "name_ko": "바다 개방",
+      "short_label_ko": "25km",
+      "description_ko": "갤 전체 누적 거리 25km로 바다가 열립니다.",
+      "threshold_type": "gallery_total_distance_m",
+      "threshold_value": 25000,
+      "icon_key": "gal.base",
+      "tier": 4
+    },
+    {
+      "badge_id": "gal_05",
+      "name_ko": "물결 전시",
+      "short_label_ko": "50km",
+      "description_ko": "갤 전체 누적 거리 50km로 물결 전시가 시작됩니다.",
+      "threshold_type": "gallery_total_distance_m",
+      "threshold_value": 50000,
+      "icon_key": "gal.base",
+      "tier": 5
+    },
+    {
+      "badge_id": "gal_06",
+      "name_ko": "원양 진출",
+      "short_label_ko": "100km",
+      "description_ko": "갤 전체 누적 거리 100km를 넘기며 원양 단계에 들어갑니다.",
+      "threshold_type": "gallery_total_distance_m",
+      "threshold_value": 100000,
+      "icon_key": "gal.base",
+      "tier": 6
+    },
+    {
+      "badge_id": "gal_07",
+      "name_ko": "대양 정복",
+      "short_label_ko": "200km",
+      "description_ko": "갤 전체 누적 거리 200km를 채웠습니다.",
+      "threshold_type": "gallery_total_distance_m",
+      "threshold_value": 200000,
+      "icon_key": "gal.base",
+      "tier": 7
+    },
+    {
+      "badge_id": "gal_08",
+      "name_ko": "수영 갤 전설",
+      "short_label_ko": "400km",
+      "description_ko": "1년 동안 노리는 최상위 갤 대표 칭호입니다.",
+      "threshold_type": "gallery_total_distance_m",
+      "threshold_value": 400000,
+      "icon_key": "gal.base",
+      "tier": 8
+    }
+  ]
+}

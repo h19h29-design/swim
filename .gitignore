@@ -1,0 +1,22 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# Logs / generated
+logs/*.log
+logs/
+dist/
+*.zip
+.tmp*
+.pytest_tmp*/
+.pytest_tmp_*/
+*.tmp
+local_samples/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

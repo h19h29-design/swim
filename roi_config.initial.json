@@ -1,0 +1,176 @@
+{
+  "version": 1,
+  "decision": {
+    "auto_include_only_families": [
+      "photo_header_detail_light",
+      "photo_header_detail_dark",
+      "garmin_detail_light",
+      "garmin_detail_dark",
+      "white_detail_card",
+      "dashboard_chart_summary"
+    ],
+    "manual_review_only_families": [
+      "garmin_home_feed_dark"
+    ],
+    "target_fields_v1": [
+      "distance_m",
+      "total_time"
+    ],
+    "ignore_fields_v1": [
+      "pace",
+      "heart_rate",
+      "calories",
+      "swolf",
+      "strokes"
+    ]
+  },
+  "families": {
+    "photo_header_detail_light": {
+      "theme": "light",
+      "distance_roi": {
+        "x1": 0.02,
+        "y1": 0.09,
+        "x2": 0.36,
+        "y2": 0.3
+      },
+      "total_time_roi": {
+        "x1": 0.04,
+        "y1": 0.33,
+        "x2": 0.3,
+        "y2": 0.49
+      },
+      "pace_roi_verify_only": {
+        "x1": 0.46,
+        "y1": 0.33,
+        "x2": 0.84,
+        "y2": 0.49
+      }
+    },
+    "photo_header_detail_dark": {
+      "theme": "dark",
+      "distance_roi": {
+        "x1": 0.02,
+        "y1": 0.08,
+        "x2": 0.36,
+        "y2": 0.3
+      },
+      "total_time_roi": {
+        "x1": 0.05,
+        "y1": 0.35,
+        "x2": 0.31,
+        "y2": 0.53
+      },
+      "pace_roi_verify_only": {
+        "x1": 0.45,
+        "y1": 0.35,
+        "x2": 0.84,
+        "y2": 0.53
+      }
+    },
+    "garmin_detail_light": {
+      "theme": "light",
+      "distance_roi": {
+        "x1": 0.03,
+        "y1": 0.31,
+        "x2": 0.35,
+        "y2": 0.49
+      },
+      "total_time_roi": {
+        "x1": 0.03,
+        "y1": 0.43,
+        "x2": 0.33,
+        "y2": 0.59
+      },
+      "pace_roi_verify_only": {
+        "x1": 0.46,
+        "y1": 0.43,
+        "x2": 0.86,
+        "y2": 0.59
+      }
+    },
+    "garmin_detail_dark": {
+      "theme": "dark",
+      "distance_roi": {
+        "x1": 0.03,
+        "y1": 0.17,
+        "x2": 0.38,
+        "y2": 0.44
+      },
+      "total_time_roi": {
+        "x1": 0.03,
+        "y1": 0.39,
+        "x2": 0.34,
+        "y2": 0.58
+      },
+      "pace_roi_verify_only": {
+        "x1": 0.45,
+        "y1": 0.39,
+        "x2": 0.86,
+        "y2": 0.58
+      }
+    },
+    "white_detail_card": {
+      "theme": "light",
+      "distance_roi": {
+        "x1": 0.05,
+        "y1": 0.08,
+        "x2": 0.33,
+        "y2": 0.22
+      },
+      "total_time_roi": {
+        "x1": 0.05,
+        "y1": 0.23,
+        "x2": 0.34,
+        "y2": 0.42
+      },
+      "pace_roi_verify_only": {
+        "x1": 0.47,
+        "y1": 0.23,
+        "x2": 0.85,
+        "y2": 0.42
+      }
+    },
+    "dashboard_chart_summary": {
+      "theme": "light",
+      "distance_roi": {
+        "x1": 0.66,
+        "y1": 0.03,
+        "x2": 0.98,
+        "y2": 0.13
+      },
+      "total_time_roi": {
+        "x1": 0.03,
+        "y1": 0.07,
+        "x2": 0.29,
+        "y2": 0.17
+      },
+      "pace_roi_verify_only": {
+        "x1": 0.42,
+        "y1": 0.07,
+        "x2": 0.68,
+        "y2": 0.17
+      }
+    },
+    "garmin_home_feed_dark": {
+      "theme": "dark",
+      "distance_roi": {
+        "x1": 0.18,
+        "y1": 0.6,
+        "x2": 0.52,
+        "y2": 0.73
+      },
+      "total_time_roi": {
+        "x1": 0.18,
+        "y1": 0.69,
+        "x2": 0.4,
+        "y2": 0.77
+      },
+      "pace_roi_verify_only": {
+        "x1": 0.4,
+        "y1": 0.69,
+        "x2": 0.68,
+        "y2": 0.77
+      }
+    }
+  }
+}

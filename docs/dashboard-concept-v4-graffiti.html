@@ -1,0 +1,62 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>수영 대시보드 시안 V4 - 그래피티</title>
+<style>
+:root{--bg:#140f19;--ink:#fff7ed;--muted:#d7caff;--panel:rgba(25,19,34,.85);--line:rgba(255,255,255,.12);--lime:#d6ff49;--cyan:#52efff;--pink:#ff5bb7;--orange:#ff9447;--max:1540px;--shadow:0 24px 64px rgba(0,0,0,.34)}*{box-sizing:border-box}body{margin:0;font-family:"Trebuchet MS","Malgun Gothic",sans-serif;color:var(--ink);background:radial-gradient(circle at 10% 10%,rgba(82,239,255,.14),transparent 20%),radial-gradient(circle at 90% 10%,rgba(255,91,183,.14),transparent 20%),linear-gradient(180deg,#120d16,#17111e 42%,#101824)}.shell{width:min(calc(100% - 56px),var(--max));margin:0 auto;padding:28px 0 40px;display:grid;gap:18px}.panel{background:var(--panel);border:2px solid var(--line);border-radius:30px;box-shadow:var(--shadow)}.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;padding:24px;background:repeating-linear-gradient(-28deg,rgba(255,255,255,.04),rgba(255,255,255,.04) 12px,transparent 12px,transparent 28px),var(--panel)}.eyebrow{display:inline-flex;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.08);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);font-weight:900}h1{margin:16px 0 12px;font-size:clamp(3rem,5vw,5.6rem);line-height:.88;letter-spacing:-.06em;text-transform:uppercase}.hero p,.card p,.side p,.footer p{line-height:1.65}.spray{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.spray span{padding:10px 14px;border-radius:999px;border:2px dashed rgba(255,255,255,.2);background:rgba(255,255,255,.05);font-weight:800}.side{display:grid;gap:14px}.card,.side article,.footer article{padding:18px;border-radius:24px;background:rgba(14,11,22,.72);border:2px solid var(--line)}.meter{height:12px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:12px}.meter span{display:block;height:100%;width:64%;background:linear-gradient(90deg,var(--pink),var(--orange),var(--lime))}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.kpi{padding:20px;border-radius:24px;background:rgba(255,255,255,.06);border:2px solid var(--line)}.kpi small{display:block;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}.kpi strong{display:block;margin-top:14px;font-size:2.2rem;color:var(--lime)}.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.section{padding:22px}.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}.tabs span{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);font-weight:800}.tabs .on{background:var(--lime);color:#111}.podium{display:grid;grid-template-columns:1.08fr .92fr .92fr;gap:12px}.podium article{padding:18px;border-radius:24px;min-height:180px;position:relative;overflow:hidden}.podium .one{min-height:260px;background:linear-gradient(160deg,#ff7f50,#ff4d9d 58%,#7a5cff)}.podium .two{background:linear-gradient(160deg,#5b7bff,#34b8ff 60%,#5cffeb)}.podium .three{background:linear-gradient(160deg,#1b2840,#2d425f 58%,#48689a)}.rank{display:inline-flex;padding:7px 12px;border-radius:999px;background:rgba(0,0,0,.22);font-weight:900}.podium h3{margin:12px 0 8px;font-size:1.8rem}.podium strong{font-size:2.2rem}.mini{display:grid;gap:12px;margin-top:14px}.mini article{display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;padding:16px;border-radius:20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14)}.num{width:42px;height:42px;display:grid;place-items:center;border-radius:14px;background:rgba(255,255,255,.12);font-weight:900}.footer{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}@media (max-width:1180px){.hero,.grid,.kpis,.podium,.footer{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="shell">
+<section class="panel hero">
+<div>
+<span class="eyebrow">spray season / lane takeover</span>
+<h1>갤 수영판을<br>벽면처럼 칠해버린<br>기록 보드</h1>
+<p>얌전한 기록실이 아니라, 오늘 제일 세게 물 갈라버린 사람이 누군지 바로 튀어나오게 만든 시안이다. 숫자는 진하게, 칭호는 스프레이 낙서처럼, 분위기는 체육관 뒤편 벽화처럼 간다.</p>
+<div class="spray"><span>오수완 streak</span><span>랭킹부터 본다</span><span>오늘의 물개 MVP</span></div>
+</div>
+<div class="side">
+<article><span class="eyebrow">gallery title unlocked</span><h2>갤 전체 칭호: 대형 파도</h2><p>다음 칭호 <b>바다 개방</b>까지 41km. 목표를 벽에 크게 뿌려놓는 느낌으로.</p><div class="meter"><span></span></div></article>
+<article><span class="eyebrow">this week mission</span><h2>이번 주는 출석으로 밀어붙인다</h2><p>“거리보다 출석, 기록보다 기세” 같은 시즌 카피를 위에 얹기 좋은 구조.</p></article>
+</div>
+</section>
+<section class="kpis">
+<article class="kpi"><small>갤 전체 운동횟수</small><strong>142회</strong></article>
+<article class="kpi"><small>갤 전체 총거리</small><strong>107.8km</strong></article>
+<article class="kpi"><small>갤 전체 총시간</small><strong>58시간 40분</strong></article>
+<article class="kpi"><small>참여 인원</small><strong>17명</strong></article>
+</section>
+<section class="grid">
+<section class="panel section">
+<span class="eyebrow">hall of splash</span><h2>지금 제일 크게 튀는 랭킹</h2>
+<div class="tabs"><span class="on">참여횟수</span><span>거리</span><span>시간</span><span>시간당 거리</span><span>성장</span></div>
+<div class="podium">
+<article class="one"><span class="rank">1위 / 레인 보스</span><h3>NTHNG</h3><strong>24회</strong><p>이번 시즌 출석을 그냥 밀어버리는 중. 칭호는 <b>레인 지배자</b>.</p></article>
+<article class="two"><span class="rank">2위</span><h3>WAVEKIM</h3><strong>18회</strong><p>묵직하게 따라붙는 파도형 러너.</p></article>
+<article class="three"><span class="rank">3위</span><h3>LANE7</h3><strong>16회</strong><p>거리를 꾸준히 찍는 안정형.</p></article>
+</div>
+<div class="mini">
+<article><span class="num">4</span><div><b>BLUECAP</b><br>장거리 레이서</div><strong>14회</strong></article>
+<article><span class="num">5</span><div><b>SEAFOX</b><br>물 적응 완료</div><strong>12회</strong></article>
+<article><span class="num">6</span><div><b>FREESTYLE</b><br>중거리 주자</div><strong>11회</strong></article>
+</div>
+</section>
+<aside class="panel section">
+<span class="eyebrow">spray titles</span><h2>낙서처럼 붙는 칭호</h2>
+<div class="mini">
+<article><span class="num">!</span><div><b>출석왕</b><br>50회 달성 시 네온 태그처럼 크게 붙는 이름.</div></article>
+<article><span class="num">!</span><div><b>백킬로 클럽</b><br>누적 거리 욕심을 강하게 자극하는 숫자형 칭호.</div></article>
+<article><span class="num">!</span><div><b>심해 체류자</b><br>누적 시간형. 조용하지만 묵직한 별명.</div></article>
+</div>
+</aside>
+</section>
+<section class="footer">
+<article class="card"><span class="eyebrow">growth</span><h2>떡상 중인 닉네임</h2><p>최근 28일 기준 성장률이 제일 큰 사람을 하단 카드에서 별도 조명.</p></article>
+<article class="card"><span class="eyebrow">profile</span><h2>개인 페이지는 전용 벽</h2><p>닉네임 검색 후 들어가면 내 칭호와 성장 곡선이 한 장에 펼쳐진다.</p></article>
+<article class="card"><span class="eyebrow">ops later</span><h2>운영 정보는 아래</h2><p>첫 화면은 운동량과 랭킹만, 검토는 맨 아래로 내린다.</p></article>
+</section>
+</main>
+</body>
+</html>
