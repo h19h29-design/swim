@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-17 12:07:39 KST",
+  "generated_at": "2026-04-05 04:05:35 KST",
   "reference_date": "2026-03-17",
   "dashboard_date_floor": "2026-03-01",
   "dashboard_window": {
@@ -109,7 +109,7 @@
             }
           }
         },
-        "generated_at": "2026-03-17 12:07:39 KST",
+        "generated_at": "2026-04-05 04:05:35 KST",
         "date_range": {
           "start": "2026-03-15",
           "end": "2026-03-15"
@@ -653,7 +653,7 @@
             }
           }
         },
-        "generated_at": "2026-03-17 12:07:39 KST",
+        "generated_at": "2026-04-05 04:05:35 KST",
         "date_range": {
           "start": "2026-03-14",
           "end": "2026-03-15"
@@ -1351,7 +1351,7 @@
             }
           }
         },
-        "generated_at": "2026-03-17 12:07:39 KST",
+        "generated_at": "2026-04-05 04:05:35 KST",
         "date_range": {
           "start": "2026-03-01",
           "end": "2026-03-16"
@@ -2472,7 +2472,7 @@
             }
           }
         },
-        "generated_at": "2026-03-17 12:07:39 KST",
+        "generated_at": "2026-04-05 04:05:35 KST",
         "date_range": {
           "start": "2026-03-17",
           "end": "2026-03-17"
@@ -2974,7 +2974,7 @@
             }
           }
         },
-        "generated_at": "2026-03-17 12:07:39 KST",
+        "generated_at": "2026-04-05 04:05:35 KST",
         "date_range": {
           "start": null,
           "end": null
@@ -3156,7 +3156,7 @@
             }
           }
         },
-        "generated_at": "2026-03-17 12:07:39 KST",
+        "generated_at": "2026-04-05 04:05:35 KST",
         "date_range": {
           "start": null,
           "end": null
@@ -3343,7 +3343,7 @@
             }
           }
         },
-        "generated_at": "2026-03-17 12:07:39 KST",
+        "generated_at": "2026-04-05 04:05:35 KST",
         "date_range": {
           "start": "2026-03-17",
           "end": "2026-03-17"
@@ -3777,7 +3777,7 @@
             }
           }
         },
-        "generated_at": "2026-03-17 12:07:39 KST",
+        "generated_at": "2026-04-05 04:05:35 KST",
         "date_range": {
           "start": null,
           "end": null
@@ -3959,7 +3959,7 @@
             }
           }
         },
-        "generated_at": "2026-03-17 12:07:39 KST",
+        "generated_at": "2026-04-05 04:05:35 KST",
         "date_range": {
           "start": null,
           "end": null
@@ -4141,7 +4141,7 @@
             }
           }
         },
-        "generated_at": "2026-03-17 12:07:39 KST",
+        "generated_at": "2026-04-05 04:05:35 KST",
         "date_range": {
           "start": null,
           "end": null
@@ -4328,7 +4328,7 @@
             }
           }
         },
-        "generated_at": "2026-03-17 12:07:39 KST",
+        "generated_at": "2026-04-05 04:05:35 KST",
         "date_range": {
           "start": "2026-03-16",
           "end": "2026-03-16"
@@ -4784,7 +4784,7 @@
             }
           }
         },
-        "generated_at": "2026-03-17 12:07:39 KST",
+        "generated_at": "2026-04-05 04:05:35 KST",
         "date_range": {
           "start": null,
           "end": null
@@ -4966,7 +4966,7 @@
             }
           }
         },
-        "generated_at": "2026-03-17 12:07:39 KST",
+        "generated_at": "2026-04-05 04:05:35 KST",
         "date_range": {
           "start": "2026-03-13",
           "end": "2026-03-13"
@@ -5515,7 +5515,7 @@
             }
           }
         },
-        "generated_at": "2026-03-17 12:07:39 KST",
+        "generated_at": "2026-04-05 04:05:35 KST",
         "date_range": {
           "start": "2026-03-12",
           "end": "2026-03-17"
@@ -6235,7 +6235,7 @@
             }
           }
         },
-        "generated_at": "2026-03-17 12:07:39 KST",
+        "generated_at": "2026-04-05 04:05:35 KST",
         "date_range": {
           "start": null,
           "end": null
@@ -6419,7 +6419,7 @@
             }
           }
         },
-        "generated_at": "2026-03-17 12:07:39 KST",
+        "generated_at": "2026-04-05 04:05:35 KST",
         "date_range": {
           "start": null,
           "end": null
@@ -6606,7 +6606,7 @@
             }
           }
         },
-        "generated_at": "2026-03-17 12:07:39 KST",
+        "generated_at": "2026-04-05 04:05:35 KST",
         "date_range": {
           "start": "2026-03-01",
           "end": "2026-03-08"
@@ -7243,7 +7243,7 @@
             }
           }
         },
-        "generated_at": "2026-03-17 12:07:39 KST",
+        "generated_at": "2026-04-05 04:05:35 KST",
         "date_range": {
           "start": "2026-03-10",
           "end": "2026-03-12"
@@ -7787,7 +7787,7 @@
             }
           }
         },
-        "generated_at": "2026-03-17 12:07:39 KST",
+        "generated_at": "2026-04-05 04:05:35 KST",
         "date_range": {
           "start": "2026-03-14",
           "end": "2026-03-16"
@@ -8578,7 +8578,7 @@
             }
           }
         },
-        "generated_at": "2026-03-17 12:07:39 KST",
+        "generated_at": "2026-04-05 04:05:35 KST",
         "date_range": {
           "start": "2026-03-10",
           "end": "2026-03-16"
@@ -9347,7 +9347,7 @@
             }
           }
         },
-        "generated_at": "2026-03-17 12:07:39 KST",
+        "generated_at": "2026-04-05 04:05:35 KST",
         "date_range": {
           "start": "2026-03-01",
           "end": "2026-03-16"
@@ -10353,7 +10353,7 @@
             }
           }
         },
-        "generated_at": "2026-03-17 12:07:39 KST",
+        "generated_at": "2026-04-05 04:05:35 KST",
         "date_range": {
           "start": null,
           "end": null
@@ -10535,7 +10535,7 @@
             }
           }
         },
-        "generated_at": "2026-03-17 12:07:39 KST",
+        "generated_at": "2026-04-05 04:05:35 KST",
         "date_range": {
           "start": null,
           "end": null
