@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-04-18 04:05:27 KST",
-  "reference_date": "2026-04-15",
+  "generated_at": "2026-04-18 16:13:02 KST",
+  "reference_date": "2026-04-16",
   "dashboard_date_floor": "2026-03-01",
   "dashboard_window": {
     "start": "2026-03-01",
-    "end": "2026-04-15"
+    "end": "2026-04-16"
   },
   "visible_date_range": {
     "start": "2026-03-01",
-    "end": "2026-04-15"
+    "end": "2026-04-16"
   },
   "product_mode": "core_only",
   "default_mode": "core_only",
   "supported_modes": [
     "core_only"
   ],
-  "source_record_count": 148,
-  "visible_record_count": 139,
-  "parsed_count": 60,
+  "source_record_count": 151,
+  "visible_record_count": 142,
+  "parsed_count": 63,
   "unparsed_count": 79,
-  "success_rate_pct": 43.17,
+  "success_rate_pct": 44.37,
   "failure_reason_counts": {
     "TITLE_FORMAT_INVALID": 3,
     "TITLE_FORMAT_MISSING": 76
@@ -71,6 +71,51 @@
     ]
   },
   "parsed_rows": [
+    {
+      "post_id": 18989,
+      "post_date": "2026-04-16",
+      "post_datetime": "2026-04-16 10:17:45",
+      "author": "근육키우기",
+      "title": "1125 / 50분 33초",
+      "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=18989&page=2",
+      "source": "title_format",
+      "score": 100,
+      "distance_m": 1125,
+      "total_time_text": "50분 33초",
+      "total_seconds": 3033,
+      "metric_bucket": "core",
+      "manual_override_decision": null
+    },
+    {
+      "post_id": 18985,
+      "post_date": "2026-04-16",
+      "post_datetime": "2026-04-16 07:01:56",
+      "author": "쭈삼",
+      "title": "2050/44:32",
+      "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=18985&page=2",
+      "source": "title_format",
+      "score": 100,
+      "distance_m": 2050,
+      "total_time_text": "44:32",
+      "total_seconds": 2672,
+      "metric_bucket": "core",
+      "manual_override_decision": null
+    },
+    {
+      "post_id": 18984,
+      "post_date": "2026-04-15",
+      "post_datetime": "2026-04-15 23:22:09",
+      "author": "매쾌협",
+      "title": "700 / 47:59",
+      "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=18984&page=2",
+      "source": "title_format",
+      "score": 100,
+      "distance_m": 700,
+      "total_time_text": "47:59",
+      "total_seconds": 2879,
+      "metric_bucket": "core",
+      "manual_override_decision": null
+    },
     {
       "post_id": 18982,
       "post_date": "2026-04-15",

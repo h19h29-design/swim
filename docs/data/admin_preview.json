@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-18 04:05:27 KST",
-  "reference_date": "2026-04-15",
+  "generated_at": "2026-04-18 16:13:03 KST",
+  "reference_date": "2026-04-16",
   "product_mode": "core_only",
   "source_paths": {
     "site_config": "data/admin/site_config.json",
@@ -358,19 +358,19 @@
       "tier": 6,
       "target_value": 100000,
       "target_value_text_ko": "100km",
-      "remaining_value": 8900,
-      "remaining_value_text_ko": "8.9km 남음",
-      "progress_ratio": 0.911
+      "remaining_value": 5025,
+      "remaining_value_text_ko": "5.0km 남음",
+      "progress_ratio": 0.9497
     },
     "progress": {
       "metric_key": "total_distance_m",
-      "current_value": 91100.0,
-      "current_value_text_ko": "91.1km",
+      "current_value": 94975.0,
+      "current_value_text_ko": "95.0km",
       "target_value": 100000,
       "target_value_text_ko": "100km",
-      "remaining_value": 8900,
-      "remaining_value_text_ko": "8.9km 남음",
-      "progress_ratio": 0.911,
+      "remaining_value": 5025,
+      "remaining_value_text_ko": "5.0km 남음",
+      "progress_ratio": 0.9497,
       "unlocked_badge_count": 5
     }
   },
@@ -433,6 +433,63 @@
       }
     },
     {
+      "author": "쭈삼",
+      "primary_title": {
+        "badge_id": "grw_06",
+        "category": "growth",
+        "name_ko": "시간 각성",
+        "short_label_ko": "+90분",
+        "description_ko": "최근 28일 누적 시간이 크게 늘었습니다.",
+        "threshold_type": "author_recent_growth_total_seconds",
+        "threshold_value": 5400,
+        "icon_key": "grw.base",
+        "tier": 6,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null,
+        "current_value": 7961,
+        "current_value_text_ko": "2시간 12분 41초",
+        "target_value": 5400,
+        "target_value_text_ko": "1시간 30분",
+        "remaining_value": 0,
+        "remaining_value_text_ko": "해금 완료",
+        "progress_ratio": 1.0,
+        "unlocked_at": "2026-04-16 07:01:56"
+      },
+      "unlocked_badge_count": 20,
+      "badge_counts_by_category": {
+        "attendance": 2,
+        "distance": 3,
+        "time": 1,
+        "efficiency": 5,
+        "growth": 6,
+        "season": 1,
+        "gallery": 0,
+        "fun": 2
+      },
+      "next_badge_progress": {
+        "badge_id": "fun_02",
+        "category": "fun",
+        "name_ko": "물개 왕복자",
+        "short_label_ko": "한 번에 3000m",
+        "description_ko": "한 번의 기록에서 3000m를 찍었습니다.",
+        "threshold_type": "author_single_swim_distance_m",
+        "threshold_value": 3000,
+        "icon_key": "fun.base",
+        "tier": 2,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null,
+        "current_value": 2625,
+        "current_value_text_ko": "2.6km",
+        "target_value": 3000,
+        "target_value_text_ko": "3km",
+        "remaining_value": 375,
+        "remaining_value_text_ko": "375m 남음",
+        "progress_ratio": 0.875
+      }
+    },
+    {
       "author": "청귤",
       "primary_title": {
         "badge_id": "fun_05",
@@ -490,6 +547,63 @@
       }
     },
     {
+      "author": "근육키우기",
+      "primary_title": {
+        "badge_id": "grw_05",
+        "category": "growth",
+        "name_ko": "거리 각성",
+        "short_label_ko": "+1500m",
+        "description_ko": "최근 28일 거리가 확실하게 늘어났습니다.",
+        "threshold_type": "author_recent_growth_distance_m",
+        "threshold_value": 1500,
+        "icon_key": "grw.base",
+        "tier": 5,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null,
+        "current_value": 2450,
+        "current_value_text_ko": "2.5km",
+        "target_value": 1500,
+        "target_value_text_ko": "1.5km",
+        "remaining_value": 0,
+        "remaining_value_text_ko": "해금 완료",
+        "progress_ratio": 1.0,
+        "unlocked_at": "2026-04-16 10:17:45"
+      },
+      "unlocked_badge_count": 15,
+      "badge_counts_by_category": {
+        "attendance": 2,
+        "distance": 2,
+        "time": 2,
+        "efficiency": 3,
+        "growth": 4,
+        "season": 2,
+        "gallery": 0,
+        "fun": 0
+      },
+      "next_badge_progress": {
+        "badge_id": "eff_04",
+        "category": "efficiency",
+        "name_ko": "수중 엔진",
+        "short_label_ko": "1300m/h",
+        "description_ko": "시간당 1300m로 강한 추진력을 보여줍니다.",
+        "threshold_type": "author_distance_per_hour_m",
+        "threshold_value": 1300,
+        "icon_key": "eff.base",
+        "tier": 4,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null,
+        "current_value": 1257.47,
+        "current_value_text_ko": "1257m/h",
+        "target_value": 1300,
+        "target_value_text_ko": "1300m/h",
+        "remaining_value": 42.53,
+        "remaining_value_text_ko": "43m/h 남음",
+        "progress_ratio": 0.9673
+      }
+    },
+    {
       "author": "알프스",
       "primary_title": {
         "badge_id": "eff_04",
@@ -544,63 +658,6 @@
         "remaining_value": 402,
         "remaining_value_text_ko": "6분 42초 남음",
         "progress_ratio": 0.9814
-      }
-    },
-    {
-      "author": "쭈삼",
-      "primary_title": {
-        "badge_id": "grw_05",
-        "category": "growth",
-        "name_ko": "거리 각성",
-        "short_label_ko": "+1500m",
-        "description_ko": "최근 28일 거리가 확실하게 늘어났습니다.",
-        "threshold_type": "author_recent_growth_distance_m",
-        "threshold_value": 1500,
-        "icon_key": "grw.base",
-        "tier": 5,
-        "is_primary_title_candidate": true,
-        "is_hidden": false,
-        "season_tag": null,
-        "current_value": 4625,
-        "current_value_text_ko": "4.6km",
-        "target_value": 1500,
-        "target_value_text_ko": "1.5km",
-        "remaining_value": 0,
-        "remaining_value_text_ko": "해금 완료",
-        "progress_ratio": 1.0,
-        "unlocked_at": "2026-04-13 07:02:40"
-      },
-      "unlocked_badge_count": 15,
-      "badge_counts_by_category": {
-        "attendance": 1,
-        "distance": 2,
-        "time": 1,
-        "efficiency": 5,
-        "growth": 4,
-        "season": 1,
-        "gallery": 0,
-        "fun": 1
-      },
-      "next_badge_progress": {
-        "badge_id": "grw_06",
-        "category": "growth",
-        "name_ko": "시간 각성",
-        "short_label_ko": "+90분",
-        "description_ko": "최근 28일 누적 시간이 크게 늘었습니다.",
-        "threshold_type": "author_recent_growth_total_seconds",
-        "threshold_value": 5400,
-        "icon_key": "grw.base",
-        "tier": 6,
-        "is_primary_title_candidate": true,
-        "is_hidden": false,
-        "season_tag": null,
-        "current_value": 5289,
-        "current_value_text_ko": "1시간 28분 9초",
-        "target_value": 5400,
-        "target_value_text_ko": "1시간 30분",
-        "remaining_value": 111,
-        "remaining_value_text_ko": "1분 51초 남음",
-        "progress_ratio": 0.9794
       }
     },
     {
@@ -772,63 +829,6 @@
         "remaining_value": 1000,
         "remaining_value_text_ko": "1km 남음",
         "progress_ratio": 0.8
-      }
-    },
-    {
-      "author": "근육키우기",
-      "primary_title": {
-        "badge_id": "eff_03",
-        "category": "efficiency",
-        "name_ko": "레인 스프린터",
-        "short_label_ko": "1100m/h",
-        "description_ko": "시간당 1100m를 넘기면 효율 레벨이 달라집니다.",
-        "threshold_type": "author_distance_per_hour_m",
-        "threshold_value": 1100,
-        "icon_key": "eff.base",
-        "tier": 3,
-        "is_primary_title_candidate": false,
-        "is_hidden": false,
-        "season_tag": null,
-        "current_value": 1227.38,
-        "current_value_text_ko": "1227m/h",
-        "target_value": 1100,
-        "target_value_text_ko": "1100m/h",
-        "remaining_value": 0,
-        "remaining_value_text_ko": "해금 완료",
-        "progress_ratio": 1.0,
-        "unlocked_at": "2026-04-15 15:56:45"
-      },
-      "unlocked_badge_count": 11,
-      "badge_counts_by_category": {
-        "attendance": 2,
-        "distance": 1,
-        "time": 1,
-        "efficiency": 3,
-        "growth": 2,
-        "season": 2,
-        "gallery": 0,
-        "fun": 0
-      },
-      "next_badge_progress": {
-        "badge_id": "eff_04",
-        "category": "efficiency",
-        "name_ko": "수중 엔진",
-        "short_label_ko": "1300m/h",
-        "description_ko": "시간당 1300m로 강한 추진력을 보여줍니다.",
-        "threshold_type": "author_distance_per_hour_m",
-        "threshold_value": 1300,
-        "icon_key": "eff.base",
-        "tier": 4,
-        "is_primary_title_candidate": false,
-        "is_hidden": false,
-        "season_tag": null,
-        "current_value": 1227.38,
-        "current_value_text_ko": "1227m/h",
-        "target_value": 1300,
-        "target_value_text_ko": "1300m/h",
-        "remaining_value": 72.62,
-        "remaining_value_text_ko": "73m/h 남음",
-        "progress_ratio": 0.9441
       }
     }
   ]
