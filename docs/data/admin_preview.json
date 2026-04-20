@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-20 17:13:22 KST",
-  "reference_date": "2026-04-18",
+  "generated_at": "2026-04-21 04:10:49 KST",
+  "reference_date": "2026-04-19",
   "product_mode": "core_only",
   "source_paths": {
     "site_config": "data/admin/site_config.json",
@@ -358,19 +358,19 @@
       "tier": 7,
       "target_value": 200000,
       "target_value_text_ko": "200km",
-      "remaining_value": 94025,
-      "remaining_value_text_ko": "94.0km 남음",
-      "progress_ratio": 0.5299
+      "remaining_value": 91075,
+      "remaining_value_text_ko": "91.1km 남음",
+      "progress_ratio": 0.5446
     },
     "progress": {
       "metric_key": "total_distance_m",
-      "current_value": 105975.0,
-      "current_value_text_ko": "106.0km",
+      "current_value": 108925.0,
+      "current_value_text_ko": "108.9km",
       "target_value": 200000,
       "target_value_text_ko": "200km",
-      "remaining_value": 94025,
-      "remaining_value_text_ko": "94.0km 남음",
-      "progress_ratio": 0.5299,
+      "remaining_value": 91075,
+      "remaining_value_text_ko": "91.1km 남음",
+      "progress_ratio": 0.5446,
       "unlocked_badge_count": 6
     }
   },
@@ -537,13 +537,13 @@
         "is_primary_title_candidate": false,
         "is_hidden": false,
         "season_tag": null,
-        "current_value": 1218.26,
-        "current_value_text_ko": "1218m/h",
+        "current_value": 1227.71,
+        "current_value_text_ko": "1228m/h",
         "target_value": 1300,
         "target_value_text_ko": "1300m/h",
-        "remaining_value": 81.74,
-        "remaining_value_text_ko": "82m/h 남음",
-        "progress_ratio": 0.9371
+        "remaining_value": 72.29,
+        "remaining_value_text_ko": "72m/h 남음",
+        "progress_ratio": 0.9444
       }
     },
     {
@@ -601,6 +601,63 @@
         "remaining_value": 375,
         "remaining_value_text_ko": "375m 남음",
         "progress_ratio": 0.875
+      }
+    },
+    {
+      "author": "SㅇS",
+      "primary_title": {
+        "badge_id": "grw_06",
+        "category": "growth",
+        "name_ko": "시간 각성",
+        "short_label_ko": "+90분",
+        "description_ko": "최근 28일 누적 시간이 크게 늘었습니다.",
+        "threshold_type": "author_recent_growth_total_seconds",
+        "threshold_value": 5400,
+        "icon_key": "grw.base",
+        "tier": 6,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null,
+        "current_value": 9720,
+        "current_value_text_ko": "2시간 42분",
+        "target_value": 5400,
+        "target_value_text_ko": "1시간 30분",
+        "remaining_value": 0,
+        "remaining_value_text_ko": "해금 완료",
+        "progress_ratio": 1.0,
+        "unlocked_at": "2026-04-18 16:41:18"
+      },
+      "unlocked_badge_count": 16,
+      "badge_counts_by_category": {
+        "attendance": 2,
+        "distance": 2,
+        "time": 2,
+        "efficiency": 2,
+        "growth": 5,
+        "season": 2,
+        "gallery": 0,
+        "fun": 1
+      },
+      "next_badge_progress": {
+        "badge_id": "dst_03",
+        "category": "distance",
+        "name_ko": "중거리 주자",
+        "short_label_ko": "5km",
+        "description_ko": "누적 5km로 중거리 감각이 붙습니다.",
+        "threshold_type": "author_total_distance_m",
+        "threshold_value": 5000,
+        "icon_key": "dst.base",
+        "tier": 3,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null,
+        "current_value": 4700,
+        "current_value_text_ko": "4.7km",
+        "target_value": 5000,
+        "target_value_text_ko": "5km",
+        "remaining_value": 300,
+        "remaining_value_text_ko": "300m 남음",
+        "progress_ratio": 0.94
       }
     },
     {
@@ -772,63 +829,6 @@
         "remaining_value": 42.53,
         "remaining_value_text_ko": "43m/h 남음",
         "progress_ratio": 0.9673
-      }
-    },
-    {
-      "author": "SㅇS",
-      "primary_title": {
-        "badge_id": "grw_03",
-        "category": "growth",
-        "name_ko": "호흡이 붙음",
-        "short_label_ko": "+30분",
-        "description_ko": "최근 28일 누적 시간이 30분 이상 늘었습니다.",
-        "threshold_type": "author_recent_growth_total_seconds",
-        "threshold_value": 1800,
-        "icon_key": "grw.base",
-        "tier": 3,
-        "is_primary_title_candidate": true,
-        "is_hidden": false,
-        "season_tag": null,
-        "current_value": 4320,
-        "current_value_text_ko": "1시간 12분",
-        "target_value": 1800,
-        "target_value_text_ko": "30분",
-        "remaining_value": 0,
-        "remaining_value_text_ko": "해금 완료",
-        "progress_ratio": 1.0,
-        "unlocked_at": "2026-03-17 11:47:14"
-      },
-      "unlocked_badge_count": 14,
-      "badge_counts_by_category": {
-        "attendance": 2,
-        "distance": 2,
-        "time": 2,
-        "efficiency": 2,
-        "growth": 3,
-        "season": 2,
-        "gallery": 0,
-        "fun": 1
-      },
-      "next_badge_progress": {
-        "badge_id": "eff_03",
-        "category": "efficiency",
-        "name_ko": "레인 스프린터",
-        "short_label_ko": "1100m/h",
-        "description_ko": "시간당 1100m를 넘기면 효율 레벨이 달라집니다.",
-        "threshold_type": "author_distance_per_hour_m",
-        "threshold_value": 1100,
-        "icon_key": "eff.base",
-        "tier": 3,
-        "is_primary_title_candidate": false,
-        "is_hidden": false,
-        "season_tag": null,
-        "current_value": 951.92,
-        "current_value_text_ko": "952m/h",
-        "target_value": 1100,
-        "target_value_text_ko": "1100m/h",
-        "remaining_value": 148.08,
-        "remaining_value_text_ko": "148m/h 남음",
-        "progress_ratio": 0.8654
       }
     }
   ]

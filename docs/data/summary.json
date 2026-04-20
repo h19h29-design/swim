@@ -1,35 +1,35 @@
 {
-  "generated_at": "2026-04-20 17:13:22 KST",
-  "reference_date": "2026-04-18",
+  "generated_at": "2026-04-21 04:10:49 KST",
+  "reference_date": "2026-04-19",
   "dashboard_date_floor": "2026-03-01",
   "dashboard_window": {
     "start": "2026-03-01",
-    "end": "2026-04-18"
+    "end": "2026-04-19"
   },
   "visible_date_range": {
     "start": "2026-03-01",
-    "end": "2026-04-18"
+    "end": "2026-04-19"
   },
   "product_mode": "core_only",
   "default_mode": "core_only",
   "supported_modes": [
     "core_only"
   ],
-  "source_record_count": 161,
-  "visible_record_count": 152,
+  "source_record_count": 163,
+  "visible_record_count": 154,
   "summary": {
     "mode": "core_only",
-    "record_count": 72,
-    "total_record_count": 152,
-    "source_record_count": 161,
+    "record_count": 74,
+    "total_record_count": 154,
+    "source_record_count": 163,
     "dashboard_date_floor": "2026-03-01",
     "dashboard_window": {
       "start": "2026-03-01",
-      "end": "2026-04-18"
+      "end": "2026-04-19"
     },
     "visible_date_range": {
       "start": "2026-03-01",
-      "end": "2026-04-18"
+      "end": "2026-04-19"
     },
     "excluded_record_count": 80,
     "excluded_reason_counts": {
@@ -44,73 +44,73 @@
     "warning_code_counts": {},
     "source_counts": {
       "none": 80,
-      "title_format": 72
+      "title_format": 74
     },
     "manual_override_counts": {},
-    "swim_count": 72,
-    "total_distance_m": 105975.0,
-    "total_seconds": 303655,
-    "total_duration_min": 5060.92,
-    "distance_per_hour_m": 1256.39,
+    "swim_count": 74,
+    "total_distance_m": 108925.0,
+    "total_seconds": 313261,
+    "total_duration_min": 5221.02,
+    "distance_per_hour_m": 1251.77,
     "active_authors": 14,
     "included_metric_bucket_counts": {
-      "core": 72
+      "core": 74
     },
     "included_source_counts": {
-      "title_format": 72
+      "title_format": 74
     },
     "has_zero_visible_included_rows": false,
-    "reference_date": "2026-04-18",
+    "reference_date": "2026-04-19",
     "growth": {
-      "reference_date": "2026-04-18",
+      "reference_date": "2026-04-19",
       "window_days": 28,
       "dashboard_date_floor": "2026-03-01",
       "recent_window": {
-        "start": "2026-03-22",
-        "end": "2026-04-18",
-        "nominal_start": "2026-03-22",
-        "nominal_end": "2026-04-18",
+        "start": "2026-03-23",
+        "end": "2026-04-19",
+        "nominal_start": "2026-03-23",
+        "nominal_end": "2026-04-19",
         "nominal_day_count": 28,
         "visible_day_count": 28,
         "truncated_by_floor": false
       },
       "previous_window": {
         "start": "2026-03-01",
-        "end": "2026-03-21",
-        "nominal_start": "2026-02-22",
-        "nominal_end": "2026-03-21",
+        "end": "2026-03-22",
+        "nominal_start": "2026-02-23",
+        "nominal_end": "2026-03-22",
         "nominal_day_count": 28,
-        "visible_day_count": 21,
+        "visible_day_count": 22,
         "truncated_by_floor": true
       },
       "metrics": {
         "swim_count": {
-          "recent_value": 28,
+          "recent_value": 30,
           "previous_value": 44,
-          "delta_value": -16.0,
-          "pct_change": -36.36,
+          "delta_value": -14.0,
+          "pct_change": -31.82,
           "pct_change_status": "standard"
         },
         "distance_m": {
-          "recent_value": 37150.0,
+          "recent_value": 40100.0,
           "previous_value": 68825.0,
-          "delta_value": -31675.0,
-          "pct_change": -46.02,
+          "delta_value": -28725.0,
+          "pct_change": -41.74,
           "pct_change_status": "standard"
         },
         "total_seconds": {
-          "recent_value": 98070,
+          "recent_value": 107676,
           "previous_value": 205585,
-          "delta_value": -107515.0,
-          "pct_change": -52.3,
+          "delta_value": -97909.0,
+          "pct_change": -47.62,
           "pct_change_status": "standard"
         }
       }
     },
-    "generated_at": "2026-04-20 17:13:22 KST",
+    "generated_at": "2026-04-21 04:10:49 KST",
     "date_range": {
       "start": "2026-03-01",
-      "end": "2026-04-18"
+      "end": "2026-04-19"
     }
   },
   "gallery": {
@@ -132,19 +132,19 @@
       "tier": 7,
       "target_value": 200000,
       "target_value_text_ko": "200km",
-      "remaining_value": 94025,
-      "remaining_value_text_ko": "94.0km 남음",
-      "progress_ratio": 0.5299
+      "remaining_value": 91075,
+      "remaining_value_text_ko": "91.1km 남음",
+      "progress_ratio": 0.5446
     },
     "progress": {
       "metric_key": "total_distance_m",
-      "current_value": 105975.0,
-      "current_value_text_ko": "106.0km",
+      "current_value": 108925.0,
+      "current_value_text_ko": "108.9km",
       "target_value": 200000,
       "target_value_text_ko": "200km",
-      "remaining_value": 94025,
-      "remaining_value_text_ko": "94.0km 남음",
-      "progress_ratio": 0.5299,
+      "remaining_value": 91075,
+      "remaining_value_text_ko": "91.1km 남음",
+      "progress_ratio": 0.5446,
       "unlocked_badge_count": 6
     },
     "unlocked_badges": [
@@ -283,11 +283,31 @@
         "unlocked_at": "2026-03-01 13:28:07"
       }
     ],
-    "metric_value": 105975.0,
-    "metric_value_text_ko": "106.0km",
-    "reference_date": "2026-04-18"
+    "metric_value": 108925.0,
+    "metric_value_text_ko": "108.9km",
+    "reference_date": "2026-04-19"
   },
   "recent_unlocks": [
+    {
+      "scope": "author",
+      "author": "SㅇS",
+      "badge_id": "grw_06",
+      "category": "growth",
+      "name_ko": "시간 각성",
+      "short_label_ko": "+90분",
+      "icon_key": "grw.base",
+      "unlocked_at": "2026-04-18 16:41:18"
+    },
+    {
+      "scope": "author",
+      "author": "SㅇS",
+      "badge_id": "grw_05",
+      "category": "growth",
+      "name_ko": "거리 각성",
+      "short_label_ko": "+1500m",
+      "icon_key": "grw.base",
+      "unlocked_at": "2026-04-18 16:41:18"
+    },
     {
       "scope": "author",
       "author": "청귤",
@@ -388,26 +408,6 @@
       "short_label_ko": "10km",
       "icon_key": "dst.base",
       "unlocked_at": "2026-04-16 16:18:15"
-    },
-    {
-      "scope": "author",
-      "author": "SㅇS",
-      "badge_id": "tim_02",
-      "category": "time",
-      "name_ko": "물 적응 완료",
-      "short_label_ko": "3시간",
-      "icon_key": "tim.base",
-      "unlocked_at": "2026-04-16 12:01:44"
-    },
-    {
-      "scope": "author",
-      "author": "SㅇS",
-      "badge_id": "fun_01",
-      "category": "fun",
-      "name_ko": "오늘 길었다",
-      "short_label_ko": "한 번에 1500m",
-      "icon_key": "fun.base",
-      "unlocked_at": "2026-04-16 12:01:44"
     }
   ],
   "ops": {
@@ -424,7 +424,7 @@
     "warning_code_counts": {},
     "source_counts": {
       "none": 80,
-      "title_format": 72
+      "title_format": 74
     },
     "manual_override_counts": {}
   },
