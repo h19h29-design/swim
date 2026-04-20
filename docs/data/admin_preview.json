@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-20 11:52:12 KST",
-  "reference_date": "2026-04-17",
+  "generated_at": "2026-04-20 17:13:22 KST",
+  "reference_date": "2026-04-18",
   "product_mode": "core_only",
   "source_paths": {
     "site_config": "data/admin/site_config.json",
@@ -358,19 +358,19 @@
       "tier": 7,
       "target_value": 200000,
       "target_value_text_ko": "200km",
-      "remaining_value": 97925,
-      "remaining_value_text_ko": "97.9km 남음",
-      "progress_ratio": 0.5104
+      "remaining_value": 94025,
+      "remaining_value_text_ko": "94.0km 남음",
+      "progress_ratio": 0.5299
     },
     "progress": {
       "metric_key": "total_distance_m",
-      "current_value": 102075.0,
-      "current_value_text_ko": "102.1km",
+      "current_value": 105975.0,
+      "current_value_text_ko": "106.0km",
       "target_value": 200000,
       "target_value_text_ko": "200km",
-      "remaining_value": 97925,
-      "remaining_value_text_ko": "97.9km 남음",
-      "progress_ratio": 0.5104,
+      "remaining_value": 94025,
+      "remaining_value_text_ko": "94.0km 남음",
+      "progress_ratio": 0.5299,
       "unlocked_badge_count": 6
     }
   },
@@ -390,8 +390,8 @@
         "is_primary_title_candidate": true,
         "is_hidden": false,
         "season_tag": null,
-        "current_value": 30925,
-        "current_value_text_ko": "30.9km",
+        "current_value": 33975,
+        "current_value_text_ko": "34.0km",
         "target_value": 25000,
         "target_value_text_ko": "25km",
         "remaining_value": 0,
@@ -423,13 +423,13 @@
         "is_primary_title_candidate": false,
         "is_hidden": false,
         "season_tag": null,
-        "current_value": 1122.5,
-        "current_value_text_ko": "1122m/h",
+        "current_value": 1124.38,
+        "current_value_text_ko": "1124m/h",
         "target_value": 1300,
         "target_value_text_ko": "1300m/h",
-        "remaining_value": 177.5,
-        "remaining_value_text_ko": "178m/h 남음",
-        "progress_ratio": 0.8635
+        "remaining_value": 175.62,
+        "remaining_value_text_ko": "176m/h 남음",
+        "progress_ratio": 0.8649
       }
     },
     {
@@ -490,6 +490,63 @@
       }
     },
     {
+      "author": "청귤",
+      "primary_title": {
+        "badge_id": "fun_05",
+        "category": "fun",
+        "name_ko": "심야 수영부",
+        "short_label_ko": "밤 2회",
+        "description_ko": "밤 9시 이후 기록이 두 번 이상입니다.",
+        "threshold_type": "author_night_owl_swim_count",
+        "threshold_value": 2,
+        "icon_key": "fun.base",
+        "tier": 5,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null,
+        "current_value": 7,
+        "current_value_text_ko": "7회",
+        "target_value": 2,
+        "target_value_text_ko": "2회",
+        "remaining_value": 0,
+        "remaining_value_text_ko": "해금 완료",
+        "progress_ratio": 1.0,
+        "unlocked_at": "2026-03-04 22:39:36"
+      },
+      "unlocked_badge_count": 21,
+      "badge_counts_by_category": {
+        "attendance": 4,
+        "distance": 4,
+        "time": 4,
+        "efficiency": 3,
+        "growth": 0,
+        "season": 2,
+        "gallery": 0,
+        "fun": 4
+      },
+      "next_badge_progress": {
+        "badge_id": "eff_04",
+        "category": "efficiency",
+        "name_ko": "수중 엔진",
+        "short_label_ko": "1300m/h",
+        "description_ko": "시간당 1300m로 강한 추진력을 보여줍니다.",
+        "threshold_type": "author_distance_per_hour_m",
+        "threshold_value": 1300,
+        "icon_key": "eff.base",
+        "tier": 4,
+        "is_primary_title_candidate": false,
+        "is_hidden": false,
+        "season_tag": null,
+        "current_value": 1218.26,
+        "current_value_text_ko": "1218m/h",
+        "target_value": 1300,
+        "target_value_text_ko": "1300m/h",
+        "remaining_value": 81.74,
+        "remaining_value_text_ko": "82m/h 남음",
+        "progress_ratio": 0.9371
+      }
+    },
+    {
       "author": "쭈삼",
       "primary_title": {
         "badge_id": "grw_06",
@@ -544,63 +601,6 @@
         "remaining_value": 375,
         "remaining_value_text_ko": "375m 남음",
         "progress_ratio": 0.875
-      }
-    },
-    {
-      "author": "청귤",
-      "primary_title": {
-        "badge_id": "fun_05",
-        "category": "fun",
-        "name_ko": "심야 수영부",
-        "short_label_ko": "밤 2회",
-        "description_ko": "밤 9시 이후 기록이 두 번 이상입니다.",
-        "threshold_type": "author_night_owl_swim_count",
-        "threshold_value": 2,
-        "icon_key": "fun.base",
-        "tier": 5,
-        "is_primary_title_candidate": false,
-        "is_hidden": false,
-        "season_tag": null,
-        "current_value": 6,
-        "current_value_text_ko": "6회",
-        "target_value": 2,
-        "target_value_text_ko": "2회",
-        "remaining_value": 0,
-        "remaining_value_text_ko": "해금 완료",
-        "progress_ratio": 1.0,
-        "unlocked_at": "2026-03-04 22:39:36"
-      },
-      "unlocked_badge_count": 20,
-      "badge_counts_by_category": {
-        "attendance": 4,
-        "distance": 4,
-        "time": 3,
-        "efficiency": 3,
-        "growth": 0,
-        "season": 2,
-        "gallery": 0,
-        "fun": 4
-      },
-      "next_badge_progress": {
-        "badge_id": "tim_04",
-        "category": "time",
-        "name_ko": "장시간 생존자",
-        "short_label_ko": "12시간",
-        "description_ko": "누적 12시간으로 장시간 루틴에 들어갑니다.",
-        "threshold_type": "author_total_seconds",
-        "threshold_value": 43200,
-        "icon_key": "tim.base",
-        "tier": 4,
-        "is_primary_title_candidate": true,
-        "is_hidden": false,
-        "season_tag": null,
-        "current_value": 41366,
-        "current_value_text_ko": "11시간 29분 26초",
-        "target_value": 43200,
-        "target_value_text_ko": "12시간 0분",
-        "remaining_value": 1834,
-        "remaining_value_text_ko": "30분 34초 남음",
-        "progress_ratio": 0.9575
       }
     },
     {
