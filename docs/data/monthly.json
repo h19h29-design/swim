@@ -13,14 +13,14 @@
   },
   {
     "month": "2026-04",
-    "swim_count": 19,
-    "total_distance_m": 26150.0,
-    "total_seconds": 61706,
-    "total_duration_min": 1028.43,
-    "distance_per_hour_m": 1525.62,
+    "swim_count": 26,
+    "total_distance_m": 33250.0,
+    "total_seconds": 85806,
+    "total_duration_min": 1430.1,
+    "distance_per_hour_m": 1395.01,
     "active_authors": 10,
     "metric_bucket_counts": {
-      "core": 19
+      "core": 26
     }
   }
 ]

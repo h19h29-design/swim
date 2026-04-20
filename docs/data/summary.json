@@ -1,151 +1,151 @@
 {
-  "generated_at": "2026-04-18 16:13:02 KST",
-  "reference_date": "2026-04-16",
+  "generated_at": "2026-04-20 11:52:12 KST",
+  "reference_date": "2026-04-17",
   "dashboard_date_floor": "2026-03-01",
   "dashboard_window": {
     "start": "2026-03-01",
-    "end": "2026-04-16"
+    "end": "2026-04-17"
   },
   "visible_date_range": {
     "start": "2026-03-01",
-    "end": "2026-04-16"
+    "end": "2026-04-17"
   },
   "product_mode": "core_only",
   "default_mode": "core_only",
   "supported_modes": [
     "core_only"
   ],
-  "source_record_count": 151,
-  "visible_record_count": 142,
+  "source_record_count": 159,
+  "visible_record_count": 150,
   "summary": {
     "mode": "core_only",
-    "record_count": 63,
-    "total_record_count": 142,
-    "source_record_count": 151,
+    "record_count": 70,
+    "total_record_count": 150,
+    "source_record_count": 159,
     "dashboard_date_floor": "2026-03-01",
     "dashboard_window": {
       "start": "2026-03-01",
-      "end": "2026-04-16"
+      "end": "2026-04-17"
     },
     "visible_date_range": {
       "start": "2026-03-01",
-      "end": "2026-04-16"
+      "end": "2026-04-17"
     },
-    "excluded_record_count": 79,
+    "excluded_record_count": 80,
     "excluded_reason_counts": {
       "TITLE_FORMAT_INVALID": 3,
-      "TITLE_FORMAT_MISSING": 76
+      "TITLE_FORMAT_MISSING": 77
     },
-    "review_queue_count": 79,
+    "review_queue_count": 80,
     "review_reason_counts": {
       "TITLE_FORMAT_INVALID": 3,
-      "TITLE_FORMAT_MISSING": 76
+      "TITLE_FORMAT_MISSING": 77
     },
     "warning_code_counts": {},
     "source_counts": {
-      "none": 79,
-      "title_format": 63
+      "none": 80,
+      "title_format": 70
     },
     "manual_override_counts": {},
-    "swim_count": 63,
-    "total_distance_m": 94975.0,
-    "total_seconds": 267291,
-    "total_duration_min": 4454.85,
-    "distance_per_hour_m": 1279.17,
+    "swim_count": 70,
+    "total_distance_m": 102075.0,
+    "total_seconds": 291391,
+    "total_duration_min": 4856.52,
+    "distance_per_hour_m": 1261.09,
     "active_authors": 14,
     "included_metric_bucket_counts": {
-      "core": 63
+      "core": 70
     },
     "included_source_counts": {
-      "title_format": 63
+      "title_format": 70
     },
     "has_zero_visible_included_rows": false,
-    "reference_date": "2026-04-16",
+    "reference_date": "2026-04-17",
     "growth": {
-      "reference_date": "2026-04-16",
+      "reference_date": "2026-04-17",
       "window_days": 28,
       "dashboard_date_floor": "2026-03-01",
       "recent_window": {
-        "start": "2026-03-20",
-        "end": "2026-04-16",
-        "nominal_start": "2026-03-20",
-        "nominal_end": "2026-04-16",
+        "start": "2026-03-21",
+        "end": "2026-04-17",
+        "nominal_start": "2026-03-21",
+        "nominal_end": "2026-04-17",
         "nominal_day_count": 28,
         "visible_day_count": 28,
         "truncated_by_floor": false
       },
       "previous_window": {
         "start": "2026-03-01",
-        "end": "2026-03-19",
-        "nominal_start": "2026-02-20",
-        "nominal_end": "2026-03-19",
+        "end": "2026-03-20",
+        "nominal_start": "2026-02-21",
+        "nominal_end": "2026-03-20",
         "nominal_day_count": 28,
-        "visible_day_count": 19,
+        "visible_day_count": 20,
         "truncated_by_floor": true
       },
       "metrics": {
         "swim_count": {
-          "recent_value": 19,
+          "recent_value": 26,
           "previous_value": 44,
-          "delta_value": -25.0,
-          "pct_change": -56.82,
+          "delta_value": -18.0,
+          "pct_change": -40.91,
           "pct_change_status": "standard"
         },
         "distance_m": {
-          "recent_value": 26150.0,
+          "recent_value": 33250.0,
           "previous_value": 68825.0,
-          "delta_value": -42675.0,
-          "pct_change": -62.01,
+          "delta_value": -35575.0,
+          "pct_change": -51.69,
           "pct_change_status": "standard"
         },
         "total_seconds": {
-          "recent_value": 61706,
+          "recent_value": 85806,
           "previous_value": 205585,
-          "delta_value": -143879.0,
-          "pct_change": -69.99,
+          "delta_value": -119779.0,
+          "pct_change": -58.26,
           "pct_change_status": "standard"
         }
       }
     },
-    "generated_at": "2026-04-18 16:13:02 KST",
+    "generated_at": "2026-04-20 11:52:12 KST",
     "date_range": {
       "start": "2026-03-01",
-      "end": "2026-04-16"
+      "end": "2026-04-17"
     }
   },
   "gallery": {
     "current_title": {
-      "badge_id": "gal_05",
-      "name_ko": "물결 전시",
-      "short_label_ko": "50km",
-      "description_ko": "갤 전체 누적 거리 50km로 물결 전시가 시작됩니다.",
-      "icon_key": "gal.base",
-      "tier": 5,
-      "unlocked_at": "2026-03-15 14:08:06"
-    },
-    "next_title_target": {
       "badge_id": "gal_06",
       "name_ko": "원양 진출",
       "short_label_ko": "100km",
       "description_ko": "갤 전체 누적 거리 100km를 넘기며 원양 단계에 들어갑니다.",
       "icon_key": "gal.base",
       "tier": 6,
-      "target_value": 100000,
-      "target_value_text_ko": "100km",
-      "remaining_value": 5025,
-      "remaining_value_text_ko": "5.0km 남음",
-      "progress_ratio": 0.9497
+      "unlocked_at": "2026-04-17 07:54:09"
+    },
+    "next_title_target": {
+      "badge_id": "gal_07",
+      "name_ko": "대양 정복",
+      "short_label_ko": "200km",
+      "description_ko": "갤 전체 누적 거리 200km를 채웠습니다.",
+      "icon_key": "gal.base",
+      "tier": 7,
+      "target_value": 200000,
+      "target_value_text_ko": "200km",
+      "remaining_value": 97925,
+      "remaining_value_text_ko": "97.9km 남음",
+      "progress_ratio": 0.5104
     },
     "progress": {
       "metric_key": "total_distance_m",
-      "current_value": 94975.0,
-      "current_value_text_ko": "95.0km",
-      "target_value": 100000,
-      "target_value_text_ko": "100km",
-      "remaining_value": 5025,
-      "remaining_value_text_ko": "5.0km 남음",
-      "progress_ratio": 0.9497,
-      "unlocked_badge_count": 5
+      "current_value": 102075.0,
+      "current_value_text_ko": "102.1km",
+      "target_value": 200000,
+      "target_value_text_ko": "200km",
+      "remaining_value": 97925,
+      "remaining_value_text_ko": "97.9km 남음",
+      "progress_ratio": 0.5104,
+      "unlocked_badge_count": 6
     },
     "unlocked_badges": [
       {
@@ -202,9 +202,31 @@
         "icon_key": "gal.base",
         "tier": 5,
         "unlocked_at": "2026-03-15 14:08:06"
+      },
+      {
+        "scope": "gallery",
+        "badge_id": "gal_06",
+        "category": "gallery",
+        "name_ko": "원양 진출",
+        "short_label_ko": "100km",
+        "description_ko": "갤 전체 누적 거리 100km를 넘기며 원양 단계에 들어갑니다.",
+        "icon_key": "gal.base",
+        "tier": 6,
+        "unlocked_at": "2026-04-17 07:54:09"
       }
     ],
     "recent_unlocks": [
+      {
+        "scope": "gallery",
+        "badge_id": "gal_06",
+        "category": "gallery",
+        "name_ko": "원양 진출",
+        "short_label_ko": "100km",
+        "description_ko": "갤 전체 누적 거리 100km를 넘기며 원양 단계에 들어갑니다.",
+        "icon_key": "gal.base",
+        "tier": 6,
+        "unlocked_at": "2026-04-17 07:54:09"
+      },
       {
         "scope": "gallery",
         "badge_id": "gal_05",
@@ -261,147 +283,148 @@
         "unlocked_at": "2026-03-01 13:28:07"
       }
     ],
-    "metric_value": 94975.0,
-    "metric_value_text_ko": "95.0km",
-    "reference_date": "2026-04-16"
+    "metric_value": 102075.0,
+    "metric_value_text_ko": "102.1km",
+    "reference_date": "2026-04-17"
   },
   "recent_unlocks": [
     {
       "scope": "author",
-      "author": "근육키우기",
-      "badge_id": "tim_02",
-      "category": "time",
-      "name_ko": "물 적응 완료",
-      "short_label_ko": "3시간",
-      "icon_key": "tim.base",
-      "unlocked_at": "2026-04-16 10:17:45"
-    },
-    {
-      "scope": "author",
-      "author": "근육키우기",
-      "badge_id": "grw_05",
-      "category": "growth",
-      "name_ko": "거리 각성",
-      "short_label_ko": "+1500m",
-      "icon_key": "grw.base",
-      "unlocked_at": "2026-04-16 10:17:45"
-    },
-    {
-      "scope": "author",
-      "author": "근육키우기",
-      "badge_id": "dst_02",
-      "category": "distance",
-      "name_ko": "물결 수집가",
-      "short_label_ko": "3km",
-      "icon_key": "dst.base",
-      "unlocked_at": "2026-04-16 10:17:45"
-    },
-    {
-      "scope": "author",
-      "author": "쭈삼",
-      "badge_id": "grw_06",
-      "category": "growth",
-      "name_ko": "시간 각성",
-      "short_label_ko": "+90분",
-      "icon_key": "grw.base",
-      "unlocked_at": "2026-04-16 07:01:56"
-    },
-    {
-      "scope": "author",
-      "author": "쭈삼",
-      "badge_id": "grw_04",
-      "category": "growth",
-      "name_ko": "출석 각성",
-      "short_label_ko": "횟수 +3",
-      "icon_key": "grw.base",
-      "unlocked_at": "2026-04-16 07:01:56"
-    },
-    {
-      "scope": "author",
-      "author": "쭈삼",
-      "badge_id": "fun_04",
-      "category": "fun",
-      "name_ko": "새벽 입수러",
-      "short_label_ko": "새벽 3회",
-      "icon_key": "fun.base",
-      "unlocked_at": "2026-04-16 07:01:56"
-    },
-    {
-      "scope": "author",
-      "author": "쭈삼",
+      "author": "주석",
       "badge_id": "dst_03",
       "category": "distance",
       "name_ko": "중거리 주자",
       "short_label_ko": "5km",
       "icon_key": "dst.base",
-      "unlocked_at": "2026-04-16 07:01:56"
+      "unlocked_at": "2026-04-17 19:16:42"
     },
     {
       "scope": "author",
-      "author": "쭈삼",
-      "badge_id": "att_02",
+      "author": "주석",
+      "badge_id": "att_03",
       "category": "attendance",
-      "name_ko": "레인 발도장",
-      "short_label_ko": "3회",
+      "name_ko": "오수완 초심자",
+      "short_label_ko": "5회",
       "icon_key": "att.base",
-      "unlocked_at": "2026-04-16 07:01:56"
+      "unlocked_at": "2026-04-17 19:16:42"
     },
     {
       "scope": "author",
-      "author": "매쾌협",
-      "badge_id": "tim_01",
+      "author": "천천히영",
+      "badge_id": "att_04",
+      "category": "attendance",
+      "name_ko": "꾸준러",
+      "short_label_ko": "10회",
+      "icon_key": "att.base",
+      "unlocked_at": "2026-04-17 14:23:10"
+    },
+    {
+      "scope": "author",
+      "author": "알프스",
+      "badge_id": "dst_04",
+      "category": "distance",
+      "name_ko": "장거리 레이서",
+      "short_label_ko": "10km",
+      "icon_key": "dst.base",
+      "unlocked_at": "2026-04-17 07:54:09"
+    },
+    {
+      "scope": "gallery",
+      "badge_id": "gal_06",
+      "category": "gallery",
+      "name_ko": "원양 진출",
+      "short_label_ko": "100km",
+      "description_ko": "갤 전체 누적 거리 100km를 넘기며 원양 단계에 들어갑니다.",
+      "icon_key": "gal.base",
+      "tier": 6,
+      "unlocked_at": "2026-04-17 07:54:09"
+    },
+    {
+      "scope": "author",
+      "author": "주석",
+      "badge_id": "tim_02",
       "category": "time",
-      "name_ko": "첫 1시간 잠수",
-      "short_label_ko": "1시간",
+      "name_ko": "물 적응 완료",
+      "short_label_ko": "3시간",
       "icon_key": "tim.base",
-      "unlocked_at": "2026-04-15 23:22:09"
+      "unlocked_at": "2026-04-16 21:01:39"
     },
     {
       "scope": "author",
-      "author": "매쾌협",
-      "badge_id": "sea_02",
-      "category": "season",
-      "name_ko": "4월 물결 멤버",
-      "short_label_ko": "4월",
-      "icon_key": "sea.base",
-      "unlocked_at": "2026-04-15 23:22:09"
-    },
-    {
-      "scope": "author",
-      "author": "매쾌협",
+      "author": "주석",
       "badge_id": "fun_05",
       "category": "fun",
       "name_ko": "심야 수영부",
       "short_label_ko": "밤 2회",
       "icon_key": "fun.base",
-      "unlocked_at": "2026-04-15 23:22:09"
+      "unlocked_at": "2026-04-16 21:01:39"
     },
     {
       "scope": "author",
-      "author": "매쾌협",
-      "badge_id": "dst_01",
+      "author": "알프스",
+      "badge_id": "tim_03",
+      "category": "time",
+      "name_ko": "레인 체류자",
+      "short_label_ko": "6시간",
+      "icon_key": "tim.base",
+      "unlocked_at": "2026-04-16 20:40:29"
+    },
+    {
+      "scope": "author",
+      "author": "천천히영",
+      "badge_id": "dst_04",
       "category": "distance",
-      "name_ko": "1km 돌파",
-      "short_label_ko": "1km",
+      "name_ko": "장거리 레이서",
+      "short_label_ko": "10km",
       "icon_key": "dst.base",
-      "unlocked_at": "2026-04-15 23:22:09"
+      "unlocked_at": "2026-04-16 16:18:15"
+    },
+    {
+      "scope": "author",
+      "author": "SㅇS",
+      "badge_id": "tim_02",
+      "category": "time",
+      "name_ko": "물 적응 완료",
+      "short_label_ko": "3시간",
+      "icon_key": "tim.base",
+      "unlocked_at": "2026-04-16 12:01:44"
+    },
+    {
+      "scope": "author",
+      "author": "SㅇS",
+      "badge_id": "fun_01",
+      "category": "fun",
+      "name_ko": "오늘 길었다",
+      "short_label_ko": "한 번에 1500m",
+      "icon_key": "fun.base",
+      "unlocked_at": "2026-04-16 12:01:44"
+    },
+    {
+      "scope": "author",
+      "author": "SㅇS",
+      "badge_id": "dst_02",
+      "category": "distance",
+      "name_ko": "물결 수집가",
+      "short_label_ko": "3km",
+      "icon_key": "dst.base",
+      "unlocked_at": "2026-04-16 12:01:44"
     }
   ],
   "ops": {
-    "review_queue_count": 79,
+    "review_queue_count": 80,
     "review_reason_counts": {
       "TITLE_FORMAT_INVALID": 3,
-      "TITLE_FORMAT_MISSING": 76
+      "TITLE_FORMAT_MISSING": 77
     },
-    "excluded_record_count": 79,
+    "excluded_record_count": 80,
     "excluded_reason_counts": {
       "TITLE_FORMAT_INVALID": 3,
-      "TITLE_FORMAT_MISSING": 76
+      "TITLE_FORMAT_MISSING": 77
     },
     "warning_code_counts": {},
     "source_counts": {
-      "none": 79,
-      "title_format": 63
+      "none": 80,
+      "title_format": 70
     },
     "manual_override_counts": {}
   },
