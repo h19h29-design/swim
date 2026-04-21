@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21 04:10:49 KST",
+  "generated_at": "2026-04-21 11:43:53 KST",
   "reference_date": "2026-04-19",
   "dashboard_date_floor": "2026-03-01",
   "dashboard_window": {
@@ -15,8 +15,8 @@
   "supported_modes": [
     "core_only"
   ],
-  "source_record_count": 163,
-  "visible_record_count": 154,
+  "source_record_count": 165,
+  "visible_record_count": 156,
   "core_only_has_zero_visible_included_rows": false,
   "growth_windows": {
     "window_days": 28,
@@ -165,9 +165,9 @@
   },
   "summary": {
     "mode": "core_only",
-    "record_count": 74,
-    "total_record_count": 154,
-    "source_record_count": 163,
+    "record_count": 76,
+    "total_record_count": 156,
+    "source_record_count": 165,
     "dashboard_date_floor": "2026-03-01",
     "dashboard_window": {
       "start": "2026-03-01",
@@ -190,20 +190,20 @@
     "warning_code_counts": {},
     "source_counts": {
       "none": 80,
-      "title_format": 74
+      "title_format": 76
     },
     "manual_override_counts": {},
-    "swim_count": 74,
-    "total_distance_m": 108925.0,
-    "total_seconds": 313261,
-    "total_duration_min": 5221.02,
-    "distance_per_hour_m": 1251.77,
-    "active_authors": 14,
+    "swim_count": 76,
+    "total_distance_m": 111775.0,
+    "total_seconds": 318484,
+    "total_duration_min": 5308.07,
+    "distance_per_hour_m": 1263.45,
+    "active_authors": 15,
     "included_metric_bucket_counts": {
-      "core": 74
+      "core": 76
     },
     "included_source_counts": {
-      "title_format": 74
+      "title_format": 76
     },
     "has_zero_visible_included_rows": false,
     "reference_date": "2026-04-19",
@@ -231,29 +231,29 @@
       },
       "metrics": {
         "swim_count": {
-          "recent_value": 30,
+          "recent_value": 32,
           "previous_value": 44,
-          "delta_value": -14.0,
-          "pct_change": -31.82,
+          "delta_value": -12.0,
+          "pct_change": -27.27,
           "pct_change_status": "standard"
         },
         "distance_m": {
-          "recent_value": 40100.0,
+          "recent_value": 42950.0,
           "previous_value": 68825.0,
-          "delta_value": -28725.0,
-          "pct_change": -41.74,
+          "delta_value": -25875.0,
+          "pct_change": -37.6,
           "pct_change_status": "standard"
         },
         "total_seconds": {
-          "recent_value": 107676,
+          "recent_value": 112899,
           "previous_value": 205585,
-          "delta_value": -97909.0,
-          "pct_change": -47.62,
+          "delta_value": -92686.0,
+          "pct_change": -45.08,
           "pct_change_status": "standard"
         }
       }
     },
-    "generated_at": "2026-04-21 04:10:49 KST",
+    "generated_at": "2026-04-21 11:43:53 KST",
     "date_range": {
       "start": "2026-03-01",
       "end": "2026-04-19"
@@ -274,14 +274,14 @@
     },
     {
       "month": "2026-04",
-      "swim_count": 30,
-      "total_distance_m": 40100.0,
-      "total_seconds": 107676,
-      "total_duration_min": 1794.6,
-      "distance_per_hour_m": 1340.69,
-      "active_authors": 10,
+      "swim_count": 32,
+      "total_distance_m": 42950.0,
+      "total_seconds": 112899,
+      "total_duration_min": 1881.65,
+      "distance_per_hour_m": 1369.54,
+      "active_authors": 11,
       "metric_bucket_counts": {
-        "core": 30
+        "core": 32
       }
     }
   ],
@@ -304,19 +304,19 @@
       "tier": 7,
       "target_value": 200000,
       "target_value_text_ko": "200km",
-      "remaining_value": 91075,
-      "remaining_value_text_ko": "91.1km 남음",
-      "progress_ratio": 0.5446
+      "remaining_value": 88225,
+      "remaining_value_text_ko": "88.2km 남음",
+      "progress_ratio": 0.5589
     },
     "progress": {
       "metric_key": "total_distance_m",
-      "current_value": 108925.0,
-      "current_value_text_ko": "108.9km",
+      "current_value": 111775.0,
+      "current_value_text_ko": "111.8km",
       "target_value": 200000,
       "target_value_text_ko": "200km",
-      "remaining_value": 91075,
-      "remaining_value_text_ko": "91.1km 남음",
-      "progress_ratio": 0.5446,
+      "remaining_value": 88225,
+      "remaining_value_text_ko": "88.2km 남음",
+      "progress_ratio": 0.5589,
       "unlocked_badge_count": 6
     },
     "unlocked_badges": [
@@ -455,8 +455,8 @@
         "unlocked_at": "2026-03-01 13:28:07"
       }
     ],
-    "metric_value": 108925.0,
-    "metric_value_text_ko": "108.9km",
+    "metric_value": 111775.0,
+    "metric_value_text_ko": "111.8km",
     "reference_date": "2026-04-19"
   },
   "rankings": {
@@ -566,40 +566,40 @@
           {
             "author": "천천히영",
             "search_key": "천천히영",
-            "latest_post_date": "2026-04-17",
+            "latest_post_date": "2026-04-19",
             "metric_key": "swim_count",
-            "metric_value": 10,
-            "metric_value_text_ko": "10회",
-            "secondary_text_ko": "10회 · 11.1km",
+            "metric_value": 11,
+            "metric_value_text_ko": "11회",
+            "secondary_text_ko": "11회 · 12.3km",
             "primary_title": {
-              "badge_id": "dst_04",
-              "category": "distance",
-              "name_ko": "장거리 레이서",
-              "short_label_ko": "10km",
-              "description_ko": "누적 10km로 진짜 장거리 감각에 들어갑니다.",
-              "threshold_type": "author_total_distance_m",
-              "threshold_value": 10000,
-              "icon_key": "dst.base",
-              "tier": 4,
+              "badge_id": "grw_06",
+              "category": "growth",
+              "name_ko": "시간 각성",
+              "short_label_ko": "+90분",
+              "description_ko": "최근 28일 누적 시간이 크게 늘었습니다.",
+              "threshold_type": "author_recent_growth_total_seconds",
+              "threshold_value": 5400,
+              "icon_key": "grw.base",
+              "tier": 6,
               "is_primary_title_candidate": true,
               "is_hidden": false,
               "season_tag": null,
-              "current_value": 11100,
-              "current_value_text_ko": "11.1km",
-              "target_value": 10000,
-              "target_value_text_ko": "10km",
+              "current_value": 5428,
+              "current_value_text_ko": "1시간 30분 28초",
+              "target_value": 5400,
+              "target_value_text_ko": "1시간 30분",
               "remaining_value": 0,
               "remaining_value_text_ko": "해금 완료",
               "progress_ratio": 1.0,
-              "unlocked_at": "2026-04-16 16:18:15"
+              "unlocked_at": "2026-03-11 18:00:04"
             },
-            "unlocked_badge_count": 16,
+            "unlocked_badge_count": 19,
             "badge_counts_by_category": {
               "attendance": 4,
               "distance": 4,
               "time": 3,
               "efficiency": 2,
-              "growth": 1,
+              "growth": 4,
               "season": 2,
               "gallery": 0,
               "fun": 0
@@ -1140,6 +1140,54 @@
               "1500m/h"
             ],
             "rank": 14
+          },
+          {
+            "author": "양.아치",
+            "search_key": "양.아치",
+            "latest_post_date": "2026-04-19",
+            "metric_key": "swim_count",
+            "metric_value": 1,
+            "metric_value_text_ko": "1회",
+            "secondary_text_ko": "1회 · 1.6km",
+            "primary_title": {
+              "badge_id": "grw_05",
+              "category": "growth",
+              "name_ko": "거리 각성",
+              "short_label_ko": "+1500m",
+              "description_ko": "최근 28일 거리가 확실하게 늘어났습니다.",
+              "threshold_type": "author_recent_growth_distance_m",
+              "threshold_value": 1500,
+              "icon_key": "grw.base",
+              "tier": 5,
+              "is_primary_title_candidate": true,
+              "is_hidden": false,
+              "season_tag": null,
+              "current_value": 1650,
+              "current_value_text_ko": "1.6km",
+              "target_value": 1500,
+              "target_value_text_ko": "1.5km",
+              "remaining_value": 0,
+              "remaining_value_text_ko": "해금 완료",
+              "progress_ratio": 1.0,
+              "unlocked_at": "2026-04-19 12:56:54"
+            },
+            "unlocked_badge_count": 13,
+            "badge_counts_by_category": {
+              "attendance": 1,
+              "distance": 1,
+              "time": 0,
+              "efficiency": 5,
+              "growth": 4,
+              "season": 1,
+              "gallery": 0,
+              "fun": 1
+            },
+            "badge_preview": [
+              "첫 입수",
+              "1km",
+              "1500m/h"
+            ],
+            "rank": 15
           }
         ],
         "rows": [
@@ -1242,40 +1290,40 @@
           {
             "author": "천천히영",
             "search_key": "천천히영",
-            "latest_post_date": "2026-04-17",
+            "latest_post_date": "2026-04-19",
             "metric_key": "swim_count",
-            "metric_value": 10,
-            "metric_value_text_ko": "10회",
-            "secondary_text_ko": "10회 · 11.1km",
+            "metric_value": 11,
+            "metric_value_text_ko": "11회",
+            "secondary_text_ko": "11회 · 12.3km",
             "primary_title": {
-              "badge_id": "dst_04",
-              "category": "distance",
-              "name_ko": "장거리 레이서",
-              "short_label_ko": "10km",
-              "description_ko": "누적 10km로 진짜 장거리 감각에 들어갑니다.",
-              "threshold_type": "author_total_distance_m",
-              "threshold_value": 10000,
-              "icon_key": "dst.base",
-              "tier": 4,
+              "badge_id": "grw_06",
+              "category": "growth",
+              "name_ko": "시간 각성",
+              "short_label_ko": "+90분",
+              "description_ko": "최근 28일 누적 시간이 크게 늘었습니다.",
+              "threshold_type": "author_recent_growth_total_seconds",
+              "threshold_value": 5400,
+              "icon_key": "grw.base",
+              "tier": 6,
               "is_primary_title_candidate": true,
               "is_hidden": false,
               "season_tag": null,
-              "current_value": 11100,
-              "current_value_text_ko": "11.1km",
-              "target_value": 10000,
-              "target_value_text_ko": "10km",
+              "current_value": 5428,
+              "current_value_text_ko": "1시간 30분 28초",
+              "target_value": 5400,
+              "target_value_text_ko": "1시간 30분",
               "remaining_value": 0,
               "remaining_value_text_ko": "해금 완료",
               "progress_ratio": 1.0,
-              "unlocked_at": "2026-04-16 16:18:15"
+              "unlocked_at": "2026-03-11 18:00:04"
             },
-            "unlocked_badge_count": 16,
+            "unlocked_badge_count": 19,
             "badge_counts_by_category": {
               "attendance": 4,
               "distance": 4,
               "time": 3,
               "efficiency": 2,
-              "growth": 1,
+              "growth": 4,
               "season": 2,
               "gallery": 0,
               "fun": 0
@@ -1814,9 +1862,57 @@
               "1500m/h"
             ],
             "rank": 14
+          },
+          {
+            "author": "양.아치",
+            "search_key": "양.아치",
+            "latest_post_date": "2026-04-19",
+            "metric_key": "swim_count",
+            "metric_value": 1,
+            "metric_value_text_ko": "1회",
+            "secondary_text_ko": "1회 · 1.6km",
+            "primary_title": {
+              "badge_id": "grw_05",
+              "category": "growth",
+              "name_ko": "거리 각성",
+              "short_label_ko": "+1500m",
+              "description_ko": "최근 28일 거리가 확실하게 늘어났습니다.",
+              "threshold_type": "author_recent_growth_distance_m",
+              "threshold_value": 1500,
+              "icon_key": "grw.base",
+              "tier": 5,
+              "is_primary_title_candidate": true,
+              "is_hidden": false,
+              "season_tag": null,
+              "current_value": 1650,
+              "current_value_text_ko": "1.6km",
+              "target_value": 1500,
+              "target_value_text_ko": "1.5km",
+              "remaining_value": 0,
+              "remaining_value_text_ko": "해금 완료",
+              "progress_ratio": 1.0,
+              "unlocked_at": "2026-04-19 12:56:54"
+            },
+            "unlocked_badge_count": 13,
+            "badge_counts_by_category": {
+              "attendance": 1,
+              "distance": 1,
+              "time": 0,
+              "efficiency": 5,
+              "growth": 4,
+              "season": 1,
+              "gallery": 0,
+              "fun": 1
+            },
+            "badge_preview": [
+              "첫 입수",
+              "1km",
+              "1500m/h"
+            ],
+            "rank": 15
           }
         ],
-        "total_ranked_rows": 14
+        "total_ranked_rows": 15
       },
       "total_distance_m": {
         "metric_key": "total_distance_m",
@@ -1922,40 +2018,40 @@
           {
             "author": "천천히영",
             "search_key": "천천히영",
-            "latest_post_date": "2026-04-17",
+            "latest_post_date": "2026-04-19",
             "metric_key": "total_distance_m",
-            "metric_value": 11100.0,
-            "metric_value_text_ko": "11.1km",
-            "secondary_text_ko": "10회 · 11.1km",
+            "metric_value": 12300.0,
+            "metric_value_text_ko": "12.3km",
+            "secondary_text_ko": "11회 · 12.3km",
             "primary_title": {
-              "badge_id": "dst_04",
-              "category": "distance",
-              "name_ko": "장거리 레이서",
-              "short_label_ko": "10km",
-              "description_ko": "누적 10km로 진짜 장거리 감각에 들어갑니다.",
-              "threshold_type": "author_total_distance_m",
-              "threshold_value": 10000,
-              "icon_key": "dst.base",
-              "tier": 4,
+              "badge_id": "grw_06",
+              "category": "growth",
+              "name_ko": "시간 각성",
+              "short_label_ko": "+90분",
+              "description_ko": "최근 28일 누적 시간이 크게 늘었습니다.",
+              "threshold_type": "author_recent_growth_total_seconds",
+              "threshold_value": 5400,
+              "icon_key": "grw.base",
+              "tier": 6,
               "is_primary_title_candidate": true,
               "is_hidden": false,
               "season_tag": null,
-              "current_value": 11100,
-              "current_value_text_ko": "11.1km",
-              "target_value": 10000,
-              "target_value_text_ko": "10km",
+              "current_value": 5428,
+              "current_value_text_ko": "1시간 30분 28초",
+              "target_value": 5400,
+              "target_value_text_ko": "1시간 30분",
               "remaining_value": 0,
               "remaining_value_text_ko": "해금 완료",
               "progress_ratio": 1.0,
-              "unlocked_at": "2026-04-16 16:18:15"
+              "unlocked_at": "2026-03-11 18:00:04"
             },
-            "unlocked_badge_count": 16,
+            "unlocked_badge_count": 19,
             "badge_counts_by_category": {
               "attendance": 4,
               "distance": 4,
               "time": 3,
               "efficiency": 2,
-              "growth": 1,
+              "growth": 4,
               "season": 2,
               "gallery": 0,
               "fun": 0
@@ -2354,6 +2450,54 @@
             "rank": 11
           },
           {
+            "author": "양.아치",
+            "search_key": "양.아치",
+            "latest_post_date": "2026-04-19",
+            "metric_key": "total_distance_m",
+            "metric_value": 1650.0,
+            "metric_value_text_ko": "1.6km",
+            "secondary_text_ko": "1회 · 1.6km",
+            "primary_title": {
+              "badge_id": "grw_05",
+              "category": "growth",
+              "name_ko": "거리 각성",
+              "short_label_ko": "+1500m",
+              "description_ko": "최근 28일 거리가 확실하게 늘어났습니다.",
+              "threshold_type": "author_recent_growth_distance_m",
+              "threshold_value": 1500,
+              "icon_key": "grw.base",
+              "tier": 5,
+              "is_primary_title_candidate": true,
+              "is_hidden": false,
+              "season_tag": null,
+              "current_value": 1650,
+              "current_value_text_ko": "1.6km",
+              "target_value": 1500,
+              "target_value_text_ko": "1.5km",
+              "remaining_value": 0,
+              "remaining_value_text_ko": "해금 완료",
+              "progress_ratio": 1.0,
+              "unlocked_at": "2026-04-19 12:56:54"
+            },
+            "unlocked_badge_count": 13,
+            "badge_counts_by_category": {
+              "attendance": 1,
+              "distance": 1,
+              "time": 0,
+              "efficiency": 5,
+              "growth": 4,
+              "season": 1,
+              "gallery": 0,
+              "fun": 1
+            },
+            "badge_preview": [
+              "첫 입수",
+              "1km",
+              "1500m/h"
+            ],
+            "rank": 12
+          },
+          {
             "author": "매쾌협",
             "search_key": "매쾌협",
             "latest_post_date": "2026-04-15",
@@ -2399,7 +2543,7 @@
               "1km",
               "1시간"
             ],
-            "rank": 12
+            "rank": 13
           },
           {
             "author": "0asis",
@@ -2447,7 +2591,7 @@
               "1km",
               "1500m/h"
             ],
-            "rank": 13
+            "rank": 14
           },
           {
             "author": "써머",
@@ -2495,7 +2639,7 @@
               "1km",
               "1500m/h"
             ],
-            "rank": 14
+            "rank": 15
           }
         ],
         "rows": [
@@ -2598,40 +2742,40 @@
           {
             "author": "천천히영",
             "search_key": "천천히영",
-            "latest_post_date": "2026-04-17",
+            "latest_post_date": "2026-04-19",
             "metric_key": "total_distance_m",
-            "metric_value": 11100.0,
-            "metric_value_text_ko": "11.1km",
-            "secondary_text_ko": "10회 · 11.1km",
+            "metric_value": 12300.0,
+            "metric_value_text_ko": "12.3km",
+            "secondary_text_ko": "11회 · 12.3km",
             "primary_title": {
-              "badge_id": "dst_04",
-              "category": "distance",
-              "name_ko": "장거리 레이서",
-              "short_label_ko": "10km",
-              "description_ko": "누적 10km로 진짜 장거리 감각에 들어갑니다.",
-              "threshold_type": "author_total_distance_m",
-              "threshold_value": 10000,
-              "icon_key": "dst.base",
-              "tier": 4,
+              "badge_id": "grw_06",
+              "category": "growth",
+              "name_ko": "시간 각성",
+              "short_label_ko": "+90분",
+              "description_ko": "최근 28일 누적 시간이 크게 늘었습니다.",
+              "threshold_type": "author_recent_growth_total_seconds",
+              "threshold_value": 5400,
+              "icon_key": "grw.base",
+              "tier": 6,
               "is_primary_title_candidate": true,
               "is_hidden": false,
               "season_tag": null,
-              "current_value": 11100,
-              "current_value_text_ko": "11.1km",
-              "target_value": 10000,
-              "target_value_text_ko": "10km",
+              "current_value": 5428,
+              "current_value_text_ko": "1시간 30분 28초",
+              "target_value": 5400,
+              "target_value_text_ko": "1시간 30분",
               "remaining_value": 0,
               "remaining_value_text_ko": "해금 완료",
               "progress_ratio": 1.0,
-              "unlocked_at": "2026-04-16 16:18:15"
+              "unlocked_at": "2026-03-11 18:00:04"
             },
-            "unlocked_badge_count": 16,
+            "unlocked_badge_count": 19,
             "badge_counts_by_category": {
               "attendance": 4,
               "distance": 4,
               "time": 3,
               "efficiency": 2,
-              "growth": 1,
+              "growth": 4,
               "season": 2,
               "gallery": 0,
               "fun": 0
@@ -3028,6 +3172,54 @@
             "rank": 11
           },
           {
+            "author": "양.아치",
+            "search_key": "양.아치",
+            "latest_post_date": "2026-04-19",
+            "metric_key": "total_distance_m",
+            "metric_value": 1650.0,
+            "metric_value_text_ko": "1.6km",
+            "secondary_text_ko": "1회 · 1.6km",
+            "primary_title": {
+              "badge_id": "grw_05",
+              "category": "growth",
+              "name_ko": "거리 각성",
+              "short_label_ko": "+1500m",
+              "description_ko": "최근 28일 거리가 확실하게 늘어났습니다.",
+              "threshold_type": "author_recent_growth_distance_m",
+              "threshold_value": 1500,
+              "icon_key": "grw.base",
+              "tier": 5,
+              "is_primary_title_candidate": true,
+              "is_hidden": false,
+              "season_tag": null,
+              "current_value": 1650,
+              "current_value_text_ko": "1.6km",
+              "target_value": 1500,
+              "target_value_text_ko": "1.5km",
+              "remaining_value": 0,
+              "remaining_value_text_ko": "해금 완료",
+              "progress_ratio": 1.0,
+              "unlocked_at": "2026-04-19 12:56:54"
+            },
+            "unlocked_badge_count": 13,
+            "badge_counts_by_category": {
+              "attendance": 1,
+              "distance": 1,
+              "time": 0,
+              "efficiency": 5,
+              "growth": 4,
+              "season": 1,
+              "gallery": 0,
+              "fun": 1
+            },
+            "badge_preview": [
+              "첫 입수",
+              "1km",
+              "1500m/h"
+            ],
+            "rank": 12
+          },
+          {
             "author": "매쾌협",
             "search_key": "매쾌협",
             "latest_post_date": "2026-04-15",
@@ -3073,7 +3265,7 @@
               "1km",
               "1시간"
             ],
-            "rank": 12
+            "rank": 13
           },
           {
             "author": "0asis",
@@ -3121,7 +3313,7 @@
               "1km",
               "1500m/h"
             ],
-            "rank": 13
+            "rank": 14
           },
           {
             "author": "써머",
@@ -3169,10 +3361,10 @@
               "1km",
               "1500m/h"
             ],
-            "rank": 14
+            "rank": 15
           }
         ],
-        "total_ranked_rows": 14
+        "total_ranked_rows": 15
       },
       "total_seconds": {
         "metric_key": "total_seconds",
@@ -3278,40 +3470,40 @@
           {
             "author": "천천히영",
             "search_key": "천천히영",
-            "latest_post_date": "2026-04-17",
+            "latest_post_date": "2026-04-19",
             "metric_key": "total_seconds",
-            "metric_value": 40129,
-            "metric_value_text_ko": "11시간 8분",
-            "secondary_text_ko": "10회 · 11.1km",
+            "metric_value": 42712,
+            "metric_value_text_ko": "11시간 51분",
+            "secondary_text_ko": "11회 · 12.3km",
             "primary_title": {
-              "badge_id": "dst_04",
-              "category": "distance",
-              "name_ko": "장거리 레이서",
-              "short_label_ko": "10km",
-              "description_ko": "누적 10km로 진짜 장거리 감각에 들어갑니다.",
-              "threshold_type": "author_total_distance_m",
-              "threshold_value": 10000,
-              "icon_key": "dst.base",
-              "tier": 4,
+              "badge_id": "grw_06",
+              "category": "growth",
+              "name_ko": "시간 각성",
+              "short_label_ko": "+90분",
+              "description_ko": "최근 28일 누적 시간이 크게 늘었습니다.",
+              "threshold_type": "author_recent_growth_total_seconds",
+              "threshold_value": 5400,
+              "icon_key": "grw.base",
+              "tier": 6,
               "is_primary_title_candidate": true,
               "is_hidden": false,
               "season_tag": null,
-              "current_value": 11100,
-              "current_value_text_ko": "11.1km",
-              "target_value": 10000,
-              "target_value_text_ko": "10km",
+              "current_value": 5428,
+              "current_value_text_ko": "1시간 30분 28초",
+              "target_value": 5400,
+              "target_value_text_ko": "1시간 30분",
               "remaining_value": 0,
               "remaining_value_text_ko": "해금 완료",
               "progress_ratio": 1.0,
-              "unlocked_at": "2026-04-16 16:18:15"
+              "unlocked_at": "2026-03-11 18:00:04"
             },
-            "unlocked_badge_count": 16,
+            "unlocked_badge_count": 19,
             "badge_counts_by_category": {
               "attendance": 4,
               "distance": 4,
               "time": 3,
               "efficiency": 2,
-              "growth": 1,
+              "growth": 4,
               "season": 2,
               "gallery": 0,
               "fun": 0
@@ -3806,6 +3998,54 @@
             "rank": 13
           },
           {
+            "author": "양.아치",
+            "search_key": "양.아치",
+            "latest_post_date": "2026-04-19",
+            "metric_key": "total_seconds",
+            "metric_value": 2640,
+            "metric_value_text_ko": "44분",
+            "secondary_text_ko": "1회 · 1.6km",
+            "primary_title": {
+              "badge_id": "grw_05",
+              "category": "growth",
+              "name_ko": "거리 각성",
+              "short_label_ko": "+1500m",
+              "description_ko": "최근 28일 거리가 확실하게 늘어났습니다.",
+              "threshold_type": "author_recent_growth_distance_m",
+              "threshold_value": 1500,
+              "icon_key": "grw.base",
+              "tier": 5,
+              "is_primary_title_candidate": true,
+              "is_hidden": false,
+              "season_tag": null,
+              "current_value": 1650,
+              "current_value_text_ko": "1.6km",
+              "target_value": 1500,
+              "target_value_text_ko": "1.5km",
+              "remaining_value": 0,
+              "remaining_value_text_ko": "해금 완료",
+              "progress_ratio": 1.0,
+              "unlocked_at": "2026-04-19 12:56:54"
+            },
+            "unlocked_badge_count": 13,
+            "badge_counts_by_category": {
+              "attendance": 1,
+              "distance": 1,
+              "time": 0,
+              "efficiency": 5,
+              "growth": 4,
+              "season": 1,
+              "gallery": 0,
+              "fun": 1
+            },
+            "badge_preview": [
+              "첫 입수",
+              "1km",
+              "1500m/h"
+            ],
+            "rank": 14
+          },
+          {
             "author": "써머",
             "search_key": "써머",
             "latest_post_date": "2026-03-13",
@@ -3851,7 +4091,7 @@
               "1km",
               "1500m/h"
             ],
-            "rank": 14
+            "rank": 15
           }
         ],
         "rows": [
@@ -3954,40 +4194,40 @@
           {
             "author": "천천히영",
             "search_key": "천천히영",
-            "latest_post_date": "2026-04-17",
+            "latest_post_date": "2026-04-19",
             "metric_key": "total_seconds",
-            "metric_value": 40129,
-            "metric_value_text_ko": "11시간 8분",
-            "secondary_text_ko": "10회 · 11.1km",
+            "metric_value": 42712,
+            "metric_value_text_ko": "11시간 51분",
+            "secondary_text_ko": "11회 · 12.3km",
             "primary_title": {
-              "badge_id": "dst_04",
-              "category": "distance",
-              "name_ko": "장거리 레이서",
-              "short_label_ko": "10km",
-              "description_ko": "누적 10km로 진짜 장거리 감각에 들어갑니다.",
-              "threshold_type": "author_total_distance_m",
-              "threshold_value": 10000,
-              "icon_key": "dst.base",
-              "tier": 4,
+              "badge_id": "grw_06",
+              "category": "growth",
+              "name_ko": "시간 각성",
+              "short_label_ko": "+90분",
+              "description_ko": "최근 28일 누적 시간이 크게 늘었습니다.",
+              "threshold_type": "author_recent_growth_total_seconds",
+              "threshold_value": 5400,
+              "icon_key": "grw.base",
+              "tier": 6,
               "is_primary_title_candidate": true,
               "is_hidden": false,
               "season_tag": null,
-              "current_value": 11100,
-              "current_value_text_ko": "11.1km",
-              "target_value": 10000,
-              "target_value_text_ko": "10km",
+              "current_value": 5428,
+              "current_value_text_ko": "1시간 30분 28초",
+              "target_value": 5400,
+              "target_value_text_ko": "1시간 30분",
               "remaining_value": 0,
               "remaining_value_text_ko": "해금 완료",
               "progress_ratio": 1.0,
-              "unlocked_at": "2026-04-16 16:18:15"
+              "unlocked_at": "2026-03-11 18:00:04"
             },
-            "unlocked_badge_count": 16,
+            "unlocked_badge_count": 19,
             "badge_counts_by_category": {
               "attendance": 4,
               "distance": 4,
               "time": 3,
               "efficiency": 2,
-              "growth": 1,
+              "growth": 4,
               "season": 2,
               "gallery": 0,
               "fun": 0
@@ -4480,6 +4720,54 @@
             "rank": 13
           },
           {
+            "author": "양.아치",
+            "search_key": "양.아치",
+            "latest_post_date": "2026-04-19",
+            "metric_key": "total_seconds",
+            "metric_value": 2640,
+            "metric_value_text_ko": "44분",
+            "secondary_text_ko": "1회 · 1.6km",
+            "primary_title": {
+              "badge_id": "grw_05",
+              "category": "growth",
+              "name_ko": "거리 각성",
+              "short_label_ko": "+1500m",
+              "description_ko": "최근 28일 거리가 확실하게 늘어났습니다.",
+              "threshold_type": "author_recent_growth_distance_m",
+              "threshold_value": 1500,
+              "icon_key": "grw.base",
+              "tier": 5,
+              "is_primary_title_candidate": true,
+              "is_hidden": false,
+              "season_tag": null,
+              "current_value": 1650,
+              "current_value_text_ko": "1.6km",
+              "target_value": 1500,
+              "target_value_text_ko": "1.5km",
+              "remaining_value": 0,
+              "remaining_value_text_ko": "해금 완료",
+              "progress_ratio": 1.0,
+              "unlocked_at": "2026-04-19 12:56:54"
+            },
+            "unlocked_badge_count": 13,
+            "badge_counts_by_category": {
+              "attendance": 1,
+              "distance": 1,
+              "time": 0,
+              "efficiency": 5,
+              "growth": 4,
+              "season": 1,
+              "gallery": 0,
+              "fun": 1
+            },
+            "badge_preview": [
+              "첫 입수",
+              "1km",
+              "1500m/h"
+            ],
+            "rank": 14
+          },
+          {
             "author": "써머",
             "search_key": "써머",
             "latest_post_date": "2026-03-13",
@@ -4525,10 +4813,10 @@
               "1km",
               "1500m/h"
             ],
-            "rank": 14
+            "rank": 15
           }
         ],
-        "total_ranked_rows": 14
+        "total_ranked_rows": 15
       },
       "distance_per_hour_m": {
         "metric_key": "distance_per_hour_m",
@@ -4632,6 +4920,56 @@
             "rank": 2
           },
           {
+            "author": "양.아치",
+            "search_key": "양.아치",
+            "latest_post_date": "2026-04-19",
+            "metric_key": "distance_per_hour_m",
+            "metric_value": 2250.0,
+            "metric_value_text_ko": "2250m/h",
+            "secondary_text_ko": "1회 · 1.6km",
+            "primary_title": {
+              "badge_id": "grw_05",
+              "category": "growth",
+              "name_ko": "거리 각성",
+              "short_label_ko": "+1500m",
+              "description_ko": "최근 28일 거리가 확실하게 늘어났습니다.",
+              "threshold_type": "author_recent_growth_distance_m",
+              "threshold_value": 1500,
+              "icon_key": "grw.base",
+              "tier": 5,
+              "is_primary_title_candidate": true,
+              "is_hidden": false,
+              "season_tag": null,
+              "current_value": 1650,
+              "current_value_text_ko": "1.6km",
+              "target_value": 1500,
+              "target_value_text_ko": "1.5km",
+              "remaining_value": 0,
+              "remaining_value_text_ko": "해금 완료",
+              "progress_ratio": 1.0,
+              "unlocked_at": "2026-04-19 12:56:54"
+            },
+            "unlocked_badge_count": 13,
+            "badge_counts_by_category": {
+              "attendance": 1,
+              "distance": 1,
+              "time": 0,
+              "efficiency": 5,
+              "growth": 4,
+              "season": 1,
+              "gallery": 0,
+              "fun": 1
+            },
+            "badge_preview": [
+              "첫 입수",
+              "1km",
+              "1500m/h"
+            ],
+            "rank": 3
+          }
+        ],
+        "ranks_4_to_20": [
+          {
             "author": "써머",
             "search_key": "써머",
             "latest_post_date": "2026-03-13",
@@ -4677,10 +5015,8 @@
               "1km",
               "1500m/h"
             ],
-            "rank": 3
-          }
-        ],
-        "ranks_4_to_20": [
+            "rank": 4
+          },
           {
             "author": "0asis",
             "search_key": "0asis",
@@ -4727,7 +5063,7 @@
               "1km",
               "1500m/h"
             ],
-            "rank": 4
+            "rank": 5
           },
           {
             "author": "찌찌누르기",
@@ -4775,7 +5111,7 @@
               "첫 입수",
               "5km"
             ],
-            "rank": 5
+            "rank": 6
           },
           {
             "author": "알프스",
@@ -4823,7 +5159,7 @@
               "3회",
               "첫 입수"
             ],
-            "rank": 6
+            "rank": 7
           },
           {
             "author": "주석",
@@ -4871,7 +5207,7 @@
               "3회",
               "첫 입수"
             ],
-            "rank": 7
+            "rank": 8
           },
           {
             "author": "근육키우기",
@@ -4919,7 +5255,7 @@
               "첫 입수",
               "3km"
             ],
-            "rank": 8
+            "rank": 9
           },
           {
             "author": "청귤",
@@ -4967,7 +5303,7 @@
               "5회",
               "3회"
             ],
-            "rank": 9
+            "rank": 10
           },
           {
             "author": "중년히어로즈",
@@ -5015,7 +5351,7 @@
               "첫 입수",
               "1km"
             ],
-            "rank": 10
+            "rank": 11
           },
           {
             "author": "NTHNG",
@@ -5063,45 +5399,45 @@
               "5회",
               "3회"
             ],
-            "rank": 11
+            "rank": 12
           },
           {
             "author": "천천히영",
             "search_key": "천천히영",
-            "latest_post_date": "2026-04-17",
+            "latest_post_date": "2026-04-19",
             "metric_key": "distance_per_hour_m",
-            "metric_value": 995.79,
-            "metric_value_text_ko": "996m/h",
-            "secondary_text_ko": "10회 · 11.1km",
+            "metric_value": 1036.71,
+            "metric_value_text_ko": "1037m/h",
+            "secondary_text_ko": "11회 · 12.3km",
             "primary_title": {
-              "badge_id": "dst_04",
-              "category": "distance",
-              "name_ko": "장거리 레이서",
-              "short_label_ko": "10km",
-              "description_ko": "누적 10km로 진짜 장거리 감각에 들어갑니다.",
-              "threshold_type": "author_total_distance_m",
-              "threshold_value": 10000,
-              "icon_key": "dst.base",
-              "tier": 4,
+              "badge_id": "grw_06",
+              "category": "growth",
+              "name_ko": "시간 각성",
+              "short_label_ko": "+90분",
+              "description_ko": "최근 28일 누적 시간이 크게 늘었습니다.",
+              "threshold_type": "author_recent_growth_total_seconds",
+              "threshold_value": 5400,
+              "icon_key": "grw.base",
+              "tier": 6,
               "is_primary_title_candidate": true,
               "is_hidden": false,
               "season_tag": null,
-              "current_value": 11100,
-              "current_value_text_ko": "11.1km",
-              "target_value": 10000,
-              "target_value_text_ko": "10km",
+              "current_value": 5428,
+              "current_value_text_ko": "1시간 30분 28초",
+              "target_value": 5400,
+              "target_value_text_ko": "1시간 30분",
               "remaining_value": 0,
               "remaining_value_text_ko": "해금 완료",
               "progress_ratio": 1.0,
-              "unlocked_at": "2026-04-16 16:18:15"
+              "unlocked_at": "2026-03-11 18:00:04"
             },
-            "unlocked_badge_count": 16,
+            "unlocked_badge_count": 19,
             "badge_counts_by_category": {
               "attendance": 4,
               "distance": 4,
               "time": 3,
               "efficiency": 2,
-              "growth": 1,
+              "growth": 4,
               "season": 2,
               "gallery": 0,
               "fun": 0
@@ -5111,7 +5447,7 @@
               "5회",
               "3회"
             ],
-            "rank": 12
+            "rank": 13
           },
           {
             "author": "SㅇS",
@@ -5159,7 +5495,7 @@
               "첫 입수",
               "3km"
             ],
-            "rank": 13
+            "rank": 14
           },
           {
             "author": "매쾌협",
@@ -5207,7 +5543,7 @@
               "1km",
               "1시간"
             ],
-            "rank": 14
+            "rank": 15
           }
         ],
         "rows": [
@@ -5308,6 +5644,54 @@
             "rank": 2
           },
           {
+            "author": "양.아치",
+            "search_key": "양.아치",
+            "latest_post_date": "2026-04-19",
+            "metric_key": "distance_per_hour_m",
+            "metric_value": 2250.0,
+            "metric_value_text_ko": "2250m/h",
+            "secondary_text_ko": "1회 · 1.6km",
+            "primary_title": {
+              "badge_id": "grw_05",
+              "category": "growth",
+              "name_ko": "거리 각성",
+              "short_label_ko": "+1500m",
+              "description_ko": "최근 28일 거리가 확실하게 늘어났습니다.",
+              "threshold_type": "author_recent_growth_distance_m",
+              "threshold_value": 1500,
+              "icon_key": "grw.base",
+              "tier": 5,
+              "is_primary_title_candidate": true,
+              "is_hidden": false,
+              "season_tag": null,
+              "current_value": 1650,
+              "current_value_text_ko": "1.6km",
+              "target_value": 1500,
+              "target_value_text_ko": "1.5km",
+              "remaining_value": 0,
+              "remaining_value_text_ko": "해금 완료",
+              "progress_ratio": 1.0,
+              "unlocked_at": "2026-04-19 12:56:54"
+            },
+            "unlocked_badge_count": 13,
+            "badge_counts_by_category": {
+              "attendance": 1,
+              "distance": 1,
+              "time": 0,
+              "efficiency": 5,
+              "growth": 4,
+              "season": 1,
+              "gallery": 0,
+              "fun": 1
+            },
+            "badge_preview": [
+              "첫 입수",
+              "1km",
+              "1500m/h"
+            ],
+            "rank": 3
+          },
+          {
             "author": "써머",
             "search_key": "써머",
             "latest_post_date": "2026-03-13",
@@ -5353,7 +5737,7 @@
               "1km",
               "1500m/h"
             ],
-            "rank": 3
+            "rank": 4
           },
           {
             "author": "0asis",
@@ -5401,7 +5785,7 @@
               "1km",
               "1500m/h"
             ],
-            "rank": 4
+            "rank": 5
           },
           {
             "author": "찌찌누르기",
@@ -5449,7 +5833,7 @@
               "첫 입수",
               "5km"
             ],
-            "rank": 5
+            "rank": 6
           },
           {
             "author": "알프스",
@@ -5497,7 +5881,7 @@
               "3회",
               "첫 입수"
             ],
-            "rank": 6
+            "rank": 7
           },
           {
             "author": "주석",
@@ -5545,7 +5929,7 @@
               "3회",
               "첫 입수"
             ],
-            "rank": 7
+            "rank": 8
           },
           {
             "author": "근육키우기",
@@ -5593,7 +5977,7 @@
               "첫 입수",
               "3km"
             ],
-            "rank": 8
+            "rank": 9
           },
           {
             "author": "청귤",
@@ -5641,7 +6025,7 @@
               "5회",
               "3회"
             ],
-            "rank": 9
+            "rank": 10
           },
           {
             "author": "중년히어로즈",
@@ -5689,7 +6073,7 @@
               "첫 입수",
               "1km"
             ],
-            "rank": 10
+            "rank": 11
           },
           {
             "author": "NTHNG",
@@ -5737,45 +6121,45 @@
               "5회",
               "3회"
             ],
-            "rank": 11
+            "rank": 12
           },
           {
             "author": "천천히영",
             "search_key": "천천히영",
-            "latest_post_date": "2026-04-17",
+            "latest_post_date": "2026-04-19",
             "metric_key": "distance_per_hour_m",
-            "metric_value": 995.79,
-            "metric_value_text_ko": "996m/h",
-            "secondary_text_ko": "10회 · 11.1km",
+            "metric_value": 1036.71,
+            "metric_value_text_ko": "1037m/h",
+            "secondary_text_ko": "11회 · 12.3km",
             "primary_title": {
-              "badge_id": "dst_04",
-              "category": "distance",
-              "name_ko": "장거리 레이서",
-              "short_label_ko": "10km",
-              "description_ko": "누적 10km로 진짜 장거리 감각에 들어갑니다.",
-              "threshold_type": "author_total_distance_m",
-              "threshold_value": 10000,
-              "icon_key": "dst.base",
-              "tier": 4,
+              "badge_id": "grw_06",
+              "category": "growth",
+              "name_ko": "시간 각성",
+              "short_label_ko": "+90분",
+              "description_ko": "최근 28일 누적 시간이 크게 늘었습니다.",
+              "threshold_type": "author_recent_growth_total_seconds",
+              "threshold_value": 5400,
+              "icon_key": "grw.base",
+              "tier": 6,
               "is_primary_title_candidate": true,
               "is_hidden": false,
               "season_tag": null,
-              "current_value": 11100,
-              "current_value_text_ko": "11.1km",
-              "target_value": 10000,
-              "target_value_text_ko": "10km",
+              "current_value": 5428,
+              "current_value_text_ko": "1시간 30분 28초",
+              "target_value": 5400,
+              "target_value_text_ko": "1시간 30분",
               "remaining_value": 0,
               "remaining_value_text_ko": "해금 완료",
               "progress_ratio": 1.0,
-              "unlocked_at": "2026-04-16 16:18:15"
+              "unlocked_at": "2026-03-11 18:00:04"
             },
-            "unlocked_badge_count": 16,
+            "unlocked_badge_count": 19,
             "badge_counts_by_category": {
               "attendance": 4,
               "distance": 4,
               "time": 3,
               "efficiency": 2,
-              "growth": 1,
+              "growth": 4,
               "season": 2,
               "gallery": 0,
               "fun": 0
@@ -5785,7 +6169,7 @@
               "5회",
               "3회"
             ],
-            "rank": 12
+            "rank": 13
           },
           {
             "author": "SㅇS",
@@ -5833,7 +6217,7 @@
               "첫 입수",
               "3km"
             ],
-            "rank": 13
+            "rank": 14
           },
           {
             "author": "매쾌협",
@@ -5881,10 +6265,10 @@
               "1km",
               "1시간"
             ],
-            "rank": 14
+            "rank": 15
           }
         ],
-        "total_ranked_rows": 14
+        "total_ranked_rows": 15
       },
       "growth_swim_count": {
         "metric_key": "growth_swim_count",
@@ -6086,6 +6470,54 @@
             "rank": 4
           },
           {
+            "author": "양.아치",
+            "search_key": "양.아치",
+            "latest_post_date": "2026-04-19",
+            "metric_key": "growth_swim_count",
+            "metric_value": 1.0,
+            "metric_value_text_ko": "+1회",
+            "secondary_text_ko": "누적 1.6km · 44분",
+            "primary_title": {
+              "badge_id": "grw_05",
+              "category": "growth",
+              "name_ko": "거리 각성",
+              "short_label_ko": "+1500m",
+              "description_ko": "최근 28일 거리가 확실하게 늘어났습니다.",
+              "threshold_type": "author_recent_growth_distance_m",
+              "threshold_value": 1500,
+              "icon_key": "grw.base",
+              "tier": 5,
+              "is_primary_title_candidate": true,
+              "is_hidden": false,
+              "season_tag": null,
+              "current_value": 1650,
+              "current_value_text_ko": "1.6km",
+              "target_value": 1500,
+              "target_value_text_ko": "1.5km",
+              "remaining_value": 0,
+              "remaining_value_text_ko": "해금 완료",
+              "progress_ratio": 1.0,
+              "unlocked_at": "2026-04-19 12:56:54"
+            },
+            "unlocked_badge_count": 13,
+            "badge_counts_by_category": {
+              "attendance": 1,
+              "distance": 1,
+              "time": 0,
+              "efficiency": 5,
+              "growth": 4,
+              "season": 1,
+              "gallery": 0,
+              "fun": 1
+            },
+            "badge_preview": [
+              "첫 입수",
+              "1km",
+              "1500m/h"
+            ],
+            "rank": 5
+          },
+          {
             "author": "주석",
             "search_key": "주석",
             "latest_post_date": "2026-04-17",
@@ -6131,7 +6563,55 @@
               "3회",
               "첫 입수"
             ],
-            "rank": 5
+            "rank": 6
+          },
+          {
+            "author": "천천히영",
+            "search_key": "천천히영",
+            "latest_post_date": "2026-04-19",
+            "metric_key": "growth_swim_count",
+            "metric_value": 1.0,
+            "metric_value_text_ko": "+1회",
+            "secondary_text_ko": "누적 12.3km · 11시간 51분",
+            "primary_title": {
+              "badge_id": "grw_06",
+              "category": "growth",
+              "name_ko": "시간 각성",
+              "short_label_ko": "+90분",
+              "description_ko": "최근 28일 누적 시간이 크게 늘었습니다.",
+              "threshold_type": "author_recent_growth_total_seconds",
+              "threshold_value": 5400,
+              "icon_key": "grw.base",
+              "tier": 6,
+              "is_primary_title_candidate": true,
+              "is_hidden": false,
+              "season_tag": null,
+              "current_value": 5428,
+              "current_value_text_ko": "1시간 30분 28초",
+              "target_value": 5400,
+              "target_value_text_ko": "1시간 30분",
+              "remaining_value": 0,
+              "remaining_value_text_ko": "해금 완료",
+              "progress_ratio": 1.0,
+              "unlocked_at": "2026-03-11 18:00:04"
+            },
+            "unlocked_badge_count": 19,
+            "badge_counts_by_category": {
+              "attendance": 4,
+              "distance": 4,
+              "time": 3,
+              "efficiency": 2,
+              "growth": 4,
+              "season": 2,
+              "gallery": 0,
+              "fun": 0
+            },
+            "badge_preview": [
+              "10회",
+              "5회",
+              "3회"
+            ],
+            "rank": 7
           },
           {
             "author": "매쾌협",
@@ -6179,55 +6659,7 @@
               "1km",
               "1시간"
             ],
-            "rank": 6
-          },
-          {
-            "author": "천천히영",
-            "search_key": "천천히영",
-            "latest_post_date": "2026-04-17",
-            "metric_key": "growth_swim_count",
-            "metric_value": 0.0,
-            "metric_value_text_ko": "0회",
-            "secondary_text_ko": "누적 11.1km · 11시간 8분",
-            "primary_title": {
-              "badge_id": "dst_04",
-              "category": "distance",
-              "name_ko": "장거리 레이서",
-              "short_label_ko": "10km",
-              "description_ko": "누적 10km로 진짜 장거리 감각에 들어갑니다.",
-              "threshold_type": "author_total_distance_m",
-              "threshold_value": 10000,
-              "icon_key": "dst.base",
-              "tier": 4,
-              "is_primary_title_candidate": true,
-              "is_hidden": false,
-              "season_tag": null,
-              "current_value": 11100,
-              "current_value_text_ko": "11.1km",
-              "target_value": 10000,
-              "target_value_text_ko": "10km",
-              "remaining_value": 0,
-              "remaining_value_text_ko": "해금 완료",
-              "progress_ratio": 1.0,
-              "unlocked_at": "2026-04-16 16:18:15"
-            },
-            "unlocked_badge_count": 16,
-            "badge_counts_by_category": {
-              "attendance": 4,
-              "distance": 4,
-              "time": 3,
-              "efficiency": 2,
-              "growth": 1,
-              "season": 2,
-              "gallery": 0,
-              "fun": 0
-            },
-            "badge_preview": [
-              "10회",
-              "5회",
-              "3회"
-            ],
-            "rank": 7
+            "rank": 8
           },
           {
             "author": "0asis",
@@ -6275,7 +6707,7 @@
               "1km",
               "1500m/h"
             ],
-            "rank": 8
+            "rank": 9
           },
           {
             "author": "써머",
@@ -6323,7 +6755,7 @@
               "1km",
               "1500m/h"
             ],
-            "rank": 9
+            "rank": 10
           },
           {
             "author": "중년히어로즈",
@@ -6371,7 +6803,7 @@
               "첫 입수",
               "1km"
             ],
-            "rank": 10
+            "rank": 11
           },
           {
             "author": "HEE",
@@ -6419,7 +6851,7 @@
               "3km",
               "1km"
             ],
-            "rank": 11
+            "rank": 12
           },
           {
             "author": "찌찌누르기",
@@ -6467,7 +6899,7 @@
               "첫 입수",
               "5km"
             ],
-            "rank": 12
+            "rank": 13
           },
           {
             "author": "청귤",
@@ -6515,7 +6947,7 @@
               "5회",
               "3회"
             ],
-            "rank": 13
+            "rank": 14
           },
           {
             "author": "NTHNG",
@@ -6563,7 +6995,7 @@
               "5회",
               "3회"
             ],
-            "rank": 14
+            "rank": 15
           }
         ],
         "rows": [
@@ -6760,6 +7192,54 @@
             "rank": 4
           },
           {
+            "author": "양.아치",
+            "search_key": "양.아치",
+            "latest_post_date": "2026-04-19",
+            "metric_key": "growth_swim_count",
+            "metric_value": 1.0,
+            "metric_value_text_ko": "+1회",
+            "secondary_text_ko": "누적 1.6km · 44분",
+            "primary_title": {
+              "badge_id": "grw_05",
+              "category": "growth",
+              "name_ko": "거리 각성",
+              "short_label_ko": "+1500m",
+              "description_ko": "최근 28일 거리가 확실하게 늘어났습니다.",
+              "threshold_type": "author_recent_growth_distance_m",
+              "threshold_value": 1500,
+              "icon_key": "grw.base",
+              "tier": 5,
+              "is_primary_title_candidate": true,
+              "is_hidden": false,
+              "season_tag": null,
+              "current_value": 1650,
+              "current_value_text_ko": "1.6km",
+              "target_value": 1500,
+              "target_value_text_ko": "1.5km",
+              "remaining_value": 0,
+              "remaining_value_text_ko": "해금 완료",
+              "progress_ratio": 1.0,
+              "unlocked_at": "2026-04-19 12:56:54"
+            },
+            "unlocked_badge_count": 13,
+            "badge_counts_by_category": {
+              "attendance": 1,
+              "distance": 1,
+              "time": 0,
+              "efficiency": 5,
+              "growth": 4,
+              "season": 1,
+              "gallery": 0,
+              "fun": 1
+            },
+            "badge_preview": [
+              "첫 입수",
+              "1km",
+              "1500m/h"
+            ],
+            "rank": 5
+          },
+          {
             "author": "주석",
             "search_key": "주석",
             "latest_post_date": "2026-04-17",
@@ -6805,7 +7285,55 @@
               "3회",
               "첫 입수"
             ],
-            "rank": 5
+            "rank": 6
+          },
+          {
+            "author": "천천히영",
+            "search_key": "천천히영",
+            "latest_post_date": "2026-04-19",
+            "metric_key": "growth_swim_count",
+            "metric_value": 1.0,
+            "metric_value_text_ko": "+1회",
+            "secondary_text_ko": "누적 12.3km · 11시간 51분",
+            "primary_title": {
+              "badge_id": "grw_06",
+              "category": "growth",
+              "name_ko": "시간 각성",
+              "short_label_ko": "+90분",
+              "description_ko": "최근 28일 누적 시간이 크게 늘었습니다.",
+              "threshold_type": "author_recent_growth_total_seconds",
+              "threshold_value": 5400,
+              "icon_key": "grw.base",
+              "tier": 6,
+              "is_primary_title_candidate": true,
+              "is_hidden": false,
+              "season_tag": null,
+              "current_value": 5428,
+              "current_value_text_ko": "1시간 30분 28초",
+              "target_value": 5400,
+              "target_value_text_ko": "1시간 30분",
+              "remaining_value": 0,
+              "remaining_value_text_ko": "해금 완료",
+              "progress_ratio": 1.0,
+              "unlocked_at": "2026-03-11 18:00:04"
+            },
+            "unlocked_badge_count": 19,
+            "badge_counts_by_category": {
+              "attendance": 4,
+              "distance": 4,
+              "time": 3,
+              "efficiency": 2,
+              "growth": 4,
+              "season": 2,
+              "gallery": 0,
+              "fun": 0
+            },
+            "badge_preview": [
+              "10회",
+              "5회",
+              "3회"
+            ],
+            "rank": 7
           },
           {
             "author": "매쾌협",
@@ -6853,55 +7381,7 @@
               "1km",
               "1시간"
             ],
-            "rank": 6
-          },
-          {
-            "author": "천천히영",
-            "search_key": "천천히영",
-            "latest_post_date": "2026-04-17",
-            "metric_key": "growth_swim_count",
-            "metric_value": 0.0,
-            "metric_value_text_ko": "0회",
-            "secondary_text_ko": "누적 11.1km · 11시간 8분",
-            "primary_title": {
-              "badge_id": "dst_04",
-              "category": "distance",
-              "name_ko": "장거리 레이서",
-              "short_label_ko": "10km",
-              "description_ko": "누적 10km로 진짜 장거리 감각에 들어갑니다.",
-              "threshold_type": "author_total_distance_m",
-              "threshold_value": 10000,
-              "icon_key": "dst.base",
-              "tier": 4,
-              "is_primary_title_candidate": true,
-              "is_hidden": false,
-              "season_tag": null,
-              "current_value": 11100,
-              "current_value_text_ko": "11.1km",
-              "target_value": 10000,
-              "target_value_text_ko": "10km",
-              "remaining_value": 0,
-              "remaining_value_text_ko": "해금 완료",
-              "progress_ratio": 1.0,
-              "unlocked_at": "2026-04-16 16:18:15"
-            },
-            "unlocked_badge_count": 16,
-            "badge_counts_by_category": {
-              "attendance": 4,
-              "distance": 4,
-              "time": 3,
-              "efficiency": 2,
-              "growth": 1,
-              "season": 2,
-              "gallery": 0,
-              "fun": 0
-            },
-            "badge_preview": [
-              "10회",
-              "5회",
-              "3회"
-            ],
-            "rank": 7
+            "rank": 8
           },
           {
             "author": "0asis",
@@ -6949,7 +7429,7 @@
               "1km",
               "1500m/h"
             ],
-            "rank": 8
+            "rank": 9
           },
           {
             "author": "써머",
@@ -6997,7 +7477,7 @@
               "1km",
               "1500m/h"
             ],
-            "rank": 9
+            "rank": 10
           },
           {
             "author": "중년히어로즈",
@@ -7045,7 +7525,7 @@
               "첫 입수",
               "1km"
             ],
-            "rank": 10
+            "rank": 11
           },
           {
             "author": "HEE",
@@ -7093,7 +7573,7 @@
               "3km",
               "1km"
             ],
-            "rank": 11
+            "rank": 12
           },
           {
             "author": "찌찌누르기",
@@ -7141,7 +7621,7 @@
               "첫 입수",
               "5km"
             ],
-            "rank": 12
+            "rank": 13
           },
           {
             "author": "청귤",
@@ -7189,7 +7669,7 @@
               "5회",
               "3회"
             ],
-            "rank": 13
+            "rank": 14
           },
           {
             "author": "NTHNG",
@@ -7237,10 +7717,10 @@
               "5회",
               "3회"
             ],
-            "rank": 14
+            "rank": 15
           }
         ],
-        "total_ranked_rows": 14
+        "total_ranked_rows": 15
       },
       "growth_distance_m": {
         "metric_key": "growth_distance_m",
@@ -7442,6 +7922,102 @@
             "rank": 4
           },
           {
+            "author": "양.아치",
+            "search_key": "양.아치",
+            "latest_post_date": "2026-04-19",
+            "metric_key": "growth_distance_m",
+            "metric_value": 1650.0,
+            "metric_value_text_ko": "+1.6km",
+            "secondary_text_ko": "누적 1.6km · 44분",
+            "primary_title": {
+              "badge_id": "grw_05",
+              "category": "growth",
+              "name_ko": "거리 각성",
+              "short_label_ko": "+1500m",
+              "description_ko": "최근 28일 거리가 확실하게 늘어났습니다.",
+              "threshold_type": "author_recent_growth_distance_m",
+              "threshold_value": 1500,
+              "icon_key": "grw.base",
+              "tier": 5,
+              "is_primary_title_candidate": true,
+              "is_hidden": false,
+              "season_tag": null,
+              "current_value": 1650,
+              "current_value_text_ko": "1.6km",
+              "target_value": 1500,
+              "target_value_text_ko": "1.5km",
+              "remaining_value": 0,
+              "remaining_value_text_ko": "해금 완료",
+              "progress_ratio": 1.0,
+              "unlocked_at": "2026-04-19 12:56:54"
+            },
+            "unlocked_badge_count": 13,
+            "badge_counts_by_category": {
+              "attendance": 1,
+              "distance": 1,
+              "time": 0,
+              "efficiency": 5,
+              "growth": 4,
+              "season": 1,
+              "gallery": 0,
+              "fun": 1
+            },
+            "badge_preview": [
+              "첫 입수",
+              "1km",
+              "1500m/h"
+            ],
+            "rank": 5
+          },
+          {
+            "author": "천천히영",
+            "search_key": "천천히영",
+            "latest_post_date": "2026-04-19",
+            "metric_key": "growth_distance_m",
+            "metric_value": 1100.0,
+            "metric_value_text_ko": "+1.1km",
+            "secondary_text_ko": "누적 12.3km · 11시간 51분",
+            "primary_title": {
+              "badge_id": "grw_06",
+              "category": "growth",
+              "name_ko": "시간 각성",
+              "short_label_ko": "+90분",
+              "description_ko": "최근 28일 누적 시간이 크게 늘었습니다.",
+              "threshold_type": "author_recent_growth_total_seconds",
+              "threshold_value": 5400,
+              "icon_key": "grw.base",
+              "tier": 6,
+              "is_primary_title_candidate": true,
+              "is_hidden": false,
+              "season_tag": null,
+              "current_value": 5428,
+              "current_value_text_ko": "1시간 30분 28초",
+              "target_value": 5400,
+              "target_value_text_ko": "1시간 30분",
+              "remaining_value": 0,
+              "remaining_value_text_ko": "해금 완료",
+              "progress_ratio": 1.0,
+              "unlocked_at": "2026-03-11 18:00:04"
+            },
+            "unlocked_badge_count": 19,
+            "badge_counts_by_category": {
+              "attendance": 4,
+              "distance": 4,
+              "time": 3,
+              "efficiency": 2,
+              "growth": 4,
+              "season": 2,
+              "gallery": 0,
+              "fun": 0
+            },
+            "badge_preview": [
+              "10회",
+              "5회",
+              "3회"
+            ],
+            "rank": 6
+          },
+          {
             "author": "매쾌협",
             "search_key": "매쾌협",
             "latest_post_date": "2026-04-15",
@@ -7487,7 +8063,7 @@
               "1km",
               "1시간"
             ],
-            "rank": 5
+            "rank": 7
           },
           {
             "author": "주석",
@@ -7535,55 +8111,7 @@
               "3회",
               "첫 입수"
             ],
-            "rank": 6
-          },
-          {
-            "author": "천천히영",
-            "search_key": "천천히영",
-            "latest_post_date": "2026-04-17",
-            "metric_key": "growth_distance_m",
-            "metric_value": -100.0,
-            "metric_value_text_ko": "-100m",
-            "secondary_text_ko": "누적 11.1km · 11시간 8분",
-            "primary_title": {
-              "badge_id": "dst_04",
-              "category": "distance",
-              "name_ko": "장거리 레이서",
-              "short_label_ko": "10km",
-              "description_ko": "누적 10km로 진짜 장거리 감각에 들어갑니다.",
-              "threshold_type": "author_total_distance_m",
-              "threshold_value": 10000,
-              "icon_key": "dst.base",
-              "tier": 4,
-              "is_primary_title_candidate": true,
-              "is_hidden": false,
-              "season_tag": null,
-              "current_value": 11100,
-              "current_value_text_ko": "11.1km",
-              "target_value": 10000,
-              "target_value_text_ko": "10km",
-              "remaining_value": 0,
-              "remaining_value_text_ko": "해금 완료",
-              "progress_ratio": 1.0,
-              "unlocked_at": "2026-04-16 16:18:15"
-            },
-            "unlocked_badge_count": 16,
-            "badge_counts_by_category": {
-              "attendance": 4,
-              "distance": 4,
-              "time": 3,
-              "efficiency": 2,
-              "growth": 1,
-              "season": 2,
-              "gallery": 0,
-              "fun": 0
-            },
-            "badge_preview": [
-              "10회",
-              "5회",
-              "3회"
-            ],
-            "rank": 7
+            "rank": 8
           },
           {
             "author": "중년히어로즈",
@@ -7631,7 +8159,7 @@
               "첫 입수",
               "1km"
             ],
-            "rank": 8
+            "rank": 9
           },
           {
             "author": "써머",
@@ -7679,7 +8207,7 @@
               "1km",
               "1500m/h"
             ],
-            "rank": 9
+            "rank": 10
           },
           {
             "author": "0asis",
@@ -7727,7 +8255,7 @@
               "1km",
               "1500m/h"
             ],
-            "rank": 10
+            "rank": 11
           },
           {
             "author": "HEE",
@@ -7775,7 +8303,7 @@
               "3km",
               "1km"
             ],
-            "rank": 11
+            "rank": 12
           },
           {
             "author": "찌찌누르기",
@@ -7823,7 +8351,7 @@
               "첫 입수",
               "5km"
             ],
-            "rank": 12
+            "rank": 13
           },
           {
             "author": "청귤",
@@ -7871,7 +8399,7 @@
               "5회",
               "3회"
             ],
-            "rank": 13
+            "rank": 14
           },
           {
             "author": "NTHNG",
@@ -7919,7 +8447,7 @@
               "5회",
               "3회"
             ],
-            "rank": 14
+            "rank": 15
           }
         ],
         "rows": [
@@ -8116,6 +8644,102 @@
             "rank": 4
           },
           {
+            "author": "양.아치",
+            "search_key": "양.아치",
+            "latest_post_date": "2026-04-19",
+            "metric_key": "growth_distance_m",
+            "metric_value": 1650.0,
+            "metric_value_text_ko": "+1.6km",
+            "secondary_text_ko": "누적 1.6km · 44분",
+            "primary_title": {
+              "badge_id": "grw_05",
+              "category": "growth",
+              "name_ko": "거리 각성",
+              "short_label_ko": "+1500m",
+              "description_ko": "최근 28일 거리가 확실하게 늘어났습니다.",
+              "threshold_type": "author_recent_growth_distance_m",
+              "threshold_value": 1500,
+              "icon_key": "grw.base",
+              "tier": 5,
+              "is_primary_title_candidate": true,
+              "is_hidden": false,
+              "season_tag": null,
+              "current_value": 1650,
+              "current_value_text_ko": "1.6km",
+              "target_value": 1500,
+              "target_value_text_ko": "1.5km",
+              "remaining_value": 0,
+              "remaining_value_text_ko": "해금 완료",
+              "progress_ratio": 1.0,
+              "unlocked_at": "2026-04-19 12:56:54"
+            },
+            "unlocked_badge_count": 13,
+            "badge_counts_by_category": {
+              "attendance": 1,
+              "distance": 1,
+              "time": 0,
+              "efficiency": 5,
+              "growth": 4,
+              "season": 1,
+              "gallery": 0,
+              "fun": 1
+            },
+            "badge_preview": [
+              "첫 입수",
+              "1km",
+              "1500m/h"
+            ],
+            "rank": 5
+          },
+          {
+            "author": "천천히영",
+            "search_key": "천천히영",
+            "latest_post_date": "2026-04-19",
+            "metric_key": "growth_distance_m",
+            "metric_value": 1100.0,
+            "metric_value_text_ko": "+1.1km",
+            "secondary_text_ko": "누적 12.3km · 11시간 51분",
+            "primary_title": {
+              "badge_id": "grw_06",
+              "category": "growth",
+              "name_ko": "시간 각성",
+              "short_label_ko": "+90분",
+              "description_ko": "최근 28일 누적 시간이 크게 늘었습니다.",
+              "threshold_type": "author_recent_growth_total_seconds",
+              "threshold_value": 5400,
+              "icon_key": "grw.base",
+              "tier": 6,
+              "is_primary_title_candidate": true,
+              "is_hidden": false,
+              "season_tag": null,
+              "current_value": 5428,
+              "current_value_text_ko": "1시간 30분 28초",
+              "target_value": 5400,
+              "target_value_text_ko": "1시간 30분",
+              "remaining_value": 0,
+              "remaining_value_text_ko": "해금 완료",
+              "progress_ratio": 1.0,
+              "unlocked_at": "2026-03-11 18:00:04"
+            },
+            "unlocked_badge_count": 19,
+            "badge_counts_by_category": {
+              "attendance": 4,
+              "distance": 4,
+              "time": 3,
+              "efficiency": 2,
+              "growth": 4,
+              "season": 2,
+              "gallery": 0,
+              "fun": 0
+            },
+            "badge_preview": [
+              "10회",
+              "5회",
+              "3회"
+            ],
+            "rank": 6
+          },
+          {
             "author": "매쾌협",
             "search_key": "매쾌협",
             "latest_post_date": "2026-04-15",
@@ -8161,7 +8785,7 @@
               "1km",
               "1시간"
             ],
-            "rank": 5
+            "rank": 7
           },
           {
             "author": "주석",
@@ -8209,55 +8833,7 @@
               "3회",
               "첫 입수"
             ],
-            "rank": 6
-          },
-          {
-            "author": "천천히영",
-            "search_key": "천천히영",
-            "latest_post_date": "2026-04-17",
-            "metric_key": "growth_distance_m",
-            "metric_value": -100.0,
-            "metric_value_text_ko": "-100m",
-            "secondary_text_ko": "누적 11.1km · 11시간 8분",
-            "primary_title": {
-              "badge_id": "dst_04",
-              "category": "distance",
-              "name_ko": "장거리 레이서",
-              "short_label_ko": "10km",
-              "description_ko": "누적 10km로 진짜 장거리 감각에 들어갑니다.",
-              "threshold_type": "author_total_distance_m",
-              "threshold_value": 10000,
-              "icon_key": "dst.base",
-              "tier": 4,
-              "is_primary_title_candidate": true,
-              "is_hidden": false,
-              "season_tag": null,
-              "current_value": 11100,
-              "current_value_text_ko": "11.1km",
-              "target_value": 10000,
-              "target_value_text_ko": "10km",
-              "remaining_value": 0,
-              "remaining_value_text_ko": "해금 완료",
-              "progress_ratio": 1.0,
-              "unlocked_at": "2026-04-16 16:18:15"
-            },
-            "unlocked_badge_count": 16,
-            "badge_counts_by_category": {
-              "attendance": 4,
-              "distance": 4,
-              "time": 3,
-              "efficiency": 2,
-              "growth": 1,
-              "season": 2,
-              "gallery": 0,
-              "fun": 0
-            },
-            "badge_preview": [
-              "10회",
-              "5회",
-              "3회"
-            ],
-            "rank": 7
+            "rank": 8
           },
           {
             "author": "중년히어로즈",
@@ -8305,7 +8881,7 @@
               "첫 입수",
               "1km"
             ],
-            "rank": 8
+            "rank": 9
           },
           {
             "author": "써머",
@@ -8353,7 +8929,7 @@
               "1km",
               "1500m/h"
             ],
-            "rank": 9
+            "rank": 10
           },
           {
             "author": "0asis",
@@ -8401,7 +8977,7 @@
               "1km",
               "1500m/h"
             ],
-            "rank": 10
+            "rank": 11
           },
           {
             "author": "HEE",
@@ -8449,7 +9025,7 @@
               "3km",
               "1km"
             ],
-            "rank": 11
+            "rank": 12
           },
           {
             "author": "찌찌누르기",
@@ -8497,7 +9073,7 @@
               "첫 입수",
               "5km"
             ],
-            "rank": 12
+            "rank": 13
           },
           {
             "author": "청귤",
@@ -8545,7 +9121,7 @@
               "5회",
               "3회"
             ],
-            "rank": 13
+            "rank": 14
           },
           {
             "author": "NTHNG",
@@ -8593,10 +9169,10 @@
               "5회",
               "3회"
             ],
-            "rank": 14
+            "rank": 15
           }
         ],
-        "total_ranked_rows": 14
+        "total_ranked_rows": 15
       },
       "growth_total_seconds": {
         "metric_key": "growth_total_seconds",
@@ -8700,6 +9276,56 @@
             "rank": 2
           },
           {
+            "author": "천천히영",
+            "search_key": "천천히영",
+            "latest_post_date": "2026-04-19",
+            "metric_key": "growth_total_seconds",
+            "metric_value": 5428.0,
+            "metric_value_text_ko": "+1시간 30분",
+            "secondary_text_ko": "누적 12.3km · 11시간 51분",
+            "primary_title": {
+              "badge_id": "grw_06",
+              "category": "growth",
+              "name_ko": "시간 각성",
+              "short_label_ko": "+90분",
+              "description_ko": "최근 28일 누적 시간이 크게 늘었습니다.",
+              "threshold_type": "author_recent_growth_total_seconds",
+              "threshold_value": 5400,
+              "icon_key": "grw.base",
+              "tier": 6,
+              "is_primary_title_candidate": true,
+              "is_hidden": false,
+              "season_tag": null,
+              "current_value": 5428,
+              "current_value_text_ko": "1시간 30분 28초",
+              "target_value": 5400,
+              "target_value_text_ko": "1시간 30분",
+              "remaining_value": 0,
+              "remaining_value_text_ko": "해금 완료",
+              "progress_ratio": 1.0,
+              "unlocked_at": "2026-03-11 18:00:04"
+            },
+            "unlocked_badge_count": 19,
+            "badge_counts_by_category": {
+              "attendance": 4,
+              "distance": 4,
+              "time": 3,
+              "efficiency": 2,
+              "growth": 4,
+              "season": 2,
+              "gallery": 0,
+              "fun": 0
+            },
+            "badge_preview": [
+              "10회",
+              "5회",
+              "3회"
+            ],
+            "rank": 3
+          }
+        ],
+        "ranks_4_to_20": [
+          {
             "author": "근육키우기",
             "search_key": "근육키우기",
             "latest_post_date": "2026-04-16",
@@ -8745,10 +9371,8 @@
               "첫 입수",
               "3km"
             ],
-            "rank": 3
-          }
-        ],
-        "ranks_4_to_20": [
+            "rank": 4
+          },
           {
             "author": "알프스",
             "search_key": "알프스",
@@ -8795,55 +9419,55 @@
               "3회",
               "첫 입수"
             ],
-            "rank": 4
+            "rank": 5
           },
           {
-            "author": "천천히영",
-            "search_key": "천천히영",
-            "latest_post_date": "2026-04-17",
+            "author": "양.아치",
+            "search_key": "양.아치",
+            "latest_post_date": "2026-04-19",
             "metric_key": "growth_total_seconds",
-            "metric_value": 2845.0,
-            "metric_value_text_ko": "+47분",
-            "secondary_text_ko": "누적 11.1km · 11시간 8분",
+            "metric_value": 2640.0,
+            "metric_value_text_ko": "+44분",
+            "secondary_text_ko": "누적 1.6km · 44분",
             "primary_title": {
-              "badge_id": "dst_04",
-              "category": "distance",
-              "name_ko": "장거리 레이서",
-              "short_label_ko": "10km",
-              "description_ko": "누적 10km로 진짜 장거리 감각에 들어갑니다.",
-              "threshold_type": "author_total_distance_m",
-              "threshold_value": 10000,
-              "icon_key": "dst.base",
-              "tier": 4,
+              "badge_id": "grw_05",
+              "category": "growth",
+              "name_ko": "거리 각성",
+              "short_label_ko": "+1500m",
+              "description_ko": "최근 28일 거리가 확실하게 늘어났습니다.",
+              "threshold_type": "author_recent_growth_distance_m",
+              "threshold_value": 1500,
+              "icon_key": "grw.base",
+              "tier": 5,
               "is_primary_title_candidate": true,
               "is_hidden": false,
               "season_tag": null,
-              "current_value": 11100,
-              "current_value_text_ko": "11.1km",
-              "target_value": 10000,
-              "target_value_text_ko": "10km",
+              "current_value": 1650,
+              "current_value_text_ko": "1.6km",
+              "target_value": 1500,
+              "target_value_text_ko": "1.5km",
               "remaining_value": 0,
               "remaining_value_text_ko": "해금 완료",
               "progress_ratio": 1.0,
-              "unlocked_at": "2026-04-16 16:18:15"
+              "unlocked_at": "2026-04-19 12:56:54"
             },
-            "unlocked_badge_count": 16,
+            "unlocked_badge_count": 13,
             "badge_counts_by_category": {
-              "attendance": 4,
-              "distance": 4,
-              "time": 3,
-              "efficiency": 2,
-              "growth": 1,
-              "season": 2,
+              "attendance": 1,
+              "distance": 1,
+              "time": 0,
+              "efficiency": 5,
+              "growth": 4,
+              "season": 1,
               "gallery": 0,
-              "fun": 0
+              "fun": 1
             },
             "badge_preview": [
-              "10회",
-              "5회",
-              "3회"
+              "첫 입수",
+              "1km",
+              "1500m/h"
             ],
-            "rank": 5
+            "rank": 6
           },
           {
             "author": "주석",
@@ -8891,7 +9515,7 @@
               "3회",
               "첫 입수"
             ],
-            "rank": 6
+            "rank": 7
           },
           {
             "author": "매쾌협",
@@ -8939,7 +9563,7 @@
               "1km",
               "1시간"
             ],
-            "rank": 7
+            "rank": 8
           },
           {
             "author": "써머",
@@ -8987,7 +9611,7 @@
               "1km",
               "1500m/h"
             ],
-            "rank": 8
+            "rank": 9
           },
           {
             "author": "중년히어로즈",
@@ -9035,7 +9659,7 @@
               "첫 입수",
               "1km"
             ],
-            "rank": 9
+            "rank": 10
           },
           {
             "author": "0asis",
@@ -9083,7 +9707,7 @@
               "1km",
               "1500m/h"
             ],
-            "rank": 10
+            "rank": 11
           },
           {
             "author": "HEE",
@@ -9131,7 +9755,7 @@
               "3km",
               "1km"
             ],
-            "rank": 11
+            "rank": 12
           },
           {
             "author": "찌찌누르기",
@@ -9179,7 +9803,7 @@
               "첫 입수",
               "5km"
             ],
-            "rank": 12
+            "rank": 13
           },
           {
             "author": "청귤",
@@ -9227,7 +9851,7 @@
               "5회",
               "3회"
             ],
-            "rank": 13
+            "rank": 14
           },
           {
             "author": "NTHNG",
@@ -9275,7 +9899,7 @@
               "5회",
               "3회"
             ],
-            "rank": 14
+            "rank": 15
           }
         ],
         "rows": [
@@ -9376,6 +10000,54 @@
             "rank": 2
           },
           {
+            "author": "천천히영",
+            "search_key": "천천히영",
+            "latest_post_date": "2026-04-19",
+            "metric_key": "growth_total_seconds",
+            "metric_value": 5428.0,
+            "metric_value_text_ko": "+1시간 30분",
+            "secondary_text_ko": "누적 12.3km · 11시간 51분",
+            "primary_title": {
+              "badge_id": "grw_06",
+              "category": "growth",
+              "name_ko": "시간 각성",
+              "short_label_ko": "+90분",
+              "description_ko": "최근 28일 누적 시간이 크게 늘었습니다.",
+              "threshold_type": "author_recent_growth_total_seconds",
+              "threshold_value": 5400,
+              "icon_key": "grw.base",
+              "tier": 6,
+              "is_primary_title_candidate": true,
+              "is_hidden": false,
+              "season_tag": null,
+              "current_value": 5428,
+              "current_value_text_ko": "1시간 30분 28초",
+              "target_value": 5400,
+              "target_value_text_ko": "1시간 30분",
+              "remaining_value": 0,
+              "remaining_value_text_ko": "해금 완료",
+              "progress_ratio": 1.0,
+              "unlocked_at": "2026-03-11 18:00:04"
+            },
+            "unlocked_badge_count": 19,
+            "badge_counts_by_category": {
+              "attendance": 4,
+              "distance": 4,
+              "time": 3,
+              "efficiency": 2,
+              "growth": 4,
+              "season": 2,
+              "gallery": 0,
+              "fun": 0
+            },
+            "badge_preview": [
+              "10회",
+              "5회",
+              "3회"
+            ],
+            "rank": 3
+          },
+          {
             "author": "근육키우기",
             "search_key": "근육키우기",
             "latest_post_date": "2026-04-16",
@@ -9421,7 +10093,7 @@
               "첫 입수",
               "3km"
             ],
-            "rank": 3
+            "rank": 4
           },
           {
             "author": "알프스",
@@ -9469,55 +10141,55 @@
               "3회",
               "첫 입수"
             ],
-            "rank": 4
+            "rank": 5
           },
           {
-            "author": "천천히영",
-            "search_key": "천천히영",
-            "latest_post_date": "2026-04-17",
+            "author": "양.아치",
+            "search_key": "양.아치",
+            "latest_post_date": "2026-04-19",
             "metric_key": "growth_total_seconds",
-            "metric_value": 2845.0,
-            "metric_value_text_ko": "+47분",
-            "secondary_text_ko": "누적 11.1km · 11시간 8분",
+            "metric_value": 2640.0,
+            "metric_value_text_ko": "+44분",
+            "secondary_text_ko": "누적 1.6km · 44분",
             "primary_title": {
-              "badge_id": "dst_04",
-              "category": "distance",
-              "name_ko": "장거리 레이서",
-              "short_label_ko": "10km",
-              "description_ko": "누적 10km로 진짜 장거리 감각에 들어갑니다.",
-              "threshold_type": "author_total_distance_m",
-              "threshold_value": 10000,
-              "icon_key": "dst.base",
-              "tier": 4,
+              "badge_id": "grw_05",
+              "category": "growth",
+              "name_ko": "거리 각성",
+              "short_label_ko": "+1500m",
+              "description_ko": "최근 28일 거리가 확실하게 늘어났습니다.",
+              "threshold_type": "author_recent_growth_distance_m",
+              "threshold_value": 1500,
+              "icon_key": "grw.base",
+              "tier": 5,
               "is_primary_title_candidate": true,
               "is_hidden": false,
               "season_tag": null,
-              "current_value": 11100,
-              "current_value_text_ko": "11.1km",
-              "target_value": 10000,
-              "target_value_text_ko": "10km",
+              "current_value": 1650,
+              "current_value_text_ko": "1.6km",
+              "target_value": 1500,
+              "target_value_text_ko": "1.5km",
               "remaining_value": 0,
               "remaining_value_text_ko": "해금 완료",
               "progress_ratio": 1.0,
-              "unlocked_at": "2026-04-16 16:18:15"
+              "unlocked_at": "2026-04-19 12:56:54"
             },
-            "unlocked_badge_count": 16,
+            "unlocked_badge_count": 13,
             "badge_counts_by_category": {
-              "attendance": 4,
-              "distance": 4,
-              "time": 3,
-              "efficiency": 2,
-              "growth": 1,
-              "season": 2,
+              "attendance": 1,
+              "distance": 1,
+              "time": 0,
+              "efficiency": 5,
+              "growth": 4,
+              "season": 1,
               "gallery": 0,
-              "fun": 0
+              "fun": 1
             },
             "badge_preview": [
-              "10회",
-              "5회",
-              "3회"
+              "첫 입수",
+              "1km",
+              "1500m/h"
             ],
-            "rank": 5
+            "rank": 6
           },
           {
             "author": "주석",
@@ -9565,7 +10237,7 @@
               "3회",
               "첫 입수"
             ],
-            "rank": 6
+            "rank": 7
           },
           {
             "author": "매쾌협",
@@ -9613,7 +10285,7 @@
               "1km",
               "1시간"
             ],
-            "rank": 7
+            "rank": 8
           },
           {
             "author": "써머",
@@ -9661,7 +10333,7 @@
               "1km",
               "1500m/h"
             ],
-            "rank": 8
+            "rank": 9
           },
           {
             "author": "중년히어로즈",
@@ -9709,7 +10381,7 @@
               "첫 입수",
               "1km"
             ],
-            "rank": 9
+            "rank": 10
           },
           {
             "author": "0asis",
@@ -9757,7 +10429,7 @@
               "1km",
               "1500m/h"
             ],
-            "rank": 10
+            "rank": 11
           },
           {
             "author": "HEE",
@@ -9805,7 +10477,7 @@
               "3km",
               "1km"
             ],
-            "rank": 11
+            "rank": 12
           },
           {
             "author": "찌찌누르기",
@@ -9853,7 +10525,7 @@
               "첫 입수",
               "5km"
             ],
-            "rank": 12
+            "rank": 13
           },
           {
             "author": "청귤",
@@ -9901,7 +10573,7 @@
               "5회",
               "3회"
             ],
-            "rank": 13
+            "rank": 14
           },
           {
             "author": "NTHNG",
@@ -9949,10 +10621,10 @@
               "5회",
               "3회"
             ],
-            "rank": 14
+            "rank": 15
           }
         ],
-        "total_ranked_rows": 14
+        "total_ranked_rows": 15
       }
     }
   },
@@ -13970,6 +14642,491 @@
       ]
     },
     {
+      "author": "양.아치",
+      "search_key": "양.아치",
+      "swim_count": 1,
+      "total_distance_m": 1650.0,
+      "total_seconds": 2640,
+      "total_duration_min": 44.0,
+      "distance_per_hour_m": 2250.0,
+      "post_count": 1,
+      "latest_post_date": "2026-04-19",
+      "metric_bucket_counts": {
+        "core": 1
+      },
+      "growth": {
+        "reference_date": "2026-04-19",
+        "window_days": 28,
+        "dashboard_date_floor": "2026-03-01",
+        "recent_window": {
+          "start": "2026-03-23",
+          "end": "2026-04-19",
+          "nominal_start": "2026-03-23",
+          "nominal_end": "2026-04-19",
+          "nominal_day_count": 28,
+          "visible_day_count": 28,
+          "truncated_by_floor": false
+        },
+        "previous_window": {
+          "start": "2026-03-01",
+          "end": "2026-03-22",
+          "nominal_start": "2026-02-23",
+          "nominal_end": "2026-03-22",
+          "nominal_day_count": 28,
+          "visible_day_count": 22,
+          "truncated_by_floor": true
+        },
+        "metrics": {
+          "swim_count": {
+            "recent_value": 1,
+            "previous_value": 0,
+            "delta_value": 1.0,
+            "pct_change": null,
+            "pct_change_status": "previous_zero_growth"
+          },
+          "distance_m": {
+            "recent_value": 1650.0,
+            "previous_value": 0,
+            "delta_value": 1650.0,
+            "pct_change": null,
+            "pct_change_status": "previous_zero_growth"
+          },
+          "total_seconds": {
+            "recent_value": 2640,
+            "previous_value": 0,
+            "delta_value": 2640.0,
+            "pct_change": null,
+            "pct_change_status": "previous_zero_growth"
+          }
+        }
+      },
+      "growth_swim_count": {
+        "recent_value": 1,
+        "previous_value": 0,
+        "delta_value": 1.0,
+        "pct_change": null,
+        "pct_change_status": "previous_zero_growth"
+      },
+      "growth_distance_m": {
+        "recent_value": 1650.0,
+        "previous_value": 0,
+        "delta_value": 1650.0,
+        "pct_change": null,
+        "pct_change_status": "previous_zero_growth"
+      },
+      "growth_total_seconds": {
+        "recent_value": 2640,
+        "previous_value": 0,
+        "delta_value": 2640.0,
+        "pct_change": null,
+        "pct_change_status": "previous_zero_growth"
+      },
+      "primary_title": {
+        "badge_id": "grw_05",
+        "category": "growth",
+        "name_ko": "거리 각성",
+        "short_label_ko": "+1500m",
+        "description_ko": "최근 28일 거리가 확실하게 늘어났습니다.",
+        "threshold_type": "author_recent_growth_distance_m",
+        "threshold_value": 1500,
+        "icon_key": "grw.base",
+        "tier": 5,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null,
+        "current_value": 1650,
+        "current_value_text_ko": "1.6km",
+        "target_value": 1500,
+        "target_value_text_ko": "1.5km",
+        "remaining_value": 0,
+        "remaining_value_text_ko": "해금 완료",
+        "progress_ratio": 1.0,
+        "unlocked_at": "2026-04-19 12:56:54"
+      },
+      "unlocked_badges": [
+        {
+          "badge_id": "att_01",
+          "category": "attendance",
+          "name_ko": "첫 입수",
+          "short_label_ko": "첫 입수",
+          "description_ko": "core 기록을 처음 남기면 받는 첫 스티커입니다.",
+          "threshold_type": "author_total_swim_count",
+          "threshold_value": 1,
+          "icon_key": "att.base",
+          "tier": 1,
+          "is_primary_title_candidate": true,
+          "is_hidden": false,
+          "season_tag": null,
+          "current_value": 1,
+          "current_value_text_ko": "1회",
+          "target_value": 1,
+          "target_value_text_ko": "1회",
+          "remaining_value": 0,
+          "remaining_value_text_ko": "해금 완료",
+          "progress_ratio": 1.0,
+          "unlocked_at": "2026-04-19 12:56:54"
+        },
+        {
+          "badge_id": "dst_01",
+          "category": "distance",
+          "name_ko": "1km 돌파",
+          "short_label_ko": "1km",
+          "description_ko": "누적 1km로 첫 물결을 만듭니다.",
+          "threshold_type": "author_total_distance_m",
+          "threshold_value": 1000,
+          "icon_key": "dst.base",
+          "tier": 1,
+          "is_primary_title_candidate": true,
+          "is_hidden": false,
+          "season_tag": null,
+          "current_value": 1650,
+          "current_value_text_ko": "1.6km",
+          "target_value": 1000,
+          "target_value_text_ko": "1km",
+          "remaining_value": 0,
+          "remaining_value_text_ko": "해금 완료",
+          "progress_ratio": 1.0,
+          "unlocked_at": "2026-04-19 12:56:54"
+        },
+        {
+          "badge_id": "eff_05",
+          "category": "efficiency",
+          "name_ko": "레인 터보",
+          "short_label_ko": "1500m/h",
+          "description_ko": "상위권 효율 배지로 기록 밀도가 매우 높습니다.",
+          "threshold_type": "author_distance_per_hour_m",
+          "threshold_value": 1500,
+          "icon_key": "eff.base",
+          "tier": 5,
+          "is_primary_title_candidate": false,
+          "is_hidden": false,
+          "season_tag": null,
+          "current_value": 2250,
+          "current_value_text_ko": "2250m/h",
+          "target_value": 1500,
+          "target_value_text_ko": "1500m/h",
+          "remaining_value": 0,
+          "remaining_value_text_ko": "해금 완료",
+          "progress_ratio": 1.0,
+          "unlocked_at": "2026-04-19 12:56:54"
+        },
+        {
+          "badge_id": "eff_04",
+          "category": "efficiency",
+          "name_ko": "수중 엔진",
+          "short_label_ko": "1300m/h",
+          "description_ko": "시간당 1300m로 강한 추진력을 보여줍니다.",
+          "threshold_type": "author_distance_per_hour_m",
+          "threshold_value": 1300,
+          "icon_key": "eff.base",
+          "tier": 4,
+          "is_primary_title_candidate": false,
+          "is_hidden": false,
+          "season_tag": null,
+          "current_value": 2250,
+          "current_value_text_ko": "2250m/h",
+          "target_value": 1300,
+          "target_value_text_ko": "1300m/h",
+          "remaining_value": 0,
+          "remaining_value_text_ko": "해금 완료",
+          "progress_ratio": 1.0,
+          "unlocked_at": "2026-04-19 12:56:54"
+        },
+        {
+          "badge_id": "eff_03",
+          "category": "efficiency",
+          "name_ko": "레인 스프린터",
+          "short_label_ko": "1100m/h",
+          "description_ko": "시간당 1100m를 넘기면 효율 레벨이 달라집니다.",
+          "threshold_type": "author_distance_per_hour_m",
+          "threshold_value": 1100,
+          "icon_key": "eff.base",
+          "tier": 3,
+          "is_primary_title_candidate": false,
+          "is_hidden": false,
+          "season_tag": null,
+          "current_value": 2250,
+          "current_value_text_ko": "2250m/h",
+          "target_value": 1100,
+          "target_value_text_ko": "1100m/h",
+          "remaining_value": 0,
+          "remaining_value_text_ko": "해금 완료",
+          "progress_ratio": 1.0,
+          "unlocked_at": "2026-04-19 12:56:54"
+        },
+        {
+          "badge_id": "eff_02",
+          "category": "efficiency",
+          "name_ko": "물살 모터",
+          "short_label_ko": "900m/h",
+          "description_ko": "시간당 900m 이상으로 물살을 안정적으로 밀어냅니다.",
+          "threshold_type": "author_distance_per_hour_m",
+          "threshold_value": 900,
+          "icon_key": "eff.base",
+          "tier": 2,
+          "is_primary_title_candidate": false,
+          "is_hidden": false,
+          "season_tag": null,
+          "current_value": 2250,
+          "current_value_text_ko": "2250m/h",
+          "target_value": 900,
+          "target_value_text_ko": "900m/h",
+          "remaining_value": 0,
+          "remaining_value_text_ko": "해금 완료",
+          "progress_ratio": 1.0,
+          "unlocked_at": "2026-04-19 12:56:54"
+        },
+        {
+          "badge_id": "eff_01",
+          "category": "efficiency",
+          "name_ko": "기본 추진",
+          "short_label_ko": "700m/h",
+          "description_ko": "시간당 700m를 넘기면 기본 추진 배지를 받습니다.",
+          "threshold_type": "author_distance_per_hour_m",
+          "threshold_value": 700,
+          "icon_key": "eff.base",
+          "tier": 1,
+          "is_primary_title_candidate": false,
+          "is_hidden": false,
+          "season_tag": null,
+          "current_value": 2250,
+          "current_value_text_ko": "2250m/h",
+          "target_value": 700,
+          "target_value_text_ko": "700m/h",
+          "remaining_value": 0,
+          "remaining_value_text_ko": "해금 완료",
+          "progress_ratio": 1.0,
+          "unlocked_at": "2026-04-19 12:56:54"
+        },
+        {
+          "badge_id": "grw_05",
+          "category": "growth",
+          "name_ko": "거리 각성",
+          "short_label_ko": "+1500m",
+          "description_ko": "최근 28일 거리가 확실하게 늘어났습니다.",
+          "threshold_type": "author_recent_growth_distance_m",
+          "threshold_value": 1500,
+          "icon_key": "grw.base",
+          "tier": 5,
+          "is_primary_title_candidate": true,
+          "is_hidden": false,
+          "season_tag": null,
+          "current_value": 1650,
+          "current_value_text_ko": "1.6km",
+          "target_value": 1500,
+          "target_value_text_ko": "1.5km",
+          "remaining_value": 0,
+          "remaining_value_text_ko": "해금 완료",
+          "progress_ratio": 1.0,
+          "unlocked_at": "2026-04-19 12:56:54"
+        },
+        {
+          "badge_id": "grw_03",
+          "category": "growth",
+          "name_ko": "호흡이 붙음",
+          "short_label_ko": "+30분",
+          "description_ko": "최근 28일 누적 시간이 30분 이상 늘었습니다.",
+          "threshold_type": "author_recent_growth_total_seconds",
+          "threshold_value": 1800,
+          "icon_key": "grw.base",
+          "tier": 3,
+          "is_primary_title_candidate": true,
+          "is_hidden": false,
+          "season_tag": null,
+          "current_value": 2640,
+          "current_value_text_ko": "44분",
+          "target_value": 1800,
+          "target_value_text_ko": "30분",
+          "remaining_value": 0,
+          "remaining_value_text_ko": "해금 완료",
+          "progress_ratio": 1.0,
+          "unlocked_at": "2026-04-19 12:56:54"
+        },
+        {
+          "badge_id": "grw_02",
+          "category": "growth",
+          "name_ko": "거리 급상승",
+          "short_label_ko": "+500m",
+          "description_ko": "최근 28일 누적 거리가 500m 이상 늘었습니다.",
+          "threshold_type": "author_recent_growth_distance_m",
+          "threshold_value": 500,
+          "icon_key": "grw.base",
+          "tier": 2,
+          "is_primary_title_candidate": true,
+          "is_hidden": false,
+          "season_tag": null,
+          "current_value": 1650,
+          "current_value_text_ko": "1.6km",
+          "target_value": 500,
+          "target_value_text_ko": "500m",
+          "remaining_value": 0,
+          "remaining_value_text_ko": "해금 완료",
+          "progress_ratio": 1.0,
+          "unlocked_at": "2026-04-19 12:56:54"
+        },
+        {
+          "badge_id": "grw_01",
+          "category": "growth",
+          "name_ko": "요즘 떡상",
+          "short_label_ko": "횟수 +1",
+          "description_ko": "최근 28일 수영 횟수가 이전보다 늘었습니다.",
+          "threshold_type": "author_recent_growth_swim_count",
+          "threshold_value": 1,
+          "icon_key": "grw.base",
+          "tier": 1,
+          "is_primary_title_candidate": true,
+          "is_hidden": false,
+          "season_tag": null,
+          "current_value": 1,
+          "current_value_text_ko": "1회",
+          "target_value": 1,
+          "target_value_text_ko": "1회",
+          "remaining_value": 0,
+          "remaining_value_text_ko": "해금 완료",
+          "progress_ratio": 1.0,
+          "unlocked_at": "2026-04-19 12:56:54"
+        },
+        {
+          "badge_id": "sea_02",
+          "category": "season",
+          "name_ko": "4월 물결 멤버",
+          "short_label_ko": "4월",
+          "description_ko": "4월 시즌 배지를 해금합니다.",
+          "threshold_type": "season_month_participation",
+          "threshold_value": 1,
+          "icon_key": "sea.base",
+          "tier": 2,
+          "is_primary_title_candidate": false,
+          "is_hidden": false,
+          "season_tag": "04",
+          "current_value": 1,
+          "current_value_text_ko": "4월 완료",
+          "target_value": 1,
+          "target_value_text_ko": "4월 완료",
+          "remaining_value": 0,
+          "remaining_value_text_ko": "해금 완료",
+          "progress_ratio": 1.0,
+          "unlocked_at": "2026-04-19 12:56:54"
+        },
+        {
+          "badge_id": "fun_01",
+          "category": "fun",
+          "name_ko": "오늘 길었다",
+          "short_label_ko": "한 번에 1500m",
+          "description_ko": "한 번의 기록에서 1500m를 채웠습니다.",
+          "threshold_type": "author_single_swim_distance_m",
+          "threshold_value": 1500,
+          "icon_key": "fun.base",
+          "tier": 1,
+          "is_primary_title_candidate": false,
+          "is_hidden": false,
+          "season_tag": null,
+          "current_value": 1650,
+          "current_value_text_ko": "1.6km",
+          "target_value": 1500,
+          "target_value_text_ko": "1.5km",
+          "remaining_value": 0,
+          "remaining_value_text_ko": "해금 완료",
+          "progress_ratio": 1.0,
+          "unlocked_at": "2026-04-19 12:56:54"
+        }
+      ],
+      "unlocked_badge_count": 13,
+      "badge_counts_by_category": {
+        "attendance": 1,
+        "distance": 1,
+        "time": 0,
+        "efficiency": 5,
+        "growth": 4,
+        "season": 1,
+        "gallery": 0,
+        "fun": 1
+      },
+      "next_badge_progress": {
+        "badge_id": "tim_01",
+        "category": "time",
+        "name_ko": "첫 1시간 잠수",
+        "short_label_ko": "1시간",
+        "description_ko": "누적 1시간으로 물속 체류를 시작합니다.",
+        "threshold_type": "author_total_seconds",
+        "threshold_value": 3600,
+        "icon_key": "tim.base",
+        "tier": 1,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null,
+        "current_value": 2640,
+        "current_value_text_ko": "44분",
+        "target_value": 3600,
+        "target_value_text_ko": "1시간 0분",
+        "remaining_value": 960,
+        "remaining_value_text_ko": "16분 남음",
+        "progress_ratio": 0.7333
+      },
+      "recent_unlocks": [
+        {
+          "scope": "author",
+          "author": "양.아치",
+          "badge_id": "sea_02",
+          "category": "season",
+          "name_ko": "4월 물결 멤버",
+          "short_label_ko": "4월",
+          "icon_key": "sea.base",
+          "unlocked_at": "2026-04-19 12:56:54"
+        },
+        {
+          "scope": "author",
+          "author": "양.아치",
+          "badge_id": "grw_05",
+          "category": "growth",
+          "name_ko": "거리 각성",
+          "short_label_ko": "+1500m",
+          "icon_key": "grw.base",
+          "unlocked_at": "2026-04-19 12:56:54"
+        },
+        {
+          "scope": "author",
+          "author": "양.아치",
+          "badge_id": "grw_03",
+          "category": "growth",
+          "name_ko": "호흡이 붙음",
+          "short_label_ko": "+30분",
+          "icon_key": "grw.base",
+          "unlocked_at": "2026-04-19 12:56:54"
+        },
+        {
+          "scope": "author",
+          "author": "양.아치",
+          "badge_id": "grw_02",
+          "category": "growth",
+          "name_ko": "거리 급상승",
+          "short_label_ko": "+500m",
+          "icon_key": "grw.base",
+          "unlocked_at": "2026-04-19 12:56:54"
+        },
+        {
+          "scope": "author",
+          "author": "양.아치",
+          "badge_id": "grw_01",
+          "category": "growth",
+          "name_ko": "요즘 떡상",
+          "short_label_ko": "횟수 +1",
+          "icon_key": "grw.base",
+          "unlocked_at": "2026-04-19 12:56:54"
+        },
+        {
+          "scope": "author",
+          "author": "양.아치",
+          "badge_id": "fun_01",
+          "category": "fun",
+          "name_ko": "오늘 길었다",
+          "short_label_ko": "한 번에 1500m",
+          "icon_key": "fun.base",
+          "unlocked_at": "2026-04-19 12:56:54"
+        }
+      ]
+    },
+    {
       "author": "주석",
       "search_key": "주석",
       "swim_count": 5,
@@ -16066,15 +17223,15 @@
     {
       "author": "천천히영",
       "search_key": "천천히영",
-      "swim_count": 10,
-      "total_distance_m": 11100.0,
-      "total_seconds": 40129,
-      "total_duration_min": 668.82,
-      "distance_per_hour_m": 995.79,
-      "post_count": 10,
-      "latest_post_date": "2026-04-17",
+      "swim_count": 11,
+      "total_distance_m": 12300.0,
+      "total_seconds": 42712,
+      "total_duration_min": 711.87,
+      "distance_per_hour_m": 1036.71,
+      "post_count": 11,
+      "latest_post_date": "2026-04-19",
       "metric_bucket_counts": {
-        "core": 10
+        "core": 11
       },
       "growth": {
         "reference_date": "2026-04-19",
@@ -16100,70 +17257,70 @@
         },
         "metrics": {
           "swim_count": {
-            "recent_value": 5,
+            "recent_value": 6,
             "previous_value": 5,
-            "delta_value": 0.0,
-            "pct_change": 0.0,
+            "delta_value": 1.0,
+            "pct_change": 20.0,
             "pct_change_status": "standard"
           },
           "distance_m": {
-            "recent_value": 5500.0,
+            "recent_value": 6700.0,
             "previous_value": 5600.0,
-            "delta_value": -100.0,
-            "pct_change": -1.79,
+            "delta_value": 1100.0,
+            "pct_change": 19.64,
             "pct_change_status": "standard"
           },
           "total_seconds": {
-            "recent_value": 21487,
+            "recent_value": 24070,
             "previous_value": 18642,
-            "delta_value": 2845.0,
-            "pct_change": 15.26,
+            "delta_value": 5428.0,
+            "pct_change": 29.12,
             "pct_change_status": "standard"
           }
         }
       },
       "growth_swim_count": {
-        "recent_value": 5,
+        "recent_value": 6,
         "previous_value": 5,
-        "delta_value": 0.0,
-        "pct_change": 0.0,
+        "delta_value": 1.0,
+        "pct_change": 20.0,
         "pct_change_status": "standard"
       },
       "growth_distance_m": {
-        "recent_value": 5500.0,
+        "recent_value": 6700.0,
         "previous_value": 5600.0,
-        "delta_value": -100.0,
-        "pct_change": -1.79,
+        "delta_value": 1100.0,
+        "pct_change": 19.64,
         "pct_change_status": "standard"
       },
       "growth_total_seconds": {
-        "recent_value": 21487,
+        "recent_value": 24070,
         "previous_value": 18642,
-        "delta_value": 2845.0,
-        "pct_change": 15.26,
+        "delta_value": 5428.0,
+        "pct_change": 29.12,
         "pct_change_status": "standard"
       },
       "primary_title": {
-        "badge_id": "dst_04",
-        "category": "distance",
-        "name_ko": "장거리 레이서",
-        "short_label_ko": "10km",
-        "description_ko": "누적 10km로 진짜 장거리 감각에 들어갑니다.",
-        "threshold_type": "author_total_distance_m",
-        "threshold_value": 10000,
-        "icon_key": "dst.base",
-        "tier": 4,
+        "badge_id": "grw_06",
+        "category": "growth",
+        "name_ko": "시간 각성",
+        "short_label_ko": "+90분",
+        "description_ko": "최근 28일 누적 시간이 크게 늘었습니다.",
+        "threshold_type": "author_recent_growth_total_seconds",
+        "threshold_value": 5400,
+        "icon_key": "grw.base",
+        "tier": 6,
         "is_primary_title_candidate": true,
         "is_hidden": false,
         "season_tag": null,
-        "current_value": 11100,
-        "current_value_text_ko": "11.1km",
-        "target_value": 10000,
-        "target_value_text_ko": "10km",
+        "current_value": 5428,
+        "current_value_text_ko": "1시간 30분 28초",
+        "target_value": 5400,
+        "target_value_text_ko": "1시간 30분",
         "remaining_value": 0,
         "remaining_value_text_ko": "해금 완료",
         "progress_ratio": 1.0,
-        "unlocked_at": "2026-04-16 16:18:15"
+        "unlocked_at": "2026-03-11 18:00:04"
       },
       "unlocked_badges": [
         {
@@ -16179,8 +17336,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 10,
-          "current_value_text_ko": "10회",
+          "current_value": 11,
+          "current_value_text_ko": "11회",
           "target_value": 10,
           "target_value_text_ko": "10회",
           "remaining_value": 0,
@@ -16201,8 +17358,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 10,
-          "current_value_text_ko": "10회",
+          "current_value": 11,
+          "current_value_text_ko": "11회",
           "target_value": 5,
           "target_value_text_ko": "5회",
           "remaining_value": 0,
@@ -16223,8 +17380,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 10,
-          "current_value_text_ko": "10회",
+          "current_value": 11,
+          "current_value_text_ko": "11회",
           "target_value": 3,
           "target_value_text_ko": "3회",
           "remaining_value": 0,
@@ -16245,8 +17402,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 10,
-          "current_value_text_ko": "10회",
+          "current_value": 11,
+          "current_value_text_ko": "11회",
           "target_value": 1,
           "target_value_text_ko": "1회",
           "remaining_value": 0,
@@ -16267,8 +17424,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 11100,
-          "current_value_text_ko": "11.1km",
+          "current_value": 12300,
+          "current_value_text_ko": "12.3km",
           "target_value": 10000,
           "target_value_text_ko": "10km",
           "remaining_value": 0,
@@ -16289,8 +17446,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 11100,
-          "current_value_text_ko": "11.1km",
+          "current_value": 12300,
+          "current_value_text_ko": "12.3km",
           "target_value": 5000,
           "target_value_text_ko": "5km",
           "remaining_value": 0,
@@ -16311,8 +17468,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 11100,
-          "current_value_text_ko": "11.1km",
+          "current_value": 12300,
+          "current_value_text_ko": "12.3km",
           "target_value": 3000,
           "target_value_text_ko": "3km",
           "remaining_value": 0,
@@ -16333,8 +17490,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 11100,
-          "current_value_text_ko": "11.1km",
+          "current_value": 12300,
+          "current_value_text_ko": "12.3km",
           "target_value": 1000,
           "target_value_text_ko": "1km",
           "remaining_value": 0,
@@ -16355,8 +17512,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 40129,
-          "current_value_text_ko": "11시간 8분 49초",
+          "current_value": 42712,
+          "current_value_text_ko": "11시간 51분 52초",
           "target_value": 21600,
           "target_value_text_ko": "6시간 0분",
           "remaining_value": 0,
@@ -16377,8 +17534,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 40129,
-          "current_value_text_ko": "11시간 8분 49초",
+          "current_value": 42712,
+          "current_value_text_ko": "11시간 51분 52초",
           "target_value": 10800,
           "target_value_text_ko": "3시간 0분",
           "remaining_value": 0,
@@ -16399,8 +17556,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 40129,
-          "current_value_text_ko": "11시간 8분 49초",
+          "current_value": 42712,
+          "current_value_text_ko": "11시간 51분 52초",
           "target_value": 3600,
           "target_value_text_ko": "1시간 0분",
           "remaining_value": 0,
@@ -16421,8 +17578,8 @@
           "is_primary_title_candidate": false,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 995.79,
-          "current_value_text_ko": "996m/h",
+          "current_value": 1036.71,
+          "current_value_text_ko": "1037m/h",
           "target_value": 900,
           "target_value_text_ko": "900m/h",
           "remaining_value": 0,
@@ -16443,14 +17600,36 @@
           "is_primary_title_candidate": false,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 995.79,
-          "current_value_text_ko": "996m/h",
+          "current_value": 1036.71,
+          "current_value_text_ko": "1037m/h",
           "target_value": 700,
           "target_value_text_ko": "700m/h",
           "remaining_value": 0,
           "remaining_value_text_ko": "해금 완료",
           "progress_ratio": 1.0,
           "unlocked_at": "2026-03-10 16:55:25"
+        },
+        {
+          "badge_id": "grw_06",
+          "category": "growth",
+          "name_ko": "시간 각성",
+          "short_label_ko": "+90분",
+          "description_ko": "최근 28일 누적 시간이 크게 늘었습니다.",
+          "threshold_type": "author_recent_growth_total_seconds",
+          "threshold_value": 5400,
+          "icon_key": "grw.base",
+          "tier": 6,
+          "is_primary_title_candidate": true,
+          "is_hidden": false,
+          "season_tag": null,
+          "current_value": 5428,
+          "current_value_text_ko": "1시간 30분 28초",
+          "target_value": 5400,
+          "target_value_text_ko": "1시간 30분",
+          "remaining_value": 0,
+          "remaining_value_text_ko": "해금 완료",
+          "progress_ratio": 1.0,
+          "unlocked_at": "2026-03-11 18:00:04"
         },
         {
           "badge_id": "grw_03",
@@ -16465,10 +17644,54 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 2845,
-          "current_value_text_ko": "47분 25초",
+          "current_value": 5428,
+          "current_value_text_ko": "1시간 30분 28초",
           "target_value": 1800,
           "target_value_text_ko": "30분",
+          "remaining_value": 0,
+          "remaining_value_text_ko": "해금 완료",
+          "progress_ratio": 1.0,
+          "unlocked_at": "2026-03-10 16:55:25"
+        },
+        {
+          "badge_id": "grw_02",
+          "category": "growth",
+          "name_ko": "거리 급상승",
+          "short_label_ko": "+500m",
+          "description_ko": "최근 28일 누적 거리가 500m 이상 늘었습니다.",
+          "threshold_type": "author_recent_growth_distance_m",
+          "threshold_value": 500,
+          "icon_key": "grw.base",
+          "tier": 2,
+          "is_primary_title_candidate": true,
+          "is_hidden": false,
+          "season_tag": null,
+          "current_value": 1100,
+          "current_value_text_ko": "1.1km",
+          "target_value": 500,
+          "target_value_text_ko": "500m",
+          "remaining_value": 0,
+          "remaining_value_text_ko": "해금 완료",
+          "progress_ratio": 1.0,
+          "unlocked_at": "2026-03-10 16:55:25"
+        },
+        {
+          "badge_id": "grw_01",
+          "category": "growth",
+          "name_ko": "요즘 떡상",
+          "short_label_ko": "횟수 +1",
+          "description_ko": "최근 28일 수영 횟수가 이전보다 늘었습니다.",
+          "threshold_type": "author_recent_growth_swim_count",
+          "threshold_value": 1,
+          "icon_key": "grw.base",
+          "tier": 1,
+          "is_primary_title_candidate": true,
+          "is_hidden": false,
+          "season_tag": null,
+          "current_value": 1,
+          "current_value_text_ko": "1회",
+          "target_value": 1,
+          "target_value_text_ko": "1회",
           "remaining_value": 0,
           "remaining_value_text_ko": "해금 완료",
           "progress_ratio": 1.0,
@@ -16519,37 +17742,37 @@
           "unlocked_at": "2026-03-10 16:55:25"
         }
       ],
-      "unlocked_badge_count": 16,
+      "unlocked_badge_count": 19,
       "badge_counts_by_category": {
         "attendance": 4,
         "distance": 4,
         "time": 3,
         "efficiency": 2,
-        "growth": 1,
+        "growth": 4,
         "season": 2,
         "gallery": 0,
         "fun": 0
       },
       "next_badge_progress": {
-        "badge_id": "fun_01",
-        "category": "fun",
-        "name_ko": "오늘 길었다",
-        "short_label_ko": "한 번에 1500m",
-        "description_ko": "한 번의 기록에서 1500m를 채웠습니다.",
-        "threshold_type": "author_single_swim_distance_m",
-        "threshold_value": 1500,
-        "icon_key": "fun.base",
-        "tier": 1,
-        "is_primary_title_candidate": false,
+        "badge_id": "tim_04",
+        "category": "time",
+        "name_ko": "장시간 생존자",
+        "short_label_ko": "12시간",
+        "description_ko": "누적 12시간으로 장시간 루틴에 들어갑니다.",
+        "threshold_type": "author_total_seconds",
+        "threshold_value": 43200,
+        "icon_key": "tim.base",
+        "tier": 4,
+        "is_primary_title_candidate": true,
         "is_hidden": false,
         "season_tag": null,
-        "current_value": 1400,
-        "current_value_text_ko": "1.4km",
-        "target_value": 1500,
-        "target_value_text_ko": "1.5km",
-        "remaining_value": 100,
-        "remaining_value_text_ko": "100m 남음",
-        "progress_ratio": 0.9333
+        "current_value": 42712,
+        "current_value_text_ko": "11시간 51분 52초",
+        "target_value": 43200,
+        "target_value_text_ko": "12시간 0분",
+        "remaining_value": 488,
+        "remaining_value_text_ko": "8분 8초 남음",
+        "progress_ratio": 0.9887
       },
       "recent_unlocks": [
         {
@@ -17278,6 +18501,34 @@
   ],
   "recent_records": [
     {
+      "post_id": 19057,
+      "post_date": "2026-04-19",
+      "post_datetime": "2026-04-19 18:03:38",
+      "author": "천천히영",
+      "distance_m": 1200,
+      "total_time_text": "43:03",
+      "total_seconds": 2583,
+      "source": "title_format",
+      "metric_bucket": "core",
+      "score": 100,
+      "warning_codes": [],
+      "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=19057&page=2"
+    },
+    {
+      "post_id": 19052,
+      "post_date": "2026-04-19",
+      "post_datetime": "2026-04-19 12:56:54",
+      "author": "양.아치",
+      "distance_m": 1650,
+      "total_time_text": "44분",
+      "total_seconds": 2640,
+      "source": "title_format",
+      "metric_bucket": "core",
+      "score": 100,
+      "warning_codes": [],
+      "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=19052&page=2"
+    },
+    {
       "post_id": 19046,
       "post_date": "2026-04-19",
       "post_datetime": "2026-04-19 01:51:35",
@@ -17528,37 +18779,69 @@
       "score": 100,
       "warning_codes": [],
       "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=18960&page=2"
-    },
-    {
-      "post_id": 18956,
-      "post_date": "2026-04-15",
-      "post_datetime": "2026-04-15 09:48:29",
-      "author": "중년히어로즈",
-      "distance_m": 800,
-      "total_time_text": "34분 36초",
-      "total_seconds": 2076,
-      "source": "title_format",
-      "metric_bucket": "core",
-      "score": 100,
-      "warning_codes": [],
-      "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=18956&page=2"
-    },
-    {
-      "post_id": 18953,
-      "post_date": "2026-04-15",
-      "post_datetime": "2026-04-15 09:17:26",
-      "author": "알프스",
-      "distance_m": 1650,
-      "total_time_text": "43분 26초",
-      "total_seconds": 2606,
-      "source": "title_format",
-      "metric_bucket": "core",
-      "score": 100,
-      "warning_codes": [],
-      "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=18953&page=2"
     }
   ],
   "recent_unlocks": [
+    {
+      "scope": "author",
+      "author": "양.아치",
+      "badge_id": "sea_02",
+      "category": "season",
+      "name_ko": "4월 물결 멤버",
+      "short_label_ko": "4월",
+      "icon_key": "sea.base",
+      "unlocked_at": "2026-04-19 12:56:54"
+    },
+    {
+      "scope": "author",
+      "author": "양.아치",
+      "badge_id": "grw_05",
+      "category": "growth",
+      "name_ko": "거리 각성",
+      "short_label_ko": "+1500m",
+      "icon_key": "grw.base",
+      "unlocked_at": "2026-04-19 12:56:54"
+    },
+    {
+      "scope": "author",
+      "author": "양.아치",
+      "badge_id": "grw_03",
+      "category": "growth",
+      "name_ko": "호흡이 붙음",
+      "short_label_ko": "+30분",
+      "icon_key": "grw.base",
+      "unlocked_at": "2026-04-19 12:56:54"
+    },
+    {
+      "scope": "author",
+      "author": "양.아치",
+      "badge_id": "grw_02",
+      "category": "growth",
+      "name_ko": "거리 급상승",
+      "short_label_ko": "+500m",
+      "icon_key": "grw.base",
+      "unlocked_at": "2026-04-19 12:56:54"
+    },
+    {
+      "scope": "author",
+      "author": "양.아치",
+      "badge_id": "grw_01",
+      "category": "growth",
+      "name_ko": "요즘 떡상",
+      "short_label_ko": "횟수 +1",
+      "icon_key": "grw.base",
+      "unlocked_at": "2026-04-19 12:56:54"
+    },
+    {
+      "scope": "author",
+      "author": "양.아치",
+      "badge_id": "fun_01",
+      "category": "fun",
+      "name_ko": "오늘 길었다",
+      "short_label_ko": "한 번에 1500m",
+      "icon_key": "fun.base",
+      "unlocked_at": "2026-04-19 12:56:54"
+    },
     {
       "scope": "author",
       "author": "SㅇS",
@@ -17618,67 +18901,6 @@
       "short_label_ko": "10회",
       "icon_key": "att.base",
       "unlocked_at": "2026-04-17 14:23:10"
-    },
-    {
-      "scope": "author",
-      "author": "알프스",
-      "badge_id": "dst_04",
-      "category": "distance",
-      "name_ko": "장거리 레이서",
-      "short_label_ko": "10km",
-      "icon_key": "dst.base",
-      "unlocked_at": "2026-04-17 07:54:09"
-    },
-    {
-      "scope": "gallery",
-      "badge_id": "gal_06",
-      "category": "gallery",
-      "name_ko": "원양 진출",
-      "short_label_ko": "100km",
-      "description_ko": "갤 전체 누적 거리 100km를 넘기며 원양 단계에 들어갑니다.",
-      "icon_key": "gal.base",
-      "tier": 6,
-      "unlocked_at": "2026-04-17 07:54:09"
-    },
-    {
-      "scope": "author",
-      "author": "주석",
-      "badge_id": "tim_02",
-      "category": "time",
-      "name_ko": "물 적응 완료",
-      "short_label_ko": "3시간",
-      "icon_key": "tim.base",
-      "unlocked_at": "2026-04-16 21:01:39"
-    },
-    {
-      "scope": "author",
-      "author": "주석",
-      "badge_id": "fun_05",
-      "category": "fun",
-      "name_ko": "심야 수영부",
-      "short_label_ko": "밤 2회",
-      "icon_key": "fun.base",
-      "unlocked_at": "2026-04-16 21:01:39"
-    },
-    {
-      "scope": "author",
-      "author": "알프스",
-      "badge_id": "tim_03",
-      "category": "time",
-      "name_ko": "레인 체류자",
-      "short_label_ko": "6시간",
-      "icon_key": "tim.base",
-      "unlocked_at": "2026-04-16 20:40:29"
-    },
-    {
-      "scope": "author",
-      "author": "천천히영",
-      "badge_id": "dst_04",
-      "category": "distance",
-      "name_ko": "장거리 레이서",
-      "short_label_ko": "10km",
-      "icon_key": "dst.base",
-      "unlocked_at": "2026-04-16 16:18:15"
     }
   ],
   "ops": {
@@ -17695,7 +18917,7 @@
     "warning_code_counts": {},
     "source_counts": {
       "none": 80,
-      "title_format": 74
+      "title_format": 76
     },
     "manual_override_counts": {}
   }

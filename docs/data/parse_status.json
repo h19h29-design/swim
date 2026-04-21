@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21 04:10:49 KST",
+  "generated_at": "2026-04-21 11:43:53 KST",
   "reference_date": "2026-04-19",
   "dashboard_date_floor": "2026-03-01",
   "dashboard_window": {
@@ -15,11 +15,11 @@
   "supported_modes": [
     "core_only"
   ],
-  "source_record_count": 163,
-  "visible_record_count": 154,
-  "parsed_count": 74,
+  "source_record_count": 165,
+  "visible_record_count": 156,
+  "parsed_count": 76,
   "unparsed_count": 80,
-  "success_rate_pct": 48.05,
+  "success_rate_pct": 48.72,
   "failure_reason_counts": {
     "TITLE_FORMAT_INVALID": 3,
     "TITLE_FORMAT_MISSING": 77
@@ -71,6 +71,36 @@
     ]
   },
   "parsed_rows": [
+    {
+      "post_id": 19057,
+      "post_date": "2026-04-19",
+      "post_datetime": "2026-04-19 18:03:38",
+      "author": "천천히영",
+      "title": "1200 / 43:03",
+      "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=19057&page=2",
+      "source": "title_format",
+      "score": 100,
+      "distance_m": 1200,
+      "total_time_text": "43:03",
+      "total_seconds": 2583,
+      "metric_bucket": "core",
+      "manual_override_decision": null
+    },
+    {
+      "post_id": 19052,
+      "post_date": "2026-04-19",
+      "post_datetime": "2026-04-19 12:56:54",
+      "author": "양.아치",
+      "title": "1650 / 44분",
+      "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=19052&page=2",
+      "source": "title_format",
+      "score": 100,
+      "distance_m": 1650,
+      "total_time_text": "44분",
+      "total_seconds": 2640,
+      "metric_bucket": "core",
+      "manual_override_decision": null
+    },
     {
       "post_id": 19046,
       "post_date": "2026-04-19",
