@@ -1,116 +1,116 @@
 {
-  "generated_at": "2026-04-21 11:43:53 KST",
-  "reference_date": "2026-04-19",
+  "generated_at": "2026-04-22 04:17:26 KST",
+  "reference_date": "2026-04-20",
   "dashboard_date_floor": "2026-03-01",
   "dashboard_window": {
     "start": "2026-03-01",
-    "end": "2026-04-19"
+    "end": "2026-04-20"
   },
   "visible_date_range": {
     "start": "2026-03-01",
-    "end": "2026-04-19"
+    "end": "2026-04-20"
   },
   "product_mode": "core_only",
   "default_mode": "core_only",
   "supported_modes": [
     "core_only"
   ],
-  "source_record_count": 165,
-  "visible_record_count": 156,
+  "source_record_count": 171,
+  "visible_record_count": 162,
   "summary": {
     "mode": "core_only",
-    "record_count": 76,
-    "total_record_count": 156,
-    "source_record_count": 165,
+    "record_count": 80,
+    "total_record_count": 162,
+    "source_record_count": 171,
     "dashboard_date_floor": "2026-03-01",
     "dashboard_window": {
       "start": "2026-03-01",
-      "end": "2026-04-19"
+      "end": "2026-04-20"
     },
     "visible_date_range": {
       "start": "2026-03-01",
-      "end": "2026-04-19"
+      "end": "2026-04-20"
     },
-    "excluded_record_count": 80,
+    "excluded_record_count": 82,
     "excluded_reason_counts": {
       "TITLE_FORMAT_INVALID": 3,
-      "TITLE_FORMAT_MISSING": 77
+      "TITLE_FORMAT_MISSING": 79
     },
-    "review_queue_count": 80,
+    "review_queue_count": 82,
     "review_reason_counts": {
       "TITLE_FORMAT_INVALID": 3,
-      "TITLE_FORMAT_MISSING": 77
+      "TITLE_FORMAT_MISSING": 79
     },
     "warning_code_counts": {},
     "source_counts": {
-      "none": 80,
-      "title_format": 76
+      "none": 82,
+      "title_format": 80
     },
     "manual_override_counts": {},
-    "swim_count": 76,
-    "total_distance_m": 111775.0,
-    "total_seconds": 318484,
-    "total_duration_min": 5308.07,
-    "distance_per_hour_m": 1263.45,
+    "swim_count": 80,
+    "total_distance_m": 116175.0,
+    "total_seconds": 332100,
+    "total_duration_min": 5535.0,
+    "distance_per_hour_m": 1259.35,
     "active_authors": 15,
     "included_metric_bucket_counts": {
-      "core": 76
+      "core": 80
     },
     "included_source_counts": {
-      "title_format": 76
+      "title_format": 80
     },
     "has_zero_visible_included_rows": false,
-    "reference_date": "2026-04-19",
+    "reference_date": "2026-04-20",
     "growth": {
-      "reference_date": "2026-04-19",
+      "reference_date": "2026-04-20",
       "window_days": 28,
       "dashboard_date_floor": "2026-03-01",
       "recent_window": {
-        "start": "2026-03-23",
-        "end": "2026-04-19",
-        "nominal_start": "2026-03-23",
-        "nominal_end": "2026-04-19",
+        "start": "2026-03-24",
+        "end": "2026-04-20",
+        "nominal_start": "2026-03-24",
+        "nominal_end": "2026-04-20",
         "nominal_day_count": 28,
         "visible_day_count": 28,
         "truncated_by_floor": false
       },
       "previous_window": {
         "start": "2026-03-01",
-        "end": "2026-03-22",
-        "nominal_start": "2026-02-23",
-        "nominal_end": "2026-03-22",
+        "end": "2026-03-23",
+        "nominal_start": "2026-02-24",
+        "nominal_end": "2026-03-23",
         "nominal_day_count": 28,
-        "visible_day_count": 22,
+        "visible_day_count": 23,
         "truncated_by_floor": true
       },
       "metrics": {
         "swim_count": {
-          "recent_value": 32,
+          "recent_value": 36,
           "previous_value": 44,
-          "delta_value": -12.0,
-          "pct_change": -27.27,
+          "delta_value": -8.0,
+          "pct_change": -18.18,
           "pct_change_status": "standard"
         },
         "distance_m": {
-          "recent_value": 42950.0,
+          "recent_value": 47350.0,
           "previous_value": 68825.0,
-          "delta_value": -25875.0,
-          "pct_change": -37.6,
+          "delta_value": -21475.0,
+          "pct_change": -31.2,
           "pct_change_status": "standard"
         },
         "total_seconds": {
-          "recent_value": 112899,
+          "recent_value": 126515,
           "previous_value": 205585,
-          "delta_value": -92686.0,
-          "pct_change": -45.08,
+          "delta_value": -79070.0,
+          "pct_change": -38.46,
           "pct_change_status": "standard"
         }
       }
     },
-    "generated_at": "2026-04-21 11:43:53 KST",
+    "generated_at": "2026-04-22 04:17:26 KST",
     "date_range": {
       "start": "2026-03-01",
-      "end": "2026-04-19"
+      "end": "2026-04-20"
     }
   },
   "gallery": {
@@ -132,19 +132,19 @@
       "tier": 7,
       "target_value": 200000,
       "target_value_text_ko": "200km",
-      "remaining_value": 88225,
-      "remaining_value_text_ko": "88.2km 남음",
-      "progress_ratio": 0.5589
+      "remaining_value": 83825,
+      "remaining_value_text_ko": "83.8km 남음",
+      "progress_ratio": 0.5809
     },
     "progress": {
       "metric_key": "total_distance_m",
-      "current_value": 111775.0,
-      "current_value_text_ko": "111.8km",
+      "current_value": 116175.0,
+      "current_value_text_ko": "116.2km",
       "target_value": 200000,
       "target_value_text_ko": "200km",
-      "remaining_value": 88225,
-      "remaining_value_text_ko": "88.2km 남음",
-      "progress_ratio": 0.5589,
+      "remaining_value": 83825,
+      "remaining_value_text_ko": "83.8km 남음",
+      "progress_ratio": 0.5809,
       "unlocked_badge_count": 6
     },
     "unlocked_badges": [
@@ -283,11 +283,61 @@
         "unlocked_at": "2026-03-01 13:28:07"
       }
     ],
-    "metric_value": 111775.0,
-    "metric_value_text_ko": "111.8km",
-    "reference_date": "2026-04-19"
+    "metric_value": 116175.0,
+    "metric_value_text_ko": "116.2km",
+    "reference_date": "2026-04-20"
   },
   "recent_unlocks": [
+    {
+      "scope": "author",
+      "author": "천천히영",
+      "badge_id": "tim_04",
+      "category": "time",
+      "name_ko": "장시간 생존자",
+      "short_label_ko": "12시간",
+      "icon_key": "tim.base",
+      "unlocked_at": "2026-04-20 13:16:19"
+    },
+    {
+      "scope": "author",
+      "author": "SㅇS",
+      "badge_id": "grw_04",
+      "category": "growth",
+      "name_ko": "출석 각성",
+      "short_label_ko": "횟수 +3",
+      "icon_key": "grw.base",
+      "unlocked_at": "2026-04-20 12:36:53"
+    },
+    {
+      "scope": "author",
+      "author": "SㅇS",
+      "badge_id": "dst_03",
+      "category": "distance",
+      "name_ko": "중거리 주자",
+      "short_label_ko": "5km",
+      "icon_key": "dst.base",
+      "unlocked_at": "2026-04-20 12:36:53"
+    },
+    {
+      "scope": "author",
+      "author": "SㅇS",
+      "badge_id": "att_03",
+      "category": "attendance",
+      "name_ko": "오수완 초심자",
+      "short_label_ko": "5회",
+      "icon_key": "att.base",
+      "unlocked_at": "2026-04-20 12:36:53"
+    },
+    {
+      "scope": "author",
+      "author": "알프스",
+      "badge_id": "att_04",
+      "category": "attendance",
+      "name_ko": "꾸준러",
+      "short_label_ko": "10회",
+      "icon_key": "att.base",
+      "unlocked_at": "2026-04-20 07:38:40"
+    },
     {
       "scope": "author",
       "author": "양.아치",
@@ -357,73 +407,23 @@
       "short_label_ko": "+90분",
       "icon_key": "grw.base",
       "unlocked_at": "2026-04-18 16:41:18"
-    },
-    {
-      "scope": "author",
-      "author": "SㅇS",
-      "badge_id": "grw_05",
-      "category": "growth",
-      "name_ko": "거리 각성",
-      "short_label_ko": "+1500m",
-      "icon_key": "grw.base",
-      "unlocked_at": "2026-04-18 16:41:18"
-    },
-    {
-      "scope": "author",
-      "author": "청귤",
-      "badge_id": "tim_04",
-      "category": "time",
-      "name_ko": "장시간 생존자",
-      "short_label_ko": "12시간",
-      "icon_key": "tim.base",
-      "unlocked_at": "2026-04-17 22:47:31"
-    },
-    {
-      "scope": "author",
-      "author": "주석",
-      "badge_id": "dst_03",
-      "category": "distance",
-      "name_ko": "중거리 주자",
-      "short_label_ko": "5km",
-      "icon_key": "dst.base",
-      "unlocked_at": "2026-04-17 19:16:42"
-    },
-    {
-      "scope": "author",
-      "author": "주석",
-      "badge_id": "att_03",
-      "category": "attendance",
-      "name_ko": "오수완 초심자",
-      "short_label_ko": "5회",
-      "icon_key": "att.base",
-      "unlocked_at": "2026-04-17 19:16:42"
-    },
-    {
-      "scope": "author",
-      "author": "천천히영",
-      "badge_id": "att_04",
-      "category": "attendance",
-      "name_ko": "꾸준러",
-      "short_label_ko": "10회",
-      "icon_key": "att.base",
-      "unlocked_at": "2026-04-17 14:23:10"
     }
   ],
   "ops": {
-    "review_queue_count": 80,
+    "review_queue_count": 82,
     "review_reason_counts": {
       "TITLE_FORMAT_INVALID": 3,
-      "TITLE_FORMAT_MISSING": 77
+      "TITLE_FORMAT_MISSING": 79
     },
-    "excluded_record_count": 80,
+    "excluded_record_count": 82,
     "excluded_reason_counts": {
       "TITLE_FORMAT_INVALID": 3,
-      "TITLE_FORMAT_MISSING": 77
+      "TITLE_FORMAT_MISSING": 79
     },
     "warning_code_counts": {},
     "source_counts": {
-      "none": 80,
-      "title_format": 76
+      "none": 82,
+      "title_format": 80
     },
     "manual_override_counts": {}
   },

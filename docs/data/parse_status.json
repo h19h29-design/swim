@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-04-21 11:43:53 KST",
-  "reference_date": "2026-04-19",
+  "generated_at": "2026-04-22 04:17:26 KST",
+  "reference_date": "2026-04-20",
   "dashboard_date_floor": "2026-03-01",
   "dashboard_window": {
     "start": "2026-03-01",
-    "end": "2026-04-19"
+    "end": "2026-04-20"
   },
   "visible_date_range": {
     "start": "2026-03-01",
-    "end": "2026-04-19"
+    "end": "2026-04-20"
   },
   "product_mode": "core_only",
   "default_mode": "core_only",
   "supported_modes": [
     "core_only"
   ],
-  "source_record_count": 165,
-  "visible_record_count": 156,
-  "parsed_count": 76,
-  "unparsed_count": 80,
-  "success_rate_pct": 48.72,
+  "source_record_count": 171,
+  "visible_record_count": 162,
+  "parsed_count": 80,
+  "unparsed_count": 82,
+  "success_rate_pct": 49.38,
   "failure_reason_counts": {
     "TITLE_FORMAT_INVALID": 3,
-    "TITLE_FORMAT_MISSING": 77
+    "TITLE_FORMAT_MISSING": 79
   },
   "site_config": {
     "site_title_ko": "수영 스티커북",
@@ -71,6 +71,66 @@
     ]
   },
   "parsed_rows": [
+    {
+      "post_id": 19078,
+      "post_date": "2026-04-20",
+      "post_datetime": "2026-04-20 13:16:19",
+      "author": "천천히영",
+      "title": "1200 / 1:19:00",
+      "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=19078&page=2",
+      "source": "title_format",
+      "score": 100,
+      "distance_m": 1200,
+      "total_time_text": "1:19:00",
+      "total_seconds": 4740,
+      "metric_bucket": "core",
+      "manual_override_decision": null
+    },
+    {
+      "post_id": 19076,
+      "post_date": "2026-04-20",
+      "post_datetime": "2026-04-20 12:36:53",
+      "author": "SㅇS",
+      "title": "800 / 43분",
+      "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=19076&page=2",
+      "source": "title_format",
+      "score": 100,
+      "distance_m": 800,
+      "total_time_text": "43분",
+      "total_seconds": 2580,
+      "metric_bucket": "core",
+      "manual_override_decision": null
+    },
+    {
+      "post_id": 19065,
+      "post_date": "2026-04-20",
+      "post_datetime": "2026-04-20 07:38:40",
+      "author": "알프스",
+      "title": "850 / 31분 10초",
+      "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=19065&page=2",
+      "source": "title_format",
+      "score": 100,
+      "distance_m": 850,
+      "total_time_text": "31분 10초",
+      "total_seconds": 1870,
+      "metric_bucket": "core",
+      "manual_override_decision": null
+    },
+    {
+      "post_id": 19061,
+      "post_date": "2026-04-19",
+      "post_datetime": "2026-04-19 21:55:34",
+      "author": "청귤",
+      "title": "1550 / 1:13:46",
+      "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=19061&page=2",
+      "source": "title_format",
+      "score": 100,
+      "distance_m": 1550,
+      "total_time_text": "1:13:46",
+      "total_seconds": 4426,
+      "metric_bucket": "core",
+      "manual_override_decision": null
+    },
     {
       "post_id": 19057,
       "post_date": "2026-04-19",
@@ -1213,6 +1273,34 @@
     }
   ],
   "unparsed_rows": [
+    {
+      "post_id": 19068,
+      "post_date": "2026-04-20",
+      "post_datetime": "2026-04-20 10:35:18",
+      "author": "ㅇㅇ",
+      "title": "25일부터 수영다시 도전합니다!!",
+      "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=19068&page=2",
+      "source": "none",
+      "score": 10,
+      "reason_code": "TITLE_FORMAT_MISSING",
+      "evidence_text": "25일부터 수영다시 도전합니다!!",
+      "review_needed": true,
+      "manual_override_decision": null
+    },
+    {
+      "post_id": 19066,
+      "post_date": "2026-04-20",
+      "post_datetime": "2026-04-20 09:29:55",
+      "author": "꽃순이12",
+      "title": "수영갔다옴",
+      "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=19066&page=2",
+      "source": "none",
+      "score": 10,
+      "reason_code": "TITLE_FORMAT_MISSING",
+      "evidence_text": "수영갔다옴",
+      "review_needed": true,
+      "manual_override_decision": null
+    },
     {
       "post_id": 19020,
       "post_date": "2026-04-17",

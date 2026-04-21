@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-04-21 11:43:53 KST",
-  "reference_date": "2026-04-19",
+  "generated_at": "2026-04-22 04:17:26 KST",
+  "reference_date": "2026-04-20",
   "dashboard_date_floor": "2026-03-01",
   "dashboard_window": {
     "start": "2026-03-01",
-    "end": "2026-04-19"
+    "end": "2026-04-20"
   },
   "visible_date_range": {
     "start": "2026-03-01",
-    "end": "2026-04-19"
+    "end": "2026-04-20"
   },
   "product_mode": "core_only",
   "default_mode": "core_only",
   "supported_modes": [
     "core_only"
   ],
-  "source_record_count": 165,
-  "visible_record_count": 156,
+  "source_record_count": 171,
+  "visible_record_count": 162,
   "profile_count": 24,
   "profiles": [
     {
@@ -34,7 +34,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-03-15",
@@ -62,27 +62,27 @@
           "title_format": 1
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
@@ -109,32 +109,32 @@
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": "2026-03-15",
           "end": "2026-03-15"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
@@ -512,7 +512,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-03-14",
@@ -540,27 +540,27 @@
           "title_format": 2
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
@@ -587,32 +587,32 @@
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": "2026-03-14",
           "end": "2026-03-15"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
@@ -1100,7 +1100,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-03-01",
@@ -1128,27 +1128,27 @@
           "title_format": 15
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
@@ -1175,32 +1175,32 @@
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": "2026-03-01",
           "end": "2026-04-18"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
@@ -2194,23 +2194,23 @@
     {
       "author": "SㅇS",
       "search_key": "sᄋs",
-      "latest_post_date": "2026-04-18",
-      "total_record_count": 5,
-      "included_record_count": 4,
+      "latest_post_date": "2026-04-20",
+      "total_record_count": 6,
+      "included_record_count": 5,
       "review_queue_count": 1,
       "summary": {
         "mode": "core_only",
-        "record_count": 4,
-        "total_record_count": 5,
-        "source_record_count": 5,
+        "record_count": 5,
+        "total_record_count": 6,
+        "source_record_count": 6,
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-03-13",
-          "end": "2026-04-18"
+          "end": "2026-04-20"
         },
         "excluded_record_count": 1,
         "excluded_reason_counts": {
@@ -2223,117 +2223,117 @@
         "warning_code_counts": {},
         "source_counts": {
           "none": 1,
-          "title_format": 4
+          "title_format": 5
         },
         "manual_override_counts": {},
-        "swim_count": 4,
-        "total_distance_m": 4700.0,
-        "total_seconds": 17880,
-        "total_duration_min": 298.0,
-        "distance_per_hour_m": 946.31,
+        "swim_count": 5,
+        "total_distance_m": 5500.0,
+        "total_seconds": 20460,
+        "total_duration_min": 341.0,
+        "distance_per_hour_m": 967.74,
         "active_authors": 1,
         "included_metric_bucket_counts": {
-          "core": 4
+          "core": 5
         },
         "included_source_counts": {
-          "title_format": 4
+          "title_format": 5
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
             "swim_count": {
-              "recent_value": 3,
+              "recent_value": 4,
               "previous_value": 1,
-              "delta_value": 2.0,
-              "pct_change": 200.0,
+              "delta_value": 3.0,
+              "pct_change": 300.0,
               "pct_change_status": "standard"
             },
             "distance_m": {
-              "recent_value": 3650.0,
+              "recent_value": 4450.0,
               "previous_value": 1050.0,
-              "delta_value": 2600.0,
-              "pct_change": 247.62,
+              "delta_value": 3400.0,
+              "pct_change": 323.81,
               "pct_change_status": "standard"
             },
             "total_seconds": {
-              "recent_value": 13800,
+              "recent_value": 16380,
               "previous_value": 4080,
-              "delta_value": 9720.0,
-              "pct_change": 238.24,
+              "delta_value": 12300.0,
+              "pct_change": 301.47,
               "pct_change_status": "standard"
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": "2026-03-17",
-          "end": "2026-04-18"
+          "end": "2026-04-20"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
           "swim_count": {
-            "recent_value": 3,
+            "recent_value": 4,
             "previous_value": 1,
-            "delta_value": 2.0,
-            "pct_change": 200.0,
+            "delta_value": 3.0,
+            "pct_change": 300.0,
             "pct_change_status": "standard"
           },
           "distance_m": {
-            "recent_value": 3650.0,
+            "recent_value": 4450.0,
             "previous_value": 1050.0,
-            "delta_value": 2600.0,
-            "pct_change": 247.62,
+            "delta_value": 3400.0,
+            "pct_change": 323.81,
             "pct_change_status": "standard"
           },
           "total_seconds": {
-            "recent_value": 13800,
+            "recent_value": 16380,
             "previous_value": 4080,
-            "delta_value": 9720.0,
-            "pct_change": 238.24,
+            "delta_value": 12300.0,
+            "pct_change": 301.47,
             "pct_change_status": "standard"
           }
         }
@@ -2353,18 +2353,32 @@
         },
         {
           "month": "2026-04",
-          "swim_count": 3,
-          "total_distance_m": 3650.0,
-          "total_seconds": 13800,
-          "total_duration_min": 230.0,
-          "distance_per_hour_m": 952.17,
+          "swim_count": 4,
+          "total_distance_m": 4450.0,
+          "total_seconds": 16380,
+          "total_duration_min": 273.0,
+          "distance_per_hour_m": 978.02,
           "active_authors": 1,
           "metric_bucket_counts": {
-            "core": 3
+            "core": 4
           }
         }
       ],
       "recent_records": [
+        {
+          "post_id": 19076,
+          "post_date": "2026-04-20",
+          "post_datetime": "2026-04-20 12:36:53",
+          "author": "SㅇS",
+          "distance_m": 800,
+          "total_time_text": "43분",
+          "total_seconds": 2580,
+          "source": "title_format",
+          "metric_bucket": "core",
+          "score": 100,
+          "warning_codes": [],
+          "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=19076&page=2"
+        },
         {
           "post_id": 19040,
           "post_date": "2026-04-18",
@@ -2455,6 +2469,14 @@
             "total_seconds": 5400,
             "total_duration_min": 90.0,
             "distance_per_hour_m": 933.33
+          },
+          {
+            "date": "2026-04-20",
+            "swim_count": 1,
+            "total_distance_m": 800.0,
+            "total_seconds": 2580,
+            "total_duration_min": 43.0,
+            "distance_per_hour_m": 1116.28
           }
         ]
       },
@@ -2471,8 +2493,8 @@
         "is_primary_title_candidate": true,
         "is_hidden": false,
         "season_tag": null,
-        "current_value": 9720,
-        "current_value_text_ko": "2시간 42분",
+        "current_value": 12300,
+        "current_value_text_ko": "3시간 25분",
         "target_value": 5400,
         "target_value_text_ko": "1시간 30분",
         "remaining_value": 0,
@@ -2481,6 +2503,28 @@
         "unlocked_at": "2026-04-18 16:41:18"
       },
       "unlocked_badges": [
+        {
+          "badge_id": "att_03",
+          "category": "attendance",
+          "name_ko": "오수완 초심자",
+          "short_label_ko": "5회",
+          "description_ko": "다섯 번의 기록으로 루틴을 만들기 시작합니다.",
+          "threshold_type": "author_total_swim_count",
+          "threshold_value": 5,
+          "icon_key": "att.base",
+          "tier": 3,
+          "is_primary_title_candidate": true,
+          "is_hidden": false,
+          "season_tag": null,
+          "current_value": 5,
+          "current_value_text_ko": "5회",
+          "target_value": 5,
+          "target_value_text_ko": "5회",
+          "remaining_value": 0,
+          "remaining_value_text_ko": "해금 완료",
+          "progress_ratio": 1.0,
+          "unlocked_at": "2026-04-20 12:36:53"
+        },
         {
           "badge_id": "att_02",
           "category": "attendance",
@@ -2494,8 +2538,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 4,
-          "current_value_text_ko": "4회",
+          "current_value": 5,
+          "current_value_text_ko": "5회",
           "target_value": 3,
           "target_value_text_ko": "3회",
           "remaining_value": 0,
@@ -2516,14 +2560,36 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 4,
-          "current_value_text_ko": "4회",
+          "current_value": 5,
+          "current_value_text_ko": "5회",
           "target_value": 1,
           "target_value_text_ko": "1회",
           "remaining_value": 0,
           "remaining_value_text_ko": "해금 완료",
           "progress_ratio": 1.0,
           "unlocked_at": "2026-03-17 11:47:14"
+        },
+        {
+          "badge_id": "dst_03",
+          "category": "distance",
+          "name_ko": "중거리 주자",
+          "short_label_ko": "5km",
+          "description_ko": "누적 5km로 중거리 감각이 붙습니다.",
+          "threshold_type": "author_total_distance_m",
+          "threshold_value": 5000,
+          "icon_key": "dst.base",
+          "tier": 3,
+          "is_primary_title_candidate": true,
+          "is_hidden": false,
+          "season_tag": null,
+          "current_value": 5500,
+          "current_value_text_ko": "5.5km",
+          "target_value": 5000,
+          "target_value_text_ko": "5km",
+          "remaining_value": 0,
+          "remaining_value_text_ko": "해금 완료",
+          "progress_ratio": 1.0,
+          "unlocked_at": "2026-04-20 12:36:53"
         },
         {
           "badge_id": "dst_02",
@@ -2538,8 +2604,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 4700,
-          "current_value_text_ko": "4.7km",
+          "current_value": 5500,
+          "current_value_text_ko": "5.5km",
           "target_value": 3000,
           "target_value_text_ko": "3km",
           "remaining_value": 0,
@@ -2560,8 +2626,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 4700,
-          "current_value_text_ko": "4.7km",
+          "current_value": 5500,
+          "current_value_text_ko": "5.5km",
           "target_value": 1000,
           "target_value_text_ko": "1km",
           "remaining_value": 0,
@@ -2582,8 +2648,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 17880,
-          "current_value_text_ko": "4시간 58분",
+          "current_value": 20460,
+          "current_value_text_ko": "5시간 41분",
           "target_value": 10800,
           "target_value_text_ko": "3시간 0분",
           "remaining_value": 0,
@@ -2604,8 +2670,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 17880,
-          "current_value_text_ko": "4시간 58분",
+          "current_value": 20460,
+          "current_value_text_ko": "5시간 41분",
           "target_value": 3600,
           "target_value_text_ko": "1시간 0분",
           "remaining_value": 0,
@@ -2626,8 +2692,8 @@
           "is_primary_title_candidate": false,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 946.31,
-          "current_value_text_ko": "946m/h",
+          "current_value": 967.74,
+          "current_value_text_ko": "968m/h",
           "target_value": 900,
           "target_value_text_ko": "900m/h",
           "remaining_value": 0,
@@ -2648,8 +2714,8 @@
           "is_primary_title_candidate": false,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 946.31,
-          "current_value_text_ko": "946m/h",
+          "current_value": 967.74,
+          "current_value_text_ko": "968m/h",
           "target_value": 700,
           "target_value_text_ko": "700m/h",
           "remaining_value": 0,
@@ -2670,8 +2736,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 9720,
-          "current_value_text_ko": "2시간 42분",
+          "current_value": 12300,
+          "current_value_text_ko": "3시간 25분",
           "target_value": 5400,
           "target_value_text_ko": "1시간 30분",
           "remaining_value": 0,
@@ -2692,14 +2758,36 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 2600,
-          "current_value_text_ko": "2.6km",
+          "current_value": 3400,
+          "current_value_text_ko": "3.4km",
           "target_value": 1500,
           "target_value_text_ko": "1.5km",
           "remaining_value": 0,
           "remaining_value_text_ko": "해금 완료",
           "progress_ratio": 1.0,
           "unlocked_at": "2026-04-18 16:41:18"
+        },
+        {
+          "badge_id": "grw_04",
+          "category": "growth",
+          "name_ko": "출석 각성",
+          "short_label_ko": "횟수 +3",
+          "description_ko": "최근 28일 참여가 눈에 띄게 늘어난 상태입니다.",
+          "threshold_type": "author_recent_growth_swim_count",
+          "threshold_value": 3,
+          "icon_key": "grw.base",
+          "tier": 4,
+          "is_primary_title_candidate": true,
+          "is_hidden": false,
+          "season_tag": null,
+          "current_value": 3,
+          "current_value_text_ko": "3회",
+          "target_value": 3,
+          "target_value_text_ko": "3회",
+          "remaining_value": 0,
+          "remaining_value_text_ko": "해금 완료",
+          "progress_ratio": 1.0,
+          "unlocked_at": "2026-04-20 12:36:53"
         },
         {
           "badge_id": "grw_03",
@@ -2714,8 +2802,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 9720,
-          "current_value_text_ko": "2시간 42분",
+          "current_value": 12300,
+          "current_value_text_ko": "3시간 25분",
           "target_value": 1800,
           "target_value_text_ko": "30분",
           "remaining_value": 0,
@@ -2736,8 +2824,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 2600,
-          "current_value_text_ko": "2.6km",
+          "current_value": 3400,
+          "current_value_text_ko": "3.4km",
           "target_value": 500,
           "target_value_text_ko": "500m",
           "remaining_value": 0,
@@ -2758,8 +2846,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 2,
-          "current_value_text_ko": "2회",
+          "current_value": 3,
+          "current_value_text_ko": "3회",
           "target_value": 1,
           "target_value_text_ko": "1회",
           "remaining_value": 0,
@@ -2835,37 +2923,67 @@
         }
       ],
       "next_badge_progress": {
-        "badge_id": "dst_03",
-        "category": "distance",
-        "name_ko": "중거리 주자",
-        "short_label_ko": "5km",
-        "description_ko": "누적 5km로 중거리 감각이 붙습니다.",
-        "threshold_type": "author_total_distance_m",
-        "threshold_value": 5000,
-        "icon_key": "dst.base",
+        "badge_id": "tim_03",
+        "category": "time",
+        "name_ko": "레인 체류자",
+        "short_label_ko": "6시간",
+        "description_ko": "누적 6시간으로 레인에 머무는 감각이 생깁니다.",
+        "threshold_type": "author_total_seconds",
+        "threshold_value": 21600,
+        "icon_key": "tim.base",
         "tier": 3,
         "is_primary_title_candidate": true,
         "is_hidden": false,
         "season_tag": null,
-        "current_value": 4700,
-        "current_value_text_ko": "4.7km",
-        "target_value": 5000,
-        "target_value_text_ko": "5km",
-        "remaining_value": 300,
-        "remaining_value_text_ko": "300m 남음",
-        "progress_ratio": 0.94
+        "current_value": 20460,
+        "current_value_text_ko": "5시간 41분",
+        "target_value": 21600,
+        "target_value_text_ko": "6시간 0분",
+        "remaining_value": 1140,
+        "remaining_value_text_ko": "19분 남음",
+        "progress_ratio": 0.9472
       },
       "badge_counts_by_category": {
-        "attendance": 2,
-        "distance": 2,
+        "attendance": 3,
+        "distance": 3,
         "time": 2,
         "efficiency": 2,
-        "growth": 5,
+        "growth": 6,
         "season": 2,
         "gallery": 0,
         "fun": 1
       },
       "recent_unlocks": [
+        {
+          "scope": "author",
+          "author": "SㅇS",
+          "badge_id": "grw_04",
+          "category": "growth",
+          "name_ko": "출석 각성",
+          "short_label_ko": "횟수 +3",
+          "icon_key": "grw.base",
+          "unlocked_at": "2026-04-20 12:36:53"
+        },
+        {
+          "scope": "author",
+          "author": "SㅇS",
+          "badge_id": "dst_03",
+          "category": "distance",
+          "name_ko": "중거리 주자",
+          "short_label_ko": "5km",
+          "icon_key": "dst.base",
+          "unlocked_at": "2026-04-20 12:36:53"
+        },
+        {
+          "scope": "author",
+          "author": "SㅇS",
+          "badge_id": "att_03",
+          "category": "attendance",
+          "name_ko": "오수완 초심자",
+          "short_label_ko": "5회",
+          "icon_key": "att.base",
+          "unlocked_at": "2026-04-20 12:36:53"
+        },
         {
           "scope": "author",
           "author": "SㅇS",
@@ -2895,36 +3013,6 @@
           "short_label_ko": "3시간",
           "icon_key": "tim.base",
           "unlocked_at": "2026-04-16 12:01:44"
-        },
-        {
-          "scope": "author",
-          "author": "SㅇS",
-          "badge_id": "fun_01",
-          "category": "fun",
-          "name_ko": "오늘 길었다",
-          "short_label_ko": "한 번에 1500m",
-          "icon_key": "fun.base",
-          "unlocked_at": "2026-04-16 12:01:44"
-        },
-        {
-          "scope": "author",
-          "author": "SㅇS",
-          "badge_id": "dst_02",
-          "category": "distance",
-          "name_ko": "물결 수집가",
-          "short_label_ko": "3km",
-          "icon_key": "dst.base",
-          "unlocked_at": "2026-04-16 12:01:44"
-        },
-        {
-          "scope": "author",
-          "author": "SㅇS",
-          "badge_id": "att_02",
-          "category": "attendance",
-          "name_ko": "레인 발도장",
-          "short_label_ko": "3회",
-          "icon_key": "att.base",
-          "unlocked_at": "2026-04-16 12:01:44"
         }
       ]
     },
@@ -2943,7 +3031,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-03-03",
@@ -2973,27 +3061,27 @@
         "included_metric_bucket_counts": {},
         "included_source_counts": {},
         "has_zero_visible_included_rows": true,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
@@ -3020,32 +3108,32 @@
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": null,
           "end": null
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
@@ -3115,35 +3203,35 @@
     {
       "author": "ㅇㅇ",
       "search_key": "ᄋᄋ",
-      "latest_post_date": "2026-03-11",
-      "total_record_count": 1,
+      "latest_post_date": "2026-04-20",
+      "total_record_count": 2,
       "included_record_count": 0,
-      "review_queue_count": 1,
+      "review_queue_count": 2,
       "summary": {
         "mode": "core_only",
         "record_count": 0,
-        "total_record_count": 1,
-        "source_record_count": 1,
+        "total_record_count": 2,
+        "source_record_count": 2,
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-03-11",
-          "end": "2026-03-11"
+          "end": "2026-04-20"
         },
-        "excluded_record_count": 1,
+        "excluded_record_count": 2,
         "excluded_reason_counts": {
-          "TITLE_FORMAT_MISSING": 1
+          "TITLE_FORMAT_MISSING": 2
         },
-        "review_queue_count": 1,
+        "review_queue_count": 2,
         "review_reason_counts": {
-          "TITLE_FORMAT_MISSING": 1
+          "TITLE_FORMAT_MISSING": 2
         },
         "warning_code_counts": {},
         "source_counts": {
-          "none": 1
+          "none": 2
         },
         "manual_override_counts": {},
         "swim_count": 0,
@@ -3155,27 +3243,27 @@
         "included_metric_bucket_counts": {},
         "included_source_counts": {},
         "has_zero_visible_included_rows": true,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
@@ -3202,32 +3290,32 @@
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": null,
           "end": null
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
@@ -3309,7 +3397,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-03-03",
@@ -3342,27 +3430,27 @@
           "title_format": 4
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
@@ -3389,32 +3477,32 @@
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": "2026-03-17",
           "end": "2026-04-16"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
@@ -4012,35 +4100,35 @@
     {
       "author": "꽃순이12",
       "search_key": "꽃순이12",
-      "latest_post_date": "2026-04-17",
-      "total_record_count": 2,
+      "latest_post_date": "2026-04-20",
+      "total_record_count": 3,
       "included_record_count": 0,
-      "review_queue_count": 2,
+      "review_queue_count": 3,
       "summary": {
         "mode": "core_only",
         "record_count": 0,
-        "total_record_count": 2,
-        "source_record_count": 2,
+        "total_record_count": 3,
+        "source_record_count": 3,
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-03-13",
-          "end": "2026-04-17"
+          "end": "2026-04-20"
         },
-        "excluded_record_count": 2,
+        "excluded_record_count": 3,
         "excluded_reason_counts": {
-          "TITLE_FORMAT_MISSING": 2
+          "TITLE_FORMAT_MISSING": 3
         },
-        "review_queue_count": 2,
+        "review_queue_count": 3,
         "review_reason_counts": {
-          "TITLE_FORMAT_MISSING": 2
+          "TITLE_FORMAT_MISSING": 3
         },
         "warning_code_counts": {},
         "source_counts": {
-          "none": 2
+          "none": 3
         },
         "manual_override_counts": {},
         "swim_count": 0,
@@ -4052,27 +4140,27 @@
         "included_metric_bucket_counts": {},
         "included_source_counts": {},
         "has_zero_visible_included_rows": true,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
@@ -4099,32 +4187,32 @@
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": null,
           "end": null
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
@@ -4206,7 +4294,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-03-08",
@@ -4234,27 +4322,27 @@
         "included_metric_bucket_counts": {},
         "included_source_counts": {},
         "has_zero_visible_included_rows": true,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
@@ -4281,32 +4369,32 @@
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": null,
           "end": null
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
@@ -4388,7 +4476,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-03-04",
@@ -4416,27 +4504,27 @@
         "included_metric_bucket_counts": {},
         "included_source_counts": {},
         "has_zero_visible_included_rows": true,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
@@ -4463,32 +4551,32 @@
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": null,
           "end": null
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
@@ -4570,7 +4658,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-03-01",
@@ -4603,27 +4691,27 @@
           "title_format": 2
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
@@ -4650,32 +4738,32 @@
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": "2026-03-16",
           "end": "2026-04-15"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
@@ -5087,7 +5175,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-03-13",
@@ -5115,27 +5203,27 @@
         "included_metric_bucket_counts": {},
         "included_source_counts": {},
         "has_zero_visible_included_rows": true,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
@@ -5162,32 +5250,32 @@
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": null,
           "end": null
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
@@ -5269,7 +5357,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-03-13",
@@ -5297,27 +5385,27 @@
           "title_format": 1
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
@@ -5344,32 +5432,32 @@
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": "2026-03-13",
           "end": "2026-03-13"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
@@ -5735,23 +5823,23 @@
     {
       "author": "알프스",
       "search_key": "알프스",
-      "latest_post_date": "2026-04-17",
-      "total_record_count": 24,
-      "included_record_count": 9,
+      "latest_post_date": "2026-04-20",
+      "total_record_count": 25,
+      "included_record_count": 10,
       "review_queue_count": 15,
       "summary": {
         "mode": "core_only",
-        "record_count": 9,
-        "total_record_count": 24,
-        "source_record_count": 24,
+        "record_count": 10,
+        "total_record_count": 25,
+        "source_record_count": 25,
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-03-02",
-          "end": "2026-04-17"
+          "end": "2026-04-20"
         },
         "excluded_record_count": 15,
         "excluded_reason_counts": {
@@ -5764,117 +5852,117 @@
         "warning_code_counts": {},
         "source_counts": {
           "none": 15,
-          "title_format": 9
+          "title_format": 10
         },
         "manual_override_counts": {},
-        "swim_count": 9,
-        "total_distance_m": 10775.0,
-        "total_seconds": 27243,
-        "total_duration_min": 454.05,
-        "distance_per_hour_m": 1423.85,
+        "swim_count": 10,
+        "total_distance_m": 11625.0,
+        "total_seconds": 29113,
+        "total_duration_min": 485.22,
+        "distance_per_hour_m": 1437.5,
         "active_authors": 1,
         "included_metric_bucket_counts": {
-          "core": 9
+          "core": 10
         },
         "included_source_counts": {
-          "title_format": 9
+          "title_format": 10
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
             "swim_count": {
-              "recent_value": 5,
+              "recent_value": 6,
               "previous_value": 4,
-              "delta_value": 1.0,
-              "pct_change": 25.0,
+              "delta_value": 2.0,
+              "pct_change": 50.0,
               "pct_change_status": "standard"
             },
             "distance_m": {
-              "recent_value": 6500.0,
+              "recent_value": 7350.0,
               "previous_value": 4275.0,
-              "delta_value": 2225.0,
-              "pct_change": 52.05,
+              "delta_value": 3075.0,
+              "pct_change": 71.93,
               "pct_change_status": "standard"
             },
             "total_seconds": {
-              "recent_value": 15049,
+              "recent_value": 16919,
               "previous_value": 12194,
-              "delta_value": 2855.0,
-              "pct_change": 23.41,
+              "delta_value": 4725.0,
+              "pct_change": 38.75,
               "pct_change_status": "standard"
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": "2026-03-12",
-          "end": "2026-04-17"
+          "end": "2026-04-20"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
           "swim_count": {
-            "recent_value": 5,
+            "recent_value": 6,
             "previous_value": 4,
-            "delta_value": 1.0,
-            "pct_change": 25.0,
+            "delta_value": 2.0,
+            "pct_change": 50.0,
             "pct_change_status": "standard"
           },
           "distance_m": {
-            "recent_value": 6500.0,
+            "recent_value": 7350.0,
             "previous_value": 4275.0,
-            "delta_value": 2225.0,
-            "pct_change": 52.05,
+            "delta_value": 3075.0,
+            "pct_change": 71.93,
             "pct_change_status": "standard"
           },
           "total_seconds": {
-            "recent_value": 15049,
+            "recent_value": 16919,
             "previous_value": 12194,
-            "delta_value": 2855.0,
-            "pct_change": 23.41,
+            "delta_value": 4725.0,
+            "pct_change": 38.75,
             "pct_change_status": "standard"
           }
         }
@@ -5894,18 +5982,32 @@
         },
         {
           "month": "2026-04",
-          "swim_count": 5,
-          "total_distance_m": 6500.0,
-          "total_seconds": 15049,
-          "total_duration_min": 250.82,
-          "distance_per_hour_m": 1554.92,
+          "swim_count": 6,
+          "total_distance_m": 7350.0,
+          "total_seconds": 16919,
+          "total_duration_min": 281.98,
+          "distance_per_hour_m": 1563.92,
           "active_authors": 1,
           "metric_bucket_counts": {
-            "core": 5
+            "core": 6
           }
         }
       ],
       "recent_records": [
+        {
+          "post_id": 19065,
+          "post_date": "2026-04-20",
+          "post_datetime": "2026-04-20 07:38:40",
+          "author": "알프스",
+          "distance_m": 850,
+          "total_time_text": "31분 10초",
+          "total_seconds": 1870,
+          "source": "title_format",
+          "metric_bucket": "core",
+          "score": 100,
+          "warning_codes": [],
+          "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=19065&page=2"
+        },
         {
           "post_id": 19008,
           "post_date": "2026-04-17",
@@ -6106,6 +6208,14 @@
             "total_seconds": 2966,
             "total_duration_min": 49.43,
             "distance_per_hour_m": 1274.44
+          },
+          {
+            "date": "2026-04-20",
+            "swim_count": 1,
+            "total_distance_m": 850.0,
+            "total_seconds": 1870,
+            "total_duration_min": 31.17,
+            "distance_per_hour_m": 1636.36
           }
         ]
       },
@@ -6122,8 +6232,8 @@
         "is_primary_title_candidate": true,
         "is_hidden": false,
         "season_tag": null,
-        "current_value": 2225,
-        "current_value_text_ko": "2.2km",
+        "current_value": 3075,
+        "current_value_text_ko": "3.1km",
         "target_value": 1500,
         "target_value_text_ko": "1.5km",
         "remaining_value": 0,
@@ -6132,6 +6242,28 @@
         "unlocked_at": "2026-03-14 19:08:23"
       },
       "unlocked_badges": [
+        {
+          "badge_id": "att_04",
+          "category": "attendance",
+          "name_ko": "꾸준러",
+          "short_label_ko": "10회",
+          "description_ko": "열 번의 기록으로 꾸준함을 증명합니다.",
+          "threshold_type": "author_total_swim_count",
+          "threshold_value": 10,
+          "icon_key": "att.base",
+          "tier": 4,
+          "is_primary_title_candidate": true,
+          "is_hidden": false,
+          "season_tag": null,
+          "current_value": 10,
+          "current_value_text_ko": "10회",
+          "target_value": 10,
+          "target_value_text_ko": "10회",
+          "remaining_value": 0,
+          "remaining_value_text_ko": "해금 완료",
+          "progress_ratio": 1.0,
+          "unlocked_at": "2026-04-20 07:38:40"
+        },
         {
           "badge_id": "att_03",
           "category": "attendance",
@@ -6145,8 +6277,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 9,
-          "current_value_text_ko": "9회",
+          "current_value": 10,
+          "current_value_text_ko": "10회",
           "target_value": 5,
           "target_value_text_ko": "5회",
           "remaining_value": 0,
@@ -6167,8 +6299,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 9,
-          "current_value_text_ko": "9회",
+          "current_value": 10,
+          "current_value_text_ko": "10회",
           "target_value": 3,
           "target_value_text_ko": "3회",
           "remaining_value": 0,
@@ -6189,8 +6321,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 9,
-          "current_value_text_ko": "9회",
+          "current_value": 10,
+          "current_value_text_ko": "10회",
           "target_value": 1,
           "target_value_text_ko": "1회",
           "remaining_value": 0,
@@ -6211,8 +6343,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 10775,
-          "current_value_text_ko": "10.8km",
+          "current_value": 11625,
+          "current_value_text_ko": "11.6km",
           "target_value": 10000,
           "target_value_text_ko": "10km",
           "remaining_value": 0,
@@ -6233,8 +6365,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 10775,
-          "current_value_text_ko": "10.8km",
+          "current_value": 11625,
+          "current_value_text_ko": "11.6km",
           "target_value": 5000,
           "target_value_text_ko": "5km",
           "remaining_value": 0,
@@ -6255,8 +6387,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 10775,
-          "current_value_text_ko": "10.8km",
+          "current_value": 11625,
+          "current_value_text_ko": "11.6km",
           "target_value": 3000,
           "target_value_text_ko": "3km",
           "remaining_value": 0,
@@ -6277,8 +6409,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 10775,
-          "current_value_text_ko": "10.8km",
+          "current_value": 11625,
+          "current_value_text_ko": "11.6km",
           "target_value": 1000,
           "target_value_text_ko": "1km",
           "remaining_value": 0,
@@ -6299,8 +6431,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 27243,
-          "current_value_text_ko": "7시간 34분 3초",
+          "current_value": 29113,
+          "current_value_text_ko": "8시간 5분 13초",
           "target_value": 21600,
           "target_value_text_ko": "6시간 0분",
           "remaining_value": 0,
@@ -6321,8 +6453,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 27243,
-          "current_value_text_ko": "7시간 34분 3초",
+          "current_value": 29113,
+          "current_value_text_ko": "8시간 5분 13초",
           "target_value": 10800,
           "target_value_text_ko": "3시간 0분",
           "remaining_value": 0,
@@ -6343,8 +6475,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 27243,
-          "current_value_text_ko": "7시간 34분 3초",
+          "current_value": 29113,
+          "current_value_text_ko": "8시간 5분 13초",
           "target_value": 3600,
           "target_value_text_ko": "1시간 0분",
           "remaining_value": 0,
@@ -6365,8 +6497,8 @@
           "is_primary_title_candidate": false,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 1423.85,
-          "current_value_text_ko": "1424m/h",
+          "current_value": 1437.5,
+          "current_value_text_ko": "1438m/h",
           "target_value": 1300,
           "target_value_text_ko": "1300m/h",
           "remaining_value": 0,
@@ -6387,8 +6519,8 @@
           "is_primary_title_candidate": false,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 1423.85,
-          "current_value_text_ko": "1424m/h",
+          "current_value": 1437.5,
+          "current_value_text_ko": "1438m/h",
           "target_value": 1100,
           "target_value_text_ko": "1100m/h",
           "remaining_value": 0,
@@ -6409,8 +6541,8 @@
           "is_primary_title_candidate": false,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 1423.85,
-          "current_value_text_ko": "1424m/h",
+          "current_value": 1437.5,
+          "current_value_text_ko": "1438m/h",
           "target_value": 900,
           "target_value_text_ko": "900m/h",
           "remaining_value": 0,
@@ -6431,8 +6563,8 @@
           "is_primary_title_candidate": false,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 1423.85,
-          "current_value_text_ko": "1424m/h",
+          "current_value": 1437.5,
+          "current_value_text_ko": "1438m/h",
           "target_value": 700,
           "target_value_text_ko": "700m/h",
           "remaining_value": 0,
@@ -6453,8 +6585,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 2225,
-          "current_value_text_ko": "2.2km",
+          "current_value": 3075,
+          "current_value_text_ko": "3.1km",
           "target_value": 1500,
           "target_value_text_ko": "1.5km",
           "remaining_value": 0,
@@ -6475,8 +6607,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 2855,
-          "current_value_text_ko": "47분 35초",
+          "current_value": 4725,
+          "current_value_text_ko": "1시간 18분 45초",
           "target_value": 1800,
           "target_value_text_ko": "30분",
           "remaining_value": 0,
@@ -6497,8 +6629,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 2225,
-          "current_value_text_ko": "2.2km",
+          "current_value": 3075,
+          "current_value_text_ko": "3.1km",
           "target_value": 500,
           "target_value_text_ko": "500m",
           "remaining_value": 0,
@@ -6519,8 +6651,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 1,
-          "current_value_text_ko": "1회",
+          "current_value": 2,
+          "current_value_text_ko": "2회",
           "target_value": 1,
           "target_value_text_ko": "1회",
           "remaining_value": 0,
@@ -6608,16 +6740,16 @@
         "is_primary_title_candidate": false,
         "is_hidden": false,
         "season_tag": null,
-        "current_value": 1423.85,
-        "current_value_text_ko": "1424m/h",
+        "current_value": 1437.5,
+        "current_value_text_ko": "1438m/h",
         "target_value": 1500,
         "target_value_text_ko": "1500m/h",
-        "remaining_value": 76.15,
-        "remaining_value_text_ko": "76m/h 남음",
-        "progress_ratio": 0.9492
+        "remaining_value": 62.5,
+        "remaining_value_text_ko": "62m/h 남음",
+        "progress_ratio": 0.9583
       },
       "badge_counts_by_category": {
-        "attendance": 3,
+        "attendance": 4,
         "distance": 4,
         "time": 3,
         "efficiency": 4,
@@ -6627,6 +6759,16 @@
         "fun": 1
       },
       "recent_unlocks": [
+        {
+          "scope": "author",
+          "author": "알프스",
+          "badge_id": "att_04",
+          "category": "attendance",
+          "name_ko": "꾸준러",
+          "short_label_ko": "10회",
+          "icon_key": "att.base",
+          "unlocked_at": "2026-04-20 07:38:40"
+        },
         {
           "scope": "author",
           "author": "알프스",
@@ -6676,16 +6818,6 @@
           "short_label_ko": "1300m/h",
           "icon_key": "eff.base",
           "unlocked_at": "2026-04-13 08:58:26"
-        },
-        {
-          "scope": "author",
-          "author": "알프스",
-          "badge_id": "dst_03",
-          "category": "distance",
-          "name_ko": "중거리 주자",
-          "short_label_ko": "5km",
-          "icon_key": "dst.base",
-          "unlocked_at": "2026-04-13 08:58:26"
         }
       ]
     },
@@ -6704,7 +6836,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-03-03",
@@ -6737,27 +6869,27 @@
           "title_format": 1
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
@@ -6784,32 +6916,32 @@
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": "2026-04-19",
           "end": "2026-04-19"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
@@ -7297,7 +7429,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-03-13",
@@ -7327,27 +7459,27 @@
         "included_metric_bucket_counts": {},
         "included_source_counts": {},
         "has_zero_visible_included_rows": true,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
@@ -7374,32 +7506,32 @@
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": null,
           "end": null
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
@@ -7481,7 +7613,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-03-01",
@@ -7514,27 +7646,27 @@
           "title_format": 5
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
@@ -7561,32 +7693,32 @@
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": "2026-03-01",
           "end": "2026-04-17"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
@@ -8240,7 +8372,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-03-10",
@@ -8273,27 +8405,27 @@
           "title_format": 3
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
@@ -8320,32 +8452,32 @@
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": "2026-03-10",
           "end": "2026-04-15"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
@@ -8801,7 +8933,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-04-13",
@@ -8829,27 +8961,27 @@
           "title_format": 3
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
@@ -8876,32 +9008,32 @@
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": "2026-04-13",
           "end": "2026-04-16"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
@@ -9587,7 +9719,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-03-14",
@@ -9615,27 +9747,27 @@
           "title_format": 3
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
@@ -9662,32 +9794,32 @@
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": "2026-03-14",
           "end": "2026-03-16"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
@@ -10229,23 +10361,23 @@
     {
       "author": "천천히영",
       "search_key": "천천히영",
-      "latest_post_date": "2026-04-19",
-      "total_record_count": 12,
-      "included_record_count": 11,
+      "latest_post_date": "2026-04-20",
+      "total_record_count": 13,
+      "included_record_count": 12,
       "review_queue_count": 1,
       "summary": {
         "mode": "core_only",
-        "record_count": 11,
-        "total_record_count": 12,
-        "source_record_count": 12,
+        "record_count": 12,
+        "total_record_count": 13,
+        "source_record_count": 13,
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-03-10",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "excluded_record_count": 1,
         "excluded_reason_counts": {
@@ -10258,117 +10390,117 @@
         "warning_code_counts": {},
         "source_counts": {
           "none": 1,
-          "title_format": 11
+          "title_format": 12
         },
         "manual_override_counts": {},
-        "swim_count": 11,
-        "total_distance_m": 12300.0,
-        "total_seconds": 42712,
-        "total_duration_min": 711.87,
-        "distance_per_hour_m": 1036.71,
+        "swim_count": 12,
+        "total_distance_m": 13500.0,
+        "total_seconds": 47452,
+        "total_duration_min": 790.87,
+        "distance_per_hour_m": 1024.19,
         "active_authors": 1,
         "included_metric_bucket_counts": {
-          "core": 11
+          "core": 12
         },
         "included_source_counts": {
-          "title_format": 11
+          "title_format": 12
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
             "swim_count": {
-              "recent_value": 6,
+              "recent_value": 7,
               "previous_value": 5,
-              "delta_value": 1.0,
-              "pct_change": 20.0,
+              "delta_value": 2.0,
+              "pct_change": 40.0,
               "pct_change_status": "standard"
             },
             "distance_m": {
-              "recent_value": 6700.0,
+              "recent_value": 7900.0,
               "previous_value": 5600.0,
-              "delta_value": 1100.0,
-              "pct_change": 19.64,
+              "delta_value": 2300.0,
+              "pct_change": 41.07,
               "pct_change_status": "standard"
             },
             "total_seconds": {
-              "recent_value": 24070,
+              "recent_value": 28810,
               "previous_value": 18642,
-              "delta_value": 5428.0,
-              "pct_change": 29.12,
+              "delta_value": 10168.0,
+              "pct_change": 54.54,
               "pct_change_status": "standard"
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": "2026-03-10",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
           "swim_count": {
-            "recent_value": 6,
+            "recent_value": 7,
             "previous_value": 5,
-            "delta_value": 1.0,
-            "pct_change": 20.0,
+            "delta_value": 2.0,
+            "pct_change": 40.0,
             "pct_change_status": "standard"
           },
           "distance_m": {
-            "recent_value": 6700.0,
+            "recent_value": 7900.0,
             "previous_value": 5600.0,
-            "delta_value": 1100.0,
-            "pct_change": 19.64,
+            "delta_value": 2300.0,
+            "pct_change": 41.07,
             "pct_change_status": "standard"
           },
           "total_seconds": {
-            "recent_value": 24070,
+            "recent_value": 28810,
             "previous_value": 18642,
-            "delta_value": 5428.0,
-            "pct_change": 29.12,
+            "delta_value": 10168.0,
+            "pct_change": 54.54,
             "pct_change_status": "standard"
           }
         }
@@ -10388,18 +10520,32 @@
         },
         {
           "month": "2026-04",
-          "swim_count": 6,
-          "total_distance_m": 6700.0,
-          "total_seconds": 24070,
-          "total_duration_min": 401.17,
-          "distance_per_hour_m": 1002.08,
+          "swim_count": 7,
+          "total_distance_m": 7900.0,
+          "total_seconds": 28810,
+          "total_duration_min": 480.17,
+          "distance_per_hour_m": 987.16,
           "active_authors": 1,
           "metric_bucket_counts": {
-            "core": 6
+            "core": 7
           }
         }
       ],
       "recent_records": [
+        {
+          "post_id": 19078,
+          "post_date": "2026-04-20",
+          "post_datetime": "2026-04-20 13:16:19",
+          "author": "천천히영",
+          "distance_m": 1200,
+          "total_time_text": "1:19:00",
+          "total_seconds": 4740,
+          "source": "title_format",
+          "metric_bucket": "core",
+          "score": 100,
+          "warning_codes": [],
+          "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=19078&page=2"
+        },
         {
           "post_id": 19057,
           "post_date": "2026-04-19",
@@ -10644,6 +10790,14 @@
             "total_seconds": 2583,
             "total_duration_min": 43.05,
             "distance_per_hour_m": 1672.47
+          },
+          {
+            "date": "2026-04-20",
+            "swim_count": 1,
+            "total_distance_m": 1200.0,
+            "total_seconds": 4740,
+            "total_duration_min": 79.0,
+            "distance_per_hour_m": 911.39
           }
         ]
       },
@@ -10660,8 +10814,8 @@
         "is_primary_title_candidate": true,
         "is_hidden": false,
         "season_tag": null,
-        "current_value": 5428,
-        "current_value_text_ko": "1시간 30분 28초",
+        "current_value": 10168,
+        "current_value_text_ko": "2시간 49분 28초",
         "target_value": 5400,
         "target_value_text_ko": "1시간 30분",
         "remaining_value": 0,
@@ -10683,8 +10837,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 11,
-          "current_value_text_ko": "11회",
+          "current_value": 12,
+          "current_value_text_ko": "12회",
           "target_value": 10,
           "target_value_text_ko": "10회",
           "remaining_value": 0,
@@ -10705,8 +10859,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 11,
-          "current_value_text_ko": "11회",
+          "current_value": 12,
+          "current_value_text_ko": "12회",
           "target_value": 5,
           "target_value_text_ko": "5회",
           "remaining_value": 0,
@@ -10727,8 +10881,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 11,
-          "current_value_text_ko": "11회",
+          "current_value": 12,
+          "current_value_text_ko": "12회",
           "target_value": 3,
           "target_value_text_ko": "3회",
           "remaining_value": 0,
@@ -10749,8 +10903,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 11,
-          "current_value_text_ko": "11회",
+          "current_value": 12,
+          "current_value_text_ko": "12회",
           "target_value": 1,
           "target_value_text_ko": "1회",
           "remaining_value": 0,
@@ -10771,8 +10925,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 12300,
-          "current_value_text_ko": "12.3km",
+          "current_value": 13500,
+          "current_value_text_ko": "13.5km",
           "target_value": 10000,
           "target_value_text_ko": "10km",
           "remaining_value": 0,
@@ -10793,8 +10947,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 12300,
-          "current_value_text_ko": "12.3km",
+          "current_value": 13500,
+          "current_value_text_ko": "13.5km",
           "target_value": 5000,
           "target_value_text_ko": "5km",
           "remaining_value": 0,
@@ -10815,8 +10969,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 12300,
-          "current_value_text_ko": "12.3km",
+          "current_value": 13500,
+          "current_value_text_ko": "13.5km",
           "target_value": 3000,
           "target_value_text_ko": "3km",
           "remaining_value": 0,
@@ -10837,14 +10991,36 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 12300,
-          "current_value_text_ko": "12.3km",
+          "current_value": 13500,
+          "current_value_text_ko": "13.5km",
           "target_value": 1000,
           "target_value_text_ko": "1km",
           "remaining_value": 0,
           "remaining_value_text_ko": "해금 완료",
           "progress_ratio": 1.0,
           "unlocked_at": "2026-03-10 16:55:25"
+        },
+        {
+          "badge_id": "tim_04",
+          "category": "time",
+          "name_ko": "장시간 생존자",
+          "short_label_ko": "12시간",
+          "description_ko": "누적 12시간으로 장시간 루틴에 들어갑니다.",
+          "threshold_type": "author_total_seconds",
+          "threshold_value": 43200,
+          "icon_key": "tim.base",
+          "tier": 4,
+          "is_primary_title_candidate": true,
+          "is_hidden": false,
+          "season_tag": null,
+          "current_value": 47452,
+          "current_value_text_ko": "13시간 10분 52초",
+          "target_value": 43200,
+          "target_value_text_ko": "12시간 0분",
+          "remaining_value": 0,
+          "remaining_value_text_ko": "해금 완료",
+          "progress_ratio": 1.0,
+          "unlocked_at": "2026-04-20 13:16:19"
         },
         {
           "badge_id": "tim_03",
@@ -10859,8 +11035,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 42712,
-          "current_value_text_ko": "11시간 51분 52초",
+          "current_value": 47452,
+          "current_value_text_ko": "13시간 10분 52초",
           "target_value": 21600,
           "target_value_text_ko": "6시간 0분",
           "remaining_value": 0,
@@ -10881,8 +11057,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 42712,
-          "current_value_text_ko": "11시간 51분 52초",
+          "current_value": 47452,
+          "current_value_text_ko": "13시간 10분 52초",
           "target_value": 10800,
           "target_value_text_ko": "3시간 0분",
           "remaining_value": 0,
@@ -10903,8 +11079,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 42712,
-          "current_value_text_ko": "11시간 51분 52초",
+          "current_value": 47452,
+          "current_value_text_ko": "13시간 10분 52초",
           "target_value": 3600,
           "target_value_text_ko": "1시간 0분",
           "remaining_value": 0,
@@ -10925,8 +11101,8 @@
           "is_primary_title_candidate": false,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 1036.71,
-          "current_value_text_ko": "1037m/h",
+          "current_value": 1024.19,
+          "current_value_text_ko": "1024m/h",
           "target_value": 900,
           "target_value_text_ko": "900m/h",
           "remaining_value": 0,
@@ -10947,8 +11123,8 @@
           "is_primary_title_candidate": false,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 1036.71,
-          "current_value_text_ko": "1037m/h",
+          "current_value": 1024.19,
+          "current_value_text_ko": "1024m/h",
           "target_value": 700,
           "target_value_text_ko": "700m/h",
           "remaining_value": 0,
@@ -10969,10 +11145,32 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 5428,
-          "current_value_text_ko": "1시간 30분 28초",
+          "current_value": 10168,
+          "current_value_text_ko": "2시간 49분 28초",
           "target_value": 5400,
           "target_value_text_ko": "1시간 30분",
+          "remaining_value": 0,
+          "remaining_value_text_ko": "해금 완료",
+          "progress_ratio": 1.0,
+          "unlocked_at": "2026-03-11 18:00:04"
+        },
+        {
+          "badge_id": "grw_05",
+          "category": "growth",
+          "name_ko": "거리 각성",
+          "short_label_ko": "+1500m",
+          "description_ko": "최근 28일 거리가 확실하게 늘어났습니다.",
+          "threshold_type": "author_recent_growth_distance_m",
+          "threshold_value": 1500,
+          "icon_key": "grw.base",
+          "tier": 5,
+          "is_primary_title_candidate": true,
+          "is_hidden": false,
+          "season_tag": null,
+          "current_value": 2300,
+          "current_value_text_ko": "2.3km",
+          "target_value": 1500,
+          "target_value_text_ko": "1.5km",
           "remaining_value": 0,
           "remaining_value_text_ko": "해금 완료",
           "progress_ratio": 1.0,
@@ -10991,8 +11189,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 5428,
-          "current_value_text_ko": "1시간 30분 28초",
+          "current_value": 10168,
+          "current_value_text_ko": "2시간 49분 28초",
           "target_value": 1800,
           "target_value_text_ko": "30분",
           "remaining_value": 0,
@@ -11013,8 +11211,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 1100,
-          "current_value_text_ko": "1.1km",
+          "current_value": 2300,
+          "current_value_text_ko": "2.3km",
           "target_value": 500,
           "target_value_text_ko": "500m",
           "remaining_value": 0,
@@ -11035,8 +11233,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 1,
-          "current_value_text_ko": "1회",
+          "current_value": 2,
+          "current_value_text_ko": "2회",
           "target_value": 1,
           "target_value_text_ko": "1회",
           "remaining_value": 0,
@@ -11090,37 +11288,47 @@
         }
       ],
       "next_badge_progress": {
-        "badge_id": "tim_04",
-        "category": "time",
-        "name_ko": "장시간 생존자",
-        "short_label_ko": "12시간",
-        "description_ko": "누적 12시간으로 장시간 루틴에 들어갑니다.",
-        "threshold_type": "author_total_seconds",
-        "threshold_value": 43200,
-        "icon_key": "tim.base",
-        "tier": 4,
-        "is_primary_title_candidate": true,
+        "badge_id": "fun_01",
+        "category": "fun",
+        "name_ko": "오늘 길었다",
+        "short_label_ko": "한 번에 1500m",
+        "description_ko": "한 번의 기록에서 1500m를 채웠습니다.",
+        "threshold_type": "author_single_swim_distance_m",
+        "threshold_value": 1500,
+        "icon_key": "fun.base",
+        "tier": 1,
+        "is_primary_title_candidate": false,
         "is_hidden": false,
         "season_tag": null,
-        "current_value": 42712,
-        "current_value_text_ko": "11시간 51분 52초",
-        "target_value": 43200,
-        "target_value_text_ko": "12시간 0분",
-        "remaining_value": 488,
-        "remaining_value_text_ko": "8분 8초 남음",
-        "progress_ratio": 0.9887
+        "current_value": 1400,
+        "current_value_text_ko": "1.4km",
+        "target_value": 1500,
+        "target_value_text_ko": "1.5km",
+        "remaining_value": 100,
+        "remaining_value_text_ko": "100m 남음",
+        "progress_ratio": 0.9333
       },
       "badge_counts_by_category": {
         "attendance": 4,
         "distance": 4,
-        "time": 3,
+        "time": 4,
         "efficiency": 2,
-        "growth": 4,
+        "growth": 5,
         "season": 2,
         "gallery": 0,
         "fun": 0
       },
       "recent_unlocks": [
+        {
+          "scope": "author",
+          "author": "천천히영",
+          "badge_id": "tim_04",
+          "category": "time",
+          "name_ko": "장시간 생존자",
+          "short_label_ko": "12시간",
+          "icon_key": "tim.base",
+          "unlocked_at": "2026-04-20 13:16:19"
+        },
         {
           "scope": "author",
           "author": "천천히영",
@@ -11170,16 +11378,6 @@
           "short_label_ko": "5km",
           "icon_key": "dst.base",
           "unlocked_at": "2026-03-16 12:16:56"
-        },
-        {
-          "scope": "author",
-          "author": "천천히영",
-          "badge_id": "att_03",
-          "category": "attendance",
-          "name_ko": "오수완 초심자",
-          "short_label_ko": "5회",
-          "icon_key": "att.base",
-          "unlocked_at": "2026-03-16 12:16:56"
         }
       ]
     },
@@ -11187,18 +11385,18 @@
       "author": "청귤",
       "search_key": "청귤",
       "latest_post_date": "2026-04-19",
-      "total_record_count": 14,
-      "included_record_count": 12,
+      "total_record_count": 15,
+      "included_record_count": 13,
       "review_queue_count": 2,
       "summary": {
         "mode": "core_only",
-        "record_count": 12,
-        "total_record_count": 14,
-        "source_record_count": 14,
+        "record_count": 13,
+        "total_record_count": 15,
+        "source_record_count": 15,
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-03-01",
@@ -11215,117 +11413,117 @@
         "warning_code_counts": {},
         "source_counts": {
           "none": 2,
-          "title_format": 12
+          "title_format": 13
         },
         "manual_override_counts": {},
-        "swim_count": 12,
-        "total_distance_m": 16450.0,
-        "total_seconds": 48236,
-        "total_duration_min": 803.93,
-        "distance_per_hour_m": 1227.71,
+        "swim_count": 13,
+        "total_distance_m": 18000.0,
+        "total_seconds": 52662,
+        "total_duration_min": 877.7,
+        "distance_per_hour_m": 1230.49,
         "active_authors": 1,
         "included_metric_bucket_counts": {
-          "core": 12
+          "core": 13
         },
         "included_source_counts": {
-          "title_format": 12
+          "title_format": 13
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
             "swim_count": {
-              "recent_value": 3,
+              "recent_value": 4,
               "previous_value": 9,
-              "delta_value": -6.0,
-              "pct_change": -66.67,
+              "delta_value": -5.0,
+              "pct_change": -55.56,
               "pct_change_status": "standard"
             },
             "distance_m": {
-              "recent_value": 3550.0,
+              "recent_value": 5100.0,
               "previous_value": 12900.0,
-              "delta_value": -9350.0,
-              "pct_change": -72.48,
+              "delta_value": -7800.0,
+              "pct_change": -60.47,
               "pct_change_status": "standard"
             },
             "total_seconds": {
-              "recent_value": 9483,
+              "recent_value": 13909,
               "previous_value": 38753,
-              "delta_value": -29270.0,
-              "pct_change": -75.53,
+              "delta_value": -24844.0,
+              "pct_change": -64.11,
               "pct_change_status": "standard"
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": "2026-03-01",
           "end": "2026-04-19"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
           "swim_count": {
-            "recent_value": 3,
+            "recent_value": 4,
             "previous_value": 9,
-            "delta_value": -6.0,
-            "pct_change": -66.67,
+            "delta_value": -5.0,
+            "pct_change": -55.56,
             "pct_change_status": "standard"
           },
           "distance_m": {
-            "recent_value": 3550.0,
+            "recent_value": 5100.0,
             "previous_value": 12900.0,
-            "delta_value": -9350.0,
-            "pct_change": -72.48,
+            "delta_value": -7800.0,
+            "pct_change": -60.47,
             "pct_change_status": "standard"
           },
           "total_seconds": {
-            "recent_value": 9483,
+            "recent_value": 13909,
             "previous_value": 38753,
-            "delta_value": -29270.0,
-            "pct_change": -75.53,
+            "delta_value": -24844.0,
+            "pct_change": -64.11,
             "pct_change_status": "standard"
           }
         }
@@ -11345,18 +11543,32 @@
         },
         {
           "month": "2026-04",
-          "swim_count": 3,
-          "total_distance_m": 3550.0,
-          "total_seconds": 9483,
-          "total_duration_min": 158.05,
-          "distance_per_hour_m": 1347.67,
+          "swim_count": 4,
+          "total_distance_m": 5100.0,
+          "total_seconds": 13909,
+          "total_duration_min": 231.82,
+          "distance_per_hour_m": 1320.01,
           "active_authors": 1,
           "metric_bucket_counts": {
-            "core": 3
+            "core": 4
           }
         }
       ],
       "recent_records": [
+        {
+          "post_id": 19061,
+          "post_date": "2026-04-19",
+          "post_datetime": "2026-04-19 21:55:34",
+          "author": "청귤",
+          "distance_m": 1550,
+          "total_time_text": "1:13:46",
+          "total_seconds": 4426,
+          "source": "title_format",
+          "metric_bucket": "core",
+          "score": 100,
+          "warning_codes": [],
+          "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=19061&page=2"
+        },
         {
           "post_id": 19046,
           "post_date": "2026-04-19",
@@ -11618,11 +11830,11 @@
           },
           {
             "date": "2026-04-19",
-            "swim_count": 1,
-            "total_distance_m": 1550.0,
-            "total_seconds": 4206,
-            "total_duration_min": 70.1,
-            "distance_per_hour_m": 1326.68
+            "swim_count": 2,
+            "total_distance_m": 3100.0,
+            "total_seconds": 8632,
+            "total_duration_min": 143.87,
+            "distance_per_hour_m": 1292.86
           }
         ]
       },
@@ -11639,8 +11851,8 @@
         "is_primary_title_candidate": false,
         "is_hidden": false,
         "season_tag": null,
-        "current_value": 7,
-        "current_value_text_ko": "7회",
+        "current_value": 8,
+        "current_value_text_ko": "8회",
         "target_value": 2,
         "target_value_text_ko": "2회",
         "remaining_value": 0,
@@ -11662,8 +11874,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 12,
-          "current_value_text_ko": "12회",
+          "current_value": 13,
+          "current_value_text_ko": "13회",
           "target_value": 10,
           "target_value_text_ko": "10회",
           "remaining_value": 0,
@@ -11684,8 +11896,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 12,
-          "current_value_text_ko": "12회",
+          "current_value": 13,
+          "current_value_text_ko": "13회",
           "target_value": 5,
           "target_value_text_ko": "5회",
           "remaining_value": 0,
@@ -11706,8 +11918,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 12,
-          "current_value_text_ko": "12회",
+          "current_value": 13,
+          "current_value_text_ko": "13회",
           "target_value": 3,
           "target_value_text_ko": "3회",
           "remaining_value": 0,
@@ -11728,8 +11940,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 12,
-          "current_value_text_ko": "12회",
+          "current_value": 13,
+          "current_value_text_ko": "13회",
           "target_value": 1,
           "target_value_text_ko": "1회",
           "remaining_value": 0,
@@ -11750,8 +11962,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 16450,
-          "current_value_text_ko": "16.4km",
+          "current_value": 18000,
+          "current_value_text_ko": "18km",
           "target_value": 10000,
           "target_value_text_ko": "10km",
           "remaining_value": 0,
@@ -11772,8 +11984,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 16450,
-          "current_value_text_ko": "16.4km",
+          "current_value": 18000,
+          "current_value_text_ko": "18km",
           "target_value": 5000,
           "target_value_text_ko": "5km",
           "remaining_value": 0,
@@ -11794,8 +12006,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 16450,
-          "current_value_text_ko": "16.4km",
+          "current_value": 18000,
+          "current_value_text_ko": "18km",
           "target_value": 3000,
           "target_value_text_ko": "3km",
           "remaining_value": 0,
@@ -11816,8 +12028,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 16450,
-          "current_value_text_ko": "16.4km",
+          "current_value": 18000,
+          "current_value_text_ko": "18km",
           "target_value": 1000,
           "target_value_text_ko": "1km",
           "remaining_value": 0,
@@ -11838,8 +12050,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 48236,
-          "current_value_text_ko": "13시간 23분 56초",
+          "current_value": 52662,
+          "current_value_text_ko": "14시간 37분 42초",
           "target_value": 43200,
           "target_value_text_ko": "12시간 0분",
           "remaining_value": 0,
@@ -11860,8 +12072,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 48236,
-          "current_value_text_ko": "13시간 23분 56초",
+          "current_value": 52662,
+          "current_value_text_ko": "14시간 37분 42초",
           "target_value": 21600,
           "target_value_text_ko": "6시간 0분",
           "remaining_value": 0,
@@ -11882,8 +12094,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 48236,
-          "current_value_text_ko": "13시간 23분 56초",
+          "current_value": 52662,
+          "current_value_text_ko": "14시간 37분 42초",
           "target_value": 10800,
           "target_value_text_ko": "3시간 0분",
           "remaining_value": 0,
@@ -11904,8 +12116,8 @@
           "is_primary_title_candidate": true,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 48236,
-          "current_value_text_ko": "13시간 23분 56초",
+          "current_value": 52662,
+          "current_value_text_ko": "14시간 37분 42초",
           "target_value": 3600,
           "target_value_text_ko": "1시간 0분",
           "remaining_value": 0,
@@ -11926,8 +12138,8 @@
           "is_primary_title_candidate": false,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 1227.71,
-          "current_value_text_ko": "1228m/h",
+          "current_value": 1230.49,
+          "current_value_text_ko": "1230m/h",
           "target_value": 1100,
           "target_value_text_ko": "1100m/h",
           "remaining_value": 0,
@@ -11948,8 +12160,8 @@
           "is_primary_title_candidate": false,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 1227.71,
-          "current_value_text_ko": "1228m/h",
+          "current_value": 1230.49,
+          "current_value_text_ko": "1230m/h",
           "target_value": 900,
           "target_value_text_ko": "900m/h",
           "remaining_value": 0,
@@ -11970,8 +12182,8 @@
           "is_primary_title_candidate": false,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 1227.71,
-          "current_value_text_ko": "1228m/h",
+          "current_value": 1230.49,
+          "current_value_text_ko": "1230m/h",
           "target_value": 700,
           "target_value_text_ko": "700m/h",
           "remaining_value": 0,
@@ -12036,8 +12248,8 @@
           "is_primary_title_candidate": false,
           "is_hidden": true,
           "season_tag": null,
-          "current_value": 7,
-          "current_value_text_ko": "7회",
+          "current_value": 8,
+          "current_value_text_ko": "8회",
           "target_value": 5,
           "target_value_text_ko": "5회",
           "remaining_value": 0,
@@ -12058,8 +12270,8 @@
           "is_primary_title_candidate": false,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 7,
-          "current_value_text_ko": "7회",
+          "current_value": 8,
+          "current_value_text_ko": "8회",
           "target_value": 2,
           "target_value_text_ko": "2회",
           "remaining_value": 0,
@@ -12080,8 +12292,8 @@
           "is_primary_title_candidate": false,
           "is_hidden": false,
           "season_tag": null,
-          "current_value": 5,
-          "current_value_text_ko": "5회",
+          "current_value": 6,
+          "current_value_text_ko": "6회",
           "target_value": 3,
           "target_value_text_ko": "3회",
           "remaining_value": 0,
@@ -12125,13 +12337,13 @@
         "is_primary_title_candidate": false,
         "is_hidden": false,
         "season_tag": null,
-        "current_value": 1227.71,
-        "current_value_text_ko": "1228m/h",
+        "current_value": 1230.49,
+        "current_value_text_ko": "1230m/h",
         "target_value": 1300,
         "target_value_text_ko": "1300m/h",
-        "remaining_value": 72.29,
-        "remaining_value_text_ko": "72m/h 남음",
-        "progress_ratio": 0.9444
+        "remaining_value": 69.51,
+        "remaining_value_text_ko": "70m/h 남음",
+        "progress_ratio": 0.9465
       },
       "badge_counts_by_category": {
         "attendance": 4,
@@ -12221,7 +12433,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-03-04",
@@ -12249,27 +12461,27 @@
         "included_metric_bucket_counts": {},
         "included_source_counts": {},
         "has_zero_visible_included_rows": true,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
@@ -12296,32 +12508,32 @@
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": null,
           "end": null
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
@@ -12403,7 +12615,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-04-19"
+          "end": "2026-04-20"
         },
         "visible_date_range": {
           "start": "2026-03-03",
@@ -12431,27 +12643,27 @@
         "included_metric_bucket_counts": {},
         "included_source_counts": {},
         "has_zero_visible_included_rows": true,
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "growth": {
-          "reference_date": "2026-04-19",
+          "reference_date": "2026-04-20",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-03-23",
-            "end": "2026-04-19",
-            "nominal_start": "2026-03-23",
-            "nominal_end": "2026-04-19",
+            "start": "2026-03-24",
+            "end": "2026-04-20",
+            "nominal_start": "2026-03-24",
+            "nominal_end": "2026-04-20",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
             "start": "2026-03-01",
-            "end": "2026-03-22",
-            "nominal_start": "2026-02-23",
-            "nominal_end": "2026-03-22",
+            "end": "2026-03-23",
+            "nominal_start": "2026-02-24",
+            "nominal_end": "2026-03-23",
             "nominal_day_count": 28,
-            "visible_day_count": 22,
+            "visible_day_count": 23,
             "truncated_by_floor": true
           },
           "metrics": {
@@ -12478,32 +12690,32 @@
             }
           }
         },
-        "generated_at": "2026-04-21 11:43:53 KST",
+        "generated_at": "2026-04-22 04:17:26 KST",
         "date_range": {
           "start": null,
           "end": null
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-04-19",
+        "reference_date": "2026-04-20",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-03-23",
-          "end": "2026-04-19",
-          "nominal_start": "2026-03-23",
-          "nominal_end": "2026-04-19",
+          "start": "2026-03-24",
+          "end": "2026-04-20",
+          "nominal_start": "2026-03-24",
+          "nominal_end": "2026-04-20",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
           "start": "2026-03-01",
-          "end": "2026-03-22",
-          "nominal_start": "2026-02-23",
-          "nominal_end": "2026-03-22",
+          "end": "2026-03-23",
+          "nominal_start": "2026-02-24",
+          "nominal_end": "2026-03-23",
           "nominal_day_count": 28,
-          "visible_day_count": 22,
+          "visible_day_count": 23,
           "truncated_by_floor": true
         },
         "metrics": {
