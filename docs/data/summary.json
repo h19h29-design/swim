@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-23 16:58:48 KST",
+  "generated_at": "2026-04-23 22:48:36 KST",
   "reference_date": "2026-04-21",
   "dashboard_date_floor": "2026-03-01",
   "dashboard_window": {
@@ -15,13 +15,13 @@
   "supported_modes": [
     "core_only"
   ],
-  "source_record_count": 176,
-  "visible_record_count": 167,
+  "source_record_count": 177,
+  "visible_record_count": 168,
   "summary": {
     "mode": "core_only",
     "record_count": 85,
-    "total_record_count": 167,
-    "source_record_count": 176,
+    "total_record_count": 168,
+    "source_record_count": 177,
     "dashboard_date_floor": "2026-03-01",
     "dashboard_window": {
       "start": "2026-03-01",
@@ -31,19 +31,19 @@
       "start": "2026-03-01",
       "end": "2026-04-21"
     },
-    "excluded_record_count": 82,
+    "excluded_record_count": 83,
     "excluded_reason_counts": {
       "TITLE_FORMAT_INVALID": 3,
-      "TITLE_FORMAT_MISSING": 79
+      "TITLE_FORMAT_MISSING": 80
     },
-    "review_queue_count": 82,
+    "review_queue_count": 83,
     "review_reason_counts": {
       "TITLE_FORMAT_INVALID": 3,
-      "TITLE_FORMAT_MISSING": 79
+      "TITLE_FORMAT_MISSING": 80
     },
     "warning_code_counts": {},
     "source_counts": {
-      "none": 82,
+      "none": 83,
       "title_format": 85
     },
     "manual_override_counts": {},
@@ -107,7 +107,7 @@
         }
       }
     },
-    "generated_at": "2026-04-23 16:58:48 KST",
+    "generated_at": "2026-04-23 22:48:36 KST",
     "date_range": {
       "start": "2026-03-01",
       "end": "2026-04-21"
@@ -410,19 +410,19 @@
     }
   ],
   "ops": {
-    "review_queue_count": 82,
+    "review_queue_count": 83,
     "review_reason_counts": {
       "TITLE_FORMAT_INVALID": 3,
-      "TITLE_FORMAT_MISSING": 79
+      "TITLE_FORMAT_MISSING": 80
     },
-    "excluded_record_count": 82,
+    "excluded_record_count": 83,
     "excluded_reason_counts": {
       "TITLE_FORMAT_INVALID": 3,
-      "TITLE_FORMAT_MISSING": 79
+      "TITLE_FORMAT_MISSING": 80
     },
     "warning_code_counts": {},
     "source_counts": {
-      "none": 82,
+      "none": 83,
       "title_format": 85
     },
     "manual_override_counts": {}

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-23 16:58:48 KST",
+  "generated_at": "2026-04-23 22:48:37 KST",
   "reference_date": "2026-04-21",
   "dashboard_date_floor": "2026-03-01",
   "dashboard_window": {
@@ -15,14 +15,14 @@
   "supported_modes": [
     "core_only"
   ],
-  "source_record_count": 176,
-  "visible_record_count": 167,
+  "source_record_count": 177,
+  "visible_record_count": 168,
   "parsed_count": 85,
-  "unparsed_count": 82,
-  "success_rate_pct": 50.9,
+  "unparsed_count": 83,
+  "success_rate_pct": 50.6,
   "failure_reason_counts": {
     "TITLE_FORMAT_INVALID": 3,
-    "TITLE_FORMAT_MISSING": 79
+    "TITLE_FORMAT_MISSING": 80
   },
   "site_config": {
     "site_title_ko": "수영 스티커북",
@@ -1348,6 +1348,20 @@
     }
   ],
   "unparsed_rows": [
+    {
+      "post_id": 19125,
+      "post_date": "2026-04-21",
+      "post_datetime": "2026-04-21 23:00:46",
+      "author": "0asis",
+      "title": "ㅇㅅㅇ",
+      "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=19125&page=2",
+      "source": "none",
+      "score": 10,
+      "reason_code": "TITLE_FORMAT_MISSING",
+      "evidence_text": "ᄋᄉᄋ",
+      "review_needed": true,
+      "manual_override_decision": null
+    },
     {
       "post_id": 19068,
       "post_date": "2026-04-20",

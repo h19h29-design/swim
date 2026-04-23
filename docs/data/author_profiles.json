@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-23 16:58:48 KST",
+  "generated_at": "2026-04-23 22:48:37 KST",
   "reference_date": "2026-04-21",
   "dashboard_date_floor": "2026-03-01",
   "dashboard_window": {
@@ -15,22 +15,22 @@
   "supported_modes": [
     "core_only"
   ],
-  "source_record_count": 176,
-  "visible_record_count": 167,
+  "source_record_count": 177,
+  "visible_record_count": 168,
   "profile_count": 24,
   "profiles": [
     {
       "author": "0asis",
       "search_key": "0asis",
-      "latest_post_date": "2026-03-15",
-      "total_record_count": 1,
+      "latest_post_date": "2026-04-21",
+      "total_record_count": 2,
       "included_record_count": 1,
-      "review_queue_count": 0,
+      "review_queue_count": 1,
       "summary": {
         "mode": "core_only",
         "record_count": 1,
-        "total_record_count": 1,
-        "source_record_count": 1,
+        "total_record_count": 2,
+        "source_record_count": 2,
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
@@ -38,14 +38,19 @@
         },
         "visible_date_range": {
           "start": "2026-03-15",
-          "end": "2026-03-15"
+          "end": "2026-04-21"
         },
-        "excluded_record_count": 0,
-        "excluded_reason_counts": {},
-        "review_queue_count": 0,
-        "review_reason_counts": {},
+        "excluded_record_count": 1,
+        "excluded_reason_counts": {
+          "TITLE_FORMAT_MISSING": 1
+        },
+        "review_queue_count": 1,
+        "review_reason_counts": {
+          "TITLE_FORMAT_MISSING": 1
+        },
         "warning_code_counts": {},
         "source_counts": {
+          "none": 1,
           "title_format": 1
         },
         "manual_override_counts": {},
@@ -109,7 +114,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": "2026-03-15",
           "end": "2026-03-15"
@@ -587,7 +592,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": "2026-03-14",
           "end": "2026-03-15"
@@ -1175,7 +1180,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": "2026-03-01",
           "end": "2026-04-18"
@@ -2286,7 +2291,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": "2026-03-17",
           "end": "2026-04-21"
@@ -3152,7 +3157,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": null,
           "end": null
@@ -3334,7 +3339,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": null,
           "end": null
@@ -3521,7 +3526,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": "2026-03-17",
           "end": "2026-04-21"
@@ -4319,7 +4324,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": null,
           "end": null
@@ -4501,7 +4506,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": null,
           "end": null
@@ -4683,7 +4688,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": null,
           "end": null
@@ -4870,7 +4875,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": "2026-03-16",
           "end": "2026-04-15"
@@ -5382,7 +5387,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": null,
           "end": null
@@ -5564,7 +5569,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": "2026-03-13",
           "end": "2026-03-13"
@@ -6047,7 +6052,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": "2026-03-12",
           "end": "2026-04-21"
@@ -7136,7 +7141,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": "2026-04-19",
           "end": "2026-04-19"
@@ -7726,7 +7731,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": null,
           "end": null
@@ -7913,7 +7918,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": "2026-03-01",
           "end": "2026-04-17"
@@ -8672,7 +8677,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": "2026-03-10",
           "end": "2026-04-15"
@@ -9228,7 +9233,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": "2026-04-13",
           "end": "2026-04-16"
@@ -10014,7 +10019,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": "2026-03-14",
           "end": "2026-03-16"
@@ -10673,7 +10678,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": "2026-03-10",
           "end": "2026-04-21"
@@ -11762,7 +11767,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": "2026-03-01",
           "end": "2026-04-20"
@@ -12816,7 +12821,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": null,
           "end": null
@@ -12998,7 +13003,7 @@
             }
           }
         },
-        "generated_at": "2026-04-23 16:58:48 KST",
+        "generated_at": "2026-04-23 22:48:37 KST",
         "date_range": {
           "start": null,
           "end": null

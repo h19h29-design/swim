@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-23 16:58:48 KST",
+  "generated_at": "2026-04-23 22:48:37 KST",
   "reference_date": "2026-04-21",
   "dashboard_date_floor": "2026-03-01",
   "dashboard_window": {
@@ -15,8 +15,8 @@
   "supported_modes": [
     "core_only"
   ],
-  "source_record_count": 176,
-  "visible_record_count": 167,
+  "source_record_count": 177,
+  "visible_record_count": 168,
   "author_count": 24,
   "authors": [
     {
@@ -828,10 +828,10 @@
     {
       "author": "0asis",
       "search_key": "0asis",
-      "latest_post_date": "2026-03-15",
-      "total_record_count": 1,
+      "latest_post_date": "2026-04-21",
+      "total_record_count": 2,
       "included_record_count": 1,
-      "review_queue_count": 0,
+      "review_queue_count": 1,
       "primary_title": {
         "badge_id": "eff_05",
         "category": "efficiency",
