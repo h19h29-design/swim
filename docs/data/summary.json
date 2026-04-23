@@ -1,35 +1,35 @@
 {
-  "generated_at": "2026-04-22 04:17:26 KST",
-  "reference_date": "2026-04-20",
+  "generated_at": "2026-04-23 16:58:48 KST",
+  "reference_date": "2026-04-21",
   "dashboard_date_floor": "2026-03-01",
   "dashboard_window": {
     "start": "2026-03-01",
-    "end": "2026-04-20"
+    "end": "2026-04-21"
   },
   "visible_date_range": {
     "start": "2026-03-01",
-    "end": "2026-04-20"
+    "end": "2026-04-21"
   },
   "product_mode": "core_only",
   "default_mode": "core_only",
   "supported_modes": [
     "core_only"
   ],
-  "source_record_count": 171,
-  "visible_record_count": 162,
+  "source_record_count": 176,
+  "visible_record_count": 167,
   "summary": {
     "mode": "core_only",
-    "record_count": 80,
-    "total_record_count": 162,
-    "source_record_count": 171,
+    "record_count": 85,
+    "total_record_count": 167,
+    "source_record_count": 176,
     "dashboard_date_floor": "2026-03-01",
     "dashboard_window": {
       "start": "2026-03-01",
-      "end": "2026-04-20"
+      "end": "2026-04-21"
     },
     "visible_date_range": {
       "start": "2026-03-01",
-      "end": "2026-04-20"
+      "end": "2026-04-21"
     },
     "excluded_record_count": 82,
     "excluded_reason_counts": {
@@ -44,73 +44,73 @@
     "warning_code_counts": {},
     "source_counts": {
       "none": 82,
-      "title_format": 80
+      "title_format": 85
     },
     "manual_override_counts": {},
-    "swim_count": 80,
-    "total_distance_m": 116175.0,
-    "total_seconds": 332100,
-    "total_duration_min": 5535.0,
-    "distance_per_hour_m": 1259.35,
+    "swim_count": 85,
+    "total_distance_m": 122025.0,
+    "total_seconds": 352306,
+    "total_duration_min": 5871.77,
+    "distance_per_hour_m": 1246.9,
     "active_authors": 15,
     "included_metric_bucket_counts": {
-      "core": 80
+      "core": 85
     },
     "included_source_counts": {
-      "title_format": 80
+      "title_format": 85
     },
     "has_zero_visible_included_rows": false,
-    "reference_date": "2026-04-20",
+    "reference_date": "2026-04-21",
     "growth": {
-      "reference_date": "2026-04-20",
+      "reference_date": "2026-04-21",
       "window_days": 28,
       "dashboard_date_floor": "2026-03-01",
       "recent_window": {
-        "start": "2026-03-24",
-        "end": "2026-04-20",
-        "nominal_start": "2026-03-24",
-        "nominal_end": "2026-04-20",
+        "start": "2026-03-25",
+        "end": "2026-04-21",
+        "nominal_start": "2026-03-25",
+        "nominal_end": "2026-04-21",
         "nominal_day_count": 28,
         "visible_day_count": 28,
         "truncated_by_floor": false
       },
       "previous_window": {
         "start": "2026-03-01",
-        "end": "2026-03-23",
-        "nominal_start": "2026-02-24",
-        "nominal_end": "2026-03-23",
+        "end": "2026-03-24",
+        "nominal_start": "2026-02-25",
+        "nominal_end": "2026-03-24",
         "nominal_day_count": 28,
-        "visible_day_count": 23,
+        "visible_day_count": 24,
         "truncated_by_floor": true
       },
       "metrics": {
         "swim_count": {
-          "recent_value": 36,
+          "recent_value": 41,
           "previous_value": 44,
-          "delta_value": -8.0,
-          "pct_change": -18.18,
+          "delta_value": -3.0,
+          "pct_change": -6.82,
           "pct_change_status": "standard"
         },
         "distance_m": {
-          "recent_value": 47350.0,
+          "recent_value": 53200.0,
           "previous_value": 68825.0,
-          "delta_value": -21475.0,
-          "pct_change": -31.2,
+          "delta_value": -15625.0,
+          "pct_change": -22.7,
           "pct_change_status": "standard"
         },
         "total_seconds": {
-          "recent_value": 126515,
+          "recent_value": 146721,
           "previous_value": 205585,
-          "delta_value": -79070.0,
-          "pct_change": -38.46,
+          "delta_value": -58864.0,
+          "pct_change": -28.63,
           "pct_change_status": "standard"
         }
       }
     },
-    "generated_at": "2026-04-22 04:17:26 KST",
+    "generated_at": "2026-04-23 16:58:48 KST",
     "date_range": {
       "start": "2026-03-01",
-      "end": "2026-04-20"
+      "end": "2026-04-21"
     }
   },
   "gallery": {
@@ -132,19 +132,19 @@
       "tier": 7,
       "target_value": 200000,
       "target_value_text_ko": "200km",
-      "remaining_value": 83825,
-      "remaining_value_text_ko": "83.8km 남음",
-      "progress_ratio": 0.5809
+      "remaining_value": 77975,
+      "remaining_value_text_ko": "78.0km 남음",
+      "progress_ratio": 0.6101
     },
     "progress": {
       "metric_key": "total_distance_m",
-      "current_value": 116175.0,
-      "current_value_text_ko": "116.2km",
+      "current_value": 122025.0,
+      "current_value_text_ko": "122.0km",
       "target_value": 200000,
       "target_value_text_ko": "200km",
-      "remaining_value": 83825,
-      "remaining_value_text_ko": "83.8km 남음",
-      "progress_ratio": 0.5809,
+      "remaining_value": 77975,
+      "remaining_value_text_ko": "78.0km 남음",
+      "progress_ratio": 0.6101,
       "unlocked_badge_count": 6
     },
     "unlocked_badges": [
@@ -283,11 +283,71 @@
         "unlocked_at": "2026-03-01 13:28:07"
       }
     ],
-    "metric_value": 116175.0,
-    "metric_value_text_ko": "116.2km",
-    "reference_date": "2026-04-20"
+    "metric_value": 122025.0,
+    "metric_value_text_ko": "122.0km",
+    "reference_date": "2026-04-21"
   },
   "recent_unlocks": [
+    {
+      "scope": "author",
+      "author": "천천히영",
+      "badge_id": "fun_01",
+      "category": "fun",
+      "name_ko": "오늘 길었다",
+      "short_label_ko": "한 번에 1500m",
+      "icon_key": "fun.base",
+      "unlocked_at": "2026-04-21 14:01:16"
+    },
+    {
+      "scope": "author",
+      "author": "SㅇS",
+      "badge_id": "tim_03",
+      "category": "time",
+      "name_ko": "레인 체류자",
+      "short_label_ko": "6시간",
+      "icon_key": "tim.base",
+      "unlocked_at": "2026-04-21 11:40:57"
+    },
+    {
+      "scope": "author",
+      "author": "근육키우기",
+      "badge_id": "grw_06",
+      "category": "growth",
+      "name_ko": "시간 각성",
+      "short_label_ko": "+90분",
+      "icon_key": "grw.base",
+      "unlocked_at": "2026-04-21 10:55:03"
+    },
+    {
+      "scope": "author",
+      "author": "근육키우기",
+      "badge_id": "grw_04",
+      "category": "growth",
+      "name_ko": "출석 각성",
+      "short_label_ko": "횟수 +3",
+      "icon_key": "grw.base",
+      "unlocked_at": "2026-04-21 10:55:03"
+    },
+    {
+      "scope": "author",
+      "author": "근육키우기",
+      "badge_id": "att_03",
+      "category": "attendance",
+      "name_ko": "오수완 초심자",
+      "short_label_ko": "5회",
+      "icon_key": "att.base",
+      "unlocked_at": "2026-04-21 10:55:03"
+    },
+    {
+      "scope": "author",
+      "author": "알프스",
+      "badge_id": "fun_04",
+      "category": "fun",
+      "name_ko": "새벽 입수러",
+      "short_label_ko": "새벽 3회",
+      "icon_key": "fun.base",
+      "unlocked_at": "2026-04-21 07:51:10"
+    },
     {
       "scope": "author",
       "author": "천천히영",
@@ -347,66 +407,6 @@
       "short_label_ko": "4월",
       "icon_key": "sea.base",
       "unlocked_at": "2026-04-19 12:56:54"
-    },
-    {
-      "scope": "author",
-      "author": "양.아치",
-      "badge_id": "grw_05",
-      "category": "growth",
-      "name_ko": "거리 각성",
-      "short_label_ko": "+1500m",
-      "icon_key": "grw.base",
-      "unlocked_at": "2026-04-19 12:56:54"
-    },
-    {
-      "scope": "author",
-      "author": "양.아치",
-      "badge_id": "grw_03",
-      "category": "growth",
-      "name_ko": "호흡이 붙음",
-      "short_label_ko": "+30분",
-      "icon_key": "grw.base",
-      "unlocked_at": "2026-04-19 12:56:54"
-    },
-    {
-      "scope": "author",
-      "author": "양.아치",
-      "badge_id": "grw_02",
-      "category": "growth",
-      "name_ko": "거리 급상승",
-      "short_label_ko": "+500m",
-      "icon_key": "grw.base",
-      "unlocked_at": "2026-04-19 12:56:54"
-    },
-    {
-      "scope": "author",
-      "author": "양.아치",
-      "badge_id": "grw_01",
-      "category": "growth",
-      "name_ko": "요즘 떡상",
-      "short_label_ko": "횟수 +1",
-      "icon_key": "grw.base",
-      "unlocked_at": "2026-04-19 12:56:54"
-    },
-    {
-      "scope": "author",
-      "author": "양.아치",
-      "badge_id": "fun_01",
-      "category": "fun",
-      "name_ko": "오늘 길었다",
-      "short_label_ko": "한 번에 1500m",
-      "icon_key": "fun.base",
-      "unlocked_at": "2026-04-19 12:56:54"
-    },
-    {
-      "scope": "author",
-      "author": "SㅇS",
-      "badge_id": "grw_06",
-      "category": "growth",
-      "name_ko": "시간 각성",
-      "short_label_ko": "+90분",
-      "icon_key": "grw.base",
-      "unlocked_at": "2026-04-18 16:41:18"
     }
   ],
   "ops": {
@@ -423,7 +423,7 @@
     "warning_code_counts": {},
     "source_counts": {
       "none": 82,
-      "title_format": 80
+      "title_format": 85
     },
     "manual_override_counts": {}
   },

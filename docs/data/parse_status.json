@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-04-22 04:17:26 KST",
-  "reference_date": "2026-04-20",
+  "generated_at": "2026-04-23 16:58:48 KST",
+  "reference_date": "2026-04-21",
   "dashboard_date_floor": "2026-03-01",
   "dashboard_window": {
     "start": "2026-03-01",
-    "end": "2026-04-20"
+    "end": "2026-04-21"
   },
   "visible_date_range": {
     "start": "2026-03-01",
-    "end": "2026-04-20"
+    "end": "2026-04-21"
   },
   "product_mode": "core_only",
   "default_mode": "core_only",
   "supported_modes": [
     "core_only"
   ],
-  "source_record_count": 171,
-  "visible_record_count": 162,
-  "parsed_count": 80,
+  "source_record_count": 176,
+  "visible_record_count": 167,
+  "parsed_count": 85,
   "unparsed_count": 82,
-  "success_rate_pct": 49.38,
+  "success_rate_pct": 50.9,
   "failure_reason_counts": {
     "TITLE_FORMAT_INVALID": 3,
     "TITLE_FORMAT_MISSING": 79
@@ -71,6 +71,81 @@
     ]
   },
   "parsed_rows": [
+    {
+      "post_id": 19110,
+      "post_date": "2026-04-21",
+      "post_datetime": "2026-04-21 14:01:16",
+      "author": "천천히영",
+      "title": "2000 / 1:44:13",
+      "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=19110&page=2",
+      "source": "title_format",
+      "score": 100,
+      "distance_m": 2000,
+      "total_time_text": "1:44:13",
+      "total_seconds": 6253,
+      "metric_bucket": "core",
+      "manual_override_decision": null
+    },
+    {
+      "post_id": 19103,
+      "post_date": "2026-04-21",
+      "post_datetime": "2026-04-21 11:40:57",
+      "author": "SㅇS",
+      "title": "1100 / 1시간 30분",
+      "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=19103&page=2",
+      "source": "title_format",
+      "score": 100,
+      "distance_m": 1100,
+      "total_time_text": "1시간 30분",
+      "total_seconds": 5400,
+      "metric_bucket": "core",
+      "manual_override_decision": null
+    },
+    {
+      "post_id": 19101,
+      "post_date": "2026-04-21",
+      "post_datetime": "2026-04-21 10:55:03",
+      "author": "근육키우기",
+      "title": "1000 / 56분 27초",
+      "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=19101&page=2",
+      "source": "title_format",
+      "score": 100,
+      "distance_m": 1000,
+      "total_time_text": "56분 27초",
+      "total_seconds": 3387,
+      "metric_bucket": "core",
+      "manual_override_decision": null
+    },
+    {
+      "post_id": 19099,
+      "post_date": "2026-04-21",
+      "post_datetime": "2026-04-21 07:51:10",
+      "author": "알프스",
+      "title": "700 / 42분00초",
+      "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=19099&page=2",
+      "source": "title_format",
+      "score": 100,
+      "distance_m": 700,
+      "total_time_text": "42분00초",
+      "total_seconds": 2520,
+      "metric_bucket": "core",
+      "manual_override_decision": null
+    },
+    {
+      "post_id": 19093,
+      "post_date": "2026-04-20",
+      "post_datetime": "2026-04-20 22:49:28",
+      "author": "청귤",
+      "title": "1050 / 44:06",
+      "url": "https://gall.dcinside.com/mini/board/view/?id=swimmingdiary&no=19093&page=2",
+      "source": "title_format",
+      "score": 100,
+      "distance_m": 1050,
+      "total_time_text": "44:06",
+      "total_seconds": 2646,
+      "metric_bucket": "core",
+      "manual_override_decision": null
+    },
     {
       "post_id": 19078,
       "post_date": "2026-04-20",
