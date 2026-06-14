@@ -122,6 +122,7 @@ def _build_parser() -> argparse.ArgumentParser:
     shared.add_argument("--retries", type=int, default=4)
     shared.add_argument("--rate-limit", type=float, default=0.45, help="Delay seconds per request")
     shared.add_argument("--user-agent", type=str, default=DEFAULT_USER_AGENT)
+    shared.add_argument("--skip-ocr", action="store_true", help="Disable Gemini OCR candidate extraction for this run")
 
     sub.add_parser("backfill", parents=[shared], help="Crawl full history and regenerate JSON")
     sub.add_parser("incremental", parents=[shared], help="Crawl recent editable posts and merge title-format records")
@@ -198,7 +199,7 @@ def _run_crawl(
             refresh_window_start=window_start if use_refresh_window else None,
             refresh_window_end=window_end if use_refresh_window else None,
         )
-        new_records = parse_posts_to_records(posts)
+        new_records = parse_posts_to_records(posts, skip_ocr=bool(getattr(args, "skip_ocr", False)))
         if use_refresh_window:
             existing = [
                 row
@@ -960,6 +961,7 @@ def _default_runtime_args(**overrides) -> argparse.Namespace:
         "rate_limit": 0.45,
         "user_agent": DEFAULT_USER_AGENT,
         "skip_incremental": False,
+        "skip_ocr": False,
         "start_date": None,
         "end_date": None,
     }

@@ -1,12 +1,14 @@
 {
-  "version": 3,
-  "priority_policy": "title_format_only",
+  "version": 4,
+  "priority_policy": "title_body_ocr_candidates_with_resolver",
   "fields": {
     "distance_m": "integer|null",
     "total_time_text": "string|null",
     "total_seconds": "integer|null",
     "source": [
       "title_format",
+      "body_text",
+      "gemini_ocr",
       "manual_review",
       "manual_patch",
       "none"
@@ -21,6 +23,17 @@
       null,
       "TITLE_FORMAT_MISSING",
       "TITLE_FORMAT_INVALID",
+      "BODY_PARSE_FAILED",
+      "OCR_DISABLED",
+      "OCR_NO_API_KEY",
+      "OCR_API_ERROR",
+      "OCR_LOW_CONFIDENCE",
+      "OCR_DISTANCE_ONLY",
+      "OCR_DURATION_ONLY",
+      "OCR_PACE_CONFUSION",
+      "OCR_IMAGE_UNREADABLE",
+      "CANDIDATE_CONFLICT",
+      "OUT_OF_RANGE",
       "MANUAL_REJECTED",
       "NO_DATA"
     ],
@@ -29,7 +42,15 @@
     "review_reason_code": [
       null,
       "TITLE_FORMAT_MISSING",
-      "TITLE_FORMAT_INVALID"
+      "TITLE_FORMAT_INVALID",
+      "BODY_PARSE_FAILED",
+      "OCR_LOW_CONFIDENCE",
+      "OCR_DISTANCE_ONLY",
+      "OCR_DURATION_ONLY",
+      "OCR_PACE_CONFUSION",
+      "OCR_IMAGE_UNREADABLE",
+      "CANDIDATE_CONFLICT",
+      "OUT_OF_RANGE"
     ],
     "manual_override_decision": [
       null,
@@ -39,14 +60,30 @@
     ],
     "manual_override_applied": "boolean",
     "manual_override_note": "string|null",
-    "automatic_record": "object|null"
+    "automatic_record": "object|null",
+    "source_candidates": "object|null",
+    "resolved_source": [
+      null,
+      "manual",
+      "title",
+      "body",
+      "ocr",
+      "mixed",
+      "none"
+    ],
+    "resolver_confidence": "number|null",
+    "review_reason": "string|null"
   },
   "include_rules": [
-    "If the title matches the official distance / time format, include=true.",
+    "If title/body/ocr candidates agree, the resolver may include the record with the highest-priority source.",
+    "If the title matches the official distance / time format and candidates do not conflict, include=true.",
+    "If the title is missing but body or OCR has a complete high-confidence candidate, include=true.",
+    "OCR is candidate evidence only and is never called from frontend code.",
     "Manual overrides are applied after automatic normalization and can replace the final backend decision per post_id."
   ],
   "review_rules": [
-    "review_needed=true means the title is missing or invalid and should be reviewed or corrected.",
+    "review_needed=true means the resolver could not safely choose a final record.",
+    "Candidate conflict, low confidence, missing distance/time, and out-of-range values go to review_queue.",
     "Applied manual overrides clear review_needed and become the backend-authoritative final state."
   ],
   "ui_rule": "Frontend must render include/exclude from backend include boolean only and surface review queue from backend review_needed only."

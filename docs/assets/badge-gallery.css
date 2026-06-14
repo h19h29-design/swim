@@ -307,3 +307,204 @@ h2 {
   padding: 8px;
   box-shadow: 0 10px 18px rgba(52, 36, 30, 0.08);
 }
+
+/* Season 2: Deep Lane Club badge gallery overrides */
+:root {
+  --bg: #eef8fa;
+  --paper: rgba(255,255,255,0.90);
+  --paper-strong: rgba(255,255,255,0.96);
+  --ink: #102530;
+  --muted: #55707a;
+  --line: rgba(16,76,92,0.14);
+  --coral: #ff6f61;
+  --yellow: #f6c95f;
+  --sky: #5aa7ff;
+  --mint: #39d9c2;
+  --shadow: 0 22px 54px rgba(15,55,76,0.14);
+}
+
+body {
+  background:
+    linear-gradient(90deg, rgba(15,159,177,0.10) 1px, transparent 1px) 0 0 / 72px 100%,
+    linear-gradient(180deg, #f8fdff 0%, #e7f6fa 100%);
+}
+
+.gallery-hero,
+.gallery-panel,
+.badge-card,
+.family-card,
+.asset-card,
+.title-card {
+  border-color: var(--line);
+  background: rgba(255,255,255,0.92);
+  box-shadow: var(--shadow);
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: 0;
+}
+
+.hero-chip,
+.nav-chip,
+.badge-chip,
+.meta-chip,
+.file-chip,
+.text-link {
+  border-color: rgba(15,159,177,0.20);
+  background: rgba(255,255,255,0.94);
+  color: var(--ink);
+}
+
+.inline-badge-icon,
+.badge-thumb {
+  border-color: rgba(15,159,177,0.22);
+  background: linear-gradient(145deg, rgba(255,255,255,0.98), rgba(225,250,255,0.86));
+  box-shadow: 0 10px 22px rgba(15,55,76,0.12);
+}
+
+/* Season 2 cartoon-dot swim badge gallery theme, 2026-06-14 */
+:root {
+  --bg: #eaf7ff;
+  --paper: rgba(255, 255, 255, 0.95);
+  --paper-strong: #ffffff;
+  --ink: #08224f;
+  --muted: #5d7395;
+  --line: rgba(7, 86, 190, 0.18);
+  --coral: #ff7aa8;
+  --yellow: #ffbf44;
+  --mint: #35d6df;
+  --sky: #179bff;
+  --shadow: 0 8px 0 rgba(6, 62, 142, 0.05), 0 18px 42px rgba(7, 70, 150, 0.15);
+  --radius-xl: 28px;
+  --radius-lg: 22px;
+  --radius-md: 18px;
+}
+
+body {
+  font-family: "Segoe UI Rounded", "Arial Rounded MT Bold", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  background:
+    radial-gradient(circle at 15px 15px, rgba(7, 116, 255, 0.10) 0 2px, transparent 2.5px) 0 0 / 18px 18px,
+    radial-gradient(circle at 92% 8%, rgba(255,255,255,0.82), transparent 22%),
+    linear-gradient(180deg, #dff3ff 0%, #fbfdff 46%, #def4ff 100%);
+}
+
+.panel,
+.hero-card,
+.stat-card,
+.rule-card,
+.title-card,
+.family-card,
+.asset-card,
+.palette-card,
+.badge-group,
+.badge-card {
+  border: 2px solid var(--line);
+  border-bottom-width: 4px;
+  background:
+    radial-gradient(circle at 12px 12px, rgba(8, 121, 255, 0.06) 0 2px, transparent 2.5px) 0 0 / 14px 14px,
+    linear-gradient(180deg, rgba(255,255,255,0.98), rgba(246,252,255,0.94));
+  box-shadow: var(--shadow);
+}
+
+.hero-panel {
+  color: #fff;
+  background:
+    radial-gradient(circle at 17% 22%, rgba(255,255,255,0.32) 0 5px, transparent 6px),
+    repeating-radial-gradient(circle at 78% 34%, rgba(255,255,255,0.18) 0 1px, transparent 1px 9px),
+    linear-gradient(135deg, #0878ff, #19a7ff 58%, #64ddff);
+}
+
+.hero-panel::before {
+  content: "";
+  position: absolute;
+  right: 30px;
+  bottom: 22px;
+  width: 112px;
+  height: 112px;
+  border: 4px solid #073b8d;
+  border-radius: 48%;
+  background:
+    radial-gradient(circle at 48% 43%, #ffd8ad 0 32px, transparent 33px),
+    radial-gradient(circle at 38% 36%, #052b66 0 4px, transparent 5px),
+    radial-gradient(circle at 58% 36%, #052b66 0 4px, transparent 5px),
+    radial-gradient(ellipse at 48% 58%, #ff6a61 0 9px, transparent 10px),
+    linear-gradient(180deg, #38d9ff 0 28%, #056bd8 29% 100%);
+  box-shadow: 0 14px 0 rgba(4, 67, 151, 0.16), inset 0 5px 0 rgba(255,255,255,0.4);
+  transform: rotate(-5deg);
+}
+
+.hero-panel::after {
+  right: -30px;
+  bottom: -34px;
+  top: auto;
+  width: 420px;
+  height: 96px;
+  background:
+    radial-gradient(82px 38px at 12% 46%, rgba(255,255,255,0.95) 0 42%, transparent 44%),
+    radial-gradient(116px 50px at 44% 36%, rgba(255,255,255,0.92) 0 42%, transparent 44%),
+    radial-gradient(92px 44px at 78% 52%, rgba(255,255,255,0.94) 0 42%, transparent 44%);
+}
+
+.hero-panel .eyebrow,
+.hero-panel .section-kicker,
+.hero-panel .hero-copy-text,
+.hero-panel .note,
+.hero-panel .meta,
+.hero-panel .rule-copy {
+  color: rgba(255,255,255,0.9);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Segoe UI Rounded", "Arial Rounded MT Bold", "Malgun Gothic", sans-serif;
+  letter-spacing: -0.055em;
+}
+
+.hero-panel h1 {
+  color: #fff;
+  text-shadow: 0 4px 0 rgba(0, 54, 136, 0.22);
+}
+
+.hero-chip,
+.badge-chip,
+.meta-chip,
+.file-chip {
+  border: 2px solid rgba(7, 86, 190, 0.16);
+  background: linear-gradient(180deg, #fff, #eef9ff);
+  color: #07316d;
+  box-shadow: 0 6px 0 rgba(7, 77, 174, 0.08), 0 12px 22px rgba(7, 70, 150, 0.12);
+}
+
+.hero-panel .hero-chip,
+.hero-panel .badge-chip,
+.hero-panel .meta-chip {
+  border-color: rgba(255,255,255,0.42);
+  color: #063a86;
+}
+
+.family-card img,
+.asset-card img,
+.badge-card svg,
+.badge-card img {
+  filter: drop-shadow(0 8px 0 rgba(3, 62, 142, 0.10)) drop-shadow(0 12px 18px rgba(7, 70, 150, 0.16));
+}
+
+.title-card {
+  background:
+    radial-gradient(circle at 12px 12px, rgba(255,255,255,0.32) 0 2px, transparent 2.5px) 0 0 / 14px 14px,
+    linear-gradient(160deg, #ffe99d, #ffbf44 68%, #ff8b3d);
+}
+
+@media (max-width: 900px) {
+  .gallery-shell {
+    width: min(calc(100% - 24px), var(--max));
+    padding-top: 14px;
+  }
+
+  .hero-panel::before {
+    opacity: 0.24;
+  }
+}

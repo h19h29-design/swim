@@ -5,8 +5,10 @@ __pycache__/
 .pytest_cache/
 
 # Logs / generated
+.env
 logs/*.log
 logs/
+data/ocr_cache/
 dist/
 *.zip
 .tmp*

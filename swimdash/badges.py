@@ -54,9 +54,10 @@ def build_badge_context(
     admin_bundle: dict | None = None,
     reference_date: date | None = None,
     floor_date: date | None = DASHBOARD_DATE_FLOOR,
+    end_date: date | None = None,
 ) -> dict:
     bundle = admin_bundle or load_admin_config_bundle()
-    visible_records = _filter_visible_records(records, floor_date=floor_date)
+    visible_records = _filter_visible_records(records, floor_date=floor_date, end_date=end_date)
     reference = reference_date or _resolve_reference_date(visible_records, fallback=floor_date)
     core_records = [record for record in visible_records if _is_core_record(record)]
     badge_catalog = _catalog_badges(bundle)
@@ -702,16 +703,19 @@ def _gallery_rules(bundle: dict) -> list[dict]:
     )
 
 
-def _filter_visible_records(records: list[dict], *, floor_date: date | None) -> list[dict]:
-    if floor_date is None:
+def _filter_visible_records(records: list[dict], *, floor_date: date | None, end_date: date | None = None) -> list[dict]:
+    if floor_date is None and end_date is None:
         return list(records)
     visible: list[dict] = []
     for record in records:
         item_date = _record_date(record)
         if item_date is None:
             continue
-        if item_date >= floor_date:
-            visible.append(record)
+        if floor_date is not None and item_date < floor_date:
+            continue
+        if end_date is not None and item_date > end_date:
+            continue
+        visible.append(record)
     return visible
 
 

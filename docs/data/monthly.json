@@ -10,5 +10,29 @@
     "metric_bucket_counts": {
       "core": 44
     }
+  },
+  {
+    "month": "2026-05",
+    "swim_count": 7,
+    "total_distance_m": 8875.0,
+    "total_seconds": 26264,
+    "total_duration_min": 437.73,
+    "distance_per_hour_m": 1216.49,
+    "active_authors": 3,
+    "metric_bucket_counts": {
+      "core": 7
+    }
+  },
+  {
+    "month": "2026-06",
+    "swim_count": 2,
+    "total_distance_m": 1300.0,
+    "total_seconds": 4527,
+    "total_duration_min": 75.45,
+    "distance_per_hour_m": 1033.8,
+    "active_authors": 1,
+    "metric_bucket_counts": {
+      "core": 2
+    }
   }
 ]

@@ -163,6 +163,34 @@ Docker 런타임과 Synology 배포 방법은 [docs/NAS_DEPLOY.md](./docs/NAS_DE
 
 핵심:
 - 컨테이너 1개로 `docs/`를 그대로 서빙
+- 신규 공개 도메인 기준 URL은 `https://swim.h19h19.com/` 입니다
+- 기존 `http://swimmingdiary.duckdns.org:8766/` 접근은 롤백용으로 유지합니다
 - 기본 스케줄은 Synology DSM Task Scheduler에서 `10:00`, `22:00`
 - 기본 실행 명령은 `docker exec swimdash-app python -m swimdash refresh`
 - `refresh-from-floor` 와 `refresh-window` 는 관리자나 DSM에서 필요할 때 수동 실행하는 보정용 명령입니다
+
+## Gemini OCR 후보 파싱
+OCR은 공식 기록 확정이 아니라 제목/본문과 비교하는 후보 추출 경로입니다.
+
+우선순위:
+1. `data/manual_review_overrides.csv` 수동 보정
+2. 제목/본문/OCR 후보 일치
+3. 제목 공식 형식
+4. 본문 후보
+5. 고신뢰 Gemini OCR 후보
+6. review queue
+
+기본값은 OCR 비활성입니다. OCR을 켜지 않거나 API 키가 없어도 `refresh`, `rebuild`는 실패하지 않아야 합니다.
+
+```powershell
+python -m swimdash refresh --skip-ocr
+```
+
+OCR을 실험적으로 켤 때만 `.env`에 아래 값을 설정합니다. 실제 API 키는 코드, README, `docs/data`에 넣지 않습니다.
+
+```text
+SWIMDASH_ENABLE_GEMINI_OCR=1
+GEMINI_API_KEY=
+GEMINI_MODEL=gemini-2.5-flash-lite
+GEMINI_FALLBACK_MODEL=gemini-2.5-flash
+```

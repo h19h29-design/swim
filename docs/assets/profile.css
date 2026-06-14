@@ -361,3 +361,309 @@ h2 {
   padding: 7px;
   box-shadow: 0 10px 18px rgba(52, 36, 30, 0.08);
 }
+
+/* Season 2: Deep Lane Club profile overrides */
+:root {
+  --bg: #eef8fa;
+  --paper: rgba(255,255,255,0.90);
+  --paper-strong: rgba(255,255,255,0.96);
+  --ink: #102530;
+  --muted: #55707a;
+  --line: rgba(16,76,92,0.14);
+  --line-strong: rgba(16,76,92,0.24);
+  --coral: #ff6f61;
+  --yellow: #f6c95f;
+  --sky: #5aa7ff;
+  --mint: #39d9c2;
+  --shadow: 0 22px 54px rgba(15,55,76,0.14);
+  --radius-xl: 22px;
+  --radius-lg: 18px;
+  --radius-md: 14px;
+}
+
+body {
+  background:
+    linear-gradient(90deg, rgba(15,159,177,0.10) 1px, transparent 1px) 0 0 / 72px 100%,
+    linear-gradient(180deg, #f8fdff 0%, #e7f6fa 100%);
+}
+
+.profile-hero,
+.search-panel,
+.compare-panel,
+.badge-panel,
+.trend-panel,
+.records-panel,
+.empty-panel,
+.season-panel,
+.hero-grid article,
+.metric-card,
+.compare-row,
+.record-card,
+.badge-card {
+  border-color: var(--line);
+  background: rgba(255,255,255,0.92);
+  box-shadow: var(--shadow);
+}
+
+.profile-hero::after,
+.compare-panel::after,
+.badge-panel::after,
+.trend-panel::after,
+.compare-row::after,
+.badge-card::after {
+  display: none;
+}
+
+h1,
+h2,
+h3,
+.metric-card strong {
+  letter-spacing: 0;
+}
+
+.hero-grid article.is-accent {
+  background: linear-gradient(155deg, #fff9df, #f6c95f 58%, #ff9f45);
+}
+
+.hero-grid article.is-mint {
+  background: linear-gradient(155deg, #f6feff, #c9f6f0 58%, #7ce7d7);
+}
+
+.hero-chip,
+.nav-chip,
+.badge-chip,
+.stat-chip,
+.text-link,
+.suggestion-chip {
+  border-color: rgba(15,159,177,0.20);
+  background: rgba(255,255,255,0.94);
+  color: var(--ink);
+}
+
+.search-row button,
+.suggestion-chip,
+.season-tab.is-active {
+  background: linear-gradient(135deg, #0f9fb1, #1466d8 58%, #252060);
+  color: #fff;
+}
+
+.bar > span {
+  background: linear-gradient(90deg, #0f9fb1, #39d9c2, #f6c95f);
+}
+
+.season-panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  padding: 18px;
+}
+
+.season-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.season-tab {
+  display: grid;
+  gap: 3px;
+  text-align: left;
+  padding: 13px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.94);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(15,55,76,0.08);
+}
+
+.season-tab span {
+  font-size: 0.75rem;
+  font-weight: 900;
+  opacity: 0.74;
+}
+
+.profile-inline-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(15,159,177,0.28);
+}
+
+.inline-badge-icon,
+.badge-thumb {
+  border-color: rgba(15,159,177,0.22);
+  background: linear-gradient(145deg, rgba(255,255,255,0.98), rgba(225,250,255,0.86));
+}
+
+@media (max-width: 720px) {
+  .season-tabs {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Season 2 cartoon-dot swim profile theme, 2026-06-14 */
+:root {
+  --bg: #eaf7ff;
+  --paper: rgba(255, 255, 255, 0.95);
+  --paper-strong: #ffffff;
+  --ink: #08224f;
+  --muted: #5d7395;
+  --line: rgba(7, 86, 190, 0.18);
+  --line-strong: rgba(7, 86, 190, 0.26);
+  --coral: #ff7aa8;
+  --yellow: #ffbf44;
+  --sky: #179bff;
+  --mint: #35d6df;
+  --shadow: 0 8px 0 rgba(6, 62, 142, 0.05), 0 18px 42px rgba(7, 70, 150, 0.15);
+  --radius-xl: 28px;
+  --radius-lg: 22px;
+  --radius-md: 18px;
+}
+
+body {
+  font-family: "Segoe UI Rounded", "Arial Rounded MT Bold", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  background:
+    radial-gradient(circle at 15px 15px, rgba(7, 116, 255, 0.10) 0 2px, transparent 2.5px) 0 0 / 18px 18px,
+    radial-gradient(circle at 92% 8%, rgba(255,255,255,0.82), transparent 22%),
+    linear-gradient(180deg, #dff3ff 0%, #fbfdff 46%, #def4ff 100%);
+}
+
+.profile-hero,
+.search-panel,
+.compare-panel,
+.badge-panel,
+.trend-panel,
+.records-panel,
+.empty-panel,
+.hero-grid article,
+.metric-card,
+.compare-row,
+.record-card,
+.badge-card {
+  border: 2px solid var(--line);
+  border-bottom-width: 4px;
+  background:
+    radial-gradient(circle at 12px 12px, rgba(8, 121, 255, 0.06) 0 2px, transparent 2.5px) 0 0 / 14px 14px,
+    linear-gradient(180deg, rgba(255,255,255,0.98), rgba(246,252,255,0.94));
+  box-shadow: var(--shadow);
+}
+
+.profile-hero {
+  background:
+    radial-gradient(circle at 17% 22%, rgba(255,255,255,0.32) 0 5px, transparent 6px),
+    repeating-radial-gradient(circle at 78% 34%, rgba(255,255,255,0.18) 0 1px, transparent 1px 9px),
+    linear-gradient(135deg, #0878ff, #19a7ff 58%, #64ddff);
+  color: #fff;
+}
+
+.profile-hero::before {
+  content: "";
+  position: absolute;
+  right: 26px;
+  top: 26px;
+  width: 118px;
+  height: 118px;
+  border: 4px solid #073b8d;
+  border-radius: 44% 44% 50% 50%;
+  background:
+    radial-gradient(circle at 48% 43%, #ffd8ad 0 34px, transparent 35px),
+    radial-gradient(circle at 38% 36%, #052b66 0 4px, transparent 5px),
+    radial-gradient(circle at 58% 36%, #052b66 0 4px, transparent 5px),
+    radial-gradient(ellipse at 48% 58%, #ff6a61 0 9px, transparent 10px),
+    linear-gradient(180deg, #38d9ff 0 28%, #056bd8 29% 100%);
+  box-shadow: 0 14px 0 rgba(4, 67, 151, 0.16), inset 0 5px 0 rgba(255,255,255,0.4);
+  transform: rotate(5deg);
+}
+
+.profile-hero::after {
+  right: -30px;
+  bottom: -34px;
+  top: auto;
+  width: 360px;
+  height: 96px;
+  background:
+    radial-gradient(78px 36px at 12% 46%, rgba(255,255,255,0.95) 0 42%, transparent 44%),
+    radial-gradient(110px 48px at 44% 36%, rgba(255,255,255,0.92) 0 42%, transparent 44%),
+    radial-gradient(88px 42px at 78% 52%, rgba(255,255,255,0.94) 0 42%, transparent 44%);
+}
+
+.profile-hero .eyebrow,
+.profile-hero .hero-copy,
+.profile-hero .generated-at,
+.profile-hero .note {
+  color: rgba(255,255,255,0.9);
+}
+
+.profile-hero h1,
+h1,
+h2,
+h3 {
+  font-family: "Segoe UI Rounded", "Arial Rounded MT Bold", "Malgun Gothic", sans-serif;
+  letter-spacing: -0.055em;
+}
+
+.profile-hero h1 {
+  max-width: 70%;
+  color: #fff;
+  text-shadow: 0 4px 0 rgba(0, 54, 136, 0.22);
+}
+
+.hero-chip,
+.nav-chip,
+.badge-chip,
+.stat-chip,
+.text-link,
+.suggestion-chip,
+.search-row button {
+  border: 2px solid rgba(7, 86, 190, 0.16);
+  background: linear-gradient(180deg, #fff, #eef9ff);
+  color: #07316d;
+  box-shadow: 0 6px 0 rgba(7, 77, 174, 0.08), 0 12px 22px rgba(7, 70, 150, 0.12);
+}
+
+.search-row button,
+.suggestion-chip {
+  color: #fff;
+  border-color: rgba(5, 61, 142, 0.2);
+  background: linear-gradient(180deg, #159dff, #0669e0);
+}
+
+.hero-grid article.is-accent {
+  background:
+    radial-gradient(circle at 12px 12px, rgba(255,255,255,0.32) 0 2px, transparent 2.5px) 0 0 / 14px 14px,
+    linear-gradient(160deg, #ffe99d, #ffbf44 68%, #ff8b3d);
+}
+
+.hero-grid article.is-mint {
+  background:
+    radial-gradient(circle at 12px 12px, rgba(8, 121, 255, 0.06) 0 2px, transparent 2.5px) 0 0 / 14px 14px,
+    linear-gradient(180deg, #fff, rgba(53, 214, 223, 0.22));
+}
+
+.metric-card strong,
+.stat-card strong {
+  color: #06245b;
+}
+
+.badge-card,
+.record-card,
+.compare-row {
+  background: rgba(255,255,255,0.86);
+}
+
+@media (max-width: 760px) {
+  .profile-shell {
+    width: min(calc(100% - 24px), 1220px);
+    padding-top: 14px;
+  }
+
+  .profile-hero h1 {
+    max-width: 100%;
+    font-size: clamp(2.2rem, 13vw, 3.5rem);
+  }
+
+  .profile-hero::before {
+    opacity: 0.26;
+  }
+}

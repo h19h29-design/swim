@@ -11,14 +11,14 @@ from swimdash.pipeline import apply_manual_review_overrides, merge_records, pars
 from swimdash.parser import TITLE_FORMAT_MISSING
 
 
-def test_pipeline_uses_title_format_only():
+def test_pipeline_keeps_title_format_when_body_candidate_matches():
     post = CrawledPost(
         post_id=1,
         url="https://example.com/post/1",
         title="800 / 50\ubd84",
         author="\uc791\uc131\uc790",
         post_datetime="2026-03-05 07:00:00",
-        content_text="\ucd1d\uac70\ub9ac 1500\n\uc2dc\uac04 90\ubd84",
+        content_text="\ucd1d\uac70\ub9ac 800\n\uc2dc\uac04 50\ubd84",
         image_urls=["https://example.com/image.jpg"],
     )
 
@@ -32,6 +32,31 @@ def test_pipeline_uses_title_format_only():
     assert row["review_needed"] is False
     assert row["source"] == "title_format"
     assert row["evidence_text"] == "800 / 50\ubd84"
+    assert row["resolved_source"] == "mixed"
+    assert row["source_candidates"]["body"]["distance_m"] == 800
+
+
+def test_pipeline_prefers_title_and_warns_when_body_conflicts():
+    post = CrawledPost(
+        post_id=2,
+        url="https://example.com/post/2",
+        title="800 / 50\ubd84",
+        author="\uc791\uc131\uc790",
+        post_datetime="2026-03-05 07:00:00",
+        content_text="\ucd1d\uac70\ub9ac 1500\n\uc2dc\uac04 90\ubd84",
+        image_urls=[],
+    )
+
+    records = parse_posts_to_records([post])
+
+    row = records[0].to_dict()
+    assert row["include"] is True
+    assert row["review_needed"] is False
+    assert row["source"] == "title_format"
+    assert row["resolved_source"] == "title"
+    assert "CANDIDATE_CONFLICT" in row["warning_codes"]
+    assert row["source_candidates"]["title"]["distance_m"] == 800
+    assert row["source_candidates"]["body"]["distance_m"] == 1500
 
 
 def test_aggregate_uses_backend_include_boolean_and_review_queue():

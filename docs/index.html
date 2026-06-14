@@ -3,160 +3,167 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>수영 기록 스티커북</title>
+  <title>수영 기록 대시보드</title>
+  <link rel="icon" href="data:,">
   <link rel="stylesheet" href="./assets/styles.css">
   <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
 </head>
 <body>
-  <div class="page-shell">
-    <header class="hero-panel">
-      <div class="hero-copy">
-        <p class="eyebrow" id="heroEyebrow">SWIM STICKER BOOK</p>
-        <h1 id="heroHeadline">붙이고 모으는 수영 시즌 보드</h1>
-        <p class="hero-subtitle" id="heroSubtitle">운동 정보, 랭킹, 칭호, 다음 해금을 한 화면에서 보는 갤러리용 수영 기록판입니다.</p>
-        <div class="hero-chip-row" id="heroChipRow"></div>
-      </div>
-
-      <aside class="hero-side">
-        <article class="hero-card gallery-title-card">
-          <div class="card-head-row">
-            <p class="section-kicker">이번 시즌 갤 대표 칭호</p>
-            <span class="mini-chip" id="galleryTitleTier">대표 칭호</span>
-          </div>
-          <h2 id="galleryTitleName">수면 대기</h2>
-          <p class="card-copy" id="galleryTitleDescription">아직 시즌 기록이 쌓이기 전의 준비 상태입니다.</p>
-          <div class="hero-meta-row" id="galleryTitleMeta"></div>
-        </article>
-
-        <article class="hero-card unlock-card">
-          <div class="card-head-row">
-            <div>
-              <p class="section-kicker">다음 갤 칭호</p>
-              <h2 id="nextUnlockName">첫 물결</h2>
-            </div>
-            <span class="mini-chip" id="modeChip">시즌 기록</span>
-          </div>
-          <p class="card-copy" id="nextUnlockMeta">다음 칭호까지 남은 거리</p>
-          <strong class="unlock-value" id="nextUnlockValue">1km 남음</strong>
-          <div class="progress-track"><span id="nextUnlockBar"></span></div>
-          <p class="card-copy" id="nextUnlockProgressMeta"></p>
-          <p class="generated-at" id="generatedAtLabel"></p>
-        </article>
-      </aside>
-    </header>
-
-    <nav class="quick-nav" id="quickNavRow"></nav>
-
-    <section class="summary-panel">
-      <div class="section-head compact-head">
+  <div class="dashboard-shell">
+    <aside class="sidebar" aria-label="주요 메뉴">
+      <div class="brand-block">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img" focusable="false">
+            <path d="M12 43c8-7 15-7 23 0s15 7 23 0" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+            <path d="M8 52c9-7 17-7 26 0s17 7 26 0" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" opacity=".72"/>
+            <circle cx="34" cy="16" r="6" fill="currentColor"/>
+            <path d="M19 31c6-10 14-14 27-12" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+        </div>
         <div>
-          <p class="section-kicker">갤 전체 운동량</p>
-          <h2>지금 이 시즌이 얼마나 쌓였는지 먼저 봅니다</h2>
-        </div>
-        <p class="section-note" id="summaryRangeLabel"></p>
-      </div>
-      <div class="kpi-grid" id="kpiGrid"></div>
-    </section>
-
-    <section class="ranking-panel">
-      <div class="section-head ranking-head">
-        <div>
-          <p class="section-kicker">메인 랭킹</p>
-          <h2 id="rankingHeading">참여횟수 랭킹</h2>
-        </div>
-        <p class="section-note" id="rankingSummary"></p>
-      </div>
-
-      <div class="ranking-tabs" id="rankingTabs"></div>
-
-      <div class="ranking-grid">
-        <div class="top-three-grid" id="topThree"></div>
-        <div class="rank-list-panel">
-          <div class="list-head-row">
-            <h3 id="rankListTitle">4위부터 20위까지</h3>
-            <span class="mini-chip" id="rankListCount">0명</span>
-          </div>
-          <div class="rank-list" id="rankList"></div>
+          <strong>수영 기록 대시보드</strong>
+          <span>DC 수영일기 자동 수집 · Gemini OCR 분석</span>
         </div>
       </div>
-    </section>
 
-    <section class="badge-panel">
-      <div class="two-column">
-        <article class="shelf-card">
-          <div class="section-head compact-head">
-            <div>
-              <p class="section-kicker">최근 해금</p>
-              <h2>방금 붙은 스티커들</h2>
-            </div>
-          </div>
-          <div class="shelf-grid" id="recentUnlocks"></div>
-        </article>
+      <nav class="side-nav">
+        <a class="is-active" href="./index.html?desktop=1" data-icon="grid">대시보드</a>
+        <a href="#rankingPanel" data-icon="trophy">시즌 랭킹</a>
+        <a href="./profile.html" data-icon="user">개인 프로필</a>
+        <a href="#analysisPanel" data-icon="chart">기록 분석</a>
+        <a href="./badge-gallery.html" data-icon="badge">배지 갤러리</a>
+        <a href="#reviewPanel" data-icon="clock">검토 대기</a>
+        <a href="./parse-status.html" data-icon="database">파싱 현황</a>
+        <a href="./admin.html" data-icon="settings">설정</a>
+      </nav>
 
-        <article class="shelf-card">
-          <div class="section-head compact-head">
-            <div>
-              <p class="section-kicker">배지 도감</p>
-              <h2>이번 시즌 배지 모아보기</h2>
-            </div>
-          </div>
-          <div class="badge-summary-grid" id="badgeSummary"></div>
-          <div class="access-row">
-            <a class="text-link" href="./badge-gallery.html">배지 갤러리 열기</a>
-            <a class="text-link" href="./mobile.html">모바일로 보기</a>
-          </div>
-        </article>
+      <div class="sidebar-note">
+        <strong>DCInside</strong>
+        <p>수영일기 글을 수집하고 제목·본문·OCR 후보를 비교해 안전하게 반영합니다.</p>
       </div>
-    </section>
+    </aside>
 
-    <section class="search-panel">
-      <div class="section-head compact-head">
-        <div>
-          <p class="section-kicker">개인 페이지 찾기</p>
-          <h2>닉네임으로 내 수영 앨범 열기</h2>
-        </div>
-      </div>
-      <div class="search-row">
-        <label class="search-field">
+    <main class="workspace">
+      <header class="topbar">
+        <label class="search-control">
           <span class="sr-only">닉네임 검색</span>
-          <input id="authorSearch" type="text" list="authorSuggestions" placeholder="닉네임 입력">
+          <input id="authorSearch" type="search" list="authorSuggestions" placeholder="닉네임 검색">
+          <button id="openProfileButton" class="icon-button" type="button" aria-label="프로필 검색">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 4 4"/></svg>
+          </button>
         </label>
-        <button id="openProfileButton" class="primary-button" type="button">개인 페이지 열기</button>
-      </div>
-      <div class="search-suggestions" id="searchSuggestionRow"></div>
-      <datalist id="authorSuggestions"></datalist>
-      <p class="section-note" id="searchHint">닉네임을 입력하면 개인 스티커북으로 이동합니다.</p>
-    </section>
-
-    <section class="records-panel">
-      <div class="section-head compact-head">
-        <div>
-          <p class="section-kicker">최근 기록</p>
-          <h2>최근에 반영된 운동 기록</h2>
+        <div class="topbar-actions">
+          <button id="refreshButton" class="soft-button" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v6h-6"/></svg>
+            새로고침
+          </button>
+          <a class="soft-button" href="./admin.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 7v6c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z"/><path d="m9 12 2 2 4-4"/></svg>
+            관리자
+          </a>
+          <a class="profile-pill" id="profilePill" href="./profile.html">
+            <span class="avatar">泳</span>
+            <span>프로필</span>
+          </a>
         </div>
-      </div>
-      <div class="records-table" id="recentRecords"></div>
-    </section>
+      </header>
 
-    <section class="ops-panel">
-      <div class="section-head compact-head">
-        <div>
-          <p class="section-kicker">운영 메모</p>
-          <h2>검토 대기와 운영 안내</h2>
-        </div>
+      <section class="kpi-grid" id="kpiGrid" aria-label="핵심 지표"></section>
+
+      <section class="hero-card" id="seasonHero"></section>
+
+      <div class="content-layout">
+        <section class="main-stack">
+          <section class="season-switch-card">
+            <div class="section-head">
+              <div>
+                <span class="section-label">SEASON VIEW</span>
+                <h2>시즌별 기록 전환</h2>
+              </div>
+              <p id="summaryRangeLabel"></p>
+            </div>
+            <div class="season-tabs" id="seasonTabs"></div>
+          </section>
+
+          <section class="chart-grid" id="analysisPanel" aria-label="기록 분석">
+            <article class="panel-card">
+              <div class="card-title-row">
+                <h3>주간 거리 추이</h3>
+                <span>km</span>
+              </div>
+              <div id="weeklyChart" class="chart-area"></div>
+            </article>
+            <article class="panel-card">
+              <div class="card-title-row">
+                <h3>영법 비중</h3>
+                <span>source</span>
+              </div>
+              <div id="strokeChart" class="donut-layout"></div>
+            </article>
+            <article class="panel-card">
+              <div class="card-title-row">
+                <h3>월별 누적 거리</h3>
+                <span>km</span>
+              </div>
+              <div id="monthlyChart" class="bar-chart"></div>
+            </article>
+            <article class="panel-card">
+              <div class="card-title-row">
+                <h3>평균 페이스</h3>
+                <span id="paceAverageChip">시즌 평균</span>
+              </div>
+              <div id="paceChart" class="chart-area"></div>
+            </article>
+          </section>
+
+          <section class="bottom-grid">
+            <article class="panel-card profile-card" id="profileSpotlight"></article>
+            <article class="panel-card records-card">
+              <div class="card-title-row">
+                <h3>최근 수영 기록</h3>
+                <a href="./parse-status.html">더보기</a>
+              </div>
+              <div id="recentRecords" class="record-list"></div>
+            </article>
+            <article class="panel-card review-card" id="reviewPanel">
+              <div class="card-title-row">
+                <h3>검토 대기 / OCR 상태</h3>
+                <a href="./parse-status.html">전체 보기</a>
+              </div>
+              <div id="reviewStatus"></div>
+            </article>
+          </section>
+        </section>
+
+        <aside class="right-rail">
+          <section class="panel-card" id="rankingPanel">
+            <div class="card-title-row">
+              <h3>시즌 랭킹 TOP 10</h3>
+              <span id="rankingMetricLabel">거리</span>
+            </div>
+            <div class="ranking-list" id="rankingList"></div>
+            <button id="toggleMetricButton" class="wide-button" type="button">참여횟수 랭킹 보기</button>
+          </section>
+
+          <section class="panel-card">
+            <div class="card-title-row">
+              <h3>최근 해금 배지</h3>
+              <a href="./badge-gallery.html">더보기</a>
+            </div>
+            <div class="badge-strip" id="recentUnlocks"></div>
+          </section>
+        </aside>
       </div>
-      <div class="ops-grid">
-        <article class="ops-card">
-          <h3>검토 대기</h3>
-          <p id="reviewQueueSummary">검토 대기 현황을 불러오는 중입니다.</p>
-        </article>
-        <article class="ops-card">
-          <h3>관리 방식</h3>
-          <p>관리자 수정은 <code>data/admin/*.json</code> 원본을 바꾼 뒤 <code>rebuild</code> 하면 반영됩니다.</p>
-        </article>
-      </div>
-    </section>
+
+      <footer class="dashboard-footer">
+        <span>DCInside 수영 갤러리 데이터 기반</span>
+        <span>Gemini OCR 후보 분석</span>
+        <span id="generatedAtLabel"></span>
+      </footer>
+    </main>
   </div>
+
+  <datalist id="authorSuggestions"></datalist>
 
   <script>
     (() => {
@@ -170,6 +177,6 @@
       }
     })();
   </script>
-  <script type="module" src="./assets/app.js?v=20260323a"></script>
+  <script type="module" src="./assets/app.js?v=20260522a"></script>
 </body>
 </html>

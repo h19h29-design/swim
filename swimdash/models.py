@@ -35,6 +35,10 @@ class SwimRecord:
     review_needed: bool
     review_reason_code: str | None
     metric_bucket: str | None
+    source_candidates: dict | None = None
+    resolved_source: str | None = None
+    resolver_confidence: float | None = None
+    review_reason: str | None = None
 
     def to_dict(self) -> dict:
         payload = asdict(self)
@@ -44,6 +48,14 @@ class SwimRecord:
             payload["total_seconds"] = int(payload["total_seconds"])
         payload["warning_codes"] = [str(code) for code in payload.get("warning_codes", []) if code]
         payload["review_needed"] = bool(payload.get("review_needed", False))
+        if payload.get("source_candidates") is None:
+            payload.pop("source_candidates", None)
+        if payload.get("resolved_source") is None:
+            payload.pop("resolved_source", None)
+        if payload.get("resolver_confidence") is None:
+            payload.pop("resolver_confidence", None)
+        if payload.get("review_reason") is None:
+            payload.pop("review_reason", None)
         return payload
 
 

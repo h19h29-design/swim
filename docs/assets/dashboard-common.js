@@ -1,4 +1,5 @@
 ﻿const DEFAULT_MODE = "core_only";
+const DEFAULT_VIEW = "season2";
 const CATEGORY_PREFIX_MAP = {
   att: "attendance",
   dst: "distance",
@@ -63,10 +64,13 @@ export async function loadPublicSiteConfig() {
 
 export function normalizeDashboardViews(payload) {
   if (!isPlainObject(payload) || !isPlainObject(payload.summary)) {
-    return {
+    const fallback = {
       present: false,
       default_mode: DEFAULT_MODE,
       supported_modes: [DEFAULT_MODE],
+      default_view: DEFAULT_VIEW,
+      supported_views: ["season1", DEFAULT_VIEW, "cumulative"],
+      view_windows: {},
       summary: {},
       gallery: {},
       rankings: { default_metric: "swim_count", metrics: {} },
@@ -79,16 +83,23 @@ export function normalizeDashboardViews(payload) {
       generated_at: "",
       visible_date_range: { start: "", end: "" },
     };
+    fallback.season_views = normalizeSeasonViews({}, fallback);
+    return fallback;
   }
 
   const rankings = isPlainObject(payload.rankings) ? payload.rankings : { default_metric: "swim_count", metrics: {} };
-  return {
+  const normalized = {
     ...payload,
     present: true,
     default_mode: payload.default_mode || DEFAULT_MODE,
     supported_modes: Array.isArray(payload.supported_modes) && payload.supported_modes.length
       ? payload.supported_modes
       : [DEFAULT_MODE],
+    default_view: payload.default_view || payload.season_views?.default_view || DEFAULT_VIEW,
+    supported_views: Array.isArray(payload.supported_views) && payload.supported_views.length
+      ? payload.supported_views
+      : normalizeSupportedViews(payload.season_views?.supported_views),
+    view_windows: isPlainObject(payload.view_windows) ? payload.view_windows : {},
     summary: isPlainObject(payload.summary) ? payload.summary : {},
     gallery: isPlainObject(payload.gallery) ? payload.gallery : {},
     rankings: {
@@ -104,6 +115,68 @@ export function normalizeDashboardViews(payload) {
     generated_at: stringOrEmpty(payload.generated_at),
     visible_date_range: normalizeDateRange(payload.visible_date_range),
   };
+  normalized.season_views = normalizeSeasonViews(payload, normalized);
+  return normalized;
+}
+
+function normalizeSeasonViews(payload, fallbackView) {
+  const raw = isPlainObject(payload?.season_views) ? payload.season_views : {};
+  const rawViews = isPlainObject(raw.views) ? raw.views : {};
+  const views = {};
+
+  Object.entries(rawViews).forEach(([key, view]) => {
+    if (!isPlainObject(view)) return;
+    views[key] = normalizeSeasonView(key, view, fallbackView);
+  });
+
+  if (!Object.keys(views).length) {
+    const key = fallbackView?.default_view || DEFAULT_VIEW;
+    views[key] = normalizeSeasonView(key, fallbackView || {}, fallbackView);
+  }
+
+  const supported = normalizeSupportedViews(raw.supported_views || fallbackView?.supported_views);
+  const available = supported.filter((key) => views[key]);
+  const defaultView = raw.default_view && views[raw.default_view]
+    ? raw.default_view
+    : (fallbackView?.default_view && views[fallbackView.default_view] ? fallbackView.default_view : (available[0] || Object.keys(views)[0] || DEFAULT_VIEW));
+
+  return {
+    default_view: defaultView,
+    supported_views: available.length ? available : Object.keys(views),
+    view_windows: isPlainObject(raw.view_windows) ? raw.view_windows : (fallbackView?.view_windows || {}),
+    views,
+  };
+}
+
+function normalizeSeasonView(key, view, fallbackView) {
+  const rankings = isPlainObject(view.rankings) ? view.rankings : fallbackView?.rankings || { default_metric: "swim_count", metrics: {} };
+  return {
+    ...view,
+    view_key: view.view_key || key,
+    label_ko: stringOrEmpty(view.label_ko) || seasonLabel(key),
+    short_label_ko: stringOrEmpty(view.short_label_ko) || key.toUpperCase(),
+    description_ko: stringOrEmpty(view.description_ko),
+    theme_label_ko: stringOrEmpty(view.theme_label_ko),
+    view_window: isPlainObject(view.view_window) ? view.view_window : {},
+    summary: isPlainObject(view.summary) ? view.summary : (fallbackView?.summary || {}),
+    gallery: isPlainObject(view.gallery) ? view.gallery : (fallbackView?.gallery || {}),
+    rankings: {
+      default_metric: rankings.default_metric || "swim_count",
+      metrics: isPlainObject(rankings.metrics) ? rankings.metrics : {},
+    },
+    authors: Array.isArray(view.authors) ? view.authors : [],
+    monthly: Array.isArray(view.monthly) ? view.monthly : [],
+    recent_records: Array.isArray(view.recent_records) ? view.recent_records : (fallbackView?.recent_records || []),
+    recent_unlocks: Array.isArray(view.recent_unlocks) ? view.recent_unlocks : (fallbackView?.recent_unlocks || []),
+    ops: isPlainObject(view.ops) ? view.ops : (fallbackView?.ops || {}),
+    handoff: isPlainObject(view.handoff) ? view.handoff : null,
+    visible_date_range: normalizeDateRange(view.visible_date_range || fallbackView?.visible_date_range),
+  };
+}
+
+function normalizeSupportedViews(value) {
+  const rows = Array.isArray(value) && value.length ? value : ["season1", DEFAULT_VIEW, "cumulative"];
+  return [...new Set(rows.map((item) => stringOrEmpty(item)).filter(Boolean))];
 }
 
 export function normalizeAuthorIndex(payload) {
@@ -116,6 +189,7 @@ export function normalizeAuthorIndex(payload) {
     .map((row) => ({
       author: firstText(row.author, row.nickname, row.name),
       search_key: firstText(row.search_key) || firstText(row.author, row.nickname, row.name).toLowerCase(),
+      profile_url: firstText(row.profile_url),
       latest_post_date: stringOrEmpty(row.latest_post_date),
       primary_title: isPlainObject(row.primary_title) ? row.primary_title : null,
       unlocked_badge_count: numberOrZero(row.unlocked_badge_count),
@@ -374,9 +448,9 @@ function badgeShellInlineStyle(className) {
   let style = "display:inline-grid;place-items:center;overflow:hidden;vertical-align:middle;line-height:0;flex:0 0 auto;";
 
   if (normalized === "top-card-icon") {
-    style += "width:48px;height:48px;border-radius:16px;border:1px solid rgba(94,77,68,0.14);background:rgba(255,255,255,0.96);padding:6px;box-shadow:0 10px 20px rgba(52,36,30,0.10);";
+    style += "width:52px;height:52px;border-radius:18px;border:1px solid rgba(10,132,153,0.22);background:linear-gradient(145deg,rgba(255,255,255,0.98),rgba(225,250,255,0.86));padding:6px;box-shadow:0 14px 26px rgba(15,55,76,0.18),inset 0 1px 0 rgba(255,255,255,0.82);";
   } else if (!normalized || normalized === "badge-icon") {
-    style += "width:40px;height:40px;border-radius:14px;border:1px solid rgba(94,77,68,0.14);background:rgba(255,255,255,0.94);padding:6px;box-shadow:0 8px 18px rgba(52,36,30,0.08);";
+    style += "width:42px;height:42px;border-radius:16px;border:1px solid rgba(10,132,153,0.20);background:linear-gradient(145deg,rgba(255,255,255,0.98),rgba(230,251,255,0.88));padding:6px;box-shadow:0 10px 20px rgba(15,55,76,0.14),inset 0 1px 0 rgba(255,255,255,0.80);";
   }
 
   return style;
@@ -490,53 +564,53 @@ function renderBadgeSparkles(tier, palette, accentGradientId) {
 function paletteForTier(tier) {
   if (tier <= 3) {
     return {
-      main: "#d06f4c",
-      accent: "#ffd966",
-      strong: "#9e5538",
-      tint: "#fff0df",
-      soft: "#fff7ef",
-      shellA: "#fff1e5",
-      shellB: "#ffd7b5",
-      shellC: "#ffb38f",
-      edge: "rgba(135,87,61,0.42)",
+      main: "#0f9fb1",
+      accent: "#f6c95f",
+      strong: "#0b5264",
+      tint: "#e8fbff",
+      soft: "#f5fdff",
+      shellA: "#f7feff",
+      shellB: "#bfeef5",
+      shellC: "#6fd0df",
+      edge: "rgba(10,82,100,0.42)",
     };
   }
   if (tier <= 6) {
     return {
-      main: "#2f8f83",
-      accent: "#7cb7ff",
-      strong: "#21606d",
-      tint: "#eafffb",
-      soft: "#f4fffd",
-      shellA: "#ecfffb",
-      shellB: "#bfeee6",
-      shellC: "#86d7c9",
-      edge: "rgba(45,105,110,0.42)",
+      main: "#1466d8",
+      accent: "#3ee0c4",
+      strong: "#173866",
+      tint: "#eef7ff",
+      soft: "#f6fbff",
+      shellA: "#f8fcff",
+      shellB: "#bad8ff",
+      shellC: "#6ca4ff",
+      edge: "rgba(23,56,102,0.42)",
     };
   }
   if (tier <= 9) {
     return {
-      main: "#b2741b",
-      accent: "#ffb347",
-      strong: "#8b5709",
-      tint: "#fff4d7",
-      soft: "#fffaf0",
-      shellA: "#fff7e4",
-      shellB: "#ffe28d",
-      shellC: "#ffb56b",
-      edge: "rgba(139,87,9,0.42)",
+      main: "#a15b13",
+      accent: "#ffd166",
+      strong: "#5d3c07",
+      tint: "#fff7dc",
+      soft: "#fffdf5",
+      shellA: "#fff9e8",
+      shellB: "#f9d879",
+      shellC: "#f29f3d",
+      edge: "rgba(93,60,7,0.42)",
     };
   }
   return {
-    main: "#d55d68",
-    accent: "#83d6c9",
-    strong: "#6b5ac9",
-    tint: "#fff0f4",
+    main: "#dd4f6f",
+    accent: "#39e6c2",
+    strong: "#252060",
+    tint: "#fff0f6",
     soft: "#fff8fb",
-    shellA: "#fff3f5",
-    shellB: "#ffd1bf",
-    shellC: "#9bc6ff",
-    edge: "rgba(107,90,201,0.42)",
+    shellA: "#fff8fb",
+    shellB: "#ffc6d5",
+    shellC: "#79d8ff",
+    edge: "rgba(37,32,96,0.42)",
   };
 }
 
@@ -684,6 +758,52 @@ export function getMetricGroup(dashboardViews, metricKey) {
   };
 }
 
+export function getSeasonViewOptions(dashboardViews) {
+  const seasonViews = dashboardViews?.season_views;
+  const supported = Array.isArray(seasonViews?.supported_views) ? seasonViews.supported_views : [];
+  return supported
+    .map((key) => {
+      const view = seasonViews?.views?.[key];
+      if (!view) return null;
+      return {
+        view_key: key,
+        label_ko: view.label_ko || seasonLabel(key),
+        short_label_ko: view.short_label_ko || key.toUpperCase(),
+        description_ko: view.description_ko || "",
+        theme_label_ko: view.theme_label_ko || "",
+        is_current: Boolean(view.is_current),
+        view_window: view.view_window || {},
+      };
+    })
+    .filter(Boolean);
+}
+
+export function getDefaultSeasonViewKey(dashboardViews) {
+  return dashboardViews?.season_views?.default_view || dashboardViews?.default_view || DEFAULT_VIEW;
+}
+
+export function getDashboardSeasonView(dashboardViews, viewKey) {
+  const seasonViews = dashboardViews?.season_views;
+  const key = viewKey || getDefaultSeasonViewKey(dashboardViews);
+  return seasonViews?.views?.[key] || seasonViews?.views?.[getDefaultSeasonViewKey(dashboardViews)] || dashboardViews;
+}
+
+export function getViewDateRangeLabel(view) {
+  const window = view?.view_window || {};
+  if (window.start || window.end) {
+    return `${window.start || "시작 전"} ~ ${window.end || "진행 중"}`;
+  }
+  return getVisibleDateRangeLabel(view?.visible_date_range);
+}
+
+function seasonLabel(viewKey) {
+  return {
+    season1: "시즌 1",
+    season2: "시즌 2",
+    cumulative: "누적",
+  }[viewKey] || stringOrEmpty(viewKey);
+}
+
 export function metricLabel(metricKey) {
   return {
     swim_count: "참여횟수",
@@ -816,6 +936,8 @@ export function sliceRankFourToTwenty(group) {
 export function sourceLabel(source) {
   const labels = {
     title_format: "제목 양식",
+    body_text: "본문 후보",
+    gemini_ocr: "Gemini OCR",
     manual_review: "수동 승인",
     manual_patch: "수동 보정",
     none: "미분류",

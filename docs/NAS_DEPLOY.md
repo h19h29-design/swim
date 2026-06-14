@@ -171,6 +171,52 @@ which docker
 SWIMDASH_SECURE_COOKIES=1
 ```
 
+### 신규 공개 도메인
+
+신규 공개 도메인은 아래 기준으로 설정합니다.
+
+```text
+https://swim.h19h19.com/
+https://swim.h19h19.com/admin.html
+```
+
+Synology Reverse Proxy 권장 매핑:
+
+```text
+Source protocol: HTTPS
+Source hostname: swim.h19h19.com
+Source port: 443
+Destination protocol: HTTP
+Destination hostname: 127.0.0.1 또는 NAS 내부 IP
+Destination port: 8766
+```
+
+주의:
+- `compose.yaml`과 `Dockerfile`의 내부 포트 `8766`은 바꾸지 않습니다.
+- DSM Task Scheduler 명령도 `docker exec swimdash-app python -m swimdash refresh` 그대로 유지합니다.
+- 관리자 저장 API는 요청의 `Host`/`Origin` 일치를 확인하므로 Reverse Proxy가 원래 Host 헤더를 보존해야 합니다.
+- HTTPS reverse proxy 앞단을 쓰면 `.env`에 `SWIMDASH_SECURE_COOKIES=1`을 둡니다.
+- OCR API 키는 NAS `.env` 또는 컨테이너 환경 변수에만 넣고 Git/문서/`docs/data`에는 저장하지 않습니다.
+
+### 롤백용 기존 주소
+
+새 도메인 전환 중 문제가 생기면 기존 raw port 경로를 롤백용으로 유지합니다.
+
+```text
+http://swimmingdiary.duckdns.org:8766/
+http://swimmingdiary.duckdns.org:8766/admin.html
+```
+
+컨테이너가 정상인지 먼저 확인합니다.
+
+```bash
+docker compose ps
+docker logs swimdash-app --tail 200
+curl -I http://127.0.0.1:8766/
+```
+
+새 도메인만 실패하면 컨테이너를 내리지 말고 Synology Reverse Proxy 또는 DNS 설정만 되돌립니다.
+
 ## 8. 업데이트
 코드 변경 후:
 

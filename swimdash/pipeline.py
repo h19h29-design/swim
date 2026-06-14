@@ -40,7 +40,13 @@ from swimdash.config import (
 )
 from swimdash.io_utils import read_json, write_json
 from swimdash.models import CrawledPost, SwimRecord
+from swimdash.body_parser import body_result_to_candidate, parse_swim_body
+from swimdash.ocr_gemini import GeminiOcrClient, OCR_API_ERROR, load_gemini_ocr_settings, skipped_candidate
 from swimdash.parser import parse_swim_text, parse_total_time_text_value
+from swimdash.record_resolver import (
+    ocr_min_confidence_from_env,
+    resolve_record_candidates,
+)
 
 LEGACY_SOURCE_MAP = {
     "text_strict_pair": "title_format",
@@ -77,6 +83,10 @@ AUTOMATIC_RECORD_FIELDS = (
     "evidence_text",
     "review_needed",
     "review_reason_code",
+    "source_candidates",
+    "resolved_source",
+    "resolver_confidence",
+    "review_reason",
 )
 
 NORMALIZED_RECORD_FIELDS = (
@@ -102,6 +112,10 @@ NORMALIZED_RECORD_FIELDS = (
     "manual_override_applied",
     "manual_override_note",
     "automatic_record",
+    "source_candidates",
+    "resolved_source",
+    "resolver_confidence",
+    "review_reason",
 )
 
 MANUAL_OVERRIDE_DECISIONS = {"accept", "reject", "patch"}
@@ -114,15 +128,35 @@ def load_existing_records() -> list[dict]:
     return [_normalize_record_schema(_rebuild_record_from_title(item)) for item in payload if isinstance(item, dict)]
 
 
-def parse_posts_to_records(posts: list[CrawledPost]) -> list[SwimRecord]:
+def parse_posts_to_records(posts: list[CrawledPost], *, skip_ocr: bool = False) -> list[SwimRecord]:
     records: list[SwimRecord] = []
+    ocr_settings = load_gemini_ocr_settings()
+    use_ocr = (not skip_ocr) and ocr_settings.enabled
+    ocr_client = GeminiOcrClient(ocr_settings) if use_ocr else None
+    ocr_min_confidence = ocr_settings.min_confidence if use_ocr else ocr_min_confidence_from_env()
     for post in posts:
-        parsed = parse_swim_text(
+        title_parsed = parse_swim_text(
             post.title,
             post.content_text,
         )
+        body_parsed = parse_swim_body(post.content_text)
+        body_candidate = body_result_to_candidate(body_parsed)
+        if ocr_client is not None:
+            try:
+                ocr_candidate = ocr_client.extract_best_candidate(post.image_urls)
+            except Exception as exc:  # noqa: BLE001
+                ocr_candidate = skipped_candidate(OCR_API_ERROR, warnings=[f"{type(exc).__name__}: {exc}"])
+        else:
+            ocr_candidate = None
+        resolved = resolve_record_candidates(
+            title_parse=title_parsed,
+            body_candidate=body_candidate,
+            ocr_candidate=ocr_candidate,
+            ocr_enabled=use_ocr,
+            ocr_min_confidence=ocr_min_confidence,
+        )
         post_date = post.post_datetime[:10] if post.post_datetime else ""
-        metric_bucket = resolve_metric_bucket({"source": parsed.source, "include": parsed.include})
+        metric_bucket = resolve_metric_bucket({"source": resolved.source, "include": resolved.include})
         records.append(
             SwimRecord(
                 post_id=post.post_id,
@@ -131,18 +165,22 @@ def parse_posts_to_records(posts: list[CrawledPost]) -> list[SwimRecord]:
                 author=post.author,
                 post_datetime=post.post_datetime,
                 post_date=post_date,
-                distance_m=parsed.distance_m,
-                total_time_text=parsed.total_time_text,
-                total_seconds=parsed.total_seconds,
-                source=parsed.source,
-                include=parsed.include,
-                score=parsed.score,
-                exclude_reason_code=parsed.exclude_reason_code,
-                warning_codes=parsed.warning_codes,
-                evidence_text=parsed.evidence_text,
-                review_needed=parsed.review_needed,
-                review_reason_code=parsed.review_reason_code,
+                distance_m=resolved.distance_m,
+                total_time_text=resolved.total_time_text,
+                total_seconds=resolved.total_seconds,
+                source=resolved.source,
+                include=resolved.include,
+                score=resolved.score,
+                exclude_reason_code=resolved.exclude_reason_code,
+                warning_codes=resolved.warning_codes,
+                evidence_text=resolved.evidence_text,
+                review_needed=resolved.review_needed,
+                review_reason_code=resolved.review_reason_code,
                 metric_bucket=metric_bucket,
+                source_candidates=resolved.source_candidates,
+                resolved_source=resolved.resolved_source,
+                resolver_confidence=resolved.resolver_confidence,
+                review_reason=resolved.review_reason,
             )
         )
     return records
@@ -150,6 +188,9 @@ def parse_posts_to_records(posts: list[CrawledPost]) -> list[SwimRecord]:
 
 def _rebuild_record_from_title(item: dict) -> dict:
     restored = _restore_automatic_record(item)
+    if isinstance(restored.get("source_candidates"), dict):
+        return restored
+
     parsed = parse_swim_text(str(restored.get("title") or ""), "")
     rebuilt = dict(restored)
     rebuilt.pop("automatic_record", None)
@@ -401,6 +442,10 @@ def _normalize_record_schema(item: dict) -> dict:
     row["evidence_text"] = _clean_string(row.get("evidence_text"))
     row["review_needed"] = _resolve_review_needed(row)
     row["review_reason_code"] = _resolve_review_reason_code(row)
+    row["source_candidates"] = row.get("source_candidates") if isinstance(row.get("source_candidates"), dict) else None
+    row["resolved_source"] = _clean_string(row.get("resolved_source"))
+    row["resolver_confidence"] = _coerce_float_or_none(row.get("resolver_confidence"))
+    row["review_reason"] = _clean_string(row.get("review_reason"))
     row["manual_override_decision"] = _resolve_manual_override_decision(row)
     row["manual_override_applied"] = _resolve_manual_override_applied(row)
     row["manual_override_note"] = _clean_string(row.get("manual_override_note"))
@@ -413,7 +458,15 @@ def _normalize_record_schema(item: dict) -> dict:
     row["source"] = row["source"] or ("none" if not row["include"] else "title_format")
     row["score"] = row["score"] if row["score"] is not None else (100 if row["include"] else 0)
     row["metric_bucket"] = resolve_metric_bucket(row)
-    return {field: deepcopy(row.get(field)) for field in NORMALIZED_RECORD_FIELDS if field in row}
+    optional_fields = {"source_candidates", "resolved_source", "resolver_confidence", "review_reason"}
+    payload = {}
+    for field in NORMALIZED_RECORD_FIELDS:
+        if field not in row:
+            continue
+        if field in optional_fields and row.get(field) is None:
+            continue
+        payload[field] = deepcopy(row.get(field))
+    return payload
 
 
 def _resolve_total_seconds(row: dict) -> int | None:
@@ -528,6 +581,15 @@ def _coerce_int_or_none(value) -> int | None:  # noqa: ANN001
         return None
     try:
         return int(round(float(value)))
+    except Exception:  # noqa: BLE001
+        return None
+
+
+def _coerce_float_or_none(value) -> float | None:  # noqa: ANN001
+    if value in (None, ""):
+        return None
+    try:
+        return float(value)
     except Exception:  # noqa: BLE001
         return None
 

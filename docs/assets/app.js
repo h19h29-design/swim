@@ -1,4 +1,4 @@
-﻿import {
+import {
   buildMobileUrl,
   buildProfileUrl,
   compareAuthors,
@@ -9,8 +9,11 @@
   formatDurationLabel,
   formatInt,
   getAuthorSuggestions,
+  getDashboardSeasonView,
+  getDefaultSeasonViewKey,
   getMetricGroup,
-  getVisibleDateRangeLabel,
+  getSeasonViewOptions,
+  getViewDateRangeLabel,
   loadAuthorIndex,
   loadBadgeIndex,
   loadDashboardViews,
@@ -19,27 +22,18 @@
   mergeSiteBundles,
   metricLabel,
   renderBadgeIcon,
-  sliceRankFourToTwenty,
-  sliceTopThree,
   sourceLabel,
 } from "./dashboard-common.js?v=20260323a";
 
-const DEFAULT_NAV = [
-  { label_ko: "모바일 보기", href: buildMobileUrl() },
-  { label_ko: "배지 갤러리", href: "./badge-gallery.html" },
-  { label_ko: "파싱 현황", href: "./parse-status.html" },
-];
-
-const CATEGORY_ORDER = ["attendance", "distance", "time", "efficiency", "growth", "season", "gallery", "fun"];
-const RANK_SLOT_START = 4;
-const RANK_SLOT_END = 20;
+const metricCycle = ["total_distance_m", "swim_count"];
 
 const state = {
   dashboard: null,
   authorIndex: null,
   badgeIndex: null,
   reviewQueue: [],
-  activeMetric: "swim_count",
+  activeSeasonKey: null,
+  activeMetric: "total_distance_m",
   siteBundle: null,
 };
 
@@ -57,6 +51,7 @@ async function init() {
   state.badgeIndex = badgeIndex;
   state.reviewQueue = reviewQueue;
   state.siteBundle = mergeSiteBundles(publicSiteConfig, dashboard);
+  state.activeSeasonKey = resolveInitialSeasonKey();
   state.activeMetric = resolveInitialMetric();
 
   bindEvents();
@@ -64,359 +59,456 @@ async function init() {
 }
 
 function bindEvents() {
-  document.getElementById("rankingTabs")?.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-metric]");
+  document.getElementById("seasonTabs")?.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-season-view]");
     if (!button) return;
-    state.activeMetric = button.dataset.metric;
-    syncMetricQuery();
+    state.activeSeasonKey = button.dataset.seasonView;
+    syncQuery();
+    render();
+  });
+
+  document.getElementById("toggleMetricButton")?.addEventListener("click", () => {
+    const currentIndex = metricCycle.indexOf(state.activeMetric);
+    state.activeMetric = metricCycle[(currentIndex + 1) % metricCycle.length] || metricCycle[0];
+    syncQuery();
     renderRanking();
   });
 
-  document.getElementById("searchSuggestionRow")?.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-author]");
-    if (!button) return;
-    const input = document.getElementById("authorSearch");
-    if (input) input.value = button.dataset.author || "";
-    openProfile();
-  });
-
+  document.getElementById("refreshButton")?.addEventListener("click", () => window.location.reload());
+  document.getElementById("openProfileButton")?.addEventListener("click", openProfile);
   document.getElementById("authorSearch")?.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
       openProfile();
     }
   });
-
-  document.getElementById("openProfileButton")?.addEventListener("click", openProfile);
-}
-
-function resolveInitialMetric() {
-  const params = new URLSearchParams(window.location.search);
-  const requested = params.get("metric");
-  const metrics = availableMetrics();
-  if (requested && metrics.some((item) => item.metric_key === requested)) {
-    return requested;
-  }
-  return state.dashboard?.rankings?.default_metric || metrics[0]?.metric_key || "swim_count";
-}
-
-function syncMetricQuery() {
-  const url = new URL(window.location.href);
-  url.searchParams.set("desktop", "1");
-  url.searchParams.set("metric", state.activeMetric);
-  url.searchParams.set("v", "20260317a");
-  window.history.replaceState({}, "", url);
 }
 
 function render() {
-  renderHero();
+  renderChrome();
+  renderSeasonTabs();
   renderKpis();
+  renderHero();
+  renderCharts();
   renderRanking();
-  renderBadgeShelves();
-  renderSearch();
+  renderProfileSpotlight();
   renderRecentRecords();
-  renderOps();
+  renderReviewStatus();
+  renderBadges();
 }
 
-function renderHero() {
-  const site = state.siteBundle?.site_config || {};
-  const hero = site.hero || {};
-  const gallery = state.dashboard?.gallery || {};
-  const progress = gallery.progress || {};
-  const current = gallery.current_title || {};
-  const next = gallery.next_title_target || {};
-  const navItems = (state.siteBundle?.navigation_config?.items || [])
-    .filter((item) => item?.visible !== false && item?.nav_key !== "admin")
-    .map((item) => ({ label_ko: item.label_ko, href: item.href || resolveDefaultHref(item.nav_key) }))
-    .filter((item) => item.label_ko && item.href);
-
-  setText("heroEyebrow", hero.eyebrow_ko || "SWIM STICKER BOOK");
-  setText("heroHeadline", hero.headline_ko || "붙이고 모으는 수영 시즌 보드");
-  setText("heroSubtitle", hero.subheadline_ko || "운동 정보, 랭킹, 대표 칭호와 다음 해금을 한 화면에서 보여줍니다.");
-
-  setText("galleryTitleName", current.name_ko || "시즌 준비중");
-  setText("galleryTitleDescription", current.description_ko || "아직 첫 갤 칭호가 열리기 전입니다.");
-  setText("galleryTitleTier", current.short_label_ko || "갤 칭호");
-
-  setText("nextUnlockName", next.name_ko || "다음 칭호 준비중");
-  setText("nextUnlockValue", next.remaining_value_text_ko || "목표 계산 중");
-  setText("nextUnlockMeta", `${progress.current_value_text_ko || "0m"} / ${progress.target_value_text_ko || next.target_value_text_ko || "-"}`);
-  setText("modeChip", "제목 양식 기준");
-  setText("generatedAtLabel", state.dashboard?.generated_at ? `집계 갱신 ${state.dashboard.generated_at}` : "집계 생성 시각 정보가 없습니다.");
-  setText("summaryRangeLabel", getVisibleDateRangeLabel(state.dashboard?.visible_date_range));
-  setText(
-    "nextUnlockProgressMeta",
-    `${progress.remaining_value_text_ko || next.remaining_value_text_ko || "남은 목표 계산 중"} · ${Math.round(clampRatio(progress.progress_ratio || next.progress_ratio || 0) * 100)}%`,
-  );
-
-  const bar = document.getElementById("nextUnlockBar");
-  if (bar) {
-    bar.style.width = `${Math.round(clampRatio(progress.progress_ratio || next.progress_ratio || 0) * 100)}%`;
+function renderChrome() {
+  const activeView = getActiveDashboardView();
+  const authors = getAuthorSuggestions(state.authorIndex).sort((a, b) => compareAuthors(a.author, b.author));
+  setHtml("authorSuggestions", authors.map((row) => `<option value="${escapeHtml(row.author)}"></option>`).join(""));
+  setText("summaryRangeLabel", getViewDateRangeLabel(activeView));
+  setText("generatedAtLabel", activeView?.generated_at ? `최종 업데이트: ${activeView.generated_at}` : "업데이트 정보 없음");
+  const firstAuthor = activeView?.authors?.[0]?.author || authors[0]?.author || "";
+  const pill = document.getElementById("profilePill");
+  if (pill && firstAuthor) {
+    pill.href = buildProfileUrl(firstAuthor);
+    pill.querySelector("span:last-child").textContent = firstAuthor;
   }
+}
 
-  document.getElementById("galleryTitleMeta").innerHTML = [
-    current.icon_key ? chip(renderBadgeIcon(state.siteBundle, current, current.name_ko || "갤 칭호", "inline-badge-icon") + escapeHtml(current.short_label_ko || "현재 칭호"), true) : "",
-    chip(`해금된 갤 배지 ${formatInt(progress.unlocked_badge_count || 0)}개`),
-  ].join("");
-
-  document.getElementById("heroChipRow").innerHTML = [
-    chip(site.site_title_ko || "수영 스티커북"),
-    chip(`집계 기간 ${getVisibleDateRangeLabel(state.dashboard?.visible_date_range)}`),
-    chip(`다음 해금 ${next.short_label_ko || next.target_value_text_ko || "준비중"}`),
-    chip(`전체 배지 ${formatInt(state.badgeIndex?.badge_count)}개`),
-  ].join("");
-
-  document.getElementById("quickNavRow").innerHTML = uniqueNav([...navItems, ...DEFAULT_NAV])
-    .map((item) => `<a class="nav-chip" href="${escapeHtml(item.href)}">${escapeHtml(item.label_ko)}</a>`)
-    .join("");
+function renderSeasonTabs() {
+  const options = getSeasonViewOptions(state.dashboard);
+  setHtml("seasonTabs", options.map((item) => `
+    <button class="season-tab${item.view_key === state.activeSeasonKey ? " is-active" : ""}" type="button" data-season-view="${escapeHtml(item.view_key)}">
+      <span>${escapeHtml(item.short_label_ko || item.label_ko)}</span>
+      <strong>${escapeHtml(item.label_ko)}</strong>
+      <small>${escapeHtml(item.is_current ? "진행 중" : getViewDateRangeLabel(item))}</small>
+    </button>
+  `).join(""));
 }
 
 function renderKpis() {
-  const summary = state.dashboard?.summary || {};
-  const labels = state.siteBundle?.site_config?.kpi_labels || {};
+  const activeView = getActiveDashboardView();
+  const summary = activeView?.summary || {};
+  const growth = summary.growth?.metrics || {};
+  const reviewCount = Number(activeView?.ops?.review_queue_count ?? state.reviewQueue.length ?? 0);
   const cards = [
-    { title: labels.swim_count || "갤 전체 운동횟수", value: `${formatInt(summary.swim_count)}회`, note: "제목 양식으로 자동 반영된 기록 수입니다." },
-    { title: labels.total_distance_m || "갤 전체 총거리", value: formatDistance(summary.total_distance_m), note: "누적 거리 합계입니다." },
-    { title: labels.total_seconds || "갤 전체 총시간", value: formatDurationLabel(summary.total_seconds), note: "누적 운동 시간입니다." },
-    { title: labels.active_authors || "참여 인원", value: `${formatInt(summary.active_authors)}명`, note: summary.has_zero_visible_included_rows ? "현재 자동 반영된 닉네임이 아직 적습니다." : "현재 집계 기간 안에서 기록이 잡힌 닉네임 수입니다." },
+    {
+      icon: "wave",
+      tone: "blue",
+      title: "이번 시즌 총거리",
+      value: formatDistance(summary.total_distance_m),
+      meta: growth.distance_m ? growthText(growth.distance_m, "distance") : "지난 시즌 대비 준비 중",
+    },
+    {
+      icon: "clipboard",
+      tone: "teal",
+      title: "공식 반영 기록",
+      value: `${formatInt(summary.swim_count)}건`,
+      meta: growth.swim_count ? growthText(growth.swim_count, "count") : "제목·본문·OCR 리졸버 기준",
+    },
+    {
+      icon: "users",
+      tone: "violet",
+      title: "활성 작성자",
+      value: `${formatInt(summary.active_authors)}명`,
+      meta: "집계 기간 안의 고정닉 기준",
+    },
+    {
+      icon: "clock",
+      tone: "orange",
+      title: "검토 대기",
+      value: `${formatInt(reviewCount)}건`,
+      meta: "충돌·저신뢰·누락 후보 포함",
+    },
   ];
 
-  document.getElementById("kpiGrid").innerHTML = cards.map((card) => `
-    <article class="kpi-card">
-      <h3>${escapeHtml(card.title)}</h3>
-      <p class="kpi-value">${escapeHtml(card.value)}</p>
-      <span class="kpi-note">${escapeHtml(card.note)}</span>
+  setHtml("kpiGrid", cards.map((card) => `
+    <article class="kpi-card ${escapeHtml(card.tone)}">
+      <span class="kpi-icon">${iconSvg(card.icon)}</span>
+      <div>
+        <h2>${escapeHtml(card.title)}</h2>
+        <strong>${escapeHtml(card.value)}</strong>
+        <p>${escapeHtml(card.meta)}</p>
+      </div>
     </article>
-  `).join("");
+  `).join(""));
+}
+
+function renderHero() {
+  const activeView = getActiveDashboardView();
+  const gallery = activeView?.gallery || {};
+  const current = gallery.current_title || {};
+  const next = gallery.next_title_target || {};
+  const progress = gallery.progress || {};
+  const ratio = clampRatio(progress.progress_ratio || next.progress_ratio || 0);
+  const currentValue = progress.current_value_text_ko || gallery.metric_value_text_ko || formatDistance(activeView?.summary?.total_distance_m);
+  const targetValue = progress.target_value_text_ko || next.target_value_text_ko || "-";
+
+  setHtml("seasonHero", `
+    <div class="hero-watermark" aria-hidden="true">${iconSvg("swimmer")}</div>
+    <div class="hero-title-block">
+      <span class="section-label">${escapeHtml(activeView?.theme_label_ko || "Deep Lane Club")}</span>
+      <h1>${escapeHtml(current.name_ko || "물결 준비중")}</h1>
+      <p>${escapeHtml(current.description_ko || "우리 갤러리의 여정은 계속됩니다.")}</p>
+    </div>
+    <div class="hero-progress-block">
+      <div class="hero-progress-head">
+        <span>다음 칭호까지</span>
+        <strong>${escapeHtml(progress.remaining_value_text_ko || next.remaining_value_text_ko || "계산 중")}</strong>
+      </div>
+      <div class="progress-track"><span style="width:${Math.round(ratio * 100)}%"></span></div>
+      <div class="hero-progress-meta">
+        <span>${escapeHtml(currentValue)} / ${escapeHtml(targetValue)}</span>
+        <span>${Math.round(ratio * 100)}%</span>
+      </div>
+    </div>
+    <div class="hero-next-badge">
+      ${renderBadgeIcon(state.siteBundle, next, next.name_ko || "다음 칭호", "hero-badge-icon")}
+      <span>다음 칭호</span>
+      <strong>${escapeHtml(next.short_label_ko || next.name_ko || "대기중")}</strong>
+    </div>
+  `);
+}
+
+function renderCharts() {
+  const activeView = getActiveDashboardView();
+  renderWeeklyChart(activeView);
+  renderSourceDonut(activeView);
+  renderMonthlyChart(activeView);
+  renderPaceChart(activeView);
+}
+
+function renderWeeklyChart(activeView) {
+  const daily = getDailyRows(activeView).slice(-8);
+  if (!daily.length) {
+    setHtml("weeklyChart", emptyState("주간 거리 데이터가 아직 없습니다."));
+    return;
+  }
+  setHtml("weeklyChart", lineChart(daily, "total_distance_m", (row) => shortDate(row.date), (value) => `${(Number(value) / 1000).toFixed(1)}km`));
+}
+
+function renderSourceDonut(activeView) {
+  const counts = activeView?.summary?.included_source_counts || activeView?.summary?.source_counts || {};
+  const entries = Object.entries(counts).filter(([, value]) => Number(value) > 0);
+  if (!entries.length) {
+    setHtml("strokeChart", emptyState("영법 또는 출처 비중 데이터가 아직 없습니다."));
+    return;
+  }
+  const total = entries.reduce((sum, [, value]) => sum + Number(value || 0), 0);
+  let cursor = 0;
+  const colors = ["#1d7cf2", "#1fc4c6", "#ff9f2e", "#7258f2", "#0f2f68"];
+  const stops = entries.map(([key, value], index) => {
+    const start = cursor;
+    cursor += (Number(value) / total) * 100;
+    return `${colors[index % colors.length]} ${start}% ${cursor}%`;
+  }).join(", ");
+  setHtml("strokeChart", `
+    <div class="donut" style="background:conic-gradient(${stops})"><strong>${formatInt(total)}건</strong></div>
+    <div class="donut-legend">
+      ${entries.map(([key, value], index) => `
+        <span><i style="background:${colors[index % colors.length]}"></i>${escapeHtml(sourceLabel(key))} ${formatInt(value)}건</span>
+      `).join("")}
+    </div>
+  `);
+}
+
+function renderMonthlyChart(activeView) {
+  const rows = Array.isArray(activeView?.monthly) ? activeView.monthly.slice(-6) : [];
+  if (!rows.length) {
+    setHtml("monthlyChart", emptyState("월별 누적 데이터가 아직 없습니다."));
+    return;
+  }
+  const max = Math.max(...rows.map((row) => Number(row.total_distance_m || 0)), 1);
+  setHtml("monthlyChart", rows.map((row) => {
+    const value = Number(row.total_distance_m || 0);
+    return `
+      <div class="bar-item">
+        <div class="bar-track"><span style="height:${Math.max(6, (value / max) * 100)}%"></span></div>
+        <strong>${escapeHtml(formatDistance(value))}</strong>
+        <small>${escapeHtml(monthLabel(row.month))}</small>
+      </div>
+    `;
+  }).join(""));
+}
+
+function renderPaceChart(activeView) {
+  const recent = Array.isArray(activeView?.recent_records) ? activeView.recent_records.slice(0, 8).reverse() : [];
+  const rows = recent
+    .filter((row) => Number(row.distance_m) > 0 && Number(row.total_seconds) > 0)
+    .map((row) => ({ ...row, pace_seconds: (Number(row.total_seconds) / Number(row.distance_m)) * 100 }));
+  if (!rows.length) {
+    setText("paceAverageChip", "시즌 평균 없음");
+    setHtml("paceChart", emptyState("평균 페이스를 계산할 기록이 아직 없습니다."));
+    return;
+  }
+  const average = rows.reduce((sum, row) => sum + row.pace_seconds, 0) / rows.length;
+  setText("paceAverageChip", `시즌 평균 ${formatPace(average)}`);
+  setHtml("paceChart", lineChart(rows, "pace_seconds", (row) => shortDate(row.post_date), formatPace, { invert: true }));
+}
+
+function getDailyRows(activeView) {
+  if (Array.isArray(activeView?.time_series?.daily) && activeView.time_series.daily.length) {
+    return activeView.time_series.daily;
+  }
+  const bucket = new Map();
+  (activeView?.recent_records || []).forEach((row) => {
+    const date = row.post_date || "";
+    if (!date) return;
+    const current = bucket.get(date) || { date, total_distance_m: 0, total_seconds: 0, swim_count: 0 };
+    current.total_distance_m += Number(row.distance_m || 0);
+    current.total_seconds += Number(row.total_seconds || 0);
+    current.swim_count += 1;
+    bucket.set(date, current);
+  });
+  return [...bucket.values()].sort((left, right) => String(left.date).localeCompare(String(right.date)));
 }
 
 function renderRanking() {
-  renderRankingTabs();
-  const group = getMetricGroup(state.dashboard, state.activeMetric);
-  const topRows = sliceTopThree(group).slice(0, 3);
-  const rankRows = sliceRankFourToTwenty(group);
+  const activeView = getActiveDashboardView();
+  const group = getMetricGroup(activeView, state.activeMetric);
+  const rows = group.rows?.length ? group.rows : [...(group.top3 || []), ...(group.ranks_4_to_20 || [])];
+  const topRows = rows.slice(0, 10);
+  setText("rankingMetricLabel", group.label_ko || metricLabel(state.activeMetric));
+  setText("toggleMetricButton", state.activeMetric === "total_distance_m" ? "참여횟수 랭킹 보기" : "거리 랭킹 보기");
 
-  setText("rankingHeading", `${group.label_ko || metricLabel(state.activeMetric)} 랭킹`);
-  setText("rankingSummary", group.description_ko || "이번 시즌 기록 기준으로 순위를 보여줍니다.");
-  setText("rankListTitle", "4위부터 20위까지");
-  setText("rankListCount", `${formatInt(rankRows.length)}명`);
-
-  document.getElementById("topThree").innerHTML = [1, 2, 3]
-    .map((rank, index) => buildTopCard(topRows[index] || null, rank))
-    .join("");
-
-  document.getElementById("rankList").innerHTML = Array.from({ length: RANK_SLOT_END - RANK_SLOT_START + 1 }, (_, offset) => {
-    const rank = RANK_SLOT_START + offset;
-    const row = rankRows.find((item) => Number(item.rank) === rank) || null;
-    return buildRankRow(row, rank);
-  }).join("");
+  setHtml("rankingList", topRows.length ? topRows.map((row, index) => `
+    <a class="rank-line" href="${escapeHtml(row.profile_url || buildProfileUrl(row.author))}">
+      <span class="rank-medal">${rankLabel(row.rank || index + 1)}</span>
+      <strong>${escapeHtml(row.author || "작성자 없음")}</strong>
+      <span>${escapeHtml(row.metric_value_text_ko || "-")}</span>
+      <small>${escapeHtml(row.secondary_text_ko || row.latest_post_date || "")}</small>
+    </a>
+  `).join("") : emptyState("선택한 시즌 랭킹 데이터가 아직 없습니다."));
 }
 
-function renderRankingTabs() {
-  const sections = Array.isArray(state.siteBundle?.home_sections?.ranking_sections)
-    ? state.siteBundle.home_sections.ranking_sections
-    : availableMetrics();
-  document.getElementById("rankingTabs").innerHTML = sections.map((item) => `
-    <button class="ranking-tab${item.metric_key === state.activeMetric ? " is-active" : ""}" type="button" data-metric="${escapeHtml(item.metric_key)}">
-      ${escapeHtml(item.label_ko || metricLabel(item.metric_key))}
-    </button>
-  `).join("");
-}
-
-function renderBadgeShelves() {
-  const recentUnlocks = Array.isArray(state.dashboard?.recent_unlocks) ? state.dashboard.recent_unlocks.slice(0, 4) : [];
-  document.getElementById("recentUnlocks").innerHTML = createShelfSlots(recentUnlocks, 4).map((item) => {
-    if (!item) {
-      return `
-        <article class="shelf-item is-placeholder">
-          <h3>다음 배지 대기중</h3>
-          <p class="record-note">새 기록이 들어오면 최근 해금 칸이 채워집니다.</p>
-        </article>
-      `;
-    }
-    return `
-      <article class="shelf-item">
-        <div class="metric-chip-row">
-          ${renderBadgeIcon(state.siteBundle, item, item.name_ko || item.badge_id, "inline-badge-icon")}
-          <span class="metric-chip">${escapeHtml(categoryLabelFromBundle(state.siteBundle, item.category))}</span>
-        </div>
-        <h3>${escapeHtml(item.name_ko || item.short_label_ko || "배지")}</h3>
-        <p class="record-note">${escapeHtml(item.author ? `${item.author} 닉네임이 최근에 해금했습니다.` : item.description_ko || "최근 해금 배지입니다.")}</p>
-      </article>
-    `;
-  }).join("");
-
-  const counts = state.badgeIndex?.badge_count_by_category || {};
-  const categories = CATEGORY_ORDER.filter((key) => counts[key]);
-  document.getElementById("badgeSummary").innerHTML = (categories.length ? categories : CATEGORY_ORDER.slice(0, 4)).map((key) => `
-    <article class="shelf-item${counts[key] ? "" : " is-placeholder"}">
-      <h3>${escapeHtml(categoryLabelFromBundle(state.siteBundle, key))}</h3>
-      <p class="kpi-value">${escapeHtml(`${formatInt(counts[key] || 0)}개`)}</p>
-      <p class="record-note">${escapeHtml(buildCategoryNote(key))}</p>
-    </article>
-  `).join("");
-}
-
-function renderSearch() {
-  const authors = getAuthorSuggestions(state.authorIndex).sort((a, b) => compareAuthors(a.author, b.author));
-  document.getElementById("authorSuggestions").innerHTML = authors.map((row) => `<option value="${escapeHtml(row.author)}"></option>`).join("");
-  document.getElementById("searchSuggestionRow").innerHTML = authors.slice(0, 8).map((row) => `
-    <button class="suggestion-chip" type="button" data-author="${escapeHtml(row.author)}">${escapeHtml(row.author)}</button>
-  `).join("");
-  setText(
-    "searchHint",
-    authors.length ? "닉네임을 입력하면 개인 프로필로 이동합니다." : "아직 집계된 닉네임이 적어서 추천 목록이 비어 있습니다.",
-  );
+function renderProfileSpotlight() {
+  const activeView = getActiveDashboardView();
+  const row = activeView?.authors?.[0] || null;
+  if (!row) {
+    setHtml("profileSpotlight", `
+      <div class="card-title-row"><h3>오늘의 프로필</h3></div>
+      ${emptyState("아직 표시할 프로필이 없습니다.")}
+    `);
+    return;
+  }
+  setHtml("profileSpotlight", `
+    <div class="profile-cover"></div>
+    <div class="profile-row">
+      ${renderBadgeIcon(state.siteBundle, row.primary_title, row.author || "대표 프로필", "profile-avatar")}
+      <div>
+        <span class="section-label">오늘의 프로필</span>
+        <h3>${escapeHtml(row.author || "작성자")}</h3>
+        <p>${escapeHtml(row.primary_title?.name_ko || row.primary_title?.short_label_ko || "대표 칭호 준비중")}</p>
+      </div>
+    </div>
+    <div class="profile-stats">
+      <span><strong>${escapeHtml(row.metric_value_text_ko || formatDistance(row.total_distance_m))}</strong><small>랭킹 지표</small></span>
+      <span><strong>${formatInt(row.swim_count)}건</strong><small>기록 수</small></span>
+      <span><strong>${formatDurationLabel(row.total_seconds)}</strong><small>총시간</small></span>
+    </div>
+    <a class="wide-button" href="${escapeHtml(row.profile_url || buildProfileUrl(row.author))}">프로필 보기</a>
+  `);
 }
 
 function renderRecentRecords() {
-  const rows = Array.isArray(state.dashboard?.recent_records) ? state.dashboard.recent_records.slice(0, 8) : [];
-  document.getElementById("recentRecords").innerHTML = rows.length ? rows.map((row) => `
-    <article class="record-row">
-      <div class="record-meta">${escapeHtml(row.post_date || "-")}</div>
-      <div class="record-main">
-        <div class="record-main-line">
-          <h3>${escapeHtml(row.author || "작성자 없음")}</h3>
-          <span class="metric-chip">${escapeHtml(sourceLabel(row.source))}</span>
-        </div>
-        <p>${escapeHtml(`${formatDistance(row.distance_m)} · ${row.total_time_text || formatDurationLabel(row.total_seconds)}`)}</p>
-      </div>
-      <a class="text-link" href="${escapeHtml(row.url || "#")}" target="_blank" rel="noreferrer">원문 보기</a>
-    </article>
-  `).join("") : `
-    <article class="empty-card">
-      <strong>최근 기록이 아직 없습니다.</strong>
-      <p>제목 양식 글이 들어오면 최근 기록 목록이 채워집니다.</p>
-    </article>
-  `;
+  const activeView = getActiveDashboardView();
+  const rows = Array.isArray(activeView?.recent_records) ? activeView.recent_records.slice(0, 6) : [];
+  setHtml("recentRecords", rows.length ? rows.map((row) => `
+    <a class="record-line" href="${escapeHtml(row.url || "#")}" target="_blank" rel="noreferrer">
+      <time>${escapeHtml(shortDate(row.post_date))}</time>
+      <strong>${escapeHtml(formatDistance(row.distance_m))}</strong>
+      <span>${escapeHtml(row.total_time_text || formatDurationLabel(row.total_seconds))}</span>
+      <small>${escapeHtml(row.author || "작성자")} · ${escapeHtml(sourceLabel(row.source))}</small>
+    </a>
+  `).join("") : emptyState("최근 반영 기록이 아직 없습니다."));
 }
 
-function renderOps() {
-  const count = Array.isArray(state.reviewQueue) ? state.reviewQueue.length : 0;
-  setText(
-    "reviewQueueSummary",
-    count
-      ? `검토 대기 글이 ${formatInt(count)}건 있습니다. 파싱 현황 페이지에서 실패 사유와 수동 보정 여부를 확인해 주세요.`
-      : "현재 검토 대기 글은 없습니다. 새로 보류되는 글이 생기면 여기서 안내합니다.",
-  );
+function renderReviewStatus() {
+  const activeView = getActiveDashboardView();
+  const ops = activeView?.ops || {};
+  const reviewCount = Number(ops.review_queue_count ?? state.reviewQueue.length ?? 0);
+  const reasonCounts = ops.review_reason_counts || {};
+  const ocrIssues = Object.entries(reasonCounts).filter(([key]) => key.startsWith("OCR_"));
+  const statusCards = [
+    ["OCR 정상", formatInt(Math.max(0, Number(activeView?.summary?.swim_count || 0))), "자동 반영 기록"],
+    ["충돌", formatInt(reasonCounts.CANDIDATE_CONFLICT || 0), "후보 불일치"],
+    ["저신뢰", formatInt(reasonCounts.OCR_LOW_CONFIDENCE || 0), "OCR 재검토"],
+    ["검토 대기", formatInt(reviewCount), "전체 큐"],
+  ];
+
+  setHtml("reviewStatus", `
+    <div class="status-grid">
+      ${statusCards.map(([label, value, note]) => `
+        <article>
+          <span>${escapeHtml(label)}</span>
+          <strong>${escapeHtml(value)}</strong>
+          <small>${escapeHtml(note)}</small>
+        </article>
+      `).join("")}
+    </div>
+    <div class="review-table">
+      ${(state.reviewQueue || []).slice(0, 5).map((row) => `
+        <a href="${escapeHtml(row.url || "#")}" target="_blank" rel="noreferrer">
+          <span>${escapeHtml(row.post_date || "-")}</span>
+          <strong>${escapeHtml(row.author || "작성자")}</strong>
+          <em>${escapeHtml(row.review_reason_code || row.exclude_reason_code || "검토 필요")}</em>
+        </a>
+      `).join("") || `<p class="empty-note">검토 대기 글이 없습니다.</p>`}
+    </div>
+    ${ocrIssues.length ? `<p class="empty-note">OCR 이슈: ${escapeHtml(ocrIssues.map(([key, value]) => `${key} ${value}`).join(" · "))}</p>` : ""}
+  `);
+}
+
+function renderBadges() {
+  const activeView = getActiveDashboardView();
+  const unlocks = Array.isArray(activeView?.recent_unlocks) ? activeView.recent_unlocks.slice(0, 6) : [];
+  setHtml("recentUnlocks", unlocks.length ? unlocks.map((item) => `
+    <article class="badge-item">
+      ${renderBadgeIcon(state.siteBundle, item, item.name_ko || item.badge_id, "badge-thumb")}
+      <strong>${escapeHtml(item.short_label_ko || item.name_ko || "배지")}</strong>
+      <span>${escapeHtml(categoryLabelFromBundle(state.siteBundle, item.category))}</span>
+    </article>
+  `).join("") : emptyState("최근 해금 배지가 아직 없습니다."));
 }
 
 function openProfile() {
-  const input = document.getElementById("authorSearch");
-  const query = String(input?.value || "").trim();
+  const query = String(document.getElementById("authorSearch")?.value || "").trim();
   if (!query) return;
   const author = findAuthorMatch(state.authorIndex, query);
   window.location.assign(buildProfileUrl(author));
 }
 
-function buildTopCard(row, rank) {
-  if (!row) {
-    return `
-      <article class="top-card top-card--${rank} is-placeholder">
-        <div class="metric-chip-row">
-          <span class="metric-chip">${rank}위</span>
-          <span class="metric-chip">대기중</span>
-        </div>
-        <h3>다음 닉네임 대기</h3>
-        <p class="kpi-value">기록 없음</p>
-        <p class="rank-copy">새 기록이 들어오면 이 자리가 채워집니다.</p>
-      </article>
-    `;
-  }
-
-  const badgePreview = Array.isArray(row.badge_preview) ? row.badge_preview.slice(0, 2) : [];
-  return `
-    <article class="top-card top-card--${rank}">
-      <div class="metric-chip-row">
-        <span class="metric-chip">${rank}위</span>
-        <span class="metric-chip">${escapeHtml(metricLabel(state.activeMetric))}</span>
-      </div>
-      <div class="top-card-title">
-        ${renderBadgeIcon(state.siteBundle, row.primary_title, row.author || "닉네임", "top-card-icon")}
-        <div>
-          <h3>${escapeHtml(row.author || "작성자 없음")}</h3>
-          <p class="record-note">${escapeHtml(row.primary_title?.short_label_ko || row.primary_title?.name_ko || "대표 칭호 준비중")}</p>
-        </div>
-      </div>
-      <p class="kpi-value">${escapeHtml(row.metric_value_text_ko || "-")}</p>
-      <p class="rank-copy">${escapeHtml(row.secondary_text_ko || "이번 시즌 기준 기록입니다.")}</p>
-      <div class="metric-chip-row">
-        ${badgePreview.map((item) => `<span class="metric-chip">${escapeHtml(item)}</span>`).join("")}
-      </div>
-    </article>
-  `;
+function resolveInitialSeasonKey() {
+  const params = new URLSearchParams(window.location.search);
+  const requested = params.get("view");
+  const options = getSeasonViewOptions(state.dashboard);
+  if (requested && options.some((item) => item.view_key === requested)) return requested;
+  const fallback = getDefaultSeasonViewKey(state.dashboard);
+  const seasonViews = state.dashboard?.season_views?.views || {};
+  const nonEmpty = options.find((item) => Number(seasonViews[item.view_key]?.summary?.swim_count || 0) > 0);
+  return nonEmpty?.view_key || fallback;
 }
 
-function buildRankRow(row, rank) {
-  if (!row) {
-    return `
-      <article class="rank-row is-placeholder">
-        <strong>${rank}위</strong>
-        <span>비어 있음</span>
-        <span class="rank-copy">아직 기록 없음</span>
-      </article>
-    `;
-  }
-
-  return `
-    <article class="rank-row">
-      <strong>${rank}위</strong>
-      <div class="rank-row-main">
-        <div class="rank-row-author">
-          ${renderBadgeIcon(state.siteBundle, row.primary_title, row.author || "닉네임", "inline-badge-icon")}
-          <span>${escapeHtml(row.author || "작성자 없음")}</span>
-        </div>
-        <span class="rank-copy">${escapeHtml(row.primary_title?.short_label_ko || row.secondary_text_ko || "대표 칭호 준비중")}</span>
-      </div>
-      <span class="metric-chip">${escapeHtml(row.metric_value_text_ko || "-")}</span>
-    </article>
-  `;
+function resolveInitialMetric() {
+  const params = new URLSearchParams(window.location.search);
+  const requested = params.get("metric");
+  return metricCycle.includes(requested) ? requested : metricCycle[0];
 }
 
-function availableMetrics() {
-  return Object.keys(state.dashboard?.rankings?.metrics || {}).map((metric_key) => ({ metric_key, label_ko: metricLabel(metric_key) }));
+function syncQuery() {
+  const url = new URL(window.location.href);
+  url.searchParams.set("desktop", "1");
+  url.searchParams.set("view", state.activeSeasonKey || getDefaultSeasonViewKey(state.dashboard));
+  url.searchParams.set("metric", state.activeMetric);
+  window.history.replaceState({}, "", url);
 }
 
-function uniqueNav(items) {
-  const seen = new Set();
-  return items.filter((item) => {
-    const key = `${item.label_ko}|${item.href}`;
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
+function getActiveDashboardView() {
+  return getDashboardSeasonView(state.dashboard, state.activeSeasonKey);
+}
+
+function lineChart(rows, valueKey, labelFn, valueFn, options = {}) {
+  const values = rows.map((row) => Number(row[valueKey] || 0));
+  const max = Math.max(...values, 1);
+  const min = options.invert ? Math.min(...values, max) : 0;
+  const span = Math.max(max - min, 1);
+  const points = rows.map((row, index) => {
+    const x = rows.length === 1 ? 50 : (index / (rows.length - 1)) * 100;
+    const raw = Number(row[valueKey] || 0);
+    const normalized = options.invert ? (max - raw) / span : (raw - min) / span;
+    const y = 86 - normalized * 66;
+    return { x, y, row, raw };
   });
+  const polyline = points.map((point) => `${point.x},${point.y}`).join(" ");
+  return `
+    <svg class="line-chart" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 86 H100 M0 64 H100 M0 42 H100 M0 20 H100" class="grid-lines"/>
+      <polyline points="${polyline}" class="line-path"/>
+      ${points.map((point) => `<circle cx="${point.x}" cy="${point.y}" r="1.8" class="line-dot"/>`).join("")}
+    </svg>
+    <div class="chart-labels">
+      ${points.map((point) => `<span><small>${escapeHtml(labelFn(point.row))}</small><strong>${escapeHtml(valueFn(point.raw))}</strong></span>`).join("")}
+    </div>
+  `;
 }
 
-function resolveDefaultHref(navKey) {
-  return {
-    home: "./index.html?desktop=1",
-    profiles: "./profile.html",
-    parse_status: "./parse-status.html",
-    badges: "./badge-gallery.html",
-  }[navKey] || "./index.html?desktop=1";
+function emptyState(message) {
+  return `<div class="empty-state">${escapeHtml(message)}</div>`;
 }
 
-function createShelfSlots(rows, minimumCount) {
-  const items = Array.isArray(rows) ? [...rows] : [];
-  while (items.length < minimumCount) items.push(null);
-  return items;
+function growthText(metric, type) {
+  const delta = Number(metric.delta_value || 0);
+  if (type === "distance") return delta >= 0 ? `${formatDistance(delta)} 증가` : `${formatDistance(Math.abs(delta))} 감소`;
+  return delta >= 0 ? `+${formatInt(delta)}건` : `-${formatInt(Math.abs(delta))}건`;
 }
 
-function buildCategoryNote(category) {
-  return {
-    attendance: "참여횟수 누적 배지",
-    distance: "누적 거리 배지",
-    time: "누적 시간 배지",
-    efficiency: "시간당 거리 배지",
-    growth: "최근 28일 성장 배지",
-    season: "월별 시즌 배지",
-    gallery: "갤 전체 누적 칭호",
-    fun: "보너스와 이벤트 배지",
-  }[category] || "배지 카테고리";
+function rankLabel(rank) {
+  const numeric = Number(rank);
+  return `${numeric || "-"}위`;
 }
 
-function chip(content, allowHtml = false) {
-  return `<span class="hero-chip">${allowHtml ? content : escapeHtml(content)}</span>`;
+function formatPace(secondsPer100m) {
+  const seconds = Math.max(0, Math.round(Number(secondsPer100m || 0)));
+  const minutes = Math.floor(seconds / 60);
+  const remain = seconds % 60;
+  return `${minutes}:${String(remain).padStart(2, "0")}/100m`;
+}
+
+function shortDate(raw) {
+  const text = String(raw || "");
+  return text.length >= 10 ? text.slice(5, 10).replace("-", "/") : text || "-";
+}
+
+function monthLabel(raw) {
+  const text = String(raw || "");
+  return text.length >= 7 ? `${Number(text.slice(5, 7))}월` : text || "-";
+}
+
+function iconSvg(name) {
+  const icons = {
+    wave: '<path d="M3 15c4-4 7-4 11 0s7 4 11 0" /><path d="M3 20c4-4 7-4 11 0s7 4 11 0" /><circle cx="12" cy="7" r="3" /><path d="M8 12c4-5 8-7 14-5" />',
+    clipboard: '<rect x="6" y="5" width="12" height="16" rx="2" /><path d="M9 5a3 3 0 0 1 6 0" /><path d="M9 12h6M9 16h4" />',
+    users: '<circle cx="9" cy="8" r="3" /><circle cx="17" cy="9" r="2.5" /><path d="M3 20c1-4 3-6 6-6s5 2 6 6" /><path d="M14 20c.5-3 2-5 5-5 2 0 3.5 1.4 4 5" />',
+    clock: '<circle cx="12" cy="12" r="9" /><path d="M12 7v6l4 2" />',
+    swimmer: '<path d="M3 15c4-3 7-3 11 0s7 3 11 0" /><path d="M3 20c4-3 7-3 11 0s7 3 11 0" /><circle cx="11" cy="6" r="3" /><path d="M6 12c4-5 9-7 15-5" />',
+  };
+  return `<svg viewBox="0 0 24 24" aria-hidden="true">${icons[name] || icons.wave}</svg>`;
 }
 
 function clampRatio(value) {
@@ -430,11 +522,16 @@ function setText(id, value) {
   if (node) node.textContent = value || "";
 }
 
+function setHtml(id, html) {
+  const node = document.getElementById(id);
+  if (node) node.innerHTML = html || "";
+}
+
 if (typeof document !== "undefined") {
   document.addEventListener("DOMContentLoaded", () => {
     init().catch((error) => {
       console.error(error);
-      setText("reviewQueueSummary", "페이지 렌더링 중 오류가 발생했습니다. 새로고침 후 다시 확인해 주세요.");
+      setHtml("reviewStatus", emptyState("페이지 렌더링 중 오류가 발생했습니다."));
     });
   });
 }

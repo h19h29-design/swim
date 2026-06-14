@@ -89,14 +89,21 @@ def test_dashboard_profile_and_author_index_schema_stable():
 
     assert dashboard_views["default_mode"] == MODE_CORE_ONLY
     assert dashboard_views["supported_modes"] == [MODE_CORE_ONLY]
+    assert dashboard_views["default_view"] == "season2"
+    assert dashboard_views["supported_views"] == ["season1", "season2", "cumulative"]
     assert dashboard_views["dashboard_date_floor"] == "2026-03-01"
     assert dashboard_views["core_only_has_zero_visible_included_rows"] is False
     assert dashboard_views["summary"]["record_count"] == 3
+    assert dashboard_views["season_views"]["views"]["season1"]["summary"]["record_count"] == 3
+    assert dashboard_views["season_views"]["views"]["season2"]["summary"]["record_count"] == 0
+    assert dashboard_views["season_views"]["views"]["cumulative"]["summary"]["record_count"] == 3
+    assert dashboard_views["season_views"]["views"]["season2"]["handoff"]["rows"][0]["author"] == "Alpha"
     assert dashboard_views["gallery"]["current_title"]["badge_id"] == "gal_01"
     assert dashboard_views["gallery"]["next_title_target"]["badge_id"] == "gal_02"
     assert dashboard_views["gallery"]["progress"]["remaining_value"] == 3200
     assert "swim_count" in dashboard_views["rankings"]["metrics"]
     assert dashboard_views["rankings"]["metrics"]["swim_count"]["top3"][0]["author"] == "Alpha"
+    assert dashboard_views["rankings"]["metrics"]["swim_count"]["top3"][0]["profile_url"] == "./profile.html?author=Alpha"
     assert dashboard_views["rankings"]["metrics"]["swim_count"]["ranks_4_to_20"] == []
     assert dashboard_views["recent_records"][0]["metric_bucket"] == "core"
 
@@ -110,8 +117,13 @@ def test_dashboard_profile_and_author_index_schema_stable():
 
     assert author_profiles["default_mode"] == MODE_CORE_ONLY
     assert author_profiles["supported_modes"] == [MODE_CORE_ONLY]
+    assert author_profiles["default_view"] == "season2"
     assert author_profiles["profile_count"] == 3
     alpha_profile = next(row for row in author_profiles["profiles"] if row["author"] == "Alpha")
+    assert alpha_profile["profile_url"] == "./profile.html?author=Alpha"
+    assert alpha_profile["season_views"]["views"]["season1"]["summary"]["swim_count"] == 2
+    assert alpha_profile["season_views"]["views"]["season2"]["summary"]["swim_count"] == 0
+    assert alpha_profile["season_views"]["views"]["cumulative"]["summary"]["swim_count"] == 2
     assert alpha_profile["total_record_count"] == 2
     assert alpha_profile["primary_title"]["badge_id"] == "eff_05"
     assert alpha_profile["badge_counts_by_category"]["attendance"] == 1

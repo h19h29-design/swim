@@ -1,4 +1,4 @@
-import {
+﻿import {
   buildDesktopUrl,
   buildMobileUrl,
   buildProfileUrl,
@@ -15,7 +15,9 @@ import {
   formatSignedInt,
   getAuthorProfile,
   getAuthorSuggestions,
-  getVisibleDateRangeLabel,
+  getDefaultSeasonViewKey,
+  getSeasonViewOptions,
+  getViewDateRangeLabel,
   loadAuthorIndex,
   loadAuthorProfiles,
   loadDashboardViews,
@@ -31,12 +33,16 @@ const state = {
   authorIndex: null,
   authorProfiles: null,
   author: "",
+  activeSeasonKey: null,
   siteBundle: null,
 };
 
 if (typeof document !== "undefined") {
   document.addEventListener("DOMContentLoaded", () => {
-    void init();
+    init().catch((error) => {
+      console.error(error);
+      setText("profileTitle", "프로필을 불러오지 못했습니다");
+    });
   });
 }
 
@@ -53,6 +59,7 @@ async function init() {
   state.authorProfiles = authorProfiles;
   state.siteBundle = mergeSiteBundles(publicSiteConfig, dashboard, authorProfiles);
   state.author = resolveAuthorFromQuery();
+  state.activeSeasonKey = resolveInitialSeasonKey();
 
   bindEvents();
   populateSuggestions();
@@ -74,11 +81,20 @@ function bindEvents() {
   });
 
   document.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-profile-author]");
-    if (!button) return;
-    const input = document.getElementById("profileAuthorSearch");
-    if (input) input.value = button.dataset.profileAuthor || "";
-    navigateToProfile();
+    const authorButton = event.target.closest("[data-profile-author]");
+    if (authorButton) {
+      const input = document.getElementById("profileAuthorSearch");
+      if (input) input.value = authorButton.dataset.profileAuthor || "";
+      navigateToProfile();
+      return;
+    }
+
+    const seasonButton = event.target.closest("[data-profile-season]");
+    if (seasonButton) {
+      state.activeSeasonKey = seasonButton.dataset.profileSeason;
+      syncSeasonQuery();
+      render();
+    }
   });
 }
 
@@ -91,50 +107,46 @@ function render() {
   }
 
   document.getElementById("profileEmpty").hidden = true;
-  renderHero(profile);
-  renderMetrics(profile);
-  renderCompare(profile);
+  const profileView = getProfileSeasonView(profile);
+  renderHero(profile, profileView);
+  renderSeason(profileView);
+  renderMetrics(profileView);
+  renderCompare(profileView);
   renderBadges(profile);
-  renderTrend(profile);
-  renderRecords(profile);
+  renderTrend(profileView);
+  renderRecords(profileView);
 }
 
 function renderNav() {
-  document.getElementById("profileNavLinks").innerHTML = [
+  setHtml("profileNavLinks", [
     { label: "메인 대시보드", href: buildDesktopUrl() },
     { label: "모바일 보기", href: buildMobileUrl() },
     { label: "배지 갤러리", href: "./badge-gallery.html" },
     { label: "파싱 현황", href: "./parse-status.html" },
-  ].map((item) => `<a class="nav-chip" href="${escapeHtml(item.href)}">${escapeHtml(item.label)}</a>`).join("");
+  ].map((item) => `<a class="nav-chip" href="${escapeHtml(item.href)}">${escapeHtml(item.label)}</a>`).join(""));
 }
 
-function renderHero(profile) {
+function renderHero(profile, profileView) {
   const primaryTitle = profile.primary_title;
+
+  setText("profileEyebrow", "SWIMMER PROFILE");
+  setText("profileTitle", `${profile.author}님의 수영 프로필`);
+  setText("profileSubtitle", `${profileView?.label_ko || "시즌"} 기준 기록과 누적 배지 상태를 함께 보여줍니다.`);
+  setText("profileGeneratedAt", state.authorProfiles?.generated_at ? `집계 갱신 ${state.authorProfiles.generated_at}` : "집계 생성 시각 정보가 없습니다.");
+
+  setHtml("profileHeroChips", [
+    chip(primaryTitle?.short_label_ko || "대표 칭호 대기중"),
+    chip(`배지 ${formatInt(profile.unlocked_badge_count || profile.unlocked_badges?.length || 0)}개`),
+    chip(`${profileView?.short_label_ko || "S2"} · ${getViewDateRangeLabel(profileView)}`),
+  ].join(""));
+
   const nextBadge = profile.next_badge_progress;
-
-  setText("profileEyebrow", "내 수영 앨범");
-  setText("profileTitle", `${profile.author}의 수영 앨범`);
-  setText(
-    "profileSubtitle",
-    `${getVisibleDateRangeLabel(state.dashboard?.visible_date_range)} 기준으로 대표 칭호, 최근 28일 변화, 다음 해금을 정리했습니다.`,
-  );
-  setText(
-    "profileGeneratedAt",
-    state.authorProfiles?.generated_at ? `집계 갱신 ${state.authorProfiles.generated_at}` : "집계 생성 시각을 불러오는 중입니다.",
-  );
-
-  document.getElementById("profileHeroChips").innerHTML = [
-    chip(profile.primary_title?.short_label_ko || "대표 칭호 대기중"),
-    chip(`배지 ${formatInt(profile.unlocked_badge_count || 0)}개`),
-    chip(getVisibleDateRangeLabel(state.dashboard?.visible_date_range)),
-  ].join("");
-
-  document.getElementById("profileHeroGrid").innerHTML = [
+  setHtml("profileHeroGrid", [
     `
       <article class="is-accent">
         <p class="section-kicker">대표 칭호</p>
         <h2>${escapeHtml(primaryTitle?.name_ko || "아직 대표 칭호가 없습니다")}</h2>
-        <p class="record-note">${escapeHtml(primaryTitle?.description_ko || "누적 배지 티어가 가장 높은 칭호가 이 자리에 걸립니다.")}</p>
+        <p class="record-note">${escapeHtml(primaryTitle?.description_ko || "누적 배지가 쌓이면 가장 높은 칭호가 이 자리에 걸립니다.")}</p>
         <div class="hero-meta-row">
           ${primaryTitle?.icon_key ? renderBadgeIcon(state.siteBundle, primaryTitle, primaryTitle.name_ko || "대표 칭호", "inline-badge-icon") : ""}
           ${primaryTitle?.short_label_ko ? `<span class="hero-chip">${escapeHtml(primaryTitle.short_label_ko)}</span>` : ""}
@@ -152,45 +164,48 @@ function renderHero(profile) {
         </div>
       </article>
     `,
-  ].join("");
+  ].join(""));
 }
 
-function renderMetrics(profile) {
-  const summary = profile.summary || {};
+function renderSeason(profileView) {
+  const options = getSeasonViewOptions(state.dashboard);
+  setHtml("profileSeason", `
+    <div class="panel-head">
+      <p class="section-kicker">PROFILE SEASON VIEW</p>
+      <h2>${escapeHtml(profileView?.theme_label_ko || profileView?.label_ko || "시즌별 기록")}</h2>
+      <p class="note">요약, 성장 비교, 월별 추이, 최근 기록이 선택한 시즌으로 바뀝니다.</p>
+    </div>
+    <div class="season-tabs">
+      ${options.map((item) => `
+        <button class="season-tab${item.view_key === state.activeSeasonKey ? " is-active" : ""}" type="button" data-profile-season="${escapeHtml(item.view_key)}">
+          <span>${escapeHtml(item.short_label_ko || item.label_ko)}</span>
+          <strong>${escapeHtml(item.label_ko)}</strong>
+        </button>
+      `).join("")}
+    </div>
+  `);
+}
+
+function renderMetrics(profileView) {
+  const summary = profileView?.summary || {};
   const cards = [
-    {
-      label: "운동횟수",
-      value: `${formatInt(summary.swim_count)}회`,
-      note: "현재 집계 기간 누적입니다.",
-    },
-    {
-      label: "총거리",
-      value: formatDistance(summary.total_distance_m),
-      note: "제목 양식으로 잡힌 누적 거리입니다.",
-    },
-    {
-      label: "총시간",
-      value: formatDurationLabel(summary.total_seconds),
-      note: "누적 운동 시간입니다.",
-    },
-    {
-      label: "시간당 거리",
-      value: formatDistancePerHour(summary.distance_per_hour_m),
-      note: "거리와 시간으로 계산한 효율입니다.",
-    },
+    { label: "운동횟수", value: `${formatInt(summary.swim_count)}회`, note: "선택한 시즌의 공식 반영 횟수입니다." },
+    { label: "총거리", value: formatDistance(summary.total_distance_m), note: "선택한 시즌에 쌓인 거리입니다." },
+    { label: "총시간", value: formatDurationLabel(summary.total_seconds), note: "선택한 시즌의 운동 시간입니다." },
+    { label: "시간당 거리", value: formatDistancePerHour(summary.distance_per_hour_m), note: "거리와 시간으로 계산한 효율입니다." },
   ];
 
-  document.getElementById("profileMetrics").innerHTML = cards.map((card) => `
+  setHtml("profileMetrics", cards.map((card) => `
     <article class="metric-card">
       <small>${escapeHtml(card.label)}</small>
       <strong>${escapeHtml(card.value)}</strong>
       <p class="note">${escapeHtml(card.note)}</p>
     </article>
-  `).join("");
+  `).join(""));
 }
 
-function renderCompare(profile) {
-  const compare = profile.recent_28d_vs_previous_28d || {};
+function renderCompare(profileView) {
+  const compare = profileView?.recent_28d_vs_previous_28d || {};
   const metrics = compare.metrics || {};
   const rows = [
     {
@@ -210,10 +225,10 @@ function renderCompare(profile) {
     },
   ];
 
-  document.getElementById("profileCompare").innerHTML = `
+  setHtml("profileCompare", `
     <div class="panel-head">
       <p class="section-kicker">최근 28일 비교</p>
-      <h2>이전 28일과 비교해서 얼마나 달라졌는지 봅니다</h2>
+      <h2>이전 28일과 비교한 성장</h2>
       <p class="note">${escapeHtml(`${compare.recent_window?.start || "-"} ~ ${compare.recent_window?.end || "-"}`)}</p>
     </div>
     <div class="compare-grid">
@@ -225,22 +240,23 @@ function renderCompare(profile) {
         </article>
       `).join("")}
     </div>
-  `;
+  `);
 }
 
 function renderBadges(profile) {
   const recentUnlocks = Array.isArray(profile.recent_unlocks) ? profile.recent_unlocks.slice(0, 6) : [];
   const counts = profile.badge_counts_by_category || {};
 
-  document.getElementById("profileBadges").innerHTML = `
+  setHtml("profileBadges", `
     <div class="panel-head">
-      <p class="section-kicker">배지 선반</p>
-      <h2>지금까지 모은 배지와 최근 해금</h2>
+      <p class="section-kicker">누적 배지</p>
+      <h2>보유 배지와 최근 해금</h2>
+      <p class="note">배지는 시즌을 넘어 누적 프로필의 정체성으로 표시합니다.</p>
     </div>
     <div class="compare-grid">
       <article class="badge-card">
         <strong>보유 배지 요약</strong>
-        <p class="record-note">카테고리별로 몇 개씩 열었는지 먼저 봅니다.</p>
+        <p class="record-note">카테고리별 해금 개수입니다.</p>
         <div class="badge-chip-row">
           ${CATEGORY_ORDER.map((key) => `<span class="badge-chip">${escapeHtml(categoryLabelFromBundle(state.siteBundle, key))} ${escapeHtml(String(counts[key] || 0))}</span>`).join("")}
         </div>
@@ -252,21 +268,21 @@ function renderBadges(profile) {
       </article>
       <article class="badge-card">
         <strong>대표 칭호 규칙</strong>
-        <p class="record-note">보유 배지 중 티어가 가장 높은 대표 칭호 후보가 개인 프로필 상단에 걸립니다.</p>
+        <p class="record-note">보유 배지 중 우선순위가 높은 칭호 후보가 프로필 상단에 걸립니다.</p>
       </article>
     </div>
-  `;
+  `);
 }
 
-function renderTrend(profile) {
-  const monthly = Array.isArray(profile.monthly_trend) ? profile.monthly_trend : [];
+function renderTrend(profileView) {
+  const monthly = Array.isArray(profileView?.monthly_trend) ? profileView.monthly_trend : [];
   const maxDistance = Math.max(1, ...monthly.map((row) => Number(row.total_distance_m || 0)));
 
-  document.getElementById("profileTrend").innerHTML = `
+  setHtml("profileTrend", `
     <div class="panel-head">
       <p class="section-kicker">월간 추이</p>
-      <h2>월별 누적 거리 흐름</h2>
-      <p class="note">${monthly.length ? "월별로 얼마나 꾸준히 쌓았는지 막대 그래프로 보여줍니다." : "월간 추이를 그릴 만큼 데이터가 아직 없습니다."}</p>
+      <h2>${escapeHtml(profileView?.label_ko || "시즌")} 월별 거리 흐름</h2>
+      <p class="note">${monthly.length ? "월별로 얼마나 쌓였는지 막대 그래프로 보여줍니다." : "월간 추이를 그릴 기록이 아직 없습니다."}</p>
     </div>
     <div class="record-list">
       ${monthly.length ? monthly.map((row) => `
@@ -277,19 +293,19 @@ function renderTrend(profile) {
       `).join("") : `
         <article class="record-card">
           <strong>월간 추이가 아직 비어 있습니다.</strong>
-          <p class="record-note">제목 양식 기록이 더 쌓이면 이 칸이 채워집니다.</p>
+          <p class="record-note">선택한 시즌에 기록이 쌓이면 차트가 채워집니다.</p>
         </article>
       `}
     </div>
-  `;
+  `);
 }
 
-function renderRecords(profile) {
-  const recentRecords = Array.isArray(profile.recent_records) ? profile.recent_records.slice(0, 8) : [];
-  document.getElementById("profileRecords").innerHTML = `
+function renderRecords(profileView) {
+  const recentRecords = Array.isArray(profileView?.recent_records) ? profileView.recent_records.slice(0, 8) : [];
+  setHtml("profileRecords", `
     <div class="panel-head">
       <p class="section-kicker">최근 기록</p>
-      <h2>가장 최근에 반영된 수영 기록</h2>
+      <h2>${escapeHtml(profileView?.label_ko || "시즌")} 최근 반영 기록</h2>
     </div>
     <div class="record-list">
       ${recentRecords.length ? recentRecords.map((row) => `
@@ -300,47 +316,32 @@ function renderRecords(profile) {
       `).join("") : `
         <article class="record-card">
           <strong>최근 기록이 아직 없습니다.</strong>
-          <p class="record-note">제목 양식으로 적힌 새 글이 들어오면 이 칸이 채워집니다.</p>
+          <p class="record-note">선택한 시즌에 반영된 글이 생기면 여기에 표시됩니다.</p>
         </article>
       `}
     </div>
-  `;
+  `);
 }
 
 function renderEmpty() {
   const empty = document.getElementById("profileEmpty");
   empty.hidden = false;
-  document.getElementById("profileHeroGrid").innerHTML = "";
-  document.getElementById("profileMetrics").innerHTML = "";
-  document.getElementById("profileCompare").innerHTML = "";
-  document.getElementById("profileBadges").innerHTML = "";
-  document.getElementById("profileTrend").innerHTML = "";
-  document.getElementById("profileRecords").innerHTML = "";
+  ["profileSeason", "profileHeroGrid", "profileMetrics", "profileCompare", "profileBadges", "profileTrend", "profileRecords"].forEach((id) => setHtml(id, ""));
 
-  setText("profileEyebrow", "내 수영 앨범");
+  setText("profileEyebrow", "SWIMMER PROFILE");
   setText("profileTitle", state.author ? `"${state.author}" 기록을 찾지 못했습니다` : "닉네임을 먼저 입력해 주세요");
-  setText(
-    "profileSubtitle",
-    state.author ? "해당 닉네임으로 아직 공개 프로필이 생성되지 않았습니다." : "검색창에서 닉네임을 입력하면 개인 페이지를 바로 열 수 있습니다.",
-  );
-  setText(
-    "profileGeneratedAt",
-    state.authorProfiles?.generated_at ? `집계 갱신 ${state.authorProfiles.generated_at}` : "집계 생성 시각을 불러오는 중입니다.",
-  );
-  document.getElementById("profileHeroChips").innerHTML = "";
-  empty.innerHTML = `<p>${escapeHtml(state.siteBundle?.site_config?.empty_state_ko || "제목 양식 기록이 아직 없어서 프로필을 만들지 못했습니다.")}</p>`;
+  setText("profileSubtitle", state.author ? "해당 닉네임으로 아직 공개 프로필이 생성되지 않았습니다." : "검색창에서 닉네임을 입력하면 개인 프로필을 바로 열 수 있습니다.");
+  setText("profileGeneratedAt", state.authorProfiles?.generated_at ? `집계 갱신 ${state.authorProfiles.generated_at}` : "집계 생성 시각 정보가 없습니다.");
+  setHtml("profileHeroChips", "");
+  empty.innerHTML = `<p>${escapeHtml(state.siteBundle?.site_config?.empty_state_ko || "공식 반영 기록이 아직 없어 프로필을 만들지 못했습니다.")}</p>`;
 }
 
 function populateSuggestions() {
   const rows = getAuthorSuggestions(state.authorIndex).sort((left, right) => compareAuthors(left.author, right.author));
-  document.getElementById("profileAuthorSuggestions").innerHTML = rows
-    .map((row) => `<option value="${escapeHtml(row.author)}"></option>`)
-    .join("");
-  document.getElementById("profileAuthorSearch").value = state.author || "";
-  document.getElementById("profileSuggestionRow").innerHTML = rows
-    .slice(0, 8)
-    .map((row) => `<button class="suggestion-chip" type="button" data-profile-author="${escapeHtml(row.author)}">${escapeHtml(row.author)}</button>`)
-    .join("");
+  setHtml("profileAuthorSuggestions", rows.map((row) => `<option value="${escapeHtml(row.author)}"></option>`).join(""));
+  const input = document.getElementById("profileAuthorSearch");
+  if (input) input.value = state.author || "";
+  setHtml("profileSuggestionRow", rows.slice(0, 8).map((row) => `<button class="suggestion-chip" type="button" data-profile-author="${escapeHtml(row.author)}">${escapeHtml(row.author)}</button>`).join(""));
 }
 
 function buildRecentUnlockChips(rows) {
@@ -354,11 +355,36 @@ function buildRecentUnlockChips(rows) {
     : '<span class="badge-chip">최근 해금 없음</span>';
 }
 
+function getProfileSeasonView(profile) {
+  const views = profile?.season_views?.views || {};
+  return views[state.activeSeasonKey] || views[getDefaultSeasonViewKey(state.dashboard)] || profile;
+}
+
+function resolveInitialSeasonKey() {
+  const params = new URLSearchParams(window.location.search);
+  const requested = params.get("view");
+  const options = getSeasonViewOptions(state.dashboard);
+  if (requested && options.some((item) => item.view_key === requested)) {
+    return requested;
+  }
+  return getDefaultSeasonViewKey(state.dashboard);
+}
+
+function syncSeasonQuery() {
+  const url = new URL(window.location.href);
+  url.searchParams.set("author", state.author || "");
+  url.searchParams.set("view", state.activeSeasonKey || getDefaultSeasonViewKey(state.dashboard));
+  url.searchParams.set("v", "20260317a");
+  window.history.replaceState({}, "", url);
+}
+
 function navigateToProfile() {
   const query = String(document.getElementById("profileAuthorSearch")?.value || "").trim();
   if (!query) return;
   const author = findAuthorMatch(state.authorIndex, query);
-  window.location.assign(buildProfileUrl(author));
+  const url = new URL(buildProfileUrl(author), window.location.href);
+  url.searchParams.set("view", state.activeSeasonKey || getDefaultSeasonViewKey(state.dashboard));
+  window.location.assign(url.pathname.split("/").pop() + url.search);
 }
 
 function chip(label) {
@@ -368,4 +394,9 @@ function chip(label) {
 function setText(id, value) {
   const node = document.getElementById(id);
   if (node) node.textContent = value || "";
+}
+
+function setHtml(id, html) {
+  const node = document.getElementById(id);
+  if (node) node.innerHTML = html || "";
 }

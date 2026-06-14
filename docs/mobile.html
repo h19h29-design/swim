@@ -3,30 +3,141 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>손안의 수영 대시보드</title>
+  <title>수영 기록 대시보드</title>
+  <link rel="icon" href="data:,">
   <link rel="stylesheet" href="./assets/mobile.css">
 </head>
 <body>
-  <main class="mobile-shell">
-    <header class="mobile-hero">
-      <p class="eyebrow" id="mobileEyebrow">손안의 수영 대시보드</p>
-      <h1 id="mobileTitle">오늘 기록과 랭킹을 가볍게 확인합니다</h1>
-      <p class="hero-copy" id="mobileCopy">갤 전체 운동량, 현재 랭킹, 다음 해금까지 한 화면에서 빠르게 봅니다.</p>
-      <div class="hero-chip-row" id="mobileHeroChips"></div>
-      <p class="generated-at" id="mobileGeneratedAt"></p>
-      <div class="quick-links" id="mobileQuickLinks"></div>
-    </header>
+  <header class="mobile-appbar">
+    <button class="app-icon-button" type="button" data-tab-target="menu" aria-label="메뉴">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <strong>수영 기록 대시보드</strong>
+    <div class="appbar-actions">
+      <button class="app-icon-button" type="button" data-focus-search aria-label="검색">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 4 4"/></svg>
+      </button>
+      <a class="app-icon-button" href="./parse-status.html" aria-label="알림">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/><path d="M10 21h4"/></svg>
+      </a>
+    </div>
+  </header>
 
-    <section class="panel" id="mobileKpis"></section>
-    <section class="panel" id="mobileRanking"></section>
-    <section class="panel" id="mobileUnlock"></section>
-    <section class="panel" id="mobileSearch"></section>
-    <section class="panel" id="mobileRecent"></section>
-    <section class="panel" id="mobileOps"></section>
+  <main class="mobile-shell">
+    <section class="mobile-panel is-active" data-mobile-panel="dashboard">
+      <section class="season-hero" id="mobileHero"></section>
+      <section class="kpi-grid" id="mobileKpis"></section>
+      <section class="panel-card">
+        <div class="section-row">
+          <h2>기록 분석</h2>
+          <a href="./parse-status.html">더보기</a>
+        </div>
+        <div class="analysis-shortcuts" id="analysisShortcuts"></div>
+      </section>
+      <section class="panel-card">
+        <div class="section-row">
+          <h2>주간 거리 추이</h2>
+          <span>m</span>
+        </div>
+        <div id="mobileWeeklyChart" class="mobile-chart"></div>
+      </section>
+      <section class="panel-card">
+        <div class="section-row">
+          <h2>최근 수영 기록</h2>
+          <button type="button" class="text-button" data-tab-target="records">더보기</button>
+        </div>
+        <div class="record-list" id="mobileRecentPreview"></div>
+      </section>
+      <section class="review-alert" id="mobileReviewAlert"></section>
+      <section class="panel-card">
+        <div class="section-row">
+          <h2>최근 해금 배지</h2>
+          <button type="button" class="text-button" data-tab-target="badges">더보기</button>
+        </div>
+        <div class="badge-list" id="mobileBadgePreview"></div>
+      </section>
+    </section>
+
+    <section class="mobile-panel" data-mobile-panel="ranking">
+      <div class="panel-card">
+        <div class="mobile-topline">
+          <button class="app-icon-button" type="button" data-tab-target="dashboard" aria-label="뒤로">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <h1>시즌 랭킹</h1>
+          <button class="app-icon-button" type="button" id="mobileMetricToggle" aria-label="랭킹 전환">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M7 12h10M10 17h4"/></svg>
+          </button>
+        </div>
+        <div class="season-filter" id="mobileSeasonTabs"></div>
+        <div class="podium" id="mobilePodium"></div>
+        <div class="ranking-card-list" id="mobileRankingList"></div>
+        <div class="ranking-stats" id="mobileRankingStats"></div>
+      </div>
+    </section>
+
+    <section class="mobile-panel" data-mobile-panel="records">
+      <section class="panel-card">
+        <div class="section-row">
+          <h1>최근 기록</h1>
+          <a href="./parse-status.html">파싱 현황</a>
+        </div>
+        <div class="record-list is-full" id="mobileRecords"></div>
+      </section>
+    </section>
+
+    <section class="mobile-panel" data-mobile-panel="badges">
+      <section class="panel-card">
+        <div class="section-row">
+          <h1>보유 배지</h1>
+          <a href="./badge-gallery.html">갤러리</a>
+        </div>
+        <div class="badge-grid" id="mobileBadges"></div>
+      </section>
+    </section>
+
+    <section class="mobile-panel" data-mobile-panel="menu">
+      <section class="panel-card" id="mobileProfileCard"></section>
+      <section class="panel-card">
+        <div class="section-row">
+          <h2>닉네임 검색</h2>
+          <a href="./index.html?desktop=1">데스크톱</a>
+        </div>
+        <form class="search-form" id="mobileSearchForm">
+          <input id="mobileAuthorSearch" list="authorSuggestions" placeholder="닉네임 입력">
+          <button type="submit">열기</button>
+        </form>
+        <div class="suggestions" id="mobileSuggestions"></div>
+      </section>
+      <section class="panel-card" id="mobileOpsCard"></section>
+    </section>
 
     <datalist id="authorSuggestions"></datalist>
   </main>
 
-  <script type="module" src="./assets/mobile.js?v=20260323a"></script>
+  <nav class="bottom-tabs" aria-label="모바일 주요 탭">
+    <button class="is-active" type="button" data-tab-target="dashboard">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11 12 4l8 7v9H5z"/><path d="M9 20v-6h6v6"/></svg>
+      <span>대시보드</span>
+    </button>
+    <button type="button" data-tab-target="ranking">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0z"/><path d="M5 6H3v2a4 4 0 0 0 4 4M19 6h2v2a4 4 0 0 1-4 4"/></svg>
+      <span>랭킹</span>
+    </button>
+    <button type="button" data-tab-target="records">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
+      <span>기록</span>
+    </button>
+    <button type="button" data-tab-target="badges">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 3 5 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1z"/></svg>
+      <span>배지</span>
+    </button>
+    <button type="button" data-tab-target="menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <span>메뉴</span>
+    </button>
+  </nav>
+
+  <script type="module" src="./assets/mobile.js?v=20260522a"></script>
 </body>
 </html>

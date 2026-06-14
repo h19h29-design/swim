@@ -4,6 +4,7 @@ import re
 import unicodedata
 from collections import Counter, defaultdict
 from datetime import UTC, date, datetime, timedelta, timezone
+from urllib.parse import quote
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 from swimdash.admin_config import admin_config_source_paths, load_admin_config_bundle
@@ -17,8 +18,16 @@ from swimdash.config import DASHBOARD_DATE_FLOOR
 MODE_CORE_ONLY = "core_only"
 METRIC_BUCKET_CORE = "core"
 SUPPORTED_MODES = (MODE_CORE_ONLY,)
+VIEW_SEASON1 = "season1"
+VIEW_SEASON2 = "season2"
+VIEW_CUMULATIVE = "cumulative"
+DEFAULT_VIEW_KEY = VIEW_SEASON2
+PUBLIC_SUPPORTED_VIEWS = (VIEW_SEASON1, VIEW_SEASON2, VIEW_CUMULATIVE)
+SEASON2_START_DATE = date(2026, 6, 1)
 CORE_SOURCES = {
     "title_format",
+    "body_text",
+    "gemini_ocr",
     "manual_review",
     "manual_patch",
 }
@@ -56,8 +65,12 @@ def resolve_metric_bucket(record: dict) -> str | None:
     return METRIC_BUCKET_CORE
 
 
-def filter_dashboard_records(records: list[dict], floor_date: date | None = DASHBOARD_DATE_FLOOR) -> list[dict]:
-    if floor_date is None:
+def filter_dashboard_records(
+    records: list[dict],
+    floor_date: date | None = DASHBOARD_DATE_FLOOR,
+    end_date: date | None = None,
+) -> list[dict]:
+    if floor_date is None and end_date is None:
         return list(records)
 
     filtered: list[dict] = []
@@ -65,8 +78,11 @@ def filter_dashboard_records(records: list[dict], floor_date: date | None = DASH
         item_date = _record_date(row)
         if item_date is None:
             continue
-        if item_date >= floor_date:
-            filtered.append(row)
+        if floor_date is not None and item_date < floor_date:
+            continue
+        if end_date is not None and item_date > end_date:
+            continue
+        filtered.append(row)
     return filtered
 
 
@@ -75,9 +91,10 @@ def build_summary(
     mode: str = MODE_CORE_ONLY,
     reference_date: date | None = None,
     floor_date: date | None = DASHBOARD_DATE_FLOOR,
+    end_date: date | None = None,
 ) -> dict:
     _validate_mode(mode)
-    visible_records = filter_dashboard_records(records, floor_date=floor_date)
+    visible_records = filter_dashboard_records(records, floor_date=floor_date, end_date=end_date)
     included = _included_records(visible_records, mode)
     excluded = [r for r in visible_records if not _is_included(r)]
     review_queue = [r for r in visible_records if _is_review_needed(r)]
@@ -149,6 +166,7 @@ def build_monthly(
     records: list[dict],
     mode: str = MODE_CORE_ONLY,
     floor_date: date | None = DASHBOARD_DATE_FLOOR,
+    end_date: date | None = None,
 ) -> list[dict]:
     _validate_mode(mode)
     bucket: dict[str, dict] = defaultdict(
@@ -162,7 +180,7 @@ def build_monthly(
         }
     )
 
-    for rec in _included_records(filter_dashboard_records(records, floor_date=floor_date), mode):
+    for rec in _included_records(filter_dashboard_records(records, floor_date=floor_date, end_date=end_date), mode):
         month = str(rec.get("post_date") or "")[:7]
         if not month:
             continue
@@ -201,9 +219,10 @@ def build_leaderboard(
     mode: str = MODE_CORE_ONLY,
     reference_date: date | None = None,
     floor_date: date | None = DASHBOARD_DATE_FLOOR,
+    end_date: date | None = None,
 ) -> dict:
     _validate_mode(mode)
-    visible_records = filter_dashboard_records(records, floor_date=floor_date)
+    visible_records = filter_dashboard_records(records, floor_date=floor_date, end_date=end_date)
     included_records = _included_records(visible_records, mode)
     reference = reference_date or _resolve_reference_date(visible_records, fallback=floor_date)
     author_rows = _author_aggregate_rows(included_records, reference, floor_date=floor_date)
@@ -249,6 +268,7 @@ def build_summary_payload(
         floor_date=floor_date,
     )
     summary = build_summary(records, mode=MODE_CORE_ONLY, reference_date=reference, floor_date=floor_date)
+    season_meta = _season_view_metadata(floor_date)
     return {
         "generated_at": summary["generated_at"],
         "reference_date": summary["reference_date"],
@@ -258,6 +278,9 @@ def build_summary_payload(
         "product_mode": MODE_CORE_ONLY,
         "default_mode": MODE_CORE_ONLY,
         "supported_modes": list(PUBLIC_SUPPORTED_MODES),
+        "default_view": season_meta["default_view"],
+        "supported_views": season_meta["supported_views"],
+        "view_windows": season_meta["view_windows"],
         "source_record_count": len(records),
         "visible_record_count": len(visible_records),
         "summary": summary,
@@ -284,6 +307,7 @@ def build_leaderboard_payload(
     leaderboard = build_leaderboard(records, mode=MODE_CORE_ONLY, reference_date=reference, floor_date=floor_date)
     author_rows = _enrich_author_rows(leaderboard["authors"], badge_context)
     rankings = _build_ranking_sections(author_rows, admin_bundle["home_sections"])
+    season_meta = _season_view_metadata(floor_date)
     return {
         "generated_at": leaderboard["generated_at"],
         "reference_date": leaderboard["reference_date"],
@@ -293,6 +317,9 @@ def build_leaderboard_payload(
         "product_mode": MODE_CORE_ONLY,
         "default_mode": MODE_CORE_ONLY,
         "supported_modes": list(PUBLIC_SUPPORTED_MODES),
+        "default_view": season_meta["default_view"],
+        "supported_views": season_meta["supported_views"],
+        "view_windows": season_meta["view_windows"],
         "source_record_count": len(records),
         "visible_record_count": len(visible_records),
         "authors": author_rows,
@@ -318,6 +345,7 @@ def build_dashboard_views(
     monthly = build_monthly(records, mode=MODE_CORE_ONLY, floor_date=floor_date)
     leaderboard = build_leaderboard(records, mode=MODE_CORE_ONLY, reference_date=reference, floor_date=floor_date)
     author_rows = _enrich_author_rows(leaderboard["authors"], badge_context)
+    season_views = _build_season_views_payload(records, admin_bundle=admin_bundle, floor_date=floor_date)
 
     return {
         "generated_at": summary["generated_at"],
@@ -328,6 +356,9 @@ def build_dashboard_views(
         "product_mode": MODE_CORE_ONLY,
         "default_mode": MODE_CORE_ONLY,
         "supported_modes": list(PUBLIC_SUPPORTED_MODES),
+        "default_view": season_views["default_view"],
+        "supported_views": season_views["supported_views"],
+        "view_windows": season_views["view_windows"],
         "source_record_count": len(records),
         "visible_record_count": len(visible_records),
         "core_only_has_zero_visible_included_rows": summary["has_zero_visible_included_rows"],
@@ -340,9 +371,10 @@ def build_dashboard_views(
         "gallery": badge_context["gallery"],
         "rankings": _build_ranking_sections(author_rows, admin_bundle["home_sections"]),
         "authors": author_rows,
-        "recent_records": _recent_record_previews(records, MODE_CORE_ONLY, 20),
+        "recent_records": _recent_record_previews(visible_records, MODE_CORE_ONLY, 20),
         "recent_unlocks": badge_context["recent_unlocks"],
         "ops": _ops_snapshot(summary),
+        "season_views": season_views,
     }
 
 
@@ -427,6 +459,7 @@ def build_author_index(
             {
                 "author": author,
                 "search_key": _author_search_key(author),
+                "profile_url": _profile_url(author),
                 "latest_post_date": _latest_post_date(author_records),
                 "total_record_count": len(author_records),
                 "included_record_count": len(_included_records(author_records, MODE_CORE_ONLY)),
@@ -481,10 +514,12 @@ def build_author_profiles(
         author_records = grouped[author]
         badge_payload = badge_context["authors"].get(author, _empty_badge_payload())
         summary = build_summary(author_records, mode=MODE_CORE_ONLY, reference_date=reference, floor_date=floor_date)
+        season_views = _build_author_profile_views(author_records, floor_date=floor_date)
         profiles.append(
             {
                 "author": author,
                 "search_key": _author_search_key(author),
+                "profile_url": _profile_url(author),
                 "latest_post_date": _latest_post_date(author_records),
                 "total_record_count": len(author_records),
                 "included_record_count": summary["record_count"],
@@ -501,6 +536,7 @@ def build_author_profiles(
                 "next_badge_progress": badge_payload["next_badge_progress"],
                 "badge_counts_by_category": badge_payload["badge_counts_by_category"],
                 "recent_unlocks": badge_payload["recent_unlocks"],
+                "season_views": season_views,
             }
         )
 
@@ -513,6 +549,12 @@ def build_author_profiles(
         "product_mode": MODE_CORE_ONLY,
         "default_mode": MODE_CORE_ONLY,
         "supported_modes": list(PUBLIC_SUPPORTED_MODES),
+        "default_view": DEFAULT_VIEW_KEY,
+        "supported_views": list(PUBLIC_SUPPORTED_VIEWS),
+        "view_windows": {
+            spec["view_key"]: _view_window_payload(spec)
+            for spec in _build_view_specs(floor_date)
+        },
         "source_record_count": len(records),
         "visible_record_count": len(visible_records),
         "profile_count": len(profiles),
@@ -576,6 +618,165 @@ def _resolve_public_context(
     return resolved_admin_bundle, resolved_badge_context, visible_records, reference
 
 
+def _build_view_specs(floor_date: date | None) -> list[dict]:
+    base_start = floor_date or DASHBOARD_DATE_FLOOR or SEASON2_START_DATE
+    season1_end = SEASON2_START_DATE - timedelta(days=1)
+    return [
+        {
+            "view_key": VIEW_SEASON1,
+            "label_ko": "시즌 1",
+            "short_label_ko": "S1",
+            "description_ko": "시즌2로 넘겨 받은 시즌1 최종 기록입니다.",
+            "theme_label_ko": "Season 1 Archive",
+            "start_date": base_start,
+            "end_date": season1_end,
+            "is_current": False,
+        },
+        {
+            "view_key": VIEW_SEASON2,
+            "label_ko": "시즌 2",
+            "short_label_ko": "S2",
+            "description_ko": "딥 레인 클럽 테마로 새로 보는 시즌2 기록입니다.",
+            "theme_label_ko": "Deep Lane Club",
+            "start_date": SEASON2_START_DATE,
+            "end_date": None,
+            "is_current": True,
+        },
+        {
+            "view_key": VIEW_CUMULATIVE,
+            "label_ko": "누적",
+            "short_label_ko": "ALL",
+            "description_ko": "시즌1과 시즌2를 합친 전체 누적 기록입니다.",
+            "theme_label_ko": "Total Archive",
+            "start_date": base_start,
+            "end_date": None,
+            "is_current": False,
+        },
+    ]
+
+
+def _season_view_metadata(floor_date: date | None) -> dict:
+    specs = _build_view_specs(floor_date)
+    return {
+        "default_view": DEFAULT_VIEW_KEY,
+        "supported_views": list(PUBLIC_SUPPORTED_VIEWS),
+        "view_windows": {spec["view_key"]: _view_window_payload(spec) for spec in specs},
+    }
+
+
+def _build_season_views_payload(
+    records: list[dict],
+    *,
+    admin_bundle: dict,
+    floor_date: date | None,
+) -> dict:
+    specs = _build_view_specs(floor_date)
+    views = {
+        spec["view_key"]: _build_dashboard_view_for_spec(records, spec, admin_bundle=admin_bundle)
+        for spec in specs
+    }
+    if VIEW_SEASON2 in views and VIEW_SEASON1 in views:
+        views[VIEW_SEASON2]["handoff"] = _build_handoff_payload(views[VIEW_SEASON1])
+
+    return {
+        "default_view": DEFAULT_VIEW_KEY,
+        "supported_views": list(PUBLIC_SUPPORTED_VIEWS),
+        "view_windows": {spec["view_key"]: _view_window_payload(spec) for spec in specs},
+        "views": views,
+    }
+
+
+def _build_dashboard_view_for_spec(records: list[dict], spec: dict, *, admin_bundle: dict) -> dict:
+    start_date = spec.get("start_date")
+    end_date = spec.get("end_date")
+    visible_records = filter_dashboard_records(records, floor_date=start_date, end_date=end_date)
+    fallback_date = end_date or start_date or DASHBOARD_DATE_FLOOR
+    reference = _resolve_reference_date(visible_records, fallback=fallback_date)
+    badge_context = build_badge_context(
+        records,
+        admin_bundle=admin_bundle,
+        reference_date=reference,
+        floor_date=start_date,
+        end_date=end_date,
+    )
+    summary = build_summary(
+        records,
+        mode=MODE_CORE_ONLY,
+        reference_date=reference,
+        floor_date=start_date,
+        end_date=end_date,
+    )
+    leaderboard = build_leaderboard(
+        records,
+        mode=MODE_CORE_ONLY,
+        reference_date=reference,
+        floor_date=start_date,
+        end_date=end_date,
+    )
+    author_rows = _enrich_author_rows(leaderboard["authors"], badge_context)
+
+    return {
+        "view_key": spec["view_key"],
+        "label_ko": spec["label_ko"],
+        "short_label_ko": spec["short_label_ko"],
+        "description_ko": spec["description_ko"],
+        "theme_label_ko": spec["theme_label_ko"],
+        "is_current": spec["is_current"],
+        "view_window": _view_window_payload(spec),
+        "generated_at": summary["generated_at"],
+        "reference_date": summary["reference_date"],
+        "visible_date_range": summary["visible_date_range"],
+        "source_record_count": len(records),
+        "visible_record_count": len(visible_records),
+        "summary": summary,
+        "monthly": build_monthly(records, mode=MODE_CORE_ONLY, floor_date=start_date, end_date=end_date),
+        "gallery": badge_context["gallery"],
+        "rankings": _build_ranking_sections(author_rows, admin_bundle["home_sections"]),
+        "authors": author_rows,
+        "recent_records": _recent_record_previews(visible_records, MODE_CORE_ONLY, 20),
+        "recent_unlocks": badge_context["recent_unlocks"],
+        "ops": _ops_snapshot(summary),
+    }
+
+
+def _view_window_payload(spec: dict) -> dict:
+    return {
+        "view_key": spec["view_key"],
+        "label_ko": spec["label_ko"],
+        "short_label_ko": spec["short_label_ko"],
+        "description_ko": spec["description_ko"],
+        "theme_label_ko": spec["theme_label_ko"],
+        "start": _format_date(spec.get("start_date")) if spec.get("start_date") is not None else None,
+        "end": _format_date(spec.get("end_date")) if spec.get("end_date") is not None else None,
+        "is_current": bool(spec.get("is_current")),
+    }
+
+
+def _build_handoff_payload(source_view: dict) -> dict:
+    rankings = source_view.get("rankings", {})
+    metric_key = rankings.get("default_metric") or "swim_count"
+    group = (rankings.get("metrics") or {}).get(metric_key, {})
+    rows = list(group.get("top3") or group.get("rows") or [])[:3]
+    return {
+        "from_view_key": source_view.get("view_key"),
+        "from_label_ko": source_view.get("label_ko"),
+        "label_ko": "시즌1 인계 순위",
+        "description_ko": "시즌2 화면에서도 시즌1 최종 상위권을 바로 확인할 수 있습니다.",
+        "metric_key": metric_key,
+        "metric_label_ko": group.get("label_ko") or metric_key,
+        "rows": [
+            {
+                "rank": row.get("rank"),
+                "author": row.get("author"),
+                "profile_url": row.get("profile_url"),
+                "metric_value_text_ko": row.get("metric_value_text_ko"),
+                "primary_title": row.get("primary_title"),
+            }
+            for row in rows
+        ],
+    }
+
+
 def _ops_snapshot(summary: dict) -> dict:
     return {
         "review_queue_count": summary["review_queue_count"],
@@ -604,6 +805,7 @@ def _parse_status_rows(records: list[dict], *, parsed: bool) -> list[dict]:
             "post_date": row.get("post_date"),
             "post_datetime": row.get("post_datetime"),
             "author": row.get("author"),
+            "profile_url": _profile_url(row.get("author")),
             "title": row.get("title"),
             "url": row.get("url"),
             "source": row.get("source") or "none",
@@ -632,6 +834,11 @@ def _parse_status_rows(records: list[dict], *, parsed: bool) -> list[dict]:
                     "manual_override_decision": row.get("manual_override_decision"),
                 }
             )
+        if isinstance(row.get("source_candidates"), dict):
+            payload["source_candidates"] = row.get("source_candidates")
+            payload["resolved_source"] = row.get("resolved_source")
+            payload["resolver_confidence"] = row.get("resolver_confidence")
+            payload["review_reason"] = row.get("review_reason")
         rows.append(payload)
     return rows
 
@@ -689,10 +896,22 @@ def _build_ranking_sections(author_rows: list[dict], home_sections: dict) -> dic
             "ranks_4_to_20": rows[3:20],
             "rows": rows[:20],
             "total_ranked_rows": len(rows),
+            "ranking_summary": _ranking_summary(rows),
         }
     return {
         "default_metric": home_sections.get("default_ranking_metric", "swim_count"),
         "metrics": metrics,
+    }
+
+
+def _ranking_summary(rows: list[dict]) -> dict:
+    top = rows[0] if rows else {}
+    return {
+        "ranked_author_count": len(rows),
+        "top_author": top.get("author"),
+        "top_profile_url": top.get("profile_url"),
+        "top_metric_value": top.get("metric_value"),
+        "top_metric_value_text_ko": top.get("metric_value_text_ko"),
     }
 
 
@@ -705,6 +924,7 @@ def _ranking_rows_for_metric(author_rows: list[dict], spec: dict) -> list[dict]:
             {
                 "author": author_row["author"],
                 "search_key": author_row["search_key"],
+                "profile_url": author_row.get("profile_url") or _profile_url(author_row.get("author")),
                 "latest_post_date": author_row["latest_post_date"],
                 "metric_key": metric_key,
                 "metric_value": metric_value,
@@ -828,15 +1048,62 @@ def _build_dashboard_mode_view(
     }
 
 
-def _build_author_mode_profile(author_records: list[dict], mode: str, reference_date: date) -> dict:
-    summary = build_summary(author_records, mode=mode, reference_date=reference_date)
+def _build_author_profile_views(author_records: list[dict], *, floor_date: date | None) -> dict:
+    specs = _build_view_specs(floor_date)
+    views: dict[str, dict] = {}
+    for spec in specs:
+        start_date = spec.get("start_date")
+        end_date = spec.get("end_date")
+        visible_records = filter_dashboard_records(author_records, floor_date=start_date, end_date=end_date)
+        reference = _resolve_reference_date(visible_records, fallback=end_date or start_date or floor_date)
+        view = _build_author_mode_profile(
+            author_records,
+            MODE_CORE_ONLY,
+            reference,
+            floor_date=start_date,
+            end_date=end_date,
+        )
+        views[spec["view_key"]] = {
+            "view_key": spec["view_key"],
+            "label_ko": spec["label_ko"],
+            "short_label_ko": spec["short_label_ko"],
+            "description_ko": spec["description_ko"],
+            "theme_label_ko": spec["theme_label_ko"],
+            "is_current": spec["is_current"],
+            "view_window": _view_window_payload(spec),
+            **view,
+        }
+    return {
+        "default_view": DEFAULT_VIEW_KEY,
+        "supported_views": list(PUBLIC_SUPPORTED_VIEWS),
+        "view_windows": {spec["view_key"]: _view_window_payload(spec) for spec in specs},
+        "views": views,
+    }
+
+
+def _build_author_mode_profile(
+    author_records: list[dict],
+    mode: str,
+    reference_date: date,
+    *,
+    floor_date: date | None = DASHBOARD_DATE_FLOOR,
+    end_date: date | None = None,
+) -> dict:
+    visible_records = filter_dashboard_records(author_records, floor_date=floor_date, end_date=end_date)
+    summary = build_summary(
+        author_records,
+        mode=mode,
+        reference_date=reference_date,
+        floor_date=floor_date,
+        end_date=end_date,
+    )
     return {
         "summary": summary,
         "recent_28d_vs_previous_28d": summary["growth"],
-        "monthly_trend": build_monthly(author_records, mode=mode),
-        "recent_records": _recent_record_previews(author_records, mode, 20),
+        "monthly_trend": build_monthly(author_records, mode=mode, floor_date=floor_date, end_date=end_date),
+        "recent_records": _recent_record_previews(visible_records, mode, 20),
         "time_series": {
-            "daily": _daily_time_series(author_records, mode),
+            "daily": _daily_time_series(visible_records, mode),
         },
     }
 
@@ -860,6 +1127,7 @@ def _author_aggregate_rows(records: list[dict], reference_date: date, floor_date
             {
                 "author": author,
                 "search_key": _author_search_key(author),
+                "profile_url": _profile_url(author),
                 "swim_count": len(author_records),
                 "total_distance_m": total_distance_m,
                 "total_seconds": total_seconds,
@@ -883,6 +1151,7 @@ def _growth_rows(author_rows: list[dict], metric_name: str) -> list[dict]:
         {
             "author": row["author"],
             "search_key": row["search_key"],
+            "profile_url": row.get("profile_url") or _profile_url(row.get("author")),
             "latest_post_date": row["latest_post_date"],
             "swim_count": row["swim_count"],
             "total_distance_m": row["total_distance_m"],
@@ -932,6 +1201,7 @@ def _recent_record_previews(records: list[dict], mode: str, limit: int) -> list[
                 "post_date": rec.get("post_date"),
                 "post_datetime": rec.get("post_datetime"),
                 "author": rec.get("author"),
+                "profile_url": _profile_url(rec.get("author")),
                 "distance_m": rec.get("distance_m"),
                 "total_time_text": rec.get("total_time_text"),
                 "total_seconds": _total_seconds(rec),
@@ -1182,6 +1452,10 @@ def _author_search_key(author: str) -> str:
     normalized = unicodedata.normalize("NFKC", str(author or ""))
     normalized = re.sub(r"\s+", " ", normalized).strip().lower()
     return normalized
+
+
+def _profile_url(author: str | None) -> str:
+    return f"./profile.html?author={quote(str(author or ''))}"
 
 
 def _validate_mode(mode: str) -> None:

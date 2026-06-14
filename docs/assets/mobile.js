@@ -9,8 +9,10 @@ import {
   formatDurationLabel,
   formatInt,
   getAuthorSuggestions,
+  getDashboardSeasonView,
+  getDefaultSeasonViewKey,
   getMetricGroup,
-  getVisibleDateRangeLabel,
+  getSeasonViewOptions,
   loadAuthorIndex,
   loadBadgeIndex,
   loadDashboardViews,
@@ -19,7 +21,6 @@ import {
   mergeSiteBundles,
   metricLabel,
   renderBadgeIcon,
-  sliceTopThree,
   sourceLabel,
 } from "./dashboard-common.js?v=20260323a";
 
@@ -28,14 +29,18 @@ const state = {
   authorIndex: null,
   badgeIndex: null,
   reviewQueue: [],
+  activeSeasonKey: null,
+  activeMetric: "total_distance_m",
+  activeTab: "dashboard",
   siteBundle: null,
 };
 
-if (typeof document !== "undefined") {
-  document.addEventListener("DOMContentLoaded", () => {
-    void init();
+document.addEventListener("DOMContentLoaded", () => {
+  init().catch((error) => {
+    console.error(error);
+    setHtml("mobileOpsCard", `<p class="empty-state">페이지를 불러오지 못했습니다.</p>`);
   });
-}
+});
 
 async function init() {
   const [dashboard, authorIndex, badgeIndex, reviewQueue, publicSiteConfig] = await Promise.all([
@@ -45,314 +50,380 @@ async function init() {
     loadReviewQueue(),
     loadPublicSiteConfig(),
   ]);
-
   state.dashboard = dashboard;
   state.authorIndex = authorIndex;
   state.badgeIndex = badgeIndex;
   state.reviewQueue = reviewQueue;
   state.siteBundle = mergeSiteBundles(publicSiteConfig, dashboard);
+  state.activeSeasonKey = resolveInitialSeasonKey();
 
   bindEvents();
   render();
 }
 
 function bindEvents() {
-  document.addEventListener("submit", (event) => {
-    const form = event.target.closest("#mobileSearchForm");
-    if (!form) return;
-    event.preventDefault();
-    openProfile();
-  });
-
   document.addEventListener("click", (event) => {
+    const tabButton = event.target.closest("[data-tab-target]");
+    if (tabButton) {
+      setActiveTab(tabButton.dataset.tabTarget);
+      return;
+    }
+
+    const seasonButton = event.target.closest("[data-mobile-season]");
+    if (seasonButton) {
+      state.activeSeasonKey = seasonButton.dataset.mobileSeason;
+      syncQuery();
+      render();
+      return;
+    }
+
     const authorButton = event.target.closest("[data-mobile-author]");
     if (authorButton) {
-      const author = authorButton.dataset.mobileAuthor || "";
-      const input = document.getElementById("mobileAuthorSearch");
-      if (input) input.value = author;
-      window.location.assign(buildProfileUrl(author));
+      window.location.assign(buildProfileUrl(authorButton.dataset.mobileAuthor || ""));
     }
+  });
+
+  document.getElementById("mobileMetricToggle")?.addEventListener("click", () => {
+    state.activeMetric = state.activeMetric === "total_distance_m" ? "swim_count" : "total_distance_m";
+    renderRanking();
+  });
+
+  document.getElementById("mobileSearchForm")?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const query = String(document.getElementById("mobileAuthorSearch")?.value || "").trim();
+    if (!query) return;
+    window.location.assign(buildProfileUrl(findAuthorMatch(state.authorIndex, query)));
+  });
+
+  document.querySelector("[data-focus-search]")?.addEventListener("click", () => {
+    setActiveTab("menu");
+    setTimeout(() => document.getElementById("mobileAuthorSearch")?.focus(), 80);
   });
 }
 
 function render() {
   renderHero();
   renderKpis();
-  renderRanking();
-  renderUnlock();
-  renderSearch();
+  renderAnalysisShortcuts();
+  renderWeekly();
   renderRecent();
+  renderReview();
+  renderBadges();
+  renderSeasonTabs();
+  renderRanking();
+  renderProfile();
+  renderSearch();
   renderOps();
+  setActiveTab(state.activeTab);
 }
 
 function renderHero() {
-  const site = state.siteBundle?.site_config || {};
-  const hero = site.hero || {};
-  const gallery = state.dashboard?.gallery || {};
-  const progress = gallery.progress || {};
+  const view = getActiveView();
+  const gallery = view?.gallery || {};
   const current = gallery.current_title || {};
   const next = gallery.next_title_target || {};
-
-  setText("mobileEyebrow", hero.eyebrow_ko || "손안의 수영 대시보드");
-  setText("mobileTitle", hero.headline_ko || "오늘 기록과 랭킹을 가볍게 확인합니다");
-  setText(
-    "mobileCopy",
-    hero.subheadline_ko || "갤 전체 운동량, 현재 랭킹, 다음 해금까지 한 화면에서 빠르게 봅니다.",
-  );
-  setText(
-    "mobileGeneratedAt",
-    state.dashboard?.generated_at ? `집계 갱신 ${state.dashboard.generated_at}` : "집계 생성 시각을 불러오는 중입니다.",
-  );
-
-  document.getElementById("mobileHeroChips").innerHTML = [
-    chip(getVisibleDateRangeLabel(state.dashboard?.visible_date_range)),
-    chip(current.short_label_ko || "갤 칭호"),
-    chip(`배지 ${formatInt(state.badgeIndex?.badge_count)}개`),
-  ].join("");
-
-  document.getElementById("mobileQuickLinks").innerHTML = [
-    { label: "데스크톱 보기", href: buildDesktopUrl() },
-    { label: "배지 갤러리", href: "./badge-gallery.html" },
-    { label: "파싱 현황", href: "./parse-status.html" },
-  ].map((item) => `<a class="link-chip" href="${escapeHtml(item.href)}">${escapeHtml(item.label)}</a>`).join("");
-
-  const barWidth = Math.round(clampRatio(progress.progress_ratio || next.progress_ratio || 0) * 100);
-  document.getElementById("mobileUnlock").dataset.progressWidth = String(barWidth);
+  const progress = gallery.progress || {};
+  const ratio = clampRatio(progress.progress_ratio || next.progress_ratio || 0);
+  setHtml("mobileHero", `
+    <div class="hero-bg-mark">${iconSvg("swimmer")}</div>
+    <span class="season-chip">${escapeHtml(view?.short_label_ko || "S2")}</span>
+    <p>현재 칭호</p>
+    <h1>${escapeHtml(current.name_ko || "푸른물결")}</h1>
+    <span>${escapeHtml(progress.remaining_value_text_ko || next.remaining_value_text_ko || "다음 칭호 계산 중")}</span>
+    <div class="progress-track"><span style="width:${Math.round(ratio * 100)}%"></span></div>
+    <div class="progress-meta">
+      <small>${escapeHtml(progress.current_value_text_ko || formatDistance(view?.summary?.total_distance_m))} / ${escapeHtml(progress.target_value_text_ko || next.target_value_text_ko || "-")}</small>
+      <small>${Math.round(ratio * 100)}%</small>
+    </div>
+  `);
 }
 
 function renderKpis() {
-  const summary = state.dashboard?.summary || {};
-  const labels = state.siteBundle?.site_config?.kpi_labels || {};
+  const summary = getActiveView()?.summary || {};
+  const cards = [
+    ["이번 시즌 총거리", formatDistance(summary.total_distance_m), "지난 시즌 대비"],
+    ["공식 반영 기록", `${formatInt(summary.swim_count)}건`, "자동 후보 반영"],
+    ["활성 작성자", `${formatInt(summary.active_authors)}명`, "고정닉 기준"],
+    ["검토 대기", `${formatInt(getReviewCount())}건`, "큐 포함"],
+  ];
+  setHtml("mobileKpis", cards.map(([label, value, note]) => `
+    <article class="kpi-card">
+      <small>${escapeHtml(label)}</small>
+      <strong>${escapeHtml(value)}</strong>
+      <span>${escapeHtml(note)}</span>
+    </article>
+  `).join(""));
+}
 
-  document.getElementById("mobileKpis").innerHTML = `
-    <div class="panel-head">
-      <p class="section-kicker">갤 전체 운동량</p>
-      <h2>${escapeHtml(getVisibleDateRangeLabel(state.dashboard?.visible_date_range))}</h2>
-      <p class="note">현재 집계 기간 안에서 자동 반영된 운동량만 먼저 보여줍니다.</p>
+function renderAnalysisShortcuts() {
+  const rows = [
+    ["주간 추이", "line"],
+    ["영법 비중", "donut"],
+    ["월별 누적", "bar"],
+    ["평균 페이스", "pace"],
+  ];
+  setHtml("analysisShortcuts", rows.map(([label, icon]) => `
+    <button type="button" data-tab-target="records">
+      ${iconSvg(icon)}
+      <span>${escapeHtml(label)}</span>
+    </button>
+  `).join(""));
+}
+
+function renderWeekly() {
+  const rows = getDailyRows(getActiveView()).slice(-7);
+  if (!rows.length) {
+    setHtml("mobileWeeklyChart", `<p class="empty-state">주간 거리 데이터가 아직 없습니다.</p>`);
+    return;
+  }
+  setHtml("mobileWeeklyChart", lineChart(rows, "total_distance_m", (row) => shortDate(row.date), (value) => formatDistance(value)));
+}
+
+function getDailyRows(view) {
+  if (Array.isArray(view?.time_series?.daily) && view.time_series.daily.length) {
+    return view.time_series.daily;
+  }
+  const bucket = new Map();
+  (view?.recent_records || []).forEach((row) => {
+    const date = row.post_date || "";
+    if (!date) return;
+    const current = bucket.get(date) || { date, total_distance_m: 0, total_seconds: 0, swim_count: 0 };
+    current.total_distance_m += Number(row.distance_m || 0);
+    current.total_seconds += Number(row.total_seconds || 0);
+    current.swim_count += 1;
+    bucket.set(date, current);
+  });
+  return [...bucket.values()].sort((left, right) => String(left.date).localeCompare(String(right.date)));
+}
+
+function renderRecent() {
+  const rows = Array.isArray(getActiveView()?.recent_records) ? getActiveView().recent_records : [];
+  const preview = rows.slice(0, 3);
+  const full = rows.slice(0, 12);
+  setHtml("mobileRecentPreview", preview.length ? preview.map(recordRow).join("") : `<p class="empty-state">최근 기록이 아직 없습니다.</p>`);
+  setHtml("mobileRecords", full.length ? full.map(recordRow).join("") : `<p class="empty-state">최근 기록이 아직 없습니다.</p>`);
+}
+
+function renderReview() {
+  const count = getReviewCount();
+  const reasonCounts = getActiveView()?.ops?.review_reason_counts || {};
+  setHtml("mobileReviewAlert", `
+    <div>
+      <strong>검토 대기</strong>
+      <span>${formatInt(count)}건</span>
+      <p>${escapeHtml(buildReviewSummary(reasonCounts))}</p>
     </div>
-    <div class="kpi-grid">
-      ${renderKpi(labels.swim_count || "운동횟수", `${formatInt(summary.swim_count)}회`)}
-      ${renderKpi(labels.total_distance_m || "총거리", formatDistance(summary.total_distance_m))}
-      ${renderKpi(labels.total_seconds || "총시간", formatDurationLabel(summary.total_seconds))}
-      ${renderKpi(labels.active_authors || "참여 인원", `${formatInt(summary.active_authors)}명`)}
-    </div>
-  `;
+    <a href="./parse-status.html">더보기</a>
+  `);
+}
+
+function renderBadges() {
+  const unlocks = Array.isArray(getActiveView()?.recent_unlocks) ? getActiveView().recent_unlocks : [];
+  const preview = unlocks.slice(0, 1);
+  const rows = unlocks.slice(0, 12);
+  setHtml("mobileBadgePreview", preview.length ? preview.map((item) => badgeRow(item, "wide")).join("") : `<p class="empty-state">최근 해금 배지가 아직 없습니다.</p>`);
+  setHtml("mobileBadges", rows.length ? rows.map((item) => badgeRow(item)).join("") : `<p class="empty-state">보유 배지 데이터가 아직 없습니다.</p>`);
+}
+
+function renderSeasonTabs() {
+  const options = getSeasonViewOptions(state.dashboard);
+  setHtml("mobileSeasonTabs", options.map((item) => `
+    <button class="${item.view_key === state.activeSeasonKey ? "is-active" : ""}" type="button" data-mobile-season="${escapeHtml(item.view_key)}">
+      ${escapeHtml(item.label_ko)}
+    </button>
+  `).join(""));
 }
 
 function renderRanking() {
-  const metricKey = state.dashboard?.rankings?.default_metric || "swim_count";
-  const group = getMetricGroup(state.dashboard, metricKey);
-  const topRows = sliceTopThree(group).slice(0, 3);
-
-  document.getElementById("mobileRanking").innerHTML = `
-    <div class="panel-head">
-      <p class="section-kicker">현재 랭킹</p>
-      <h2>${escapeHtml(group.label_ko || metricLabel(metricKey))}</h2>
-      <p class="note">${escapeHtml(group.description_ko || "가장 눈에 띄는 상위권 닉네임부터 보여줍니다.")}</p>
-    </div>
-    ${renderSpotlight(topRows[0], metricKey)}
-    <div class="ranking-stack">
-      ${[2, 3].map((rank) => renderRankRow(topRows[rank - 1], rank)).join("")}
-    </div>
-  `;
+  const view = getActiveView();
+  const group = getMetricGroup(view, state.activeMetric);
+  const rows = group.rows?.length ? group.rows : [...(group.top3 || []), ...(group.ranks_4_to_20 || [])];
+  const top3 = rows.slice(0, 3);
+  setHtml("mobilePodium", top3.length ? top3.map((row, index) => `
+    <a class="podium-card rank-${index + 1}" href="${escapeHtml(row.profile_url || buildProfileUrl(row.author))}">
+      ${renderBadgeIcon(state.siteBundle, row.primary_title, row.author || "랭킹", "podium-avatar")}
+      <span>${index + 1}</span>
+      <strong>${escapeHtml(row.author || "작성자")}</strong>
+      <em>${escapeHtml(row.metric_value_text_ko || "-")}</em>
+    </a>
+  `).join("") : `<p class="empty-state">랭킹 데이터가 아직 없습니다.</p>`);
+  setHtml("mobileRankingList", rows.slice(3, 10).map((row, index) => `
+    <a class="ranking-row" href="${escapeHtml(row.profile_url || buildProfileUrl(row.author))}">
+      <span>${index + 4}</span>
+      <strong>${escapeHtml(row.author || "작성자")}</strong>
+      <em>${escapeHtml(row.metric_value_text_ko || "-")}</em>
+      <small>${escapeHtml(row.secondary_text_ko || "")}</small>
+    </a>
+  `).join(""));
+  setHtml("mobileRankingStats", `
+    <article><span>TOP 10 평균</span><strong>${escapeHtml(averageMetricLabel(rows.slice(0, 10), state.activeMetric))}</strong></article>
+    <article><span>전체 참여자</span><strong>${formatInt(view?.summary?.active_authors)}명</strong></article>
+    <article><span>시즌 총거리</span><strong>${formatDistance(view?.summary?.total_distance_m)}</strong></article>
+  `);
 }
 
-function renderUnlock() {
-  const gallery = state.dashboard?.gallery || {};
-  const progress = gallery.progress || {};
-  const current = gallery.current_title || {};
-  const next = gallery.next_title_target || {};
-  const recentUnlockCount = Array.isArray(state.dashboard?.recent_unlocks) ? state.dashboard.recent_unlocks.length : 0;
-  const progressRatio = Math.round(clampRatio(progress.progress_ratio || next.progress_ratio || 0) * 100);
-
-  document.getElementById("mobileUnlock").innerHTML = `
-    <div class="panel-head">
-      <p class="section-kicker">해금 진행도</p>
-      <h2>${escapeHtml(current.name_ko || "시즌 준비중")}</h2>
-      <p class="note">${escapeHtml(current.description_ko || "갤 전체 누적으로 해금되는 칭호입니다.")}</p>
+function renderProfile() {
+  const row = getActiveView()?.authors?.[0] || null;
+  if (!row) {
+    setHtml("mobileProfileCard", `<p class="empty-state">표시할 개인 프로필이 아직 없습니다.</p>`);
+    return;
+  }
+  setHtml("mobileProfileCard", `
+    <div class="profile-cover"></div>
+    <div class="profile-head">
+      ${renderBadgeIcon(state.siteBundle, row.primary_title, row.author || "프로필", "profile-avatar")}
+      <div>
+        <h1>${escapeHtml(row.author || "작성자")}</h1>
+        <span>${escapeHtml(row.primary_title?.name_ko || row.primary_title?.short_label_ko || "대표 칭호 준비중")}</span>
+      </div>
     </div>
-    <article class="unlock-card">
-      <strong>${escapeHtml(next.name_ko || "다음 칭호 준비중")}</strong>
-      <p class="record-note">${escapeHtml(`${progress.current_value_text_ko || "0m"} / ${progress.target_value_text_ko || next.target_value_text_ko || "-"}`)}</p>
-      <div class="progress-track"><span style="width:${progressRatio}%"></span></div>
-      <p class="note">${escapeHtml(progress.remaining_value_text_ko || next.remaining_value_text_ko || "다음 해금 계산 중")}</p>
-    </article>
-    <div class="unlock-mini-grid">
-      <article class="unlock-mini-card">
-        <small>대표 칭호</small>
-        <strong>${escapeHtml(current.short_label_ko || "대기중")}</strong>
-      </article>
-      <article class="unlock-mini-card">
-        <small>최근 해금</small>
-        <strong>${escapeHtml(`${formatInt(recentUnlockCount)}개`)}</strong>
-      </article>
-      <article class="unlock-mini-card">
-        <small>전체 배지</small>
-        <strong>${escapeHtml(`${formatInt(state.badgeIndex?.badge_count)}개`)}</strong>
-      </article>
-      <article class="unlock-mini-card">
-        <small>다음 목표</small>
-        <strong>${escapeHtml(next.short_label_ko || next.target_value_text_ko || "준비중")}</strong>
-      </article>
+    <div class="profile-stats">
+      <article><span>기록 수</span><strong>${formatInt(row.swim_count)}</strong></article>
+      <article><span>총거리</span><strong>${formatDistance(row.total_distance_m)}</strong></article>
+      <article><span>총시간</span><strong>${formatDurationLabel(row.total_seconds)}</strong></article>
+      <article><span>평균 페이스</span><strong>${formatPaceFromRow(row)}</strong></article>
     </div>
-    <a class="unlock-link" href="./badge-gallery.html">배지 갤러리 열기</a>
-  `;
+    <a class="primary-link" href="${escapeHtml(row.profile_url || buildProfileUrl(row.author))}">프로필 보기</a>
+  `);
 }
 
 function renderSearch() {
   const suggestions = getAuthorSuggestions(state.authorIndex).sort((left, right) => compareAuthors(left.author, right.author));
-  document.getElementById("authorSuggestions").innerHTML = suggestions
-    .map((row) => `<option value="${escapeHtml(row.author)}"></option>`)
-    .join("");
-
-  document.getElementById("mobileSearch").innerHTML = `
-    <div class="panel-head">
-      <p class="section-kicker">개인 페이지 찾기</p>
-      <h2>닉네임으로 내 수영 앨범 열기</h2>
-      <p class="note">닉네임을 입력하면 대표 칭호, 배지, 최근 기록을 바로 볼 수 있습니다.</p>
-    </div>
-    <form class="search-form" id="mobileSearchForm">
-      <label for="mobileAuthorSearch">닉네임 입력</label>
-      <div class="search-row">
-        <input id="mobileAuthorSearch" name="author" list="authorSuggestions" placeholder="닉네임 입력">
-        <button type="submit">열기</button>
-      </div>
-    </form>
-    <div class="search-suggestions">
-      ${suggestions.slice(0, 6).map((row) => `<button class="suggestion-chip" type="button" data-mobile-author="${escapeHtml(row.author)}">${escapeHtml(row.author)}</button>`).join("")}
-    </div>
-  `;
-}
-
-function renderRecent() {
-  const recent = Array.isArray(state.dashboard?.recent_records) ? state.dashboard.recent_records.slice(0, 6) : [];
-  document.getElementById("mobileRecent").innerHTML = `
-    <div class="panel-head">
-      <p class="section-kicker">최근 반영 기록</p>
-      <h2>방금 들어온 수영 기록</h2>
-    </div>
-    <div class="record-list">
-      ${recent.length ? recent.map(renderRecentRow).join("") : `
-        <article class="record-card">
-          <strong>최근 반영 기록이 아직 없습니다.</strong>
-          <p class="record-note">제목 양식으로 작성된 글이 들어오면 이 칸이 채워집니다.</p>
-        </article>
-      `}
-    </div>
-  `;
+  setHtml("authorSuggestions", suggestions.map((row) => `<option value="${escapeHtml(row.author)}"></option>`).join(""));
+  setHtml("mobileSuggestions", suggestions.slice(0, 8).map((row) => `
+    <button type="button" data-mobile-author="${escapeHtml(row.author)}">${escapeHtml(row.author)}</button>
+  `).join(""));
 }
 
 function renderOps() {
-  const reviewCount = Array.isArray(state.reviewQueue) ? state.reviewQueue.length : 0;
-  document.getElementById("mobileOps").innerHTML = `
-    <div class="panel-head">
-      <p class="section-kicker">검토와 더보기</p>
-      <h2>운영용 페이지 바로가기</h2>
-      <p class="note">자동 반영에 실패한 제목과 수동 보정 현황은 아래 링크에서 확인합니다.</p>
+  setHtml("mobileOpsCard", `
+    <div class="section-row">
+      <h2>운영 상태</h2>
+      <a href="./parse-status.html">검토</a>
     </div>
-    <div class="record-list">
-      <article class="ops-card">
-        <strong>검토 대기 ${escapeHtml(`${formatInt(reviewCount)}건`)}</strong>
-        <p class="record-note">제목 양식이 모호하거나 수동 보정이 필요한 글입니다.</p>
-        <a class="unlock-link" href="./parse-status.html">파싱 현황 보기</a>
-      </article>
-      <article class="ops-card">
-        <strong>배지 전시관</strong>
-        <p class="record-note">배지 종류와 아이콘 구성을 카테고리별로 확인합니다.</p>
-        <a class="unlock-link" href="./badge-gallery.html">배지 갤러리 열기</a>
-      </article>
+    <div class="ops-mini">
+      <article><span>검토 대기</span><strong>${formatInt(getReviewCount())}건</strong></article>
+      <article><span>배지 수</span><strong>${formatInt(state.badgeIndex?.badge_count)}개</strong></article>
+    </div>
+    <a class="primary-link" href="${buildDesktopUrl()}">데스크톱 화면 열기</a>
+  `);
+}
+
+function recordRow(row) {
+  return `
+    <a class="record-row" href="${escapeHtml(row.url || "#")}" target="_blank" rel="noreferrer">
+      <time>${escapeHtml(shortDate(row.post_date))}</time>
+      <span>${escapeHtml(sourceLabel(row.source))}</span>
+      <strong>${escapeHtml(formatDistance(row.distance_m))}</strong>
+      <em>${escapeHtml(row.total_time_text || formatDurationLabel(row.total_seconds))}</em>
+    </a>
+  `;
+}
+
+function badgeRow(item, mode = "") {
+  return `
+    <article class="badge-row ${escapeHtml(mode)}">
+      ${renderBadgeIcon(state.siteBundle, item, item.name_ko || item.badge_id, "badge-thumb")}
+      <div>
+        <strong>${escapeHtml(item.name_ko || item.short_label_ko || "배지")}</strong>
+        <span>${escapeHtml(categoryLabelFromBundle(state.siteBundle, item.category))}</span>
+      </div>
+    </article>
+  `;
+}
+
+function lineChart(rows, valueKey, labelFn, valueFn) {
+  const values = rows.map((row) => Number(row[valueKey] || 0));
+  const max = Math.max(...values, 1);
+  const points = rows.map((row, index) => {
+    const x = rows.length === 1 ? 50 : (index / (rows.length - 1)) * 100;
+    const y = 86 - (Number(row[valueKey] || 0) / max) * 66;
+    return { x, y, row, raw: Number(row[valueKey] || 0) };
+  });
+  return `
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 86 H100 M0 64 H100 M0 42 H100 M0 20 H100" class="grid"/>
+      <polyline points="${points.map((point) => `${point.x},${point.y}`).join(" ")}" class="line"/>
+      ${points.map((point) => `<circle cx="${point.x}" cy="${point.y}" r="2" class="dot"/>`).join("")}
+    </svg>
+    <div class="mobile-chart-labels">
+      ${points.map((point) => `<span><small>${escapeHtml(labelFn(point.row))}</small><strong>${escapeHtml(valueFn(point.raw))}</strong></span>`).join("")}
     </div>
   `;
 }
 
-function renderKpi(title, value) {
-  return `
-    <article class="kpi-card">
-      <small>${escapeHtml(title)}</small>
-      <strong>${escapeHtml(value)}</strong>
-    </article>
-  `;
+function setActiveTab(tab) {
+  state.activeTab = tab || "dashboard";
+  document.querySelectorAll("[data-mobile-panel]").forEach((panel) => {
+    panel.classList.toggle("is-active", panel.dataset.mobilePanel === state.activeTab);
+  });
+  document.querySelectorAll(".bottom-tabs [data-tab-target]").forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.tabTarget === state.activeTab);
+  });
+  window.scrollTo({ top: 0 });
 }
 
-function renderSpotlight(row, metricKey) {
-  if (!row) {
-    return `
-      <article class="spotlight-card is-placeholder">
-        <div class="spotlight-head">
-          <span class="mini-chip">1위</span>
-          <span class="stat-chip">자리 준비중</span>
-        </div>
-        <h3>아직 1위 닉네임이 없습니다</h3>
-        <p class="record-note">새로운 제목 양식 기록이 들어오면 가장 먼저 채워집니다.</p>
-      </article>
-    `;
-  }
-
-  return `
-    <article class="spotlight-card">
-      <div class="spotlight-head">
-        <span class="mini-chip">1위</span>
-        <span class="stat-chip">${escapeHtml(row.primary_title?.short_label_ko || "랭킹 선두")}</span>
-      </div>
-      <h3>${escapeHtml(row.author || "닉네임")}</h3>
-      <p class="spotlight-value">${escapeHtml(row.metric_value_text_ko || metricLabel(metricKey))}</p>
-      <p class="record-note">${escapeHtml(row.secondary_text_ko || "이번 시즌 기준 기록입니다.")}</p>
-      <div class="stat-chip-row">
-        ${row.primary_title?.icon_key ? renderBadgeIcon(state.siteBundle, row.primary_title, row.author || "닉네임", "inline-badge-icon") : ""}
-        ${(row.badge_preview || []).slice(0, 2).map((item) => `<span class="stat-chip">${escapeHtml(item)}</span>`).join("")}
-      </div>
-    </article>
-  `;
+function getActiveView() {
+  return getDashboardSeasonView(state.dashboard, state.activeSeasonKey);
 }
 
-function renderRankRow(row, rank) {
-  if (!row) {
-    return `
-      <article class="rank-card is-placeholder">
-        <div class="rank-head">
-          <span class="mini-chip">${rank}위</span>
-        </div>
-        <strong>빈 자리</strong>
-        <p class="record-note">새 기록이 들어오면 이 순위가 채워집니다.</p>
-      </article>
-    `;
-  }
-
-  return `
-    <article class="rank-card">
-      <div class="rank-head">
-        <span class="mini-chip">${escapeHtml(`${rank}위`)}</span>
-        <span class="stat-chip">${escapeHtml(row.primary_title?.short_label_ko || "기록 중")}</span>
-      </div>
-      <strong>${escapeHtml(row.author || "닉네임")}</strong>
-      <p class="record-note">${escapeHtml(row.metric_value_text_ko || "-")}</p>
-      <p class="note">${escapeHtml(row.secondary_text_ko || "시즌 누적 기록입니다.")}</p>
-    </article>
-  `;
+function getReviewCount() {
+  return Number(getActiveView()?.ops?.review_queue_count ?? state.reviewQueue.length ?? 0);
 }
 
-function renderRecentRow(row) {
-  return `
-    <article class="record-card">
-      <strong>${escapeHtml(row.author || "닉네임")}</strong>
-      <p class="record-note">${escapeHtml(`${formatDistance(row.distance_m)} · ${row.total_time_text || formatDurationLabel(row.total_seconds)}`)}</p>
-      <div class="mini-chip-row">
-        <span class="mini-chip">${escapeHtml(row.post_date || "-")}</span>
-        <span class="mini-chip">${escapeHtml(sourceLabel(row.source))}</span>
-      </div>
-    </article>
-  `;
+function buildReviewSummary(reasonCounts) {
+  const parts = Object.entries(reasonCounts || {}).slice(0, 3).map(([key, value]) => `${key} ${value}`);
+  return parts.length ? parts.join(" · ") : "OCR 충돌·본문 누락·수동 확인 대상이 여기에 표시됩니다.";
 }
 
-function openProfile() {
-  const query = String(document.getElementById("mobileAuthorSearch")?.value || "").trim();
-  if (!query) return;
-  const author = findAuthorMatch(state.authorIndex, query);
-  window.location.assign(buildProfileUrl(author));
+function averageMetricLabel(rows, metricKey) {
+  const values = rows.map((row) => Number(row[metricKey] ?? row.metric_value ?? 0)).filter((value) => Number.isFinite(value));
+  if (!values.length) return "-";
+  const avg = values.reduce((sum, value) => sum + value, 0) / values.length;
+  if (metricKey === "total_distance_m") return formatDistance(avg);
+  return `${formatInt(avg)}건`;
 }
 
-function chip(label) {
-  return `<span class="hero-chip">${escapeHtml(label)}</span>`;
+function formatPaceFromRow(row) {
+  const distance = Number(row.total_distance_m || 0);
+  const seconds = Number(row.total_seconds || 0);
+  if (distance <= 0 || seconds <= 0) return "-";
+  const pace = Math.round((seconds / distance) * 100);
+  const minutes = Math.floor(pace / 60);
+  return `${minutes}:${String(pace % 60).padStart(2, "0")}/100m`;
+}
+
+function shortDate(raw) {
+  const text = String(raw || "");
+  return text.length >= 10 ? text.slice(5, 10).replace("-", ".") : text || "-";
+}
+
+function resolveInitialSeasonKey() {
+  const params = new URLSearchParams(window.location.search);
+  const requested = params.get("view");
+  const options = getSeasonViewOptions(state.dashboard);
+  if (requested && options.some((item) => item.view_key === requested)) return requested;
+  const fallback = getDefaultSeasonViewKey(state.dashboard);
+  const seasonViews = state.dashboard?.season_views?.views || {};
+  const nonEmpty = options.find((item) => Number(seasonViews[item.view_key]?.summary?.swim_count || 0) > 0);
+  return nonEmpty?.view_key || fallback;
+}
+
+function syncQuery() {
+  const url = new URL(window.location.href);
+  url.searchParams.set("view", state.activeSeasonKey || getDefaultSeasonViewKey(state.dashboard));
+  window.history.replaceState({}, "", url);
+}
+
+function iconSvg(name) {
+  const icons = {
+    swimmer: '<path d="M3 15c4-3 7-3 11 0s7 3 11 0"/><path d="M3 20c4-3 7-3 11 0s7 3 11 0"/><circle cx="11" cy="6" r="3"/><path d="M6 12c4-5 9-7 15-5"/>',
+    line: '<path d="M4 18 9 12l4 3 7-9"/><path d="M4 21h16"/>',
+    donut: '<circle cx="12" cy="12" r="8"/><path d="M12 4v8l6 4"/>',
+    bar: '<path d="M5 19V9h3v10M11 19V5h3v14M17 19v-7h3v7"/>',
+    pace: '<path d="M4 14a8 8 0 1 1 16 0"/><path d="m12 14 4-4"/><path d="M7 20h10"/>',
+  };
+  return `<svg viewBox="0 0 24 24" aria-hidden="true">${icons[name] || icons.line}</svg>`;
 }
 
 function clampRatio(value) {
@@ -361,7 +432,7 @@ function clampRatio(value) {
   return Math.max(0, Math.min(1, numeric));
 }
 
-function setText(id, value) {
+function setHtml(id, html) {
   const node = document.getElementById(id);
-  if (node) node.textContent = value || "";
+  if (node) node.innerHTML = html || "";
 }
