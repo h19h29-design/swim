@@ -1,49 +1,49 @@
 {
-  "generated_at": "2026-06-13 23:23:06 KST",
-  "reference_date": "2026-04-25",
+  "generated_at": "2026-08-11 03:58:05 KST",
+  "reference_date": "2026-08-10",
   "dashboard_date_floor": "2026-03-01",
   "dashboard_window": {
     "start": "2026-03-01",
-    "end": "2026-04-25"
+    "end": "2026-08-10"
   },
   "visible_date_range": {
     "start": "2026-03-01",
-    "end": "2026-04-25"
+    "end": "2026-08-10"
   },
   "product_mode": "core_only",
   "default_mode": "core_only",
   "supported_modes": [
     "core_only"
   ],
-  "source_record_count": 194,
-  "visible_record_count": 185,
+  "source_record_count": 215,
+  "visible_record_count": 206,
   "summary": {
     "mode": "core_only",
     "record_count": 100,
-    "total_record_count": 185,
-    "source_record_count": 194,
+    "total_record_count": 206,
+    "source_record_count": 215,
     "dashboard_date_floor": "2026-03-01",
     "dashboard_window": {
       "start": "2026-03-01",
-      "end": "2026-04-25"
+      "end": "2026-08-10"
     },
     "visible_date_range": {
       "start": "2026-03-01",
-      "end": "2026-04-25"
+      "end": "2026-08-10"
     },
-    "excluded_record_count": 85,
+    "excluded_record_count": 106,
     "excluded_reason_counts": {
       "TITLE_FORMAT_INVALID": 3,
-      "TITLE_FORMAT_MISSING": 82
+      "TITLE_FORMAT_MISSING": 103
     },
-    "review_queue_count": 85,
+    "review_queue_count": 106,
     "review_reason_counts": {
       "TITLE_FORMAT_INVALID": 3,
-      "TITLE_FORMAT_MISSING": 82
+      "TITLE_FORMAT_MISSING": 103
     },
     "warning_code_counts": {},
     "source_counts": {
-      "none": 85,
+      "none": 106,
       "title_format": 100
     },
     "manual_override_counts": {},
@@ -60,54 +60,54 @@
       "title_format": 100
     },
     "has_zero_visible_included_rows": false,
-    "reference_date": "2026-04-25",
+    "reference_date": "2026-08-10",
     "growth": {
-      "reference_date": "2026-04-25",
+      "reference_date": "2026-08-10",
       "window_days": 28,
       "dashboard_date_floor": "2026-03-01",
       "recent_window": {
-        "start": "2026-03-29",
-        "end": "2026-04-25",
-        "nominal_start": "2026-03-29",
-        "nominal_end": "2026-04-25",
+        "start": "2026-07-14",
+        "end": "2026-08-10",
+        "nominal_start": "2026-07-14",
+        "nominal_end": "2026-08-10",
         "nominal_day_count": 28,
         "visible_day_count": 28,
         "truncated_by_floor": false
       },
       "previous_window": {
-        "start": "2026-03-01",
-        "end": "2026-03-28",
-        "nominal_start": "2026-03-01",
-        "nominal_end": "2026-03-28",
+        "start": "2026-06-16",
+        "end": "2026-07-13",
+        "nominal_start": "2026-06-16",
+        "nominal_end": "2026-07-13",
         "nominal_day_count": 28,
         "visible_day_count": 28,
         "truncated_by_floor": false
       },
       "metrics": {
         "swim_count": {
-          "recent_value": 56,
-          "previous_value": 44,
-          "delta_value": 12.0,
-          "pct_change": 27.27,
-          "pct_change_status": "standard"
+          "recent_value": 0,
+          "previous_value": 0,
+          "delta_value": 0.0,
+          "pct_change": 0.0,
+          "pct_change_status": "previous_zero_no_change"
         },
         "distance_m": {
-          "recent_value": 73625.0,
-          "previous_value": 68825.0,
-          "delta_value": 4800.0,
-          "pct_change": 6.97,
-          "pct_change_status": "standard"
+          "recent_value": 0,
+          "previous_value": 0,
+          "delta_value": 0.0,
+          "pct_change": 0.0,
+          "pct_change_status": "previous_zero_no_change"
         },
         "total_seconds": {
-          "recent_value": 196368,
-          "previous_value": 205585,
-          "delta_value": -9217.0,
-          "pct_change": -4.48,
-          "pct_change_status": "standard"
+          "recent_value": 0,
+          "previous_value": 0,
+          "delta_value": 0.0,
+          "pct_change": 0.0,
+          "pct_change_status": "previous_zero_no_change"
         }
       }
     },
-    "generated_at": "2026-06-13 23:23:06 KST",
+    "generated_at": "2026-08-11 03:58:05 KST",
     "date_range": {
       "start": "2026-03-01",
       "end": "2026-04-25"
@@ -285,7 +285,7 @@
     ],
     "metric_value": 142450.0,
     "metric_value_text_ko": "142.4km",
-    "reference_date": "2026-04-25"
+    "reference_date": "2026-08-10"
   },
   "recent_unlocks": [
     {
@@ -391,38 +391,38 @@
     {
       "scope": "author",
       "author": "근육키우기",
-      "badge_id": "grw_06",
-      "category": "growth",
-      "name_ko": "시간 각성",
-      "short_label_ko": "+90분",
-      "icon_key": "grw.base",
+      "badge_id": "att_03",
+      "category": "attendance",
+      "name_ko": "오수완 초심자",
+      "short_label_ko": "5회",
+      "icon_key": "att.base",
       "unlocked_at": "2026-04-21 10:55:03"
     },
     {
       "scope": "author",
-      "author": "근육키우기",
-      "badge_id": "grw_04",
-      "category": "growth",
-      "name_ko": "출석 각성",
-      "short_label_ko": "횟수 +3",
-      "icon_key": "grw.base",
-      "unlocked_at": "2026-04-21 10:55:03"
+      "author": "알프스",
+      "badge_id": "fun_04",
+      "category": "fun",
+      "name_ko": "새벽 입수러",
+      "short_label_ko": "새벽 3회",
+      "icon_key": "fun.base",
+      "unlocked_at": "2026-04-21 07:51:10"
     }
   ],
   "ops": {
-    "review_queue_count": 85,
+    "review_queue_count": 106,
     "review_reason_counts": {
       "TITLE_FORMAT_INVALID": 3,
-      "TITLE_FORMAT_MISSING": 82
+      "TITLE_FORMAT_MISSING": 103
     },
-    "excluded_record_count": 85,
+    "excluded_record_count": 106,
     "excluded_reason_counts": {
       "TITLE_FORMAT_INVALID": 3,
-      "TITLE_FORMAT_MISSING": 82
+      "TITLE_FORMAT_MISSING": 103
     },
     "warning_code_counts": {},
     "source_counts": {
-      "none": 85,
+      "none": 106,
       "title_format": 100
     },
     "manual_override_counts": {}
