@@ -1,24 +1,206 @@
 {
-  "generated_at": "2026-08-11 03:58:05 KST",
-  "reference_date": "2026-08-10",
+  "generated_at": "2026-08-23 10:20:52 KST",
+  "reference_date": "2026-08-23",
   "dashboard_date_floor": "2026-03-01",
   "dashboard_window": {
     "start": "2026-03-01",
-    "end": "2026-08-10"
+    "end": "2026-08-23"
   },
   "visible_date_range": {
     "start": "2026-03-01",
-    "end": "2026-08-10"
+    "end": "2026-08-23"
   },
   "product_mode": "core_only",
   "default_mode": "core_only",
   "supported_modes": [
     "core_only"
   ],
-  "source_record_count": 215,
-  "visible_record_count": 206,
-  "profile_count": 26,
+  "source_record_count": 240,
+  "visible_record_count": 231,
+  "profile_count": 29,
   "profiles": [
+    {
+      "author": ".아치",
+      "search_key": ".아치",
+      "latest_post_date": "2026-08-20",
+      "total_record_count": 3,
+      "included_record_count": 0,
+      "review_queue_count": 3,
+      "summary": {
+        "mode": "core_only",
+        "record_count": 0,
+        "total_record_count": 3,
+        "source_record_count": 3,
+        "dashboard_date_floor": "2026-03-01",
+        "dashboard_window": {
+          "start": "2026-03-01",
+          "end": "2026-08-23"
+        },
+        "visible_date_range": {
+          "start": "2026-08-14",
+          "end": "2026-08-20"
+        },
+        "excluded_record_count": 3,
+        "excluded_reason_counts": {
+          "TITLE_FORMAT_MISSING": 3
+        },
+        "review_queue_count": 3,
+        "review_reason_counts": {
+          "TITLE_FORMAT_MISSING": 3
+        },
+        "warning_code_counts": {},
+        "source_counts": {
+          "none": 3
+        },
+        "manual_override_counts": {},
+        "swim_count": 0,
+        "total_distance_m": 0,
+        "total_seconds": 0,
+        "total_duration_min": 0.0,
+        "distance_per_hour_m": null,
+        "active_authors": 0,
+        "included_metric_bucket_counts": {},
+        "included_source_counts": {},
+        "has_zero_visible_included_rows": true,
+        "reference_date": "2026-08-23",
+        "growth": {
+          "reference_date": "2026-08-23",
+          "window_days": 28,
+          "dashboard_date_floor": "2026-03-01",
+          "recent_window": {
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
+            "nominal_day_count": 28,
+            "visible_day_count": 28,
+            "truncated_by_floor": false
+          },
+          "previous_window": {
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
+            "nominal_day_count": 28,
+            "visible_day_count": 28,
+            "truncated_by_floor": false
+          },
+          "metrics": {
+            "swim_count": {
+              "recent_value": 0,
+              "previous_value": 0,
+              "delta_value": 0.0,
+              "pct_change": 0.0,
+              "pct_change_status": "previous_zero_no_change"
+            },
+            "distance_m": {
+              "recent_value": 0,
+              "previous_value": 0,
+              "delta_value": 0.0,
+              "pct_change": 0.0,
+              "pct_change_status": "previous_zero_no_change"
+            },
+            "total_seconds": {
+              "recent_value": 0,
+              "previous_value": 0,
+              "delta_value": 0.0,
+              "pct_change": 0.0,
+              "pct_change_status": "previous_zero_no_change"
+            }
+          }
+        },
+        "generated_at": "2026-08-23 10:20:52 KST",
+        "date_range": {
+          "start": null,
+          "end": null
+        }
+      },
+      "recent_28d_vs_previous_28d": {
+        "reference_date": "2026-08-23",
+        "window_days": 28,
+        "dashboard_date_floor": "2026-03-01",
+        "recent_window": {
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
+          "nominal_day_count": 28,
+          "visible_day_count": 28,
+          "truncated_by_floor": false
+        },
+        "previous_window": {
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
+          "nominal_day_count": 28,
+          "visible_day_count": 28,
+          "truncated_by_floor": false
+        },
+        "metrics": {
+          "swim_count": {
+            "recent_value": 0,
+            "previous_value": 0,
+            "delta_value": 0.0,
+            "pct_change": 0.0,
+            "pct_change_status": "previous_zero_no_change"
+          },
+          "distance_m": {
+            "recent_value": 0,
+            "previous_value": 0,
+            "delta_value": 0.0,
+            "pct_change": 0.0,
+            "pct_change_status": "previous_zero_no_change"
+          },
+          "total_seconds": {
+            "recent_value": 0,
+            "previous_value": 0,
+            "delta_value": 0.0,
+            "pct_change": 0.0,
+            "pct_change_status": "previous_zero_no_change"
+          }
+        }
+      },
+      "monthly_trend": [],
+      "recent_records": [],
+      "time_series": {
+        "daily": []
+      },
+      "primary_title": null,
+      "unlocked_badges": [],
+      "next_badge_progress": {
+        "badge_id": "att_01",
+        "category": "attendance",
+        "name_ko": "첫 입수",
+        "short_label_ko": "첫 입수",
+        "description_ko": "core 기록을 처음 남기면 받는 첫 스티커입니다.",
+        "threshold_type": "author_total_swim_count",
+        "threshold_value": 1,
+        "icon_key": "att.base",
+        "tier": 1,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null,
+        "current_value": 0,
+        "current_value_text_ko": "0회",
+        "target_value": 1,
+        "target_value_text_ko": "1회",
+        "remaining_value": 1,
+        "remaining_value_text_ko": "1회 남음",
+        "progress_ratio": 0.0
+      },
+      "badge_counts_by_category": {
+        "attendance": 0,
+        "distance": 0,
+        "time": 0,
+        "efficiency": 0,
+        "growth": 0,
+        "season": 0,
+        "gallery": 0,
+        "fun": 0
+      },
+      "recent_unlocks": []
+    },
     {
       "author": "0asis",
       "search_key": "0asis",
@@ -34,7 +216,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-03-15",
@@ -67,25 +249,25 @@
           "title_format": 1
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -114,30 +296,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": "2026-03-15",
           "end": "2026-03-15"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -517,7 +699,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-03-14",
@@ -545,25 +727,25 @@
           "title_format": 2
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -592,30 +774,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": "2026-03-14",
           "end": "2026-03-15"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -1105,7 +1287,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-03-01",
@@ -1138,25 +1320,25 @@
           "title_format": 15
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -1185,30 +1367,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": "2026-03-01",
           "end": "2026-04-18"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -2204,35 +2386,35 @@
     {
       "author": "SㅇS",
       "search_key": "sᄋs",
-      "latest_post_date": "2026-08-10",
-      "total_record_count": 12,
+      "latest_post_date": "2026-08-20",
+      "total_record_count": 16,
       "included_record_count": 8,
-      "review_queue_count": 4,
+      "review_queue_count": 8,
       "summary": {
         "mode": "core_only",
         "record_count": 8,
-        "total_record_count": 12,
-        "source_record_count": 12,
+        "total_record_count": 16,
+        "source_record_count": 16,
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-03-13",
-          "end": "2026-08-10"
+          "end": "2026-08-20"
         },
-        "excluded_record_count": 4,
+        "excluded_record_count": 8,
         "excluded_reason_counts": {
-          "TITLE_FORMAT_MISSING": 4
+          "TITLE_FORMAT_MISSING": 8
         },
-        "review_queue_count": 4,
+        "review_queue_count": 8,
         "review_reason_counts": {
-          "TITLE_FORMAT_MISSING": 4
+          "TITLE_FORMAT_MISSING": 8
         },
         "warning_code_counts": {},
         "source_counts": {
-          "none": 4,
+          "none": 8,
           "title_format": 8
         },
         "manual_override_counts": {},
@@ -2249,25 +2431,25 @@
           "title_format": 8
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -2296,30 +2478,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": "2026-03-17",
           "end": "2026-04-24"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -2983,9 +3165,9 @@
       ]
     },
     {
-      "author": "ㅅㄹㅇ!",
-      "search_key": "ᄉᄅᄋ!",
-      "latest_post_date": "2026-08-06",
+      "author": "ㅁㅂㅎㄹ",
+      "search_key": "ᄆᄇᄒᄅ",
+      "latest_post_date": "2026-08-20",
       "total_record_count": 1,
       "included_record_count": 0,
       "review_queue_count": 1,
@@ -2997,11 +3179,11 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
-          "start": "2026-08-06",
-          "end": "2026-08-06"
+          "start": "2026-08-20",
+          "end": "2026-08-20"
         },
         "excluded_record_count": 1,
         "excluded_reason_counts": {
@@ -3025,25 +3207,25 @@
         "included_metric_bucket_counts": {},
         "included_source_counts": {},
         "has_zero_visible_included_rows": true,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -3072,30 +3254,212 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": null,
           "end": null
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
+          "nominal_day_count": 28,
+          "visible_day_count": 28,
+          "truncated_by_floor": false
+        },
+        "metrics": {
+          "swim_count": {
+            "recent_value": 0,
+            "previous_value": 0,
+            "delta_value": 0.0,
+            "pct_change": 0.0,
+            "pct_change_status": "previous_zero_no_change"
+          },
+          "distance_m": {
+            "recent_value": 0,
+            "previous_value": 0,
+            "delta_value": 0.0,
+            "pct_change": 0.0,
+            "pct_change_status": "previous_zero_no_change"
+          },
+          "total_seconds": {
+            "recent_value": 0,
+            "previous_value": 0,
+            "delta_value": 0.0,
+            "pct_change": 0.0,
+            "pct_change_status": "previous_zero_no_change"
+          }
+        }
+      },
+      "monthly_trend": [],
+      "recent_records": [],
+      "time_series": {
+        "daily": []
+      },
+      "primary_title": null,
+      "unlocked_badges": [],
+      "next_badge_progress": {
+        "badge_id": "att_01",
+        "category": "attendance",
+        "name_ko": "첫 입수",
+        "short_label_ko": "첫 입수",
+        "description_ko": "core 기록을 처음 남기면 받는 첫 스티커입니다.",
+        "threshold_type": "author_total_swim_count",
+        "threshold_value": 1,
+        "icon_key": "att.base",
+        "tier": 1,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null,
+        "current_value": 0,
+        "current_value_text_ko": "0회",
+        "target_value": 1,
+        "target_value_text_ko": "1회",
+        "remaining_value": 1,
+        "remaining_value_text_ko": "1회 남음",
+        "progress_ratio": 0.0
+      },
+      "badge_counts_by_category": {
+        "attendance": 0,
+        "distance": 0,
+        "time": 0,
+        "efficiency": 0,
+        "growth": 0,
+        "season": 0,
+        "gallery": 0,
+        "fun": 0
+      },
+      "recent_unlocks": []
+    },
+    {
+      "author": "ㅅㄹㅇ!",
+      "search_key": "ᄉᄅᄋ!",
+      "latest_post_date": "2026-08-06",
+      "total_record_count": 1,
+      "included_record_count": 0,
+      "review_queue_count": 1,
+      "summary": {
+        "mode": "core_only",
+        "record_count": 0,
+        "total_record_count": 1,
+        "source_record_count": 1,
+        "dashboard_date_floor": "2026-03-01",
+        "dashboard_window": {
+          "start": "2026-03-01",
+          "end": "2026-08-23"
+        },
+        "visible_date_range": {
+          "start": "2026-08-06",
+          "end": "2026-08-06"
+        },
+        "excluded_record_count": 1,
+        "excluded_reason_counts": {
+          "TITLE_FORMAT_MISSING": 1
+        },
+        "review_queue_count": 1,
+        "review_reason_counts": {
+          "TITLE_FORMAT_MISSING": 1
+        },
+        "warning_code_counts": {},
+        "source_counts": {
+          "none": 1
+        },
+        "manual_override_counts": {},
+        "swim_count": 0,
+        "total_distance_m": 0,
+        "total_seconds": 0,
+        "total_duration_min": 0.0,
+        "distance_per_hour_m": null,
+        "active_authors": 0,
+        "included_metric_bucket_counts": {},
+        "included_source_counts": {},
+        "has_zero_visible_included_rows": true,
+        "reference_date": "2026-08-23",
+        "growth": {
+          "reference_date": "2026-08-23",
+          "window_days": 28,
+          "dashboard_date_floor": "2026-03-01",
+          "recent_window": {
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
+            "nominal_day_count": 28,
+            "visible_day_count": 28,
+            "truncated_by_floor": false
+          },
+          "previous_window": {
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
+            "nominal_day_count": 28,
+            "visible_day_count": 28,
+            "truncated_by_floor": false
+          },
+          "metrics": {
+            "swim_count": {
+              "recent_value": 0,
+              "previous_value": 0,
+              "delta_value": 0.0,
+              "pct_change": 0.0,
+              "pct_change_status": "previous_zero_no_change"
+            },
+            "distance_m": {
+              "recent_value": 0,
+              "previous_value": 0,
+              "delta_value": 0.0,
+              "pct_change": 0.0,
+              "pct_change_status": "previous_zero_no_change"
+            },
+            "total_seconds": {
+              "recent_value": 0,
+              "previous_value": 0,
+              "delta_value": 0.0,
+              "pct_change": 0.0,
+              "pct_change_status": "previous_zero_no_change"
+            }
+          }
+        },
+        "generated_at": "2026-08-23 10:20:52 KST",
+        "date_range": {
+          "start": null,
+          "end": null
+        }
+      },
+      "recent_28d_vs_previous_28d": {
+        "reference_date": "2026-08-23",
+        "window_days": 28,
+        "dashboard_date_floor": "2026-03-01",
+        "recent_window": {
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
+          "nominal_day_count": 28,
+          "visible_day_count": 28,
+          "truncated_by_floor": false
+        },
+        "previous_window": {
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -3167,37 +3531,37 @@
     {
       "author": "ㅇㅂㄹㅋㄷㅂㄹ",
       "search_key": "ᄋᄇᄅᄏᄃᄇᄅ",
-      "latest_post_date": "2026-08-08",
-      "total_record_count": 9,
+      "latest_post_date": "2026-08-12",
+      "total_record_count": 10,
       "included_record_count": 0,
-      "review_queue_count": 9,
+      "review_queue_count": 10,
       "summary": {
         "mode": "core_only",
         "record_count": 0,
-        "total_record_count": 9,
-        "source_record_count": 9,
+        "total_record_count": 10,
+        "source_record_count": 10,
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-03-03",
-          "end": "2026-08-08"
+          "end": "2026-08-12"
         },
-        "excluded_record_count": 9,
+        "excluded_record_count": 10,
         "excluded_reason_counts": {
           "TITLE_FORMAT_INVALID": 1,
-          "TITLE_FORMAT_MISSING": 8
+          "TITLE_FORMAT_MISSING": 9
         },
-        "review_queue_count": 9,
+        "review_queue_count": 10,
         "review_reason_counts": {
           "TITLE_FORMAT_INVALID": 1,
-          "TITLE_FORMAT_MISSING": 8
+          "TITLE_FORMAT_MISSING": 9
         },
         "warning_code_counts": {},
         "source_counts": {
-          "none": 9
+          "none": 10
         },
         "manual_override_counts": {},
         "swim_count": 0,
@@ -3209,25 +3573,25 @@
         "included_metric_bucket_counts": {},
         "included_source_counts": {},
         "has_zero_visible_included_rows": true,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -3256,30 +3620,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": null,
           "end": null
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -3363,7 +3727,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-03-11",
@@ -3391,25 +3755,25 @@
         "included_metric_bucket_counts": {},
         "included_source_counts": {},
         "has_zero_visible_included_rows": true,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -3438,30 +3802,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": null,
           "end": null
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -3533,35 +3897,35 @@
     {
       "author": "근육키우기",
       "search_key": "근육키우기",
-      "latest_post_date": "2026-04-23",
-      "total_record_count": 17,
+      "latest_post_date": "2026-08-21",
+      "total_record_count": 20,
       "included_record_count": 7,
-      "review_queue_count": 10,
+      "review_queue_count": 13,
       "summary": {
         "mode": "core_only",
         "record_count": 7,
-        "total_record_count": 17,
-        "source_record_count": 17,
+        "total_record_count": 20,
+        "source_record_count": 20,
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-03-03",
-          "end": "2026-04-23"
+          "end": "2026-08-21"
         },
-        "excluded_record_count": 10,
+        "excluded_record_count": 13,
         "excluded_reason_counts": {
-          "TITLE_FORMAT_MISSING": 10
+          "TITLE_FORMAT_MISSING": 13
         },
-        "review_queue_count": 10,
+        "review_queue_count": 13,
         "review_reason_counts": {
-          "TITLE_FORMAT_MISSING": 10
+          "TITLE_FORMAT_MISSING": 13
         },
         "warning_code_counts": {},
         "source_counts": {
-          "none": 10,
+          "none": 13,
           "title_format": 7
         },
         "manual_override_counts": {},
@@ -3578,25 +3942,25 @@
           "title_format": 7
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -3625,30 +3989,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": "2026-03-17",
           "end": "2026-04-23"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -4304,7 +4668,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-03-13",
@@ -4332,25 +4696,25 @@
         "included_metric_bucket_counts": {},
         "included_source_counts": {},
         "has_zero_visible_included_rows": true,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -4379,30 +4743,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": null,
           "end": null
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -4486,7 +4850,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-03-08",
@@ -4514,25 +4878,25 @@
         "included_metric_bucket_counts": {},
         "included_source_counts": {},
         "has_zero_visible_included_rows": true,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -4561,30 +4925,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": null,
           "end": null
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -4668,7 +5032,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-08-03",
@@ -4696,25 +5060,25 @@
         "included_metric_bucket_counts": {},
         "included_source_counts": {},
         "has_zero_visible_included_rows": true,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -4743,30 +5107,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": null,
           "end": null
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -4850,7 +5214,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-03-04",
@@ -4878,25 +5242,25 @@
         "included_metric_bucket_counts": {},
         "included_source_counts": {},
         "has_zero_visible_included_rows": true,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -4925,30 +5289,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": null,
           "end": null
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -5032,7 +5396,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-03-01",
@@ -5065,25 +5429,25 @@
           "title_format": 3
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -5112,30 +5476,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": "2026-03-16",
           "end": "2026-04-22"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -5571,7 +5935,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-03-13",
@@ -5599,25 +5963,25 @@
         "included_metric_bucket_counts": {},
         "included_source_counts": {},
         "has_zero_visible_included_rows": true,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -5646,30 +6010,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": null,
           "end": null
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -5753,7 +6117,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-03-13",
@@ -5781,25 +6145,25 @@
           "title_format": 1
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -5828,30 +6192,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": "2026-03-13",
           "end": "2026-03-13"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -6231,7 +6595,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-03-02",
@@ -6264,25 +6628,25 @@
           "title_format": 14
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -6311,30 +6675,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": "2026-03-12",
           "end": "2026-04-24"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -7242,35 +7606,35 @@
     {
       "author": "양.아치",
       "search_key": "양.아치",
-      "latest_post_date": "2026-08-10",
-      "total_record_count": 14,
+      "latest_post_date": "2026-08-13",
+      "total_record_count": 15,
       "included_record_count": 1,
-      "review_queue_count": 13,
+      "review_queue_count": 14,
       "summary": {
         "mode": "core_only",
         "record_count": 1,
-        "total_record_count": 14,
-        "source_record_count": 14,
+        "total_record_count": 15,
+        "source_record_count": 15,
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-03-03",
-          "end": "2026-08-10"
+          "end": "2026-08-13"
         },
-        "excluded_record_count": 13,
+        "excluded_record_count": 14,
         "excluded_reason_counts": {
-          "TITLE_FORMAT_MISSING": 13
+          "TITLE_FORMAT_MISSING": 14
         },
-        "review_queue_count": 13,
+        "review_queue_count": 14,
         "review_reason_counts": {
-          "TITLE_FORMAT_MISSING": 13
+          "TITLE_FORMAT_MISSING": 14
         },
         "warning_code_counts": {},
         "source_counts": {
-          "none": 13,
+          "none": 14,
           "title_format": 1
         },
         "manual_override_counts": {},
@@ -7287,25 +7651,25 @@
           "title_format": 1
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -7334,30 +7698,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": "2026-04-19",
           "end": "2026-04-19"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -7759,7 +8123,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-03-13",
@@ -7789,25 +8153,25 @@
         "included_metric_bucket_counts": {},
         "included_source_counts": {},
         "has_zero_visible_included_rows": true,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -7836,30 +8200,212 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": null,
           "end": null
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
+          "nominal_day_count": 28,
+          "visible_day_count": 28,
+          "truncated_by_floor": false
+        },
+        "metrics": {
+          "swim_count": {
+            "recent_value": 0,
+            "previous_value": 0,
+            "delta_value": 0.0,
+            "pct_change": 0.0,
+            "pct_change_status": "previous_zero_no_change"
+          },
+          "distance_m": {
+            "recent_value": 0,
+            "previous_value": 0,
+            "delta_value": 0.0,
+            "pct_change": 0.0,
+            "pct_change_status": "previous_zero_no_change"
+          },
+          "total_seconds": {
+            "recent_value": 0,
+            "previous_value": 0,
+            "delta_value": 0.0,
+            "pct_change": 0.0,
+            "pct_change_status": "previous_zero_no_change"
+          }
+        }
+      },
+      "monthly_trend": [],
+      "recent_records": [],
+      "time_series": {
+        "daily": []
+      },
+      "primary_title": null,
+      "unlocked_badges": [],
+      "next_badge_progress": {
+        "badge_id": "att_01",
+        "category": "attendance",
+        "name_ko": "첫 입수",
+        "short_label_ko": "첫 입수",
+        "description_ko": "core 기록을 처음 남기면 받는 첫 스티커입니다.",
+        "threshold_type": "author_total_swim_count",
+        "threshold_value": 1,
+        "icon_key": "att.base",
+        "tier": 1,
+        "is_primary_title_candidate": true,
+        "is_hidden": false,
+        "season_tag": null,
+        "current_value": 0,
+        "current_value_text_ko": "0회",
+        "target_value": 1,
+        "target_value_text_ko": "1회",
+        "remaining_value": 1,
+        "remaining_value_text_ko": "1회 남음",
+        "progress_ratio": 0.0
+      },
+      "badge_counts_by_category": {
+        "attendance": 0,
+        "distance": 0,
+        "time": 0,
+        "efficiency": 0,
+        "growth": 0,
+        "season": 0,
+        "gallery": 0,
+        "fun": 0
+      },
+      "recent_unlocks": []
+    },
+    {
+      "author": "자식농사",
+      "search_key": "자식농사",
+      "latest_post_date": "2026-08-20",
+      "total_record_count": 1,
+      "included_record_count": 0,
+      "review_queue_count": 1,
+      "summary": {
+        "mode": "core_only",
+        "record_count": 0,
+        "total_record_count": 1,
+        "source_record_count": 1,
+        "dashboard_date_floor": "2026-03-01",
+        "dashboard_window": {
+          "start": "2026-03-01",
+          "end": "2026-08-23"
+        },
+        "visible_date_range": {
+          "start": "2026-08-20",
+          "end": "2026-08-20"
+        },
+        "excluded_record_count": 1,
+        "excluded_reason_counts": {
+          "TITLE_FORMAT_MISSING": 1
+        },
+        "review_queue_count": 1,
+        "review_reason_counts": {
+          "TITLE_FORMAT_MISSING": 1
+        },
+        "warning_code_counts": {},
+        "source_counts": {
+          "none": 1
+        },
+        "manual_override_counts": {},
+        "swim_count": 0,
+        "total_distance_m": 0,
+        "total_seconds": 0,
+        "total_duration_min": 0.0,
+        "distance_per_hour_m": null,
+        "active_authors": 0,
+        "included_metric_bucket_counts": {},
+        "included_source_counts": {},
+        "has_zero_visible_included_rows": true,
+        "reference_date": "2026-08-23",
+        "growth": {
+          "reference_date": "2026-08-23",
+          "window_days": 28,
+          "dashboard_date_floor": "2026-03-01",
+          "recent_window": {
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
+            "nominal_day_count": 28,
+            "visible_day_count": 28,
+            "truncated_by_floor": false
+          },
+          "previous_window": {
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
+            "nominal_day_count": 28,
+            "visible_day_count": 28,
+            "truncated_by_floor": false
+          },
+          "metrics": {
+            "swim_count": {
+              "recent_value": 0,
+              "previous_value": 0,
+              "delta_value": 0.0,
+              "pct_change": 0.0,
+              "pct_change_status": "previous_zero_no_change"
+            },
+            "distance_m": {
+              "recent_value": 0,
+              "previous_value": 0,
+              "delta_value": 0.0,
+              "pct_change": 0.0,
+              "pct_change_status": "previous_zero_no_change"
+            },
+            "total_seconds": {
+              "recent_value": 0,
+              "previous_value": 0,
+              "delta_value": 0.0,
+              "pct_change": 0.0,
+              "pct_change_status": "previous_zero_no_change"
+            }
+          }
+        },
+        "generated_at": "2026-08-23 10:20:52 KST",
+        "date_range": {
+          "start": null,
+          "end": null
+        }
+      },
+      "recent_28d_vs_previous_28d": {
+        "reference_date": "2026-08-23",
+        "window_days": 28,
+        "dashboard_date_floor": "2026-03-01",
+        "recent_window": {
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
+          "nominal_day_count": 28,
+          "visible_day_count": 28,
+          "truncated_by_floor": false
+        },
+        "previous_window": {
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -7931,35 +8477,35 @@
     {
       "author": "주석",
       "search_key": "주석",
-      "latest_post_date": "2026-04-17",
-      "total_record_count": 7,
+      "latest_post_date": "2026-08-22",
+      "total_record_count": 9,
       "included_record_count": 5,
-      "review_queue_count": 2,
+      "review_queue_count": 4,
       "summary": {
         "mode": "core_only",
         "record_count": 5,
-        "total_record_count": 7,
-        "source_record_count": 7,
+        "total_record_count": 9,
+        "source_record_count": 9,
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-03-01",
-          "end": "2026-04-17"
+          "end": "2026-08-22"
         },
-        "excluded_record_count": 2,
+        "excluded_record_count": 4,
         "excluded_reason_counts": {
-          "TITLE_FORMAT_MISSING": 2
+          "TITLE_FORMAT_MISSING": 4
         },
-        "review_queue_count": 2,
+        "review_queue_count": 4,
         "review_reason_counts": {
-          "TITLE_FORMAT_MISSING": 2
+          "TITLE_FORMAT_MISSING": 4
         },
         "warning_code_counts": {},
         "source_counts": {
-          "none": 2,
+          "none": 4,
           "title_format": 5
         },
         "manual_override_counts": {},
@@ -7976,25 +8522,25 @@
           "title_format": 5
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -8023,30 +8569,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": "2026-03-01",
           "end": "2026-04-17"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -8668,35 +9214,35 @@
     {
       "author": "중년히어로즈",
       "search_key": "중년히어로즈",
-      "latest_post_date": "2026-08-06",
-      "total_record_count": 6,
+      "latest_post_date": "2026-08-19",
+      "total_record_count": 7,
       "included_record_count": 4,
-      "review_queue_count": 2,
+      "review_queue_count": 3,
       "summary": {
         "mode": "core_only",
         "record_count": 4,
-        "total_record_count": 6,
-        "source_record_count": 6,
+        "total_record_count": 7,
+        "source_record_count": 7,
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-03-10",
-          "end": "2026-08-06"
+          "end": "2026-08-19"
         },
-        "excluded_record_count": 2,
+        "excluded_record_count": 3,
         "excluded_reason_counts": {
-          "TITLE_FORMAT_MISSING": 2
+          "TITLE_FORMAT_MISSING": 3
         },
-        "review_queue_count": 2,
+        "review_queue_count": 3,
         "review_reason_counts": {
-          "TITLE_FORMAT_MISSING": 2
+          "TITLE_FORMAT_MISSING": 3
         },
         "warning_code_counts": {},
         "source_counts": {
-          "none": 2,
+          "none": 3,
           "title_format": 4
         },
         "manual_override_counts": {},
@@ -8713,25 +9259,25 @@
           "title_format": 4
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -8760,30 +9306,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": "2026-03-10",
           "end": "2026-04-22"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -9285,7 +9831,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-04-13",
@@ -9313,25 +9859,25 @@
           "title_format": 5
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -9360,30 +9906,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": "2026-04-13",
           "end": "2026-04-25"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -10071,7 +10617,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-03-14",
@@ -10099,25 +10645,25 @@
           "title_format": 3
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -10146,30 +10692,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": "2026-03-14",
           "end": "2026-03-16"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -10713,35 +11259,35 @@
     {
       "author": "천천히영",
       "search_key": "천천히영",
-      "latest_post_date": "2026-08-06",
-      "total_record_count": 22,
+      "latest_post_date": "2026-08-21",
+      "total_record_count": 26,
       "included_record_count": 16,
-      "review_queue_count": 6,
+      "review_queue_count": 10,
       "summary": {
         "mode": "core_only",
         "record_count": 16,
-        "total_record_count": 22,
-        "source_record_count": 22,
+        "total_record_count": 26,
+        "source_record_count": 26,
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-03-10",
-          "end": "2026-08-06"
+          "end": "2026-08-21"
         },
-        "excluded_record_count": 6,
+        "excluded_record_count": 10,
         "excluded_reason_counts": {
-          "TITLE_FORMAT_MISSING": 6
+          "TITLE_FORMAT_MISSING": 10
         },
-        "review_queue_count": 6,
+        "review_queue_count": 10,
         "review_reason_counts": {
-          "TITLE_FORMAT_MISSING": 6
+          "TITLE_FORMAT_MISSING": 10
         },
         "warning_code_counts": {},
         "source_counts": {
-          "none": 6,
+          "none": 10,
           "title_format": 16
         },
         "manual_override_counts": {},
@@ -10758,25 +11304,25 @@
           "title_format": 16
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -10805,30 +11351,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": "2026-03-10",
           "end": "2026-04-24"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -11748,7 +12294,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-03-01",
@@ -11781,25 +12327,25 @@
           "title_format": 15
         },
         "has_zero_visible_included_rows": false,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -11828,30 +12374,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": "2026-03-01",
           "end": "2026-04-22"
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -12817,35 +13363,35 @@
     {
       "author": "프리맨",
       "search_key": "프리맨",
-      "latest_post_date": "2026-03-16",
-      "total_record_count": 5,
+      "latest_post_date": "2026-08-23",
+      "total_record_count": 9,
       "included_record_count": 0,
-      "review_queue_count": 5,
+      "review_queue_count": 9,
       "summary": {
         "mode": "core_only",
         "record_count": 0,
-        "total_record_count": 5,
-        "source_record_count": 5,
+        "total_record_count": 9,
+        "source_record_count": 9,
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-03-04",
-          "end": "2026-03-16"
+          "end": "2026-08-23"
         },
-        "excluded_record_count": 5,
+        "excluded_record_count": 9,
         "excluded_reason_counts": {
-          "TITLE_FORMAT_MISSING": 5
+          "TITLE_FORMAT_MISSING": 9
         },
-        "review_queue_count": 5,
+        "review_queue_count": 9,
         "review_reason_counts": {
-          "TITLE_FORMAT_MISSING": 5
+          "TITLE_FORMAT_MISSING": 9
         },
         "warning_code_counts": {},
         "source_counts": {
-          "none": 5
+          "none": 9
         },
         "manual_override_counts": {},
         "swim_count": 0,
@@ -12857,25 +13403,25 @@
         "included_metric_bucket_counts": {},
         "included_source_counts": {},
         "has_zero_visible_included_rows": true,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -12904,30 +13450,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": null,
           "end": null
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -13011,7 +13557,7 @@
         "dashboard_date_floor": "2026-03-01",
         "dashboard_window": {
           "start": "2026-03-01",
-          "end": "2026-08-10"
+          "end": "2026-08-23"
         },
         "visible_date_range": {
           "start": "2026-03-03",
@@ -13039,25 +13585,25 @@
         "included_metric_bucket_counts": {},
         "included_source_counts": {},
         "has_zero_visible_included_rows": true,
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "growth": {
-          "reference_date": "2026-08-10",
+          "reference_date": "2026-08-23",
           "window_days": 28,
           "dashboard_date_floor": "2026-03-01",
           "recent_window": {
-            "start": "2026-07-14",
-            "end": "2026-08-10",
-            "nominal_start": "2026-07-14",
-            "nominal_end": "2026-08-10",
+            "start": "2026-07-27",
+            "end": "2026-08-23",
+            "nominal_start": "2026-07-27",
+            "nominal_end": "2026-08-23",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
           },
           "previous_window": {
-            "start": "2026-06-16",
-            "end": "2026-07-13",
-            "nominal_start": "2026-06-16",
-            "nominal_end": "2026-07-13",
+            "start": "2026-06-29",
+            "end": "2026-07-26",
+            "nominal_start": "2026-06-29",
+            "nominal_end": "2026-07-26",
             "nominal_day_count": 28,
             "visible_day_count": 28,
             "truncated_by_floor": false
@@ -13086,30 +13632,30 @@
             }
           }
         },
-        "generated_at": "2026-08-11 03:58:05 KST",
+        "generated_at": "2026-08-23 10:20:52 KST",
         "date_range": {
           "start": null,
           "end": null
         }
       },
       "recent_28d_vs_previous_28d": {
-        "reference_date": "2026-08-10",
+        "reference_date": "2026-08-23",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-14",
-          "end": "2026-08-10",
-          "nominal_start": "2026-07-14",
-          "nominal_end": "2026-08-10",
+          "start": "2026-07-27",
+          "end": "2026-08-23",
+          "nominal_start": "2026-07-27",
+          "nominal_end": "2026-08-23",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-16",
-          "end": "2026-07-13",
-          "nominal_start": "2026-06-16",
-          "nominal_end": "2026-07-13",
+          "start": "2026-06-29",
+          "end": "2026-07-26",
+          "nominal_start": "2026-06-29",
+          "nominal_end": "2026-07-26",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
