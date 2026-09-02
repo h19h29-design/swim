@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-08-23 10:20:51 KST",
-  "reference_date": "2026-08-23",
+  "generated_at": "2026-09-02 12:16:32 KST",
+  "reference_date": "2026-09-02",
   "dashboard_date_floor": "2026-03-01",
   "dashboard_window": {
     "start": "2026-03-01",
-    "end": "2026-08-23"
+    "end": "2026-09-02"
   },
   "visible_date_range": {
     "start": "2026-03-01",
-    "end": "2026-08-23"
+    "end": "2026-09-02"
   },
   "product_mode": "core_only",
   "default_mode": "core_only",
   "supported_modes": [
     "core_only"
   ],
-  "source_record_count": 240,
-  "visible_record_count": 231,
+  "source_record_count": 260,
+  "visible_record_count": 251,
   "authors": [
     {
       "author": "0asis",
@@ -32,23 +32,23 @@
         "core": 1
       },
       "growth": {
-        "reference_date": "2026-08-23",
+        "reference_date": "2026-09-02",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-27",
-          "end": "2026-08-23",
-          "nominal_start": "2026-07-27",
-          "nominal_end": "2026-08-23",
+          "start": "2026-08-06",
+          "end": "2026-09-02",
+          "nominal_start": "2026-08-06",
+          "nominal_end": "2026-09-02",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-29",
-          "end": "2026-07-26",
-          "nominal_start": "2026-06-29",
-          "nominal_end": "2026-07-26",
+          "start": "2026-07-09",
+          "end": "2026-08-05",
+          "nominal_start": "2026-07-09",
+          "nominal_end": "2026-08-05",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -407,23 +407,23 @@
         "core": 2
       },
       "growth": {
-        "reference_date": "2026-08-23",
+        "reference_date": "2026-09-02",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-27",
-          "end": "2026-08-23",
-          "nominal_start": "2026-07-27",
-          "nominal_end": "2026-08-23",
+          "start": "2026-08-06",
+          "end": "2026-09-02",
+          "nominal_start": "2026-08-06",
+          "nominal_end": "2026-09-02",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-29",
-          "end": "2026-07-26",
-          "nominal_start": "2026-06-29",
-          "nominal_end": "2026-07-26",
+          "start": "2026-07-09",
+          "end": "2026-08-05",
+          "nominal_start": "2026-07-09",
+          "nominal_end": "2026-08-05",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -870,23 +870,23 @@
         "core": 15
       },
       "growth": {
-        "reference_date": "2026-08-23",
+        "reference_date": "2026-09-02",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-27",
-          "end": "2026-08-23",
-          "nominal_start": "2026-07-27",
-          "nominal_end": "2026-08-23",
+          "start": "2026-08-06",
+          "end": "2026-09-02",
+          "nominal_start": "2026-08-06",
+          "nominal_end": "2026-09-02",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-29",
-          "end": "2026-07-26",
-          "nominal_start": "2026-06-29",
-          "nominal_end": "2026-07-26",
+          "start": "2026-07-09",
+          "end": "2026-08-05",
+          "nominal_start": "2026-07-09",
+          "nominal_end": "2026-08-05",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -1553,23 +1553,23 @@
         "core": 8
       },
       "growth": {
-        "reference_date": "2026-08-23",
+        "reference_date": "2026-09-02",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-27",
-          "end": "2026-08-23",
-          "nominal_start": "2026-07-27",
-          "nominal_end": "2026-08-23",
+          "start": "2026-08-06",
+          "end": "2026-09-02",
+          "nominal_start": "2026-08-06",
+          "nominal_end": "2026-09-02",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-29",
-          "end": "2026-07-26",
-          "nominal_start": "2026-06-29",
-          "nominal_end": "2026-07-26",
+          "start": "2026-07-09",
+          "end": "2026-08-05",
+          "nominal_start": "2026-07-09",
+          "nominal_end": "2026-08-05",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -2060,23 +2060,23 @@
         "core": 7
       },
       "growth": {
-        "reference_date": "2026-08-23",
+        "reference_date": "2026-09-02",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-27",
-          "end": "2026-08-23",
-          "nominal_start": "2026-07-27",
-          "nominal_end": "2026-08-23",
+          "start": "2026-08-06",
+          "end": "2026-09-02",
+          "nominal_start": "2026-08-06",
+          "nominal_end": "2026-09-02",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-29",
-          "end": "2026-07-26",
-          "nominal_start": "2026-06-29",
-          "nominal_end": "2026-07-26",
+          "start": "2026-07-09",
+          "end": "2026-08-05",
+          "nominal_start": "2026-07-09",
+          "nominal_end": "2026-08-05",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -2567,23 +2567,23 @@
         "core": 3
       },
       "growth": {
-        "reference_date": "2026-08-23",
+        "reference_date": "2026-09-02",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-27",
-          "end": "2026-08-23",
-          "nominal_start": "2026-07-27",
-          "nominal_end": "2026-08-23",
+          "start": "2026-08-06",
+          "end": "2026-09-02",
+          "nominal_start": "2026-08-06",
+          "nominal_end": "2026-09-02",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-29",
-          "end": "2026-07-26",
-          "nominal_start": "2026-06-29",
-          "nominal_end": "2026-07-26",
+          "start": "2026-07-09",
+          "end": "2026-08-05",
+          "nominal_start": "2026-07-09",
+          "nominal_end": "2026-08-05",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -2942,23 +2942,23 @@
         "core": 1
       },
       "growth": {
-        "reference_date": "2026-08-23",
+        "reference_date": "2026-09-02",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-27",
-          "end": "2026-08-23",
-          "nominal_start": "2026-07-27",
-          "nominal_end": "2026-08-23",
+          "start": "2026-08-06",
+          "end": "2026-09-02",
+          "nominal_start": "2026-08-06",
+          "nominal_end": "2026-09-02",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-29",
-          "end": "2026-07-26",
-          "nominal_start": "2026-06-29",
-          "nominal_end": "2026-07-26",
+          "start": "2026-07-09",
+          "end": "2026-08-05",
+          "nominal_start": "2026-07-09",
+          "nominal_end": "2026-08-05",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -3317,23 +3317,23 @@
         "core": 14
       },
       "growth": {
-        "reference_date": "2026-08-23",
+        "reference_date": "2026-09-02",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-27",
-          "end": "2026-08-23",
-          "nominal_start": "2026-07-27",
-          "nominal_end": "2026-08-23",
+          "start": "2026-08-06",
+          "end": "2026-09-02",
+          "nominal_start": "2026-08-06",
+          "nominal_end": "2026-09-02",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-29",
-          "end": "2026-07-26",
-          "nominal_start": "2026-06-29",
-          "nominal_end": "2026-07-26",
+          "start": "2026-07-09",
+          "end": "2026-08-05",
+          "nominal_start": "2026-07-09",
+          "nominal_end": "2026-08-05",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -3934,23 +3934,23 @@
         "core": 1
       },
       "growth": {
-        "reference_date": "2026-08-23",
+        "reference_date": "2026-09-02",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-27",
-          "end": "2026-08-23",
-          "nominal_start": "2026-07-27",
-          "nominal_end": "2026-08-23",
+          "start": "2026-08-06",
+          "end": "2026-09-02",
+          "nominal_start": "2026-08-06",
+          "nominal_end": "2026-09-02",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-29",
-          "end": "2026-07-26",
-          "nominal_start": "2026-06-29",
-          "nominal_end": "2026-07-26",
+          "start": "2026-07-09",
+          "end": "2026-08-05",
+          "nominal_start": "2026-07-09",
+          "nominal_end": "2026-08-05",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -4331,23 +4331,23 @@
         "core": 5
       },
       "growth": {
-        "reference_date": "2026-08-23",
+        "reference_date": "2026-09-02",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-27",
-          "end": "2026-08-23",
-          "nominal_start": "2026-07-27",
-          "nominal_end": "2026-08-23",
+          "start": "2026-08-06",
+          "end": "2026-09-02",
+          "nominal_start": "2026-08-06",
+          "nominal_end": "2026-09-02",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-29",
-          "end": "2026-07-26",
-          "nominal_start": "2026-06-29",
-          "nominal_end": "2026-07-26",
+          "start": "2026-07-09",
+          "end": "2026-08-05",
+          "nominal_start": "2026-07-09",
+          "nominal_end": "2026-08-05",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -4860,23 +4860,23 @@
         "core": 4
       },
       "growth": {
-        "reference_date": "2026-08-23",
+        "reference_date": "2026-09-02",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-27",
-          "end": "2026-08-23",
-          "nominal_start": "2026-07-27",
-          "nominal_end": "2026-08-23",
+          "start": "2026-08-06",
+          "end": "2026-09-02",
+          "nominal_start": "2026-08-06",
+          "nominal_end": "2026-09-02",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-29",
-          "end": "2026-07-26",
-          "nominal_start": "2026-06-29",
-          "nominal_end": "2026-07-26",
+          "start": "2026-07-09",
+          "end": "2026-08-05",
+          "nominal_start": "2026-07-09",
+          "nominal_end": "2026-08-05",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -5279,23 +5279,23 @@
         "core": 5
       },
       "growth": {
-        "reference_date": "2026-08-23",
+        "reference_date": "2026-09-02",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-27",
-          "end": "2026-08-23",
-          "nominal_start": "2026-07-27",
-          "nominal_end": "2026-08-23",
+          "start": "2026-08-06",
+          "end": "2026-09-02",
+          "nominal_start": "2026-08-06",
+          "nominal_end": "2026-09-02",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-29",
-          "end": "2026-07-26",
-          "nominal_start": "2026-06-29",
-          "nominal_end": "2026-07-26",
+          "start": "2026-07-09",
+          "end": "2026-08-05",
+          "nominal_start": "2026-07-09",
+          "nominal_end": "2026-08-05",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -5874,23 +5874,23 @@
         "core": 3
       },
       "growth": {
-        "reference_date": "2026-08-23",
+        "reference_date": "2026-09-02",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-27",
-          "end": "2026-08-23",
-          "nominal_start": "2026-07-27",
-          "nominal_end": "2026-08-23",
+          "start": "2026-08-06",
+          "end": "2026-09-02",
+          "nominal_start": "2026-08-06",
+          "nominal_end": "2026-09-02",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-29",
-          "end": "2026-07-26",
-          "nominal_start": "2026-06-29",
-          "nominal_end": "2026-07-26",
+          "start": "2026-07-09",
+          "end": "2026-08-05",
+          "nominal_start": "2026-07-09",
+          "nominal_end": "2026-08-05",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -6381,23 +6381,23 @@
         "core": 16
       },
       "growth": {
-        "reference_date": "2026-08-23",
+        "reference_date": "2026-09-02",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-27",
-          "end": "2026-08-23",
-          "nominal_start": "2026-07-27",
-          "nominal_end": "2026-08-23",
+          "start": "2026-08-06",
+          "end": "2026-09-02",
+          "nominal_start": "2026-08-06",
+          "nominal_end": "2026-09-02",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-29",
-          "end": "2026-07-26",
-          "nominal_start": "2026-06-29",
-          "nominal_end": "2026-07-26",
+          "start": "2026-07-09",
+          "end": "2026-08-05",
+          "nominal_start": "2026-07-09",
+          "nominal_end": "2026-08-05",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
@@ -6954,23 +6954,23 @@
         "core": 15
       },
       "growth": {
-        "reference_date": "2026-08-23",
+        "reference_date": "2026-09-02",
         "window_days": 28,
         "dashboard_date_floor": "2026-03-01",
         "recent_window": {
-          "start": "2026-07-27",
-          "end": "2026-08-23",
-          "nominal_start": "2026-07-27",
-          "nominal_end": "2026-08-23",
+          "start": "2026-08-06",
+          "end": "2026-09-02",
+          "nominal_start": "2026-08-06",
+          "nominal_end": "2026-09-02",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false
         },
         "previous_window": {
-          "start": "2026-06-29",
-          "end": "2026-07-26",
-          "nominal_start": "2026-06-29",
-          "nominal_end": "2026-07-26",
+          "start": "2026-07-09",
+          "end": "2026-08-05",
+          "nominal_start": "2026-07-09",
+          "nominal_end": "2026-08-05",
           "nominal_day_count": 28,
           "visible_day_count": 28,
           "truncated_by_floor": false

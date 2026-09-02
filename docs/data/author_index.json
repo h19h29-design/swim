@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-08-23 10:20:52 KST",
-  "reference_date": "2026-08-23",
+  "generated_at": "2026-09-02 12:16:32 KST",
+  "reference_date": "2026-09-02",
   "dashboard_date_floor": "2026-03-01",
   "dashboard_window": {
     "start": "2026-03-01",
-    "end": "2026-08-23"
+    "end": "2026-09-02"
   },
   "visible_date_range": {
     "start": "2026-03-01",
-    "end": "2026-08-23"
+    "end": "2026-09-02"
   },
   "product_mode": "core_only",
   "default_mode": "core_only",
   "supported_modes": [
     "core_only"
   ],
-  "source_record_count": 240,
-  "visible_record_count": 231,
+  "source_record_count": 260,
+  "visible_record_count": 251,
   "author_count": 29,
   "authors": [
     {
       "author": "천천히영",
       "search_key": "천천히영",
-      "latest_post_date": "2026-08-21",
-      "total_record_count": 26,
+      "latest_post_date": "2026-08-29",
+      "total_record_count": 30,
       "included_record_count": 16,
-      "review_queue_count": 10,
+      "review_queue_count": 14,
       "primary_title": {
         "badge_id": "dst_04",
         "category": "distance",
@@ -84,10 +84,10 @@
     {
       "author": "NTHNG",
       "search_key": "nthng",
-      "latest_post_date": "2026-08-07",
-      "total_record_count": 16,
+      "latest_post_date": "2026-09-01",
+      "total_record_count": 18,
       "included_record_count": 15,
-      "review_queue_count": 1,
+      "review_queue_count": 3,
       "primary_title": {
         "badge_id": "dst_05",
         "category": "distance",
@@ -270,10 +270,10 @@
     {
       "author": "SㅇS",
       "search_key": "sᄋs",
-      "latest_post_date": "2026-08-20",
-      "total_record_count": 16,
+      "latest_post_date": "2026-08-28",
+      "total_record_count": 17,
       "included_record_count": 8,
-      "review_queue_count": 8,
+      "review_queue_count": 9,
       "primary_title": {
         "badge_id": "dst_03",
         "category": "distance",
@@ -332,10 +332,10 @@
     {
       "author": "근육키우기",
       "search_key": "근육키우기",
-      "latest_post_date": "2026-08-21",
-      "total_record_count": 20,
+      "latest_post_date": "2026-08-31",
+      "total_record_count": 21,
       "included_record_count": 7,
-      "review_queue_count": 13,
+      "review_queue_count": 14,
       "primary_title": {
         "badge_id": "eff_04",
         "category": "efficiency",
@@ -456,10 +456,10 @@
     {
       "author": "주석",
       "search_key": "주석",
-      "latest_post_date": "2026-08-22",
-      "total_record_count": 9,
+      "latest_post_date": "2026-08-29",
+      "total_record_count": 11,
       "included_record_count": 5,
-      "review_queue_count": 4,
+      "review_queue_count": 6,
       "primary_title": {
         "badge_id": "fun_05",
         "category": "fun",
@@ -828,10 +828,10 @@
     {
       "author": "0asis",
       "search_key": "0asis",
-      "latest_post_date": "2026-08-08",
-      "total_record_count": 5,
+      "latest_post_date": "2026-08-30",
+      "total_record_count": 6,
       "included_record_count": 1,
-      "review_queue_count": 4,
+      "review_queue_count": 5,
       "primary_title": {
         "badge_id": "eff_05",
         "category": "efficiency",
@@ -952,10 +952,10 @@
     {
       "author": ".아치",
       "search_key": ".아치",
-      "latest_post_date": "2026-08-20",
-      "total_record_count": 3,
+      "latest_post_date": "2026-08-29",
+      "total_record_count": 6,
       "included_record_count": 0,
-      "review_queue_count": 3,
+      "review_queue_count": 6,
       "primary_title": null,
       "unlocked_badge_count": 0,
       "badge_counts_by_category": {
@@ -1075,10 +1075,10 @@
     {
       "author": "ㅇㅂㄹㅋㄷㅂㄹ",
       "search_key": "ᄋᄇᄅᄏᄃᄇᄅ",
-      "latest_post_date": "2026-08-12",
-      "total_record_count": 10,
+      "latest_post_date": "2026-09-02",
+      "total_record_count": 14,
       "included_record_count": 0,
-      "review_queue_count": 10,
+      "review_queue_count": 14,
       "primary_title": null,
       "unlocked_badge_count": 0,
       "badge_counts_by_category": {
@@ -1198,10 +1198,10 @@
     {
       "author": "댕댕이애호가",
       "search_key": "댕댕이애호가",
-      "latest_post_date": "2026-03-17",
-      "total_record_count": 4,
+      "latest_post_date": "2026-08-31",
+      "total_record_count": 5,
       "included_record_count": 0,
-      "review_queue_count": 4,
+      "review_queue_count": 5,
       "primary_title": null,
       "unlocked_badge_count": 0,
       "badge_counts_by_category": {
@@ -1444,10 +1444,10 @@
     {
       "author": "프리맨",
       "search_key": "프리맨",
-      "latest_post_date": "2026-08-23",
-      "total_record_count": 9,
+      "latest_post_date": "2026-09-01",
+      "total_record_count": 10,
       "included_record_count": 0,
-      "review_queue_count": 9,
+      "review_queue_count": 10,
       "primary_title": null,
       "unlocked_badge_count": 0,
       "badge_counts_by_category": {
