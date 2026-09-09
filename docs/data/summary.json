@@ -1,49 +1,49 @@
 {
-  "generated_at": "2026-09-02 12:16:32 KST",
-  "reference_date": "2026-09-02",
+  "generated_at": "2026-09-10 01:02:46 KST",
+  "reference_date": "2026-09-09",
   "dashboard_date_floor": "2026-03-01",
   "dashboard_window": {
     "start": "2026-03-01",
-    "end": "2026-09-02"
+    "end": "2026-09-09"
   },
   "visible_date_range": {
     "start": "2026-03-01",
-    "end": "2026-09-02"
+    "end": "2026-09-09"
   },
   "product_mode": "core_only",
   "default_mode": "core_only",
   "supported_modes": [
     "core_only"
   ],
-  "source_record_count": 260,
-  "visible_record_count": 251,
+  "source_record_count": 275,
+  "visible_record_count": 266,
   "summary": {
     "mode": "core_only",
     "record_count": 100,
-    "total_record_count": 251,
-    "source_record_count": 260,
+    "total_record_count": 266,
+    "source_record_count": 275,
     "dashboard_date_floor": "2026-03-01",
     "dashboard_window": {
       "start": "2026-03-01",
-      "end": "2026-09-02"
+      "end": "2026-09-09"
     },
     "visible_date_range": {
       "start": "2026-03-01",
-      "end": "2026-09-02"
+      "end": "2026-09-09"
     },
-    "excluded_record_count": 151,
+    "excluded_record_count": 166,
     "excluded_reason_counts": {
       "TITLE_FORMAT_INVALID": 3,
-      "TITLE_FORMAT_MISSING": 148
+      "TITLE_FORMAT_MISSING": 163
     },
-    "review_queue_count": 151,
+    "review_queue_count": 166,
     "review_reason_counts": {
       "TITLE_FORMAT_INVALID": 3,
-      "TITLE_FORMAT_MISSING": 148
+      "TITLE_FORMAT_MISSING": 163
     },
     "warning_code_counts": {},
     "source_counts": {
-      "none": 151,
+      "none": 166,
       "title_format": 100
     },
     "manual_override_counts": {},
@@ -60,25 +60,25 @@
       "title_format": 100
     },
     "has_zero_visible_included_rows": false,
-    "reference_date": "2026-09-02",
+    "reference_date": "2026-09-09",
     "growth": {
-      "reference_date": "2026-09-02",
+      "reference_date": "2026-09-09",
       "window_days": 28,
       "dashboard_date_floor": "2026-03-01",
       "recent_window": {
-        "start": "2026-08-06",
-        "end": "2026-09-02",
-        "nominal_start": "2026-08-06",
-        "nominal_end": "2026-09-02",
+        "start": "2026-08-13",
+        "end": "2026-09-09",
+        "nominal_start": "2026-08-13",
+        "nominal_end": "2026-09-09",
         "nominal_day_count": 28,
         "visible_day_count": 28,
         "truncated_by_floor": false
       },
       "previous_window": {
-        "start": "2026-07-09",
-        "end": "2026-08-05",
-        "nominal_start": "2026-07-09",
-        "nominal_end": "2026-08-05",
+        "start": "2026-07-16",
+        "end": "2026-08-12",
+        "nominal_start": "2026-07-16",
+        "nominal_end": "2026-08-12",
         "nominal_day_count": 28,
         "visible_day_count": 28,
         "truncated_by_floor": false
@@ -107,7 +107,7 @@
         }
       }
     },
-    "generated_at": "2026-09-02 12:16:32 KST",
+    "generated_at": "2026-09-10 01:02:46 KST",
     "date_range": {
       "start": "2026-03-01",
       "end": "2026-04-25"
@@ -285,7 +285,7 @@
     ],
     "metric_value": 142450.0,
     "metric_value_text_ko": "142.4km",
-    "reference_date": "2026-09-02"
+    "reference_date": "2026-09-09"
   },
   "recent_unlocks": [
     {
@@ -410,19 +410,19 @@
     }
   ],
   "ops": {
-    "review_queue_count": 151,
+    "review_queue_count": 166,
     "review_reason_counts": {
       "TITLE_FORMAT_INVALID": 3,
-      "TITLE_FORMAT_MISSING": 148
+      "TITLE_FORMAT_MISSING": 163
     },
-    "excluded_record_count": 151,
+    "excluded_record_count": 166,
     "excluded_reason_counts": {
       "TITLE_FORMAT_INVALID": 3,
-      "TITLE_FORMAT_MISSING": 148
+      "TITLE_FORMAT_MISSING": 163
     },
     "warning_code_counts": {},
     "source_counts": {
-      "none": 151,
+      "none": 166,
       "title_format": 100
     },
     "manual_override_counts": {}

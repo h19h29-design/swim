@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-09-02 12:16:32 KST",
-  "reference_date": "2026-09-02",
+  "generated_at": "2026-09-10 01:02:46 KST",
+  "reference_date": "2026-09-09",
   "dashboard_date_floor": "2026-03-01",
   "dashboard_window": {
     "start": "2026-03-01",
-    "end": "2026-09-02"
+    "end": "2026-09-09"
   },
   "visible_date_range": {
     "start": "2026-03-01",
-    "end": "2026-09-02"
+    "end": "2026-09-09"
   },
   "product_mode": "core_only",
   "default_mode": "core_only",
   "supported_modes": [
     "core_only"
   ],
-  "source_record_count": 260,
-  "visible_record_count": 251,
+  "source_record_count": 275,
+  "visible_record_count": 266,
   "author_count": 29,
   "authors": [
     {
       "author": "천천히영",
       "search_key": "천천히영",
-      "latest_post_date": "2026-08-29",
-      "total_record_count": 30,
+      "latest_post_date": "2026-09-05",
+      "total_record_count": 32,
       "included_record_count": 16,
-      "review_queue_count": 14,
+      "review_queue_count": 16,
       "primary_title": {
         "badge_id": "dst_04",
         "category": "distance",
@@ -84,10 +84,10 @@
     {
       "author": "NTHNG",
       "search_key": "nthng",
-      "latest_post_date": "2026-09-01",
-      "total_record_count": 18,
+      "latest_post_date": "2026-09-08",
+      "total_record_count": 20,
       "included_record_count": 15,
-      "review_queue_count": 3,
+      "review_queue_count": 5,
       "primary_title": {
         "badge_id": "dst_05",
         "category": "distance",
@@ -332,10 +332,10 @@
     {
       "author": "근육키우기",
       "search_key": "근육키우기",
-      "latest_post_date": "2026-08-31",
-      "total_record_count": 21,
+      "latest_post_date": "2026-09-07",
+      "total_record_count": 23,
       "included_record_count": 7,
-      "review_queue_count": 14,
+      "review_queue_count": 16,
       "primary_title": {
         "badge_id": "eff_04",
         "category": "efficiency",
@@ -518,10 +518,10 @@
     {
       "author": "중년히어로즈",
       "search_key": "중년히어로즈",
-      "latest_post_date": "2026-08-19",
-      "total_record_count": 7,
+      "latest_post_date": "2026-09-04",
+      "total_record_count": 8,
       "included_record_count": 4,
-      "review_queue_count": 3,
+      "review_queue_count": 4,
       "primary_title": {
         "badge_id": "eff_03",
         "category": "efficiency",
@@ -952,10 +952,10 @@
     {
       "author": ".아치",
       "search_key": ".아치",
-      "latest_post_date": "2026-08-29",
-      "total_record_count": 6,
+      "latest_post_date": "2026-09-09",
+      "total_record_count": 9,
       "included_record_count": 0,
-      "review_queue_count": 6,
+      "review_queue_count": 9,
       "primary_title": null,
       "unlocked_badge_count": 0,
       "badge_counts_by_category": {
@@ -1075,10 +1075,10 @@
     {
       "author": "ㅇㅂㄹㅋㄷㅂㄹ",
       "search_key": "ᄋᄇᄅᄏᄃᄇᄅ",
-      "latest_post_date": "2026-09-02",
-      "total_record_count": 14,
+      "latest_post_date": "2026-09-09",
+      "total_record_count": 18,
       "included_record_count": 0,
-      "review_queue_count": 14,
+      "review_queue_count": 18,
       "primary_title": null,
       "unlocked_badge_count": 0,
       "badge_counts_by_category": {
@@ -1198,10 +1198,10 @@
     {
       "author": "댕댕이애호가",
       "search_key": "댕댕이애호가",
-      "latest_post_date": "2026-08-31",
-      "total_record_count": 5,
+      "latest_post_date": "2026-09-06",
+      "total_record_count": 6,
       "included_record_count": 0,
-      "review_queue_count": 5,
+      "review_queue_count": 6,
       "primary_title": null,
       "unlocked_badge_count": 0,
       "badge_counts_by_category": {
