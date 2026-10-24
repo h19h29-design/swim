@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-10-13 09:14:22 KST",
-  "reference_date": "2026-10-13",
+  "generated_at": "2026-10-25 05:21:23 KST",
+  "reference_date": "2026-10-24",
   "dashboard_date_floor": "2026-03-01",
   "dashboard_window": {
     "start": "2026-03-01",
-    "end": "2026-10-13"
+    "end": "2026-10-24"
   },
   "visible_date_range": {
     "start": "2026-03-01",
-    "end": "2026-10-13"
+    "end": "2026-10-24"
   },
   "product_mode": "core_only",
   "default_mode": "core_only",
   "supported_modes": [
     "core_only"
   ],
-  "source_record_count": 289,
-  "visible_record_count": 280,
+  "source_record_count": 307,
+  "visible_record_count": 298,
   "author_count": 30,
   "authors": [
     {
       "author": "천천히영",
       "search_key": "천천히영",
-      "latest_post_date": "2026-10-12",
-      "total_record_count": 37,
+      "latest_post_date": "2026-10-21",
+      "total_record_count": 41,
       "included_record_count": 16,
-      "review_queue_count": 21,
+      "review_queue_count": 25,
       "primary_title": {
         "badge_id": "dst_04",
         "category": "distance",
@@ -270,10 +270,10 @@
     {
       "author": "SㅇS",
       "search_key": "sᄋs",
-      "latest_post_date": "2026-10-12",
-      "total_record_count": 19,
+      "latest_post_date": "2026-10-21",
+      "total_record_count": 21,
       "included_record_count": 8,
-      "review_queue_count": 11,
+      "review_queue_count": 13,
       "primary_title": {
         "badge_id": "dst_03",
         "category": "distance",
@@ -456,10 +456,10 @@
     {
       "author": "주석",
       "search_key": "주석",
-      "latest_post_date": "2026-08-29",
-      "total_record_count": 11,
+      "latest_post_date": "2026-10-24",
+      "total_record_count": 13,
       "included_record_count": 5,
-      "review_queue_count": 6,
+      "review_queue_count": 8,
       "primary_title": {
         "badge_id": "fun_05",
         "category": "fun",
@@ -518,10 +518,10 @@
     {
       "author": "중년히어로즈",
       "search_key": "중년히어로즈",
-      "latest_post_date": "2026-09-04",
-      "total_record_count": 8,
+      "latest_post_date": "2026-10-16",
+      "total_record_count": 9,
       "included_record_count": 4,
-      "review_queue_count": 4,
+      "review_queue_count": 5,
       "primary_title": {
         "badge_id": "eff_03",
         "category": "efficiency",
@@ -952,10 +952,10 @@
     {
       "author": ".아치",
       "search_key": ".아치",
-      "latest_post_date": "2026-10-13",
-      "total_record_count": 11,
+      "latest_post_date": "2026-10-23",
+      "total_record_count": 14,
       "included_record_count": 0,
-      "review_queue_count": 11,
+      "review_queue_count": 14,
       "primary_title": null,
       "unlocked_badge_count": 0,
       "badge_counts_by_category": {
@@ -1362,10 +1362,10 @@
     {
       "author": "오!복길",
       "search_key": "오!복길",
-      "latest_post_date": "2026-10-08",
-      "total_record_count": 2,
+      "latest_post_date": "2026-10-15",
+      "total_record_count": 4,
       "included_record_count": 0,
-      "review_queue_count": 2,
+      "review_queue_count": 4,
       "primary_title": null,
       "unlocked_badge_count": 0,
       "badge_counts_by_category": {
@@ -1485,10 +1485,10 @@
     {
       "author": "프리맨",
       "search_key": "프리맨",
-      "latest_post_date": "2026-10-06",
-      "total_record_count": 11,
+      "latest_post_date": "2026-10-21",
+      "total_record_count": 15,
       "included_record_count": 0,
-      "review_queue_count": 11,
+      "review_queue_count": 15,
       "primary_title": null,
       "unlocked_badge_count": 0,
       "badge_counts_by_category": {
